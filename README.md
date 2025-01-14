@@ -1,5 +1,5 @@
-# CMPM 171 Project
+# Wheel Pets README
 
-TODO: need a *real* name
+from Project Owner<sup>3</sup>
 
-repo for CMPM 171 project
+A game and prototype for CMPM 171, UCSC
