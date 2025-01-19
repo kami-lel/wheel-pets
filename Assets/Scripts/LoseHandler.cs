@@ -25,7 +25,7 @@ public class LoseHandler : MonoBehaviour{
             if (LoseSound != null) StartCoroutine(PlaySoundAndLoadScene());
             else{
                 Debug.LogError("LoseSound AudioSource is not assigned.");
-                SceneManager.LoadScene("Menu"); // Fallback if sound is not assigned
+                SceneManager.LoadScene("PetGameScene"); // Fallback if sound is not assigned
             }   
         }
     }
@@ -36,7 +36,7 @@ public class LoseHandler : MonoBehaviour{
         Debug.Log("Playing LoseSound...");
         yield return new WaitForSeconds(LoseSound.clip.length); // Wait for the sound to finish
         Debug.Log("Sound finished. Loading Menu scene...");
-        SceneManager.LoadScene("Menu");
+        SceneManager.LoadScene("PetGameScene");
     }
     
     public void Start()

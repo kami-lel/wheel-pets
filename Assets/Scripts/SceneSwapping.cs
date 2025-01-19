@@ -18,15 +18,25 @@ public class SceneSwapping : MonoBehaviour
    {
        SceneManager.LoadScene("TitleScene");
    }
+   
    public void LoadLeaderboardScene()
    {
        SceneManager.LoadScene("LeaderboardScene");
    }
+   
    public void LoadOptionsScene(){
          SceneManager.LoadScene("OptionsScene");
    }
+   
+   public void LoadDogCareScene()
+   {
+        SceneManager.LoadScene("DogWalkScene");
+   }
+   
    public void ExitGame(){
         Application.Quit();
    }
+   
+
 
 }
