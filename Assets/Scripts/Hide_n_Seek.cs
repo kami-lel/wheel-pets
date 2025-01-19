@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RandomButtonSelector : MonoBehaviour
+public class Hide_n_Seek : MonoBehaviour
 {
     [SerializeField] private Button[] buttons; // Array of 4 buttons
     private int correctButtonIndex; // Index of the correct button
