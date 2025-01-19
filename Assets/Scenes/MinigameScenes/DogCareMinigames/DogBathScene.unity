@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 645251627}
   - component: {fileID: 645251626}
   - component: {fileID: 645251625}
+  - component: {fileID: 645251628}
   m_Layer: 5
   m_Name: SoapButton
   m_TagString: Untagged
@@ -453,6 +454,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645251623}
   m_CullTransparentMesh: 1
+--- !u!114 &645251628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645251623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 886397342}
 --- !u!1 &886397342
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,6 +646,7 @@ GameObject:
   - component: {fileID: 1348728833}
   - component: {fileID: 1348728832}
   - component: {fileID: 1348728831}
+  - component: {fileID: 1348728834}
   m_Layer: 5
   m_Name: TowelButton
   m_TagString: Untagged
@@ -740,6 +755,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1348728829}
   m_CullTransparentMesh: 1
+--- !u!114 &1348728834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1348728829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 886397342}
 --- !u!1 &1501558857
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +965,7 @@ GameObject:
   - component: {fileID: 1987637260}
   - component: {fileID: 1987637259}
   - component: {fileID: 1987637258}
+  - component: {fileID: 1987637261}
   m_Layer: 5
   m_Name: WatterButton
   m_TagString: Untagged
@@ -1045,6 +1074,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1987637256}
   m_CullTransparentMesh: 1
+--- !u!114 &1987637261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987637256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 886397342}
 --- !u!1 &2068223252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,6 +1174,7 @@ GameObject:
   - component: {fileID: 2089037140}
   - component: {fileID: 2089037139}
   - component: {fileID: 2089037138}
+  - component: {fileID: 2089037141}
   m_Layer: 5
   m_Name: CutButton
   m_TagString: Untagged
@@ -1240,6 +1283,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2089037136}
   m_CullTransparentMesh: 1
+--- !u!114 &2089037141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089037136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 886397342}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
