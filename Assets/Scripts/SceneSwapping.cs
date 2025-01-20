@@ -70,6 +70,11 @@ public class SceneSwapping : MonoBehaviour
         SceneManager.LoadScene("DogBathScene");
     }
 
+    public void LoadEndlessRunnerScene()
+    {
+        SceneManager.LoadScene("EndlessRunnerScene");
+    }
+
     public void ExitGame()
     {
         PlayButtonClickSound();
