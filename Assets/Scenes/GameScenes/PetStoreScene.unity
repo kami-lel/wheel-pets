@@ -877,7 +877,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &239586214
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1178,6 +1178,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363177923}
   m_CullTransparentMesh: 1
+--- !u!1 &388148417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 388148419}
+  - component: {fileID: 388148418}
+  m_Layer: 0
+  m_Name: Store Tab Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &388148418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388148417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d01611c9cc2ece34983fd2b21cda1389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storeCosmeticItems: {fileID: 774065836}
+  storeMinigames: {fileID: 239586213}
+  buttonClickSound: {fileID: 786662562}
+--- !u!4 &388148419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388148417}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 639.1115, y: 221.91002, z: -2.6060948}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &450207442
 GameObject:
   m_ObjectHideFlags: 0
@@ -1661,7 +1708,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 654426430}
-  - component: {fileID: 654426429}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -1669,19 +1715,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &654426429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 654426428}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e91198ef4d0e94e3ebecb1562c683335, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonClickSound: {fileID: 786662562}
 --- !u!4 &654426430
 Transform:
   m_ObjectHideFlags: 0
@@ -1791,7 +1824,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &774065837
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2119,7 +2152,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 654426429}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SceneSwapping, Assembly-CSharp
         m_MethodName: LoadPetGameScene
         m_Mode: 1
@@ -2653,7 +2686,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1424374803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: d01611c9cc2ece34983fd2b21cda1389, type: 3}
+        m_TargetAssemblyTypeName: UnityEngine.Object, UnityEngine
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OnMinigameButtonClick
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1424374803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3482,7 +3527,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2003246897}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: d01611c9cc2ece34983fd2b21cda1389, type: 3}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2003246897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3609,3 +3666,4 @@ SceneRoots:
   - {fileID: 1605728471}
   - {fileID: 654426430}
   - {fileID: 786662563}
+  - {fileID: 388148419}
