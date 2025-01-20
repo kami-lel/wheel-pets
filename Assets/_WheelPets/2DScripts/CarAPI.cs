@@ -43,34 +43,35 @@ namespace CarAPI
         HitACyclist,
     }
 
-    public class CarEventArgs: CarEventArgs { // TODO
+    public class CarEventArgs: EventArgs { // TODO
     }
 
-public static class CarEvent
-{
-    private static Dictionary<CarEventID, Action<CarEventArgs>> eventDict =
-        new Dictionary<CarEventID, Action<CarEventArgs>>();
-
-    public static void add(CarEventID id, Action<CarEventArgs> listener) {
-        if (!eventDict.ContainsKey(id))
-        {
-            eventDict[id] = delegate {};
-        }
-        eventDict[id] += listener;
-    }
-
-    public static void remove_all() {
-        foreach (var key in eventDict.Keys.ToList())
-        {
-            eventDict[key] = delegate {};  // reset the action to an empty delegate
-        }
-    }
-
-    public static void emit(CarEventID id, CarEventArgs eventArgs)
+    public static class CarEvent
     {
-        if (eventDict.TryGetValue(id, out var action))
+        private static Dictionary<CarEventID, Action<CarEventArgs>> eventDict =
+            new Dictionary<CarEventID, Action<CarEventArgs>>();
+
+        public static void add(CarEventID id, Action<CarEventArgs> listener) {
+            if (!eventDict.ContainsKey(id))
+            {
+                eventDict[id] = delegate {};
+            }
+            eventDict[id] += listener;
+        }
+
+        public static void remove_all() {
+            foreach (var key in eventDict.Keys.ToList())  // BUG
+            {
+                eventDict[key] = delegate {};  // reset the action to an empty delegate
+            }
+        }
+
+        public static void emit(CarEventID id, CarEventArgs eventArgs)
         {
-            action.Invoke(eventArgs);
+            if (eventDict.TryGetValue(id, out var action))
+            {
+                action.Invoke(eventArgs);
+            }
         }
     }
 }
