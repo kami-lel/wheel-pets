@@ -33,6 +33,10 @@ public class SceneSwapping : MonoBehaviour
     {
         StartCoroutine(LoadSceneWithDelay("PetGameScene"));
     }
+    public void LoadPetStoreScene()
+    {
+        StartCoroutine(LoadSceneWithDelay("PetStoreScene"));
+    }
 
     public void LoadTitleScene()
     {
