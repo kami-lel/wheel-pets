@@ -27,6 +27,10 @@ public class SceneSwapping : MonoBehaviour
     public void LoadDrivingGameScene()
     {
         StartCoroutine(LoadSceneWithDelay("DrivingGameScene"));
+    //Load GameScene
+    public void LoadDrivingGameScene()
+    {
+        SceneManager.LoadScene("DrivingGameScene");
     }
 
     public void LoadPetGameScene()
@@ -36,16 +40,19 @@ public class SceneSwapping : MonoBehaviour
     public void LoadPetStoreScene()
     {
         StartCoroutine(LoadSceneWithDelay("PetStoreScene"));
+        SceneManager.LoadScene("PetGameScene");
     }
 
     public void LoadTitleScene()
     {
         StartCoroutine(LoadSceneWithDelay("TitleScene"));
+        SceneManager.LoadScene("TitleScene");
     }
 
     public void LoadLeaderboardScene()
     {
         StartCoroutine(LoadSceneWithDelay("LeaderboardScene"));
+        SceneManager.LoadScene("LeaderboardScene");
     }
 
     public void LoadOptionsScene()
@@ -56,6 +63,25 @@ public class SceneSwapping : MonoBehaviour
     public void LoadDogCareScene()
     {
         StartCoroutine(LoadSceneWithDelay("DogWalkScene"));
+        SceneManager.LoadScene("OptionsScene");
+    }
+
+    public void LoadClosetScene()
+    {
+        SceneManager.LoadScene("ClosetScene");
+    }
+    public void LoadMinigameSelectorSecene()
+    {
+        SceneManager.LoadScene("MinigameSelectorScene");
+    }
+    public void LoadDogCareScene()
+    {
+        SceneManager.LoadScene("DogWalkScene");
+    }
+
+    public void LoadDogBathScene()
+    {
+        SceneManager.LoadScene("DogBathScene");
     }
 
     public void ExitGame()
@@ -72,4 +98,9 @@ public class SceneSwapping : MonoBehaviour
         }
         Application.Quit();
     }
+        Application.Quit();
+    }
+
+
+
 }
