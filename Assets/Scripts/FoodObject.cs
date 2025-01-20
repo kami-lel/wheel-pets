@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class FoodObject : MonoBehaviour
 {
     [SerializeField] float FoodAmount = 10f;
+    [SerializeField] int ScoreAmount = 1;
     private bool WasMouseDown = false;
 
     // Update is called once per frame
