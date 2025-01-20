@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5653113207736491701}
   - component: {fileID: 1258028992330118204}
   m_Layer: 0
-  m_Name: NotFood
+  m_Name: Food2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,5 +100,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d0f4eced1e046943a6085f390551552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FoodAmount: -10
-  ScoreAmount: -1
+  FoodAmount: 10
+  ScoreAmount: 1

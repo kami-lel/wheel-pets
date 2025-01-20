@@ -3,8 +3,10 @@ using UnityEngine.InputSystem;
 
 public class FoodObject : MonoBehaviour
 {
+    public enum FoodTypes {Food1, Food2, Food3, Food4, Food5, Food6 };
     [SerializeField] float FoodAmount = 10f;
     [SerializeField] int ScoreAmount = 1;
+    [SerializeField] FoodTypes FoodType = FoodTypes.Food1;
     private bool WasMouseDown = false;
 
     // Update is called once per frame
@@ -30,7 +32,7 @@ public class FoodObject : MonoBehaviour
         GameObject thingyHit = collision.gameObject;
         if(thingyHit.transform.name == "Pet")
         {
-            thingyHit.transform.GetComponent<HungerHandler>().SatiateHunger(FoodAmount);
+            thingyHit.transform.GetComponent<HungerHandler>().SatiateHunger(FoodAmount, ScoreAmount);
             Destroy(this.gameObject);
         }
     }

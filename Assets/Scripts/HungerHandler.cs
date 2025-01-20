@@ -11,6 +11,7 @@ public class HungerHandler : MonoBehaviour
     [SerializeField] private float acceleration = .1f;
     [SerializeField] private float acceleration2 = .05f;
     [SerializeField] private UnityEngine.UI.Slider HungerSlider;
+    private FoodObject.FoodTypes FoodIWant;
     private float timer = 0f;
     private int score = 0;
 
@@ -19,6 +20,7 @@ public class HungerHandler : MonoBehaviour
         HungerSlider.maxValue = Hunger;
         HungerSlider.minValue = 0f;
         HungerSlider.value = CurrentHunger;
+        FoodIWant = 
     }
     // Update is called once per frame
     void Update()

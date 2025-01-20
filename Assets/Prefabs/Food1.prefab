@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 33199911509740841}
   - component: {fileID: 346530191306243716}
   m_Layer: 0
-  m_Name: Food
+  m_Name: Food1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodAmount: 10
+  ScoreAmount: 1
 --- !u!61 &33199911509740841
 BoxCollider2D:
   m_ObjectHideFlags: 0
