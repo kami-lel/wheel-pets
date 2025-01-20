@@ -12,7 +12,6 @@ public class PlayerInput2D : MonoBehaviour
         movement = GetComponent<ICharacterMovement2D>();
     }
 
-    // Suppose you have Input Actions set up for Move (Vector2) and Jump (Button).
     public void OnMove(InputAction.CallbackContext context)
     {
         if (movement == null) return;
@@ -22,8 +21,7 @@ public class PlayerInput2D : MonoBehaviour
         float vertical   = move.y;
         
         // We only *apply* movement here if jump is not needed. 
-        // Or we can just store them in private variables and apply them in Update. 
-        // The new Input System is flexible.
+        // Or we can just store them in private variables and apply them in Update.
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -32,14 +30,14 @@ public class PlayerInput2D : MonoBehaviour
         // We check if the button was pressed this frame
         if (context.performed)
         {
-            // We might call something like:
+            // might call something like:
             // movement.UpdateMovement(currentHorizontal, currentVertical, true);
         }
     }
 
     private void Update()
     {
-        // If you want to call movement.UpdateMovement() every frame 
+        // If we want to call movement.UpdateMovement() every frame 
         // with the stored horizontal/vertical inputs plus 
         // a "jump" boolean if triggered. 
     }
