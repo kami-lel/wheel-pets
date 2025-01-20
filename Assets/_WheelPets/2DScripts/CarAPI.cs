@@ -60,9 +60,10 @@ namespace CarAPI
         }
 
         public static void remove_all() {
-            foreach (var key in eventDict.Keys.ToList())  // BUG
+            foreach(KeyValuePair<CarEventID, Action<CarEventArgs>> entry in eventDict)
             {
-                eventDict[key] = delegate {};  // reset the action to an empty delegate
+                // reset the action to an empty delegate
+                eventDict[entry.Key] = delegate {};
             }
         }
 
