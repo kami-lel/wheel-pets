@@ -3,40 +3,55 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwapping : MonoBehaviour
 {
-   //Load GameScene
-   public void LoadDrivingGameScene()
-   {
-       SceneManager.LoadScene("DrivingGameScene");
-   }
+    public AudioSource buttonClickSound;
+
+    private void PlayButtonClickSound()
+    {
+        if (buttonClickSound != null)
+        {
+            buttonClickSound.Play();
+        }
+    }
+
+    public void LoadDrivingGameScene()
+    {
+        PlayButtonClickSound();
+        SceneManager.LoadScene("DrivingGameScene");
+    }
 
     public void LoadPetGameScene()
-   {
-       SceneManager.LoadScene("PetGameScene");
-   }
+    {
+        PlayButtonClickSound();
+        SceneManager.LoadScene("PetGameScene");
+    }
 
-   public void LoadTitleScene()
-   {
-       SceneManager.LoadScene("TitleScene");
-   }
-   
-   public void LoadLeaderboardScene()
-   {
-       SceneManager.LoadScene("LeaderboardScene");
-   }
-   
-   public void LoadOptionsScene(){
-         SceneManager.LoadScene("OptionsScene");
-   }
-   
-   public void LoadDogCareScene()
-   {
+    public void LoadTitleScene()
+    {
+        PlayButtonClickSound();
+        SceneManager.LoadScene("TitleScene");
+    }
+
+    public void LoadLeaderboardScene()
+    {
+        PlayButtonClickSound();
+        SceneManager.LoadScene("LeaderboardScene");
+    }
+
+    public void LoadOptionsScene()
+    {
+        PlayButtonClickSound();
+        SceneManager.LoadScene("OptionsScene");
+    }
+
+    public void LoadDogCareScene()
+    {
+        PlayButtonClickSound();
         SceneManager.LoadScene("DogWalkScene");
-   }
-   
-   public void ExitGame(){
+    }
+
+    public void ExitGame()
+    {
+        PlayButtonClickSound();
         Application.Quit();
-   }
-   
-
-
+    }
 }
