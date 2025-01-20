@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SceneSwapping : MonoBehaviour
 {
@@ -13,45 +14,58 @@ public class SceneSwapping : MonoBehaviour
         }
     }
 
-    public void LoadDrivingGameScene()
+    private IEnumerator LoadSceneWithDelay(string sceneName)
     {
         PlayButtonClickSound();
-        SceneManager.LoadScene("DrivingGameScene");
+        if (buttonClickSound != null)
+        {
+            yield return new WaitWhile(() => buttonClickSound.isPlaying);
+        }
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void LoadDrivingGameScene()
+    {
+        StartCoroutine(LoadSceneWithDelay("DrivingGameScene"));
     }
 
     public void LoadPetGameScene()
     {
-        PlayButtonClickSound();
-        SceneManager.LoadScene("PetGameScene");
+        StartCoroutine(LoadSceneWithDelay("PetGameScene"));
     }
 
     public void LoadTitleScene()
     {
-        PlayButtonClickSound();
-        SceneManager.LoadScene("TitleScene");
+        StartCoroutine(LoadSceneWithDelay("TitleScene"));
     }
 
     public void LoadLeaderboardScene()
     {
-        PlayButtonClickSound();
-        SceneManager.LoadScene("LeaderboardScene");
+        StartCoroutine(LoadSceneWithDelay("LeaderboardScene"));
     }
 
     public void LoadOptionsScene()
     {
-        PlayButtonClickSound();
-        SceneManager.LoadScene("OptionsScene");
+        StartCoroutine(LoadSceneWithDelay("OptionsScene"));
     }
 
     public void LoadDogCareScene()
     {
-        PlayButtonClickSound();
-        SceneManager.LoadScene("DogWalkScene");
+        StartCoroutine(LoadSceneWithDelay("DogWalkScene"));
     }
 
     public void ExitGame()
     {
         PlayButtonClickSound();
+        StartCoroutine(ExitGameWithDelay());
+    }
+
+    private IEnumerator ExitGameWithDelay()
+    {
+        if (buttonClickSound != null)
+        {
+            yield return new WaitWhile(() => buttonClickSound.isPlaying);
+        }
         Application.Quit();
     }
 }
