@@ -1,8 +1,35 @@
 /* 
-  CarAPI define an interface between the pet-game
-  and the "car" (i.e. the driving sim)
+CarAPI define an interface between the pet-game
+and the "car" (i.e. the driving sim)
 
-  TODO write how to use on both sides
+how to use on pet-game side, i.e. 2D side
+
+class Pet: MonoBehavior
+{
+    private void Start()
+    {
+        // set up the event listner
+        // subscribe to the SuddenAccelerate event
+        // link the event with the function GetScared
+        CarEvent.add(CarEventID.SuddenAccelerate, GetScared);
+    }
+
+    private void GetScared(CarEventArgs eventArgs)
+    {
+        // play animation of pet getting scared
+    }
+}
+
+
+how to use on driving-sims side, i.e. 3D side
+class Car: MonoBehavior
+{
+    private void Update() {
+        if (...) {  // when detect a sudden acceleration
+            CarEvent.emit(CarEventID.SuddenAccelerate);
+        }
+    }
+}
 */
 
 
@@ -59,20 +86,16 @@ namespace CarAPI
             eventDict[id] += listener;
         }
 
-        public static void remove_all() {
-            foreach(KeyValuePair<CarEventID, Action<CarEventArgs>> entry in eventDict)
-            {
-                // reset the action to an empty delegate
-                eventDict[entry.Key] = delegate {};
-            }
-        }
+    public static void emit(CarEventID id, CarEventArgs eventArgs = null)
+    {
+        // default to an empty CarEventArgs if none is provided
+        eventArgs ??= new CarEventArgs();
 
-        public static void emit(CarEventID id, CarEventArgs eventArgs)
+        if (eventDict.TryGetValue(id, out var action))
         {
-            if (eventDict.TryGetValue(id, out var action))
-            {
-                action.Invoke(eventArgs);
-            }
+            action.Invoke(eventArgs);
         }
+    }
+
     }
 }
