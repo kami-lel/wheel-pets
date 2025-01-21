@@ -1,4 +1,4 @@
-/* 
+/*
 CarAPI define an interface between the pet-game
 and the "car" (i.e. the driving sim)
 
@@ -35,17 +35,17 @@ class Car: MonoBehavior
 
 using System;
 using System.Collections.Generic;
-
+using UnityEngine;
 
 namespace CarAPI
 {
     public enum CarEventID
-    { 
+    {
         // Car related event
         ShiftIntoPark,
         ShiftIntoDrive,
         ShiftIntoReverse,
-        StartCharging,  // consider StartCharing as another gear
+        StartCharging, // consider StartCharing as another gear
 
         // car battery related events
         BatteryEmpty,
@@ -70,32 +70,35 @@ namespace CarAPI
         HitACyclist,
     }
 
-    public class CarEventArgs: EventArgs { // TODO
+    public class CarEventArgs
+        : EventArgs { // TODO
     }
 
     public static class CarEvent
     {
-        private static Dictionary<CarEventID, Action<CarEventArgs>> eventDict =
-            new Dictionary<CarEventID, Action<CarEventArgs>>();
+        private static Dictionary<CarEventID, Action<CarEventArgs>> eventDict = new();
 
-        public static void add(CarEventID id, Action<CarEventArgs> listener) {
+        public static void Add(CarEventID id, Action<CarEventArgs> listener)
+        {
             if (!eventDict.ContainsKey(id))
             {
-                eventDict[id] = delegate {};
+                eventDict[id] = delegate { };
             }
             eventDict[id] += listener;
+            Debug.Log($"Event {id} added");
         }
 
-    public static void emit(CarEventID id, CarEventArgs eventArgs = null)
-    {
-        // default to an empty CarEventArgs if none is provided
-        eventArgs ??= new CarEventArgs();
-
-        if (eventDict.TryGetValue(id, out var action))
+        public static void Emit(CarEventID id, CarEventArgs eventArgs = null)
         {
-            action.Invoke(eventArgs);
-        }
-    }
+            // default to an empty CarEventArgs if none is provided
+            eventArgs ??= new CarEventArgs();
 
+            if (eventDict.TryGetValue(id, out var action))
+            {
+                action.Invoke(eventArgs);
+            }
+
+            Debug.Log($"Event {id} emitted");
+        }
     }
 }
