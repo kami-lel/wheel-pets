@@ -136,11 +136,6 @@ public class BathGame : MonoBehaviour
         {
             mistakeText.text += mistake; // Append mistake
         }
-
-        if (messageText != null)
-        {
-            messageText.text = ""; // Clear message text
-        }
     }
 
     private void DisplayMessage(string message)
@@ -148,11 +143,6 @@ public class BathGame : MonoBehaviour
         if (messageText != null)
         {
             messageText.text = message;
-        }
-
-        if (mistakeText != null)
-        {
-            mistakeText.text = ""; // Clear mistake text
         }
     }
 }
