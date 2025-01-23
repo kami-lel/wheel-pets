@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - soap
+  - brush
+  - water
+  - scissors
+  - clippers
+  - towel
   layers:
   - Default
   - TransparentFX
