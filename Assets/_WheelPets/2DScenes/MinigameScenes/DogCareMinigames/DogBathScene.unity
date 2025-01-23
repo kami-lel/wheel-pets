@@ -534,7 +534,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: XXX
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -625,8 +625,8 @@ GameObject:
   - component: {fileID: 645251627}
   - component: {fileID: 645251626}
   - component: {fileID: 645251625}
-  - component: {fileID: 645251628}
   - component: {fileID: 645251629}
+  - component: {fileID: 645251630}
   m_Layer: 5
   m_Name: SoapButton
   m_TagString: soap
@@ -735,21 +735,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645251623}
   m_CullTransparentMesh: 1
---- !u!114 &645251628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645251623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 886397342}
-  mistakeText: {fileID: 583667824}
-  messageText: {fileID: 404339}
 --- !u!60 &645251629
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -814,6 +799,18 @@ PolygonCollider2D:
       - {x: -19.632597, y: 6.348465}
       - {x: -10.698747, y: 18.47482}
   m_UseDelaunayMesh: 0
+--- !u!114 &645251630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645251623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0c7a90b8d9c4bd491f24271613e102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &886397342
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1016,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1137467592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1137467594}
+  - component: {fileID: 1137467593}
+  m_Layer: 0
+  m_Name: BathManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1137467593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137467592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cfa0b17de69495ea8d34dd01300f51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObject: {fileID: 886397342}
+  mistakeText: {fileID: 583667824}
+  messageText: {fileID: 404339}
+--- !u!4 &1137467594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1137467592}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 116.639694, y: 250.14178, z: -1.7540239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1348728829
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,12 +1193,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1348728829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0c7a90b8d9c4bd491f24271613e102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 886397342}
-  mistakeText: {fileID: 583667824}
-  messageText: {fileID: 404339}
 --- !u!1 &1501558857
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,10 +1287,10 @@ GameObject:
   - component: {fileID: 1522281007}
   - component: {fileID: 1522281006}
   - component: {fileID: 1522281005}
-  - component: {fileID: 1522281004}
+  - component: {fileID: 1522281008}
   m_Layer: 5
   m_Name: BrushButton
-  m_TagString: Untagged
+  m_TagString: brush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1273,21 +1314,6 @@ RectTransform:
   m_AnchoredPosition: {x: 50.929993, y: 29}
   m_SizeDelta: {x: 29.192596, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1522281004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1522281002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 886397342}
-  mistakeText: {fileID: 583667824}
-  messageText: {fileID: 404339}
 --- !u!114 &1522281005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1370,6 +1396,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1522281002}
   m_CullTransparentMesh: 1
+--- !u!114 &1522281008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522281002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0c7a90b8d9c4bd491f24271613e102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1603402129
 GameObject:
   m_ObjectHideFlags: 0
@@ -1602,12 +1640,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1987637256}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0c7a90b8d9c4bd491f24271613e102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 886397342}
-  mistakeText: {fileID: 583667824}
-  messageText: {fileID: 404339}
 --- !u!1 &2050454383
 GameObject:
   m_ObjectHideFlags: 0
@@ -1620,10 +1655,10 @@ GameObject:
   - component: {fileID: 2050454388}
   - component: {fileID: 2050454387}
   - component: {fileID: 2050454386}
-  - component: {fileID: 2050454385}
+  - component: {fileID: 2050454389}
   m_Layer: 5
   m_Name: ClippersButton
-  m_TagString: Untagged
+  m_TagString: clippers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1647,21 +1682,6 @@ RectTransform:
   m_AnchoredPosition: {x: 50.929993, y: 96}
   m_SizeDelta: {x: 29.192596, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2050454385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2050454383}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetObject: {fileID: 886397342}
-  mistakeText: {fileID: 583667824}
-  messageText: {fileID: 404339}
 --- !u!114 &2050454386
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1744,6 +1764,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2050454383}
   m_CullTransparentMesh: 1
+--- !u!114 &2050454389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050454383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d0c7a90b8d9c4bd491f24271613e102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2068223252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,7 +1866,7 @@ GameObject:
   - component: {fileID: 2089037141}
   m_Layer: 5
   m_Name: CutButton
-  m_TagString: Untagged
+  m_TagString: scissors
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1949,12 +1981,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2089037136}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 029efe7fe731b43739f6b96977d659bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d0c7a90b8d9c4bd491f24271613e102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetObject: {fileID: 886397342}
-  mistakeText: {fileID: 583667824}
-  messageText: {fileID: 404339}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1962,3 +1991,4 @@ SceneRoots:
   - {fileID: 972753032}
   - {fileID: 1603402133}
   - {fileID: 1501558860}
+  - {fileID: 1137467594}

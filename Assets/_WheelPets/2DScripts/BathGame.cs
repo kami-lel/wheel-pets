@@ -33,7 +33,7 @@ public class BathGame : MonoBehaviour
     {
         GameObject draggedItem = GameObject.FindWithTag(itemTag);
 
-        while (mistakeText.text != "XXX" && !isScissorsUsed) // Check if mistakes are less than 3 and towel is not used
+        if (mistakeText.text != "XXX" && !isScissorsUsed) // Check if mistakes are less than 3 and towel is not used
         {
             if (itemTag == "brush")
             {
@@ -137,7 +137,10 @@ public class BathGame : MonoBehaviour
             mistakeText.text += mistake; // Append mistake
         }
 
-     
+        if (messageText != null)
+        {
+            messageText.text = ""; // Clear message text
+        }
     }
 
     private void DisplayMessage(string message)
@@ -147,5 +150,9 @@ public class BathGame : MonoBehaviour
             messageText.text = message;
         }
 
+        if (mistakeText != null)
+        {
+            mistakeText.text = ""; // Clear mistake text
+        }
     }
 }
