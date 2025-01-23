@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
-public class BathGame : MonoBehaviour
+public class BathGame : SceneSwapping
 {
     [SerializeField] public GameObject targetObject; // The object to check for collisions with
     [SerializeField] public TextMeshProUGUI mistakeText; // Text to display mistakes
@@ -26,6 +28,15 @@ public class BathGame : MonoBehaviour
         if (messageText == null || mistakeText == null)
         {
             Debug.LogError("TextMeshProUGUI components not assigned in the Inspector!");
+        }
+    }
+
+    void Update()
+    {
+        // Check if mistakes reached "XXX" and switch to PetGame Scene
+        if (mistakeText.text == "XXX")
+        {
+            LoadPetGameScene();
         }
     }
 
