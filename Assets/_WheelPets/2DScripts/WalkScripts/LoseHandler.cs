@@ -15,11 +15,11 @@ public class LoseHandler : MonoBehaviour{
             Debug.Log("Player collided with wall. Stopping score, disabling input, playing sound, and loading Menu scene...");
 
             // Disable input in relevant scripts
-            var inputController = FindObjectOfType<InputController>(true);
-            if (inputController != null) inputController.enabled = false;
+            var WalkMovement = FindObjectOfType<WalkMovement>(true);
+            if (WalkMovement != null) WalkMovement.enabled = false;
             
-            var arrowKeyControllers = FindObjectsOfType<ArrowKeyController>(true);
-            foreach (var controller in arrowKeyControllers) controller.enabled = false;
+            var WalkMovements = FindObjectsOfType<WalkMovement>(true);
+            foreach (var controller in WalkMovements) controller.enabled = false;
 
             // Play death sound and load Menu scene
             if (LoseSound != null) StartCoroutine(PlaySoundAndLoadScene());
