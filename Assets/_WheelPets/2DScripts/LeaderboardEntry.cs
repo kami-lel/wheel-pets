@@ -1,12 +1,14 @@
 [System.Serializable]
 public class LeaderboardEntry
 {
+    public int rank;
     public string playerName;
-    public int value;
+    public int score;
 
-    public LeaderboardEntry(string playerName, int value)
+    public LeaderboardEntry(int rank, string playerName, int score)
     {
+        this.rank = rank;
         this.playerName = playerName;
-        this.value = value;
+        this.score = score;
     }
 }
