@@ -4,13 +4,16 @@ using System.Collections;
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
+    public GameObject flag; // Add flag variable
+    public GameObject goalLine; // Add goalLine variable
     public float moveSpeed = 1.0f;
+    public float tapMoveSpeed = 2.0f;
     public GameObject readyText;
     public GameObject tapText;
-    public GameObject winText; // Add WinText
+    public GameObject winText;
 
     private bool gameStarted = false;
-    private bool gameWon = false; // Add gameWon flag
+    private bool gameWon = false;
 
     void Start()
     {
@@ -22,15 +25,43 @@ public class TugOfWarManager : MonoBehaviour
         if (gameStarted && !gameWon) // Check if the game is started and not won
         {
             MoveRopeLine();
+            CheckFlagGoalCollision(); // Check for collision between flag and goal line
+        }
+        else if (gameWon) // Check if the game is won
+        {
+            FreezeRopeLine();
+        }
+
+        if (Input.GetMouseButtonDown(0)) // Detects mouse click or screen tap
+        {
+            if (gameStarted && !gameWon)
+            {
+                MoveRopeLineLeft();
+            }
         }
     }
 
     void MoveRopeLine()
     {
-        Debug.Log("MoveRopeLine called");
         if (ropeLine != null && gameStarted && !gameWon) 
         {
             ropeLine.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+        }
+        else
+        {
+            Debug.Log("MoveRopeLine - Conditions not met. gameStarted: " + gameStarted + ", gameWon: " + gameWon);
+        }
+    }
+
+    void MoveRopeLineLeft()
+    {
+        if (ropeLine != null)
+        {
+            ropeLine.transform.Translate(Vector3.left * tapMoveSpeed);
+        }
+        else
+        {
+            Debug.LogWarning("ropeLine is not assigned");
         }
     }
 
@@ -83,6 +114,13 @@ public class TugOfWarManager : MonoBehaviour
         }
 
         // Freeze the RopeLine
+        FreezeRopeLine();
+
+        Debug.Log("TriggerWinState - Game Started: " + gameStarted + ", gameWon: " + gameWon);
+    }
+
+    void FreezeRopeLine()
+    {
         if (ropeLine != null)
         {
             Rigidbody2D rb = ropeLine.GetComponent<Rigidbody2D>();
@@ -91,8 +129,18 @@ public class TugOfWarManager : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
             }
         }
+    }
 
-        Debug.Log("Update - Game Started: " + gameStarted + ", gameWon: " + gameWon);
+    void CheckFlagGoalCollision()
+    {
+        if (flag != null && goalLine != null)
+        {
+            if (flag.GetComponent<Collider2D>().IsTouching(goalLine.GetComponent<Collider2D>()))
+            {
+                Debug.Log("Flag touched the goal line");
+                TriggerWinState();
+            }
+        }
     }
 
     public bool IsGameStarted()

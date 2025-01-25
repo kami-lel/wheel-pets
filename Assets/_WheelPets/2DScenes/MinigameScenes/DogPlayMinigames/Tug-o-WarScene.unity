@@ -148,14 +148,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 681475220}
+  m_Children: []
   m_Father: {fileID: 523077344}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 676.1843, y: 8.8186035}
-  m_SizeDelta: {x: 1807.6406, y: 17.637}
+  m_AnchoredPosition: {x: 9.6928, y: 1.67}
+  m_SizeDelta: {x: 474.66, y: 31.9341}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &398903776
 MonoBehaviour:
@@ -424,6 +423,7 @@ RectTransform:
   m_Children:
   - {fileID: 398903775}
   - {fileID: 498816129}
+  - {fileID: 681475220}
   m_Father: {fileID: 1494883798}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -443,7 +443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8f9087840ce8e4ea347b28835751df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tugOfWarManager: {fileID: 523077347}
+  tugOfWarManager: {fileID: 0}
   tapMoveSpeed: 20
 --- !u!114 &523077347
 MonoBehaviour:
@@ -458,7 +458,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropeLine: {fileID: 523077343}
-  moveSpeed: 1
+  flag: {fileID: 681475219}
+  moveSpeed: 80
+  tapMoveSpeed: 20
   readyText: {fileID: 1257053664}
   tapText: {fileID: 949952697}
   winText: {fileID: 1809749169}
@@ -473,10 +475,8 @@ GameObject:
   - component: {fileID: 681475220}
   - component: {fileID: 681475222}
   - component: {fileID: 681475221}
-  - component: {fileID: 681475225}
   - component: {fileID: 681475224}
   - component: {fileID: 681475223}
-  - component: {fileID: 681475226}
   m_Layer: 5
   m_Name: Flag
   m_TagString: Untagged
@@ -496,11 +496,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 398903775}
+  m_Father: {fileID: 523077344}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -409, y: 0.00000095367}
+  m_AnchoredPosition: {x: 264, y: 8.818498}
   m_SizeDelta: {x: 33.9532, y: 92.0744}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &681475221
@@ -614,36 +614,6 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 33, y: 92}
   m_EdgeRadius: 0
---- !u!114 &681475225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681475219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf1e96c7add354f4199bc1b061c3ea3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tugOfWarManager: {fileID: 523077347}
---- !u!114 &681475226
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 681475219}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e546a704e515fd4408e38a228511fcc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ropeLine: {fileID: 523077343}
-  moveSpeed: 80
-  readyText: {fileID: 0}
-  tapText: {fileID: 0}
-  winText: {fileID: 0}
 --- !u!1 &768899894
 GameObject:
   m_ObjectHideFlags: 0
