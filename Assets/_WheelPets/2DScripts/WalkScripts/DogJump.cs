@@ -67,7 +67,7 @@ public class DogJump : MonoBehaviour
     {
         if (!jumpRequested || body == null) return;
 
-        body.velocity = new Vector2(body.velocity.x, jumpAmount);
+        body.linearVelocity = new Vector2(body.linearVelocity.x, jumpAmount);
         Debug.Log("Player jumped!");
 
         if (jumpSound != null) jumpSound.Play();
@@ -98,3 +98,4 @@ public class DogJump : MonoBehaviour
     {
         controlsEnabled = false;
     }
+}
