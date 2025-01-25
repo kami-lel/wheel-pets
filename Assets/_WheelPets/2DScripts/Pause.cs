@@ -41,6 +41,15 @@ public class Pause : MonoBehaviour
         }
     }
 
+    // Called by the Back Button to unpause the game
+    public void OnBackButtonClicked()
+    {
+        if (isPaused) // If the game is currently paused, toggle to unpause
+        {
+            TogglePause();
+        }
+    }
+
     void Update()
     {
         // Toggle pause using the P key (optional, you can connect this to a button instead)
