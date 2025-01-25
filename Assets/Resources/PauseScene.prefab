@@ -199,9 +199,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5692033816631191998}
         m_TargetAssemblyTypeName: PauseControls, Assembly-CSharp
-        m_MethodName: ExitToPetGame
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -529,6 +529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pausePrefab: {fileID: 6603537409414820424}
   backButton: {fileID: 8416289844599156262}
+  exitButton: {fileID: 2512067446673074066}
 --- !u!1 &5758893427773211696
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,7 +890,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 34.65
+  m_fontSize: 26.2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1

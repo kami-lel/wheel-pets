@@ -1,49 +1,53 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PauseButton : MonoBehaviour
 {
     [SerializeField] private GameObject pausePrefab; // Reference to the pause prefab
-    private GameObject pauseInstance; // Instance of the pause prefab
-    private bool isPaused = false; // Tracks whether the game is paused
+    public static GameObject pauseInstance; // Static instance of the pause prefab
 
     void Start()
     {
-    
+        // Ensure the game is running normally at the start
+        Time.timeScale = 1;
+        Debug.Log("Game started with Time.timeScale = 1.");
     }
 
-    public void TogglePause()
+    public void PauseGame()
     {
-        isPaused = !isPaused;
-
-        if (isPaused)
+        Debug.Log("PauseGame called.");
+        if (pausePrefab != null)
         {
-            // Display the pause prefab
-            if (pausePrefab != null && pauseInstance == null)
+            if (pauseInstance == null)
             {
+                Debug.Log("Attempting to instantiate pausePrefab.");
+
+                // Display the pause prefab
                 pauseInstance = Instantiate(pausePrefab);
+
                 Canvas mainCanvas = FindObjectOfType<Canvas>();
                 if (mainCanvas != null)
                 {
                     pauseInstance.transform.SetParent(mainCanvas.transform, false);
+                    Debug.Log("pauseInstance set as a child of the main canvas.");
                 }
                 else
                 {
                     Debug.LogError("Main Canvas not found. Make sure a Canvas exists in the scene.");
                 }
             }
-            Time.timeScale = 0; // Pause the game
+            else
+            {
+                Debug.LogWarning("Pause instance already exists. No new instance will be created.");
+            }
         }
         else
         {
-            // Remove the pause prefab
-            if (pauseInstance != null)
-            {
-                Destroy(pauseInstance);
-                pauseInstance = null;
-            }
-            Time.timeScale = 1; // Resume the game
+            Debug.LogError("pausePrefab is not assigned in the Inspector.");
         }
+
+        // Pause the game
+        Time.timeScale = 0;
+        Debug.Log("Game paused (Time.timeScale = 0).");
     }
 }

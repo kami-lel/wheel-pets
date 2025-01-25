@@ -1,63 +1,64 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseManager : MonoBehaviour
 {
-    [SerializeField] private GameObject pausePrefab; // Reference to the pause prefab
     [SerializeField] private Button backButton; // Reference to the Back button
-    private GameObject pauseInstance; // Instance of the pause prefab
-    private bool isPaused = false; // Tracks whether the game is paused
+    [SerializeField] private Button exitButton; // Reference to the Exit button
 
     void Start()
     {
         // Hook up the Back Button's OnClick event
         if (backButton != null)
         {
-            backButton.onClick.AddListener(ToggleOffPause);
+            Debug.Log("Back Button assigned successfully.");
+            backButton.onClick.AddListener(() => {
+                Debug.Log("Back Button clicked.");
+                ToggleOffPause();
+                Debug.Log("ToggleOffPause method executed.");
+            });
         }
         else
         {
             Debug.LogError("Back Button is not assigned in the Inspector.");
         }
-    }
 
-    public void TogglePause()
-    {
-        isPaused = !isPaused;
-
-        if (isPaused)
+        // Hook up the Exit Button's OnClick event
+        if (exitButton != null)
         {
-            // Display the pause prefab
-            if (pausePrefab != null && pauseInstance == null)
-            {
-                pauseInstance = Instantiate(pausePrefab);
-                Canvas mainCanvas = FindObjectOfType<Canvas>();
-                if (mainCanvas != null)
-                {
-                    pauseInstance.transform.SetParent(mainCanvas.transform, false);
-                }
-                else
-                {
-                    Debug.LogError("Main Canvas not found. Make sure a Canvas exists in the scene.");
-                }
-            }
-            Time.timeScale = 0; // Pause the game
+            Debug.Log("Exit Button assigned successfully.");
+            exitButton.onClick.AddListener(ReturnToPetGameScene);
         }
         else
         {
-            ToggleOffPause(); // Toggle off pause when the game resumes
+            Debug.LogError("Exit Button is not assigned in the Inspector.");
         }
     }
 
     public void ToggleOffPause()
     {
-        if (pauseInstance != null)
+        Debug.Log("ToggleOffPause called.");
+        if (PauseButton.pauseInstance != null)
         {
-            Destroy(pauseInstance); // Destroy the pause prefab
-            pauseInstance = null; // Clear the instance reference
+            Debug.Log("Destroying pauseInstance.");
+            Destroy(PauseButton.pauseInstance);
+            PauseButton.pauseInstance = null; // Clear the static instance
+        }
+        else
+        {
+            Debug.LogWarning("No pause instance to destroy.");
         }
 
-        isPaused = false; // Update the pause state
-        Time.timeScale = 1; // Resume the game
+        // Resume the game
+        Time.timeScale = 1;
+        Debug.Log("Game resumed (Time.timeScale = 1).");
+    }
+
+    private void ReturnToPetGameScene()
+    {
+        Debug.Log("Returning to PetGameScene...");
+        Time.timeScale = 1; // Ensure the game is not paused when switching scenes
+        SceneManager.LoadScene("PetGameScene"); // Load the PetGameScene
     }
 }
