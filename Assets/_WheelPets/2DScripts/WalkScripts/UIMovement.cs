@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class WalkMovement : MonoBehaviour
+public class UIMovement : MonoBehaviour
 {
     // Common Fields
     public bool controlsEnabled = true; // Enable/disable functionality globally
@@ -15,7 +15,8 @@ public class WalkMovement : MonoBehaviour
     private float yStart; // Initial Y position
 
     // Jump Fields
-    public CompletedJumper jumper; // Reference to the jumper component
+    public Rigidbody2D body; // Rigidbody2D component for the player (assign in Inspector)
+    public float jumpAmount = 5f; // Adjust jump strength as needed
     public AudioSource jumpSound; // Sound effect for jumping
     private bool jumpRequested = false; // Input buffer for jump
 
@@ -43,7 +44,7 @@ public class WalkMovement : MonoBehaviour
         }
 
         // Setup for Jump Functionality
-        if (jumper == null) Debug.LogWarning("Jumper is not assigned!");
+        if (body == null) Debug.LogError("Rigidbody2D (body) is null! Assign it in the Inspector.");
         if (jumpSound == null) Debug.LogWarning("Jump sound is not assigned!");
     }
 
@@ -82,7 +83,7 @@ public class WalkMovement : MonoBehaviour
 
     private void HandleJumpInput()
     {
-        if (jumper == null) return;
+        if (body == null) return;
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
@@ -93,10 +94,10 @@ public class WalkMovement : MonoBehaviour
 
     private void ProcessJump()
     {
-        if (!jumpRequested || jumper == null) return;
+        if (!jumpRequested || body == null) return;
 
-        jumper.Jump();
-        Debug.Log("Jump executed in FixedUpdate.");
+        body.linearVelocity = new Vector2(body.linearVelocity.x, jumpAmount);
+        Debug.Log("Player jumped!");
 
         if (jumpSound != null) jumpSound.Play();
 

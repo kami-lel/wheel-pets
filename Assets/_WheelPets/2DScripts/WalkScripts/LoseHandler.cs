@@ -1,45 +1,52 @@
-/* * * * * * * * * * * * 
-* 
-*
-*
-* * * * * * * * * * * * */
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class LoseHandler : MonoBehaviour{
+public class LoseHandler : MonoBehaviour
+{
     public AudioSource LoseSound; // Reference to the AudioSource (assign in Inspector)
+    public string loseTag = "Rock"; // Tag for objects that trigger a loss
 
-    private void OnCollisionEnter2D(Collision2D collision){
-        if (collision.gameObject.CompareTag("Player")){
-            Debug.Log("Player collided with wall. Stopping score, disabling input, playing sound, and loading Menu scene...");
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag(loseTag))
+        {
+            Debug.Log("Player collided with a lose-triggering object. Disabling controls...");
 
-            // Disable input in relevant scripts
-            var WalkMovement = FindObjectOfType<WalkMovement>(true);
-            if (WalkMovement != null) WalkMovement.enabled = false;
-            
-            var WalkMovements = FindObjectsOfType<WalkMovement>(true);
-            foreach (var controller in WalkMovements) controller.enabled = false;
+            // Disable DogJump scripts
+            var dogJump = GetComponent<DogJump>();
+            if (dogJump != null)
+            {
+                dogJump.DisableControls();
+            }
 
-            // Play death sound and load Menu scene
-            if (LoseSound != null) StartCoroutine(PlaySoundAndLoadScene());
-            else{
+            // Disable RockMovement scripts
+            var rockMovements = FindObjectsOfType<RockMovement>(true);
+            foreach (var rockMovement in rockMovements)
+            {
+                rockMovement.enabled = false;
+            }
+
+            // Play lose sound and load scene
+            if (LoseSound != null)
+            {
+                StartCoroutine(PlaySoundAndLoadScene());
+            }
+            else
+            {
                 Debug.LogError("LoseSound AudioSource is not assigned.");
                 SceneManager.LoadScene("PetGameScene"); // Fallback if sound is not assigned
-            }   
+            }
         }
     }
 
-    private IEnumerator PlaySoundAndLoadScene(){
+    private IEnumerator PlaySoundAndLoadScene()
+    {
         DontDestroyOnLoad(LoseSound.gameObject); // Keep sound playing across scene loads
         LoseSound.Play();
         Debug.Log("Playing LoseSound...");
         yield return new WaitForSeconds(LoseSound.clip.length); // Wait for the sound to finish
         Debug.Log("Sound finished. Loading Menu scene...");
         SceneManager.LoadScene("PetGameScene");
-    }
-    
-    public void Start()
-    {
     }
 }
