@@ -12,13 +12,16 @@ public class LeaderboardManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
+        leaderboardEntries.Add(new LeaderboardEntry("Player1", 1000));
+        leaderboardEntries.Add(new LeaderboardEntry("Player2", 800));
+        leaderboardEntries.Add(new LeaderboardEntry("Player3", 600));
         PopulateLeaderboardUI();
     }
 
     private void PopulateLeaderboardUI()
     {
         // sort entries by rank
-        leaderboardEntries = leaderboardEntries.OrderByDescending(entry => entry.score).ToList();
+        var sortedEntries = leaderboardEntries.OrderByDescending(entry => entry.score).ToList();
 
         // clear entries before refilling
         foreach (Transform child in leaderboardContent)
@@ -27,12 +30,19 @@ public class LeaderboardManager : MonoBehaviour
         }
 
         // add new entries
-        foreach (var entry in leaderboardEntries)
+        for (int i = 0; i < sortedEntries.Count; i++)
         {
             GameObject newEntry = Instantiate(leaderboardEntryPrefab, leaderboardContent);
-            newEntry.transform.Find("RankText").GetComponent<Text>().text = entry.rank.ToString();
-            newEntry.transform.Find("NameText").GetComponent<Text>().text = entry.playerName;
-            newEntry.transform.Find("ScoreText").GetComponent<Text>().text = entry.score.ToString();
+
+            newEntry.transform.Find("RankText").GetComponent<Text>().text = (i + 1).ToString(); // start rank at 1
+            newEntry.transform.Find("NameText").GetComponent<Text>().text = sortedEntries[i].playerName;
+            newEntry.transform.Find("ScoreText").GetComponent<Text>().text = sortedEntries[i].score.ToString();
         }
+    }
+
+    public void AddEntry(string playerName, int score)
+    {
+        leaderboardEntries.Add(new LeaderboardEntry(playerName, score));
+        PopulateLeaderboardUI();
     }
 }
