@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class LeaderboardManager : MonoBehaviour
 {
     [SerializeField] private GameObject leaderboardEntryPrefab;
-    [SerializeField] private Transform leaderboardContent;
+    [SerializeField] private Transform entryContainer;
 
     private List<LeaderboardEntry> leaderboardEntries = new List<LeaderboardEntry>();
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,7 +24,7 @@ public class LeaderboardManager : MonoBehaviour
         var sortedEntries = leaderboardEntries.OrderByDescending(entry => entry.score).ToList();
 
         // clear entries before refilling
-        foreach (Transform child in leaderboardContent)
+        foreach (Transform child in entryContainer)
         {
             Destroy(child.gameObject);
         }
@@ -32,7 +32,7 @@ public class LeaderboardManager : MonoBehaviour
         // add new entries
         for (int i = 0; i < sortedEntries.Count; i++)
         {
-            GameObject newEntry = Instantiate(leaderboardEntryPrefab, leaderboardContent);
+            GameObject newEntry = Instantiate(leaderboardEntryPrefab, entryContainer);
 
             newEntry.transform.Find("RankText").GetComponent<Text>().text = (i + 1).ToString();
             newEntry.transform.Find("NameText").GetComponent<Text>().text = sortedEntries[i].playerName;
