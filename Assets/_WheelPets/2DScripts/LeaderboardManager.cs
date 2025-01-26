@@ -34,7 +34,7 @@ public class LeaderboardManager : MonoBehaviour
         {
             GameObject newEntry = Instantiate(leaderboardEntryPrefab, leaderboardContent);
 
-            newEntry.transform.Find("RankText").GetComponent<Text>().text = (i + 1).ToString(); // start rank at 1
+            newEntry.transform.Find("RankText").GetComponent<Text>().text = (i + 1).ToString();
             newEntry.transform.Find("NameText").GetComponent<Text>().text = sortedEntries[i].playerName;
             newEntry.transform.Find("ScoreText").GetComponent<Text>().text = sortedEntries[i].score.ToString();
         }
