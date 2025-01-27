@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -34,9 +35,9 @@ public class LeaderboardManager : MonoBehaviour
         {
             GameObject newEntry = Instantiate(leaderboardEntryPrefab, entryContainer);
 
-            newEntry.transform.Find("LeaderboardContent/RankText").GetComponent<Text>().text = (i + 1).ToString();
-            newEntry.transform.Find("LeaderboardContent/NameText").GetComponent<Text>().text = sortedEntries[i].playerName;
-            newEntry.transform.Find("LeaderboardContent/ScoreText").GetComponent<Text>().text = sortedEntries[i].score.ToString();
+            newEntry.transform.Find("LeaderboardContent/RankText").GetComponent<TextMeshProUGUI>().text = (i + 1).ToString();
+            newEntry.transform.Find("LeaderboardContent/NameText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].playerName;
+            newEntry.transform.Find("LeaderboardContent/ScoreText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].score.ToString();
         }
     }
 
