@@ -34,7 +34,7 @@ public class LeaderboardManager : MonoBehaviour
         for (int i = 0; i < sortedEntries.Count; i++)
         {
             GameObject newEntry = Instantiate(leaderboardEntryPrefab, entryContainer);
-
+            newEntry.transform.Find("LeaderboardContent").GetComponent<HorizontalLayoutGroup>().enabled = true;
             newEntry.transform.Find("LeaderboardContent/RankText").GetComponent<TextMeshProUGUI>().text = (i + 1).ToString();
             newEntry.transform.Find("LeaderboardContent/NameText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].playerName;
             newEntry.transform.Find("LeaderboardContent/ScoreText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].score.ToString();
