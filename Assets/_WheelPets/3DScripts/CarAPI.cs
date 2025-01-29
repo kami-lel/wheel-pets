@@ -68,7 +68,7 @@ public class CarAPI : MonoBehaviour
 
         eventDict[id] += listener;
 
-        Debug.Log($"CarAPI:\tEvent {id} added from {listenerDescription}");
+        Debug.Log($"CarAPI\tEvent {id} added from {listenerDescription}");
     }
 
     /// <summary>
@@ -86,7 +86,7 @@ public class CarAPI : MonoBehaviour
             action.Invoke(eventArgs);
         }
 
-        Debug.Log($"CarAPI:\tEvent {id} emitted");
+        Debug.Log($"CarAPI\tEvent {id} emitted");
     }
 
     // static to ensure work across different instances
@@ -107,10 +107,10 @@ IKJL: SuddenAccelerate, SuddenDecelerate, SuddenTurnLeft, SuddenTurnRight
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Debug.Log("CarAPI:\tlaunch in current Scene");
+        Debug.Log("CarAPI\tlaunch in current Scene");
 
         if (EnableKeyboardEventSimulator)
-            Debug.Log("CarAPI:\t enable Keyboard Event Simulation");
+            Debug.Log("CarAPI\t enable Keyboard Event Simulation");
     }
 
     // Update is called once per frame
@@ -124,7 +124,7 @@ IKJL: SuddenAccelerate, SuddenDecelerate, SuddenTurnLeft, SuddenTurnRight
     {
         if (Input.GetKeyDown(KeyCode.H))
         {
-            Debug.Log(helpMessage);
+            Debug.LogWarning(helpMessage);
         }
         else if (Input.GetKeyDown(KeyCode.Alpha1))
         {
