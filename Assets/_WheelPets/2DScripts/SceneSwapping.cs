@@ -52,22 +52,27 @@ public class SceneSwapping : MonoBehaviour
 
     public void LoadClosetScene()
     {
-        SceneManager.LoadScene("ClosetScene");
+        StartCoroutine(LoadSceneWithDelay("ClosetScene"));
     }
 
     public void LoadMinigameSelectorSecene()
     {
-        SceneManager.LoadScene("MinigameSelectorScene");
+        StartCoroutine(LoadSceneWithDelay("MinigameSelectorScene"));
     }
 
     public void LoadDogCareScene()
     {
-        SceneManager.LoadScene("DogWalkScene");
+        StartCoroutine(LoadSceneWithDelay("DogWalkScene"));
     }
 
     public void LoadDogBathScene()
     {
-        SceneManager.LoadScene("DogBathScene");
+        StartCoroutine(LoadSceneWithDelay("DogBathScene"));
+    }
+
+    public void LoadTugOfWarScene()
+    {
+        StartCoroutine(LoadSceneWithDelay("Tug-o-WarScene"));
     }
 
     public void ExitGame()
