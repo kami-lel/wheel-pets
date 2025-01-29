@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/_WheelPets/2DScenes/TitleScene.unity
     guid: 06c5b9f6ec9544b5ebd7b9f8e0205a7e
   - enabled: 1
-    path: Assets/_WheelPets/2DScenes/GameScenes/DrivingGameScene.unity
+    path: Assets/_WheelPets/2DScenes/Play/DrivingGameScene.unity
     guid: 7e6cbac9e7daf4ad4be82b661c4f3374
   - enabled: 1
     path: Assets/_WheelPets/2DScenes/LeaderboardScene.unity
@@ -21,16 +21,16 @@ EditorBuildSettings:
     path: Assets/_WheelPets/2DScenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/_WheelPets/2DScenes/GameScenes/PetGameScene.unity
+    path: Assets/_WheelPets/2DScenes/Play/PetGameScene.unity
     guid: 6409b4fb9b54249e49c15d4262187265
   - enabled: 1
-    path: Assets/_WheelPets/2DScenes/MinigameScenes/DogCareMinigames/DogWalkScene.unity
+    path: Assets/_WheelPets/2DScenes/MiniGames/DogCareMinigames/DogWalkScene.unity
     guid: 11cddacdbb7604c4795027ee7121eaae
   - enabled: 1
-    path: Assets/_WheelPets/2DScenes/GameScenes/PetStoreScene.unity
+    path: Assets/_WheelPets/2DScenes/Play/PetStoreScene.unity
     guid: f40488c735954044a958d20b6f744281
   - enabled: 1
-    path: Assets/_WheelPets/2DScenes/GameScenes/ClosetScene.unity
+    path: Assets/_WheelPets/2DScenes/Play/ClosetScene.unity
     guid: 25824b28d595645329612558fd6c1427
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
