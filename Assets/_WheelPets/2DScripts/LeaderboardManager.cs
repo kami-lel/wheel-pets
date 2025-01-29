@@ -13,9 +13,12 @@ public class LeaderboardManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        leaderboardEntries.Add(new LeaderboardEntry("Player1", 1000));
-        leaderboardEntries.Add(new LeaderboardEntry("Player2", 800));
-        leaderboardEntries.Add(new LeaderboardEntry("Player3", 600));
+        leaderboardEntries.Add(new LeaderboardEntry("Player1", 10000));
+        leaderboardEntries.Add(new LeaderboardEntry("Player2", 9000));
+        leaderboardEntries.Add(new LeaderboardEntry("Player3", 8000));
+        leaderboardEntries.Add(new LeaderboardEntry("Player4", 7000));
+        leaderboardEntries.Add(new LeaderboardEntry("Player5", 6500));
+        leaderboardEntries.Add(new LeaderboardEntry("UserName", 5204));
         PopulateLeaderboardUI();
     }
 
