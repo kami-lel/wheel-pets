@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 242a73063def5a5409e752c01b2be206
+guid: 53ca1abd4f2001b449d7594508954d2d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 935732272321969123
-    second: button minigames_0
+      213: -2354770047620652052
+    second: button image minigames_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,17 +96,30 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: button minigames_0
+      name: button image minigames_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 940
-        height: 200
+        width: 94
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3ebbe904b836cfc00800000000000000
-      internalID: 935732272321969123
+      spriteID: ce367d72e1d225fd0800000000000000
+      internalID: -2354770047620652052
       vertices: []
       indices: 
       edges: []
@@ -135,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      button minigames_0: 935732272321969123
+      button image minigames_0: -2354770047620652052
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
