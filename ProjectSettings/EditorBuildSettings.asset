@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_WheelPets/Scenes/Minigames/FetchScene.unity
     guid: 2417e862c51014a63b82a9a19d952c16
+  - enabled: 1
+    path: Assets/_WheelPets/Scenes/Minigames/_SelectorScene.unity
+    guid: 06d85f1ee0630493d9ee980fe86f4eee
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

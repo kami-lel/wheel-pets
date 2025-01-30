@@ -57,7 +57,7 @@ public class SceneSwapping : MonoBehaviour
 
     public void LoadMinigameSelectorSecene()
     {
-        StartCoroutine(LoadSceneWithDelay("MinigameSelectorScene"));
+        StartCoroutine(LoadSceneWithDelay("_SelectorScene"));
     }
 
     public void LoadDogCareScene()
@@ -73,6 +73,11 @@ public class SceneSwapping : MonoBehaviour
     public void LoadTugOfWarScene()
     {
         StartCoroutine(LoadSceneWithDelay("Tug-o-WarScene"));
+    }
+
+    public void LoadFetchScene()
+    {
+        StartCoroutine(LoadSceneWithDelay("FetchScene"));
     }
 
     public void ExitGame()
