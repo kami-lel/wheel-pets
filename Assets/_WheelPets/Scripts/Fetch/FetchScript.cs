@@ -1,16 +1,20 @@
 using UnityEngine;
+using System.Collections;
 
 public class FetchScript : MonoBehaviour
 {
     public GameObject timingBar;
     public GameObject line;
     public GameObject checkArea;
+    public GameObject readyText;
+    public GameObject goText;
+    public GameObject gameOverText;
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
 
     private float currentSpeed;
     private bool isMovingRight = true;
-    private bool gameActive = true;
+    private bool gameActive = false;
     private int score = 0;
 
     private int timingBarLength = 100;
@@ -24,7 +28,7 @@ public class FetchScript : MonoBehaviour
         currentSpeed = initialSpeed;
         ResetLine();
         PositionCheckArea();
-        UpdateVisuals();
+        StartCoroutine(StartGameRoutine());
     }
 
     void Update()
@@ -82,6 +86,7 @@ public class FetchScript : MonoBehaviour
         {
             // Game over
             gameActive = false;
+            ShowGameOverText();
             Debug.Log("Game Over! Final Score: " + score);
         }
     }
@@ -119,5 +124,25 @@ public class FetchScript : MonoBehaviour
 
         Debug.Log("Line position: " + line.GetComponent<RectTransform>().anchoredPosition);
         Debug.Log("Check area position: " + checkArea.GetComponent<RectTransform>().anchoredPosition);
+    }
+
+    IEnumerator StartGameRoutine()
+    {
+        // Show ReadyText
+        readyText.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        readyText.SetActive(false);
+
+        // Show GoText
+        goText.SetActive(true);
+
+        // Start the game
+        gameActive = true;
+    }
+
+    void ShowGameOverText()
+    {
+        goText.SetActive(false);
+        gameOverText.SetActive(true);
     }
 }
