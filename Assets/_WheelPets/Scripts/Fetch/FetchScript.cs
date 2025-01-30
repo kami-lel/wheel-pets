@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI; // Add this line to use the Text component
 using System.Collections;
 
 public class FetchScript : MonoBehaviour
@@ -9,6 +10,7 @@ public class FetchScript : MonoBehaviour
     public GameObject readyText;
     public GameObject goText;
     public GameObject gameOverText;
+    public Text scoreText; // Add this line to declare the ScoreText variable
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
 
@@ -79,6 +81,7 @@ public class FetchScript : MonoBehaviour
             // Successful hit
             score++;
             currentSpeed += speedIncrement;
+            UpdateScoreText(); // Update the score text
             ResetLine();
             PositionCheckArea();
         }
@@ -144,5 +147,13 @@ public class FetchScript : MonoBehaviour
     {
         goText.SetActive(false);
         gameOverText.SetActive(true);
+    }
+
+    void UpdateScoreText()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
     }
 }
