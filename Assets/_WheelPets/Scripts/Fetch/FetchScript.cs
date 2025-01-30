@@ -10,6 +10,7 @@ public class FetchScript : MonoBehaviour
     public GameObject readyText;
     public GameObject goText;
     public GameObject gameOverText;
+    public GameObject playAgainButton; // Add this line to declare the PlayAgainButton variable
     public Text scoreText; // Add this line to declare the ScoreText variable
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
@@ -147,6 +148,7 @@ public class FetchScript : MonoBehaviour
     {
         goText.SetActive(false);
         gameOverText.SetActive(true);
+        playAgainButton.SetActive(true); // Enable the play again button
     }
 
     void UpdateScoreText()
