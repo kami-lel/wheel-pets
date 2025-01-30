@@ -32,6 +32,11 @@ public class SceneSwapping : MonoBehaviour
    {
         SceneManager.LoadScene("DogWalkScene");
    }
+
+   public void LoadClosetScene()
+   {
+    SceneManager.LoadScene("ClosetScene");
+   }
    
    public void ExitGame(){
         Application.Quit();

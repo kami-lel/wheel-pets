@@ -198,7 +198,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Blinker Buttons_0: -349280972986196724
+      Blinker Buttons_1: -5599838138974295328
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
