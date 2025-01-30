@@ -212,8 +212,10 @@ MonoBehaviour:
   timingBar: {fileID: 164442192}
   line: {fileID: 572255098}
   checkArea: {fileID: 1065811209}
-  initialSpeed: 20
-  speedIncrement: 2
+  initialSpeed: 1
+  speedIncrement: 0.05
+  lineLength: 10
+  checkAreaLength: 20
 --- !u!1 &330467787
 GameObject:
   m_ObjectHideFlags: 0
