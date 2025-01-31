@@ -91,6 +91,7 @@ public class CarAPI : MonoBehaviour
 
     // static to ensure work across different instances
     private static readonly Dictionary<CarEventID, Action<CarEventArgs>> eventDict = new();
+
     private const string helpMessage =
         @"Emit an Event by keyboard input:
 1: ShiftIntoPark
