@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine;
 
 // this is assuming we have itmes that can be picked up. A placeholder
 // will be made for debugging purposes till we settle on how the closet
@@ -22,7 +21,7 @@ public class Item : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        closetManager = GameObject.Find("ClosetCanvas").GetComponent<ClosetManager>();   
+        closetManager = GameObject.Find("ClosetCanvas").GetComponent<ClosetManager>();
     }
 
 private void OnCollisionEnter2D(Collision2D collision)
