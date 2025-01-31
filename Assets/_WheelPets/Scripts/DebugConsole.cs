@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -101,6 +102,7 @@ public class DebugConsole : MonoBehaviour
 
     private bool ExecuteCommandScene(string[] args)
     {
+        string rest = string.Join(" ", args.Skip(1).ToArray());
         return false; // TODO
     }
 
