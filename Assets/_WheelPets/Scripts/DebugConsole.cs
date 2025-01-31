@@ -52,11 +52,11 @@ public class DebugConsole : MonoBehaviour
         switch (args[0])
         {
             case "car":
-                CmdCar(args);
+                ExecuteCommandCar(args);
                 break;
 
             case "scene":
-                CmdScene(args);
+                ExecuteCommandScene(args);
                 break;
 
             default:
@@ -69,9 +69,9 @@ public class DebugConsole : MonoBehaviour
         container.SetActive(false);
     }
 
-    private void CmdCar(string[] args) { }
+    private void ExecuteCommandCar(string[] args) { }
 
-    private void CmdScene(string[] args) { }
+    private void ExecuteCommandScene(string[] args) { }
 
     private void OnDestroy()
     {
