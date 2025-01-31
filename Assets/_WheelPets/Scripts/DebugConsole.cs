@@ -45,33 +45,64 @@ public class DebugConsole : MonoBehaviour
         }
     }
 
+    private static string lastComamnd = null;
+
     private void HandleEndEdit(string inputText)
     {
+        if (inputText == "." && lastComamnd != null)
+        {
+            inputText = lastComamnd;
+        }
+
         string[] args = inputText.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+
+        bool success;
 
         switch (args[0])
         {
             case "car":
-                ExecuteCommandCar(args);
+                success = ExecuteCommandCar(args);
                 break;
 
             case "scene":
-                ExecuteCommandScene(args);
+                success = ExecuteCommandScene(args);
                 break;
 
             default:
-                Debug.LogWarning($"DebugConsole\tcommand \"{args[0]}\" unrecognized");
+                success = false;
                 break;
         }
 
+        if (!success)
+        {
+            Debug.LogWarning($"DebugConsole\tbad command: {inputText}");
+        }
+
+        lastComamnd = inputText;
         // clean up
         inputField.text = string.Empty;
         container.SetActive(false);
     }
 
-    private void ExecuteCommandCar(string[] args) { }
+    private bool ExecuteCommandCar(string[] args)
+    {
+        string enumName = args[1];
 
-    private void ExecuteCommandScene(string[] args) { }
+        if (Enum.TryParse(enumName, out CarAPI.Event eve))
+        {
+            CarAPI.Emit(eve);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool ExecuteCommandScene(string[] args)
+    {
+        return false; // TODO
+    }
 
     private void OnDestroy()
     {
