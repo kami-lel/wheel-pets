@@ -1,3 +1,6 @@
+// FIXME do not use this class
+
+
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
