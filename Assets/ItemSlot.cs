@@ -27,7 +27,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     private void Start()
     {
-        closetManager = GameObject.Find("ClosetCanvas").GetComponent<ClosetManager>;
+        closetManager = GameObject.Find("ClosetCanvas").GetComponent<ClosetManager>();
     }
 
 
