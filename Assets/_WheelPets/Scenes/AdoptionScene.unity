@@ -938,10 +938,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1629152634}
-  - {fileID: 1056509171}
   - {fileID: 2129337800}
   - {fileID: 835821830}
   - {fileID: 1537025403}
+  - {fileID: 1056509171}
   m_Father: {fileID: 650084355}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1013,7 +1013,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1056509170}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1023,7 +1023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 231, y: -410}
+  m_AnchoredPosition: {x: 231.00003, y: -410}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056509172
@@ -1850,7 +1850,7 @@ GameObject:
   - component: {fileID: 1629152636}
   - component: {fileID: 1629152635}
   m_Layer: 5
-  m_Name: PetName
+  m_Name: PetNameField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2591,6 +2591,7 @@ GameObject:
   - component: {fileID: 1941158164}
   - component: {fileID: 1941158163}
   - component: {fileID: 1941158166}
+  - component: {fileID: 1941158167}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2716,6 +2717,25 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &1941158167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941158162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93bf518685d6b194dae2352f56418956, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petNameField: {fileID: 1629152635}
+  puppyButton: {fileID: 685140328}
+  kittenButton: {fileID: 1698807289}
+  rabbitButton: {fileID: 2118828002}
+  dominantColorSlider: {fileID: 835821831}
+  secondaryColorSlider: {fileID: 1537025404}
+  saveButton: {fileID: 1056509172}
 --- !u!1 &1967338250
 GameObject:
   m_ObjectHideFlags: 0
