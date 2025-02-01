@@ -28,7 +28,6 @@ public class PetScript : MonoBehaviour
         dog.SetActive(false);
         cat.SetActive(false);
         rabbit.SetActive(false);
-        Debug.Log(petData.animalType); // HACK
         activePet.SetActive(true);
 
         // update dominant color
@@ -58,11 +57,6 @@ public class PetScript : MonoBehaviour
         playerData = PlayerData.Data;
         petData = playerData.petData;
         UpdateLook();
-    }
-
-    private void StartSyncAnimations()
-    {
-        // TODO
     }
 
     private void Update() { }
