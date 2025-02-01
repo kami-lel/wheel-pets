@@ -1,18 +1,52 @@
+using System;
+using System.Data.Common;
+using System.IO;
 using UnityEngine;
 
-PlayerData playerData = new PlayerData();
-
+[System.Serializable]
 class PlayerData
 {
-    public static PlayerData LoadFromFile()
+    public static PlayerData instance;
+
+    public static void LoadFromFile()
     {
-        // TODO
-        return new PlayerData();
+        string saveFilePath = GetSaveFilePath();
+
+        try
+        {
+            string jsonText = File.ReadAllText(saveFilePath);
+            instance = JsonUtility.FromJson<PlayerData>(jsonText);
+
+            // TODO
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log($"PlayerData\tLoad from File: {saveFilePath}");
+            }
+        }
+        catch (Exception ex)
+        {
+            if (ex is FileNotFoundException || ex is ArgumentException)
+            {
+                // create an default PlayerData instance
+                instance = new PlayerData();
+
+                if (Debug.isDebugBuild)
+                {
+                    Debug.LogWarning($"PlayerData\tFail to Load from file: {saveFilePath}");
+                }
+            }
+        }
     }
 
-    public static bool SaveToFile(PlayerData playerData)
+    public static void SaveToFile(PlayerData playerData)
     {
         // TODO
-        return false;
+    }
+
+    private static string GetSaveFilePath()
+    {
+        string fileName = "playerData";
+        string filePath = Path.Combine(Application.persistentDataPath, fileName + ".json");
+        return filePath;
     }
 }
