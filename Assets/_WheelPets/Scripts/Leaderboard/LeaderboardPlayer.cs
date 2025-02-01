@@ -1,21 +1,25 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LeaderboardLargePanel : MonoBehaviour
+public class LeaderboardPlayer : MonoBehaviour
 {
-    [SerializeField] private GameObject userScore;
-    [SerializeField] private GameObject stats;
+    [SerializeField] private Text playerNameText;
+    [SerializeField] private Text drivingMilesText;
+    [SerializeField] private Text gamePointsText;
+    [SerializeField] private Text minigameStatsText;
+
+    private void Start()
+    {
+        LoadPlayerData();
+    }
 
     public void LoadPlayerData()
     {
         PlayerData data = PlayerData.Data;
-
-        userScore.transform.Find("Place").GetComponent<Text>().text = "#1"; // Assuming the user is always #1
-        userScore.transform.Find("Name").GetComponent<Text>().text = data.playerName;
-        userScore.transform.Find("Points").GetComponent<Text>().text = data.drivingPoint.ToString() + " Points";
-
-        stats.transform.Find("DrivingStats").GetComponent<Text>().text = "Miles: " + data.drivingMiles.ToString();
-        stats.transform.Find("MinigameStats").GetComponent<Text>().text = "Minigame Stats: " + GetMinigameStats(data);
+        playerNameText.text = data.playerName;
+        drivingMilesText.text = "Miles: " + data.drivingMiles.ToString();
+        gamePointsText.text = "Game Points: " + data.gamePoint.ToString();
+        minigameStatsText.text = "Minigame Stats: " + GetMinigameStats(data);
     }
 
     private string GetMinigameStats(PlayerData data)
