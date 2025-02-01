@@ -9,31 +9,33 @@ class PlayerData
     // initialize with <b>default value</b>, i.e. factory reset value
     public string playerName = "Pet Owner";
 
-    public static PlayerData instance;
+    public static PlayerData playerData;
 
     /// <summary>
     /// Loads player data from a file. I.e. load into PlayerData.instance
     /// </summary>
-    public static void LoadFromFile()
+    public static PlayerData LoadFromFile()
     {
         string saveFilePath = GetSaveFilePath();
 
         try
         {
             string jsonText = File.ReadAllText(saveFilePath);
-            instance = JsonUtility.FromJson<PlayerData>(jsonText);
+            playerData = JsonUtility.FromJson<PlayerData>(jsonText);
 
             if (Debug.isDebugBuild)
             {
                 Debug.Log($"PlayerData\tLoad from File: {saveFilePath}");
             }
+
+            return playerData;
         }
         catch (Exception ex)
         {
             if (ex is FileNotFoundException || ex is ArgumentException)
             {
                 // create an default PlayerData instance
-                instance = new PlayerData();
+                playerData = new PlayerData();
 
                 if (Debug.isDebugBuild)
                 {
@@ -41,6 +43,12 @@ class PlayerData
                         $"PlayerData\tFail to Load from file: {saveFilePath}. An empty player data is used."
                     );
                 }
+
+                return playerData;
+            }
+            else
+            {
+                throw;
             }
         }
     }
@@ -51,7 +59,7 @@ class PlayerData
     public static void SaveToFile()
     {
         string saveFilePath = GetSaveFilePath();
-        string jsonText = JsonUtility.ToJson(instance);
+        string jsonText = JsonUtility.ToJson(playerData);
 
         try
         {
@@ -81,7 +89,7 @@ class PlayerData
     /// </summary>
     public static void ResetPlayerData()
     {
-        instance = new PlayerData();
+        playerData = new PlayerData();
         SaveToFile();
         Debug.Log("PlayerData\tReset");
     }
