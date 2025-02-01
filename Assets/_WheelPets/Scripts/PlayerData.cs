@@ -5,17 +5,14 @@ using UnityEngine;
 [Serializable]
 class PlayerData
 {
+    public static PlayerData playerData;
+
     // declare persistent data fields
     // initialize with <b>default value</b>, i.e. factory reset value
     public string playerName = "Pet Owner";
     public int drivingPoint = 0;
-
-    [Serializable]
-    public class LeaderboardOtherPlayerData
-    {
-        public string name;
-        public int point;
-    }
+    public int gamePoint = 0;
+    public float drivingMiles = 0;
 
     public LeaderboardOtherPlayerData[] leaderBoardOtherPlayerData =
     {
@@ -31,7 +28,41 @@ class PlayerData
         new LeaderboardOtherPlayerData { name = "Mia", point = 178 },
     };
 
-    public static PlayerData playerData;
+    /// <summary>
+    /// statistics of mini games
+    /// </summary>
+    public MinigameStatistics statBath = new();
+    public MinigameStatistics statFeed = new();
+    public MinigameStatistics statFetch = new();
+    public MinigameStatistics statHideNSeek = new();
+    public MinigameStatistics statTugOWar = new();
+    public MinigameStatistics statWalkScene = new();
+
+    // pet's data
+    public PetData petData = new();
+
+    [Serializable]
+    public class LeaderboardOtherPlayerData
+    {
+        public string name;
+        public int point;
+    }
+
+    [Serializable]
+    public class MinigameStatistics
+    {
+        public int playCount = 0;
+        public int winCount = 0;
+    }
+
+    [Serializable]
+    public class PetData
+    {
+        public string name = "Buddy";
+        public int animalType = 0;
+        public float dominantColorHue = 0f;
+        public float secondaryColorHue = 0f;
+    }
 
     /// <summary>
     /// Loads player data from a file. I.e. load into PlayerData.instance
@@ -81,7 +112,8 @@ class PlayerData
     public static void SaveToFile()
     {
         string saveFilePath = GetSaveFilePath();
-        string jsonText = JsonUtility.ToJson(playerData);
+
+        string jsonText = JsonUtility.ToJson(playerData, Debug.isDebugBuild);
 
         try
         {
