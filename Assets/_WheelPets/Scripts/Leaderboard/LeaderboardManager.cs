@@ -13,7 +13,7 @@ public class LeaderboardManager : MonoBehaviour
     private Transform entryContainer;
 
     [SerializeField]
-    private LeaderboardLargePanel largePanel;
+    private LeaderboardPlayer leaderboardPlayer;
 
     private List<LeaderboardEntry> leaderboardEntries = new List<LeaderboardEntry>();
 
@@ -38,10 +38,8 @@ public class LeaderboardManager : MonoBehaviour
 
     private void PopulateLeaderboardUI()
     {
-        // sort entries by rank
         var sortedEntries = leaderboardEntries.OrderByDescending(entry => entry.score).ToList();
 
-        // clear entries before refilling
         foreach (Transform child in entryContainer)
         {
             Destroy(child.gameObject);
@@ -49,10 +47,8 @@ public class LeaderboardManager : MonoBehaviour
 
         int userRank = 0;
 
-        // add new entries
         for (int i = 0; i < sortedEntries.Count; i++)
         {
-            // assigns entry rank
             sortedEntries[i].rank = i + 1;
 
             if (sortedEntries[i].playerName == playerData.playerName)
@@ -67,7 +63,6 @@ public class LeaderboardManager : MonoBehaviour
             leaderboardContent.Find("ScoreText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].score.ToString() + " Points";
         }
 
-        // update large panel
-        largePanel.LoadPlayerData(userRank);
+        leaderboardPlayer.LoadPlayerData(userRank);
     }
 }
