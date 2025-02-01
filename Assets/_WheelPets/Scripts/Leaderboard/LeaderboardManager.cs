@@ -22,7 +22,7 @@ public class LeaderboardManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        playerData = PlayerData.LoadFromFile();
+        playerData = PlayerData.Data;
 
         for (int i = 0; i < playerData.leaderBoardOtherPlayerData.Length; i++)
         {
@@ -47,11 +47,18 @@ public class LeaderboardManager : MonoBehaviour
             Destroy(child.gameObject);
         }
 
+        int userRank = 0;
+
         // add new entries
         for (int i = 0; i < sortedEntries.Count; i++)
         {
             // assigns entry rank
             sortedEntries[i].rank = i + 1;
+
+            if (sortedEntries[i].playerName == playerData.playerName)
+            {
+                userRank = sortedEntries[i].rank;
+            }
 
             GameObject newEntry = Instantiate(leaderboardEntryPrefab, entryContainer);
             Transform leaderboardContent = newEntry.transform.Find("LeaderboardContent");
@@ -61,6 +68,6 @@ public class LeaderboardManager : MonoBehaviour
         }
 
         // update large panel
-        largePanel.LoadPlayerData();
+        largePanel.LoadPlayerData(userRank);
     }
 }
