@@ -928,10 +928,6 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-<<<<<<< HEAD:Assets/_WheelPets/Scenes/Minigames/HideNSeekScene.unity
-  - component: {fileID: 787496110}
-  - component: {fileID: 787496109}
-=======
   - component: {fileID: 80981769}
   - component: {fileID: 80981768}
   - component: {fileID: 80981767}
@@ -1445,7 +1441,6 @@ GameObject:
   m_Component:
   - component: {fileID: 654426430}
   - component: {fileID: 654426429}
->>>>>>> ui-inventory:Assets/Scenes/GameScenes/PetGameScene.unity
   m_Layer: 0
   m_Name: PauseButtonManager
   m_TagString: Untagged
