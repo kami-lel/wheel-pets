@@ -25,12 +25,16 @@ public class LeaderboardManager : MonoBehaviour
     {
         playerData = PlayerData.LoadFromFile();
 
-        player = new LeaderboardEntry(playerData.playerName, 5204);
-        leaderboardEntries.Add(new LeaderboardEntry("Player1", 10000));
-        leaderboardEntries.Add(new LeaderboardEntry("Player2", 9000));
-        leaderboardEntries.Add(new LeaderboardEntry("Player3", 8000));
-        leaderboardEntries.Add(new LeaderboardEntry("Player4", 7000));
-        leaderboardEntries.Add(new LeaderboardEntry("Player5", 6500));
+        for (int i = 0; i < 5; i++)
+        {
+            PlayerData.LeaderboardOtherPlayerData otherPlayer =
+                playerData.leaderBoardOtherPlayerData[i];
+
+            LeaderboardEntry entry = new LeaderboardEntry(otherPlayer.name, otherPlayer.point);
+            leaderboardEntries.Add(entry);
+        }
+
+        player = new LeaderboardEntry(playerData.playerName, playerData.drivingPoint);
         leaderboardEntries.Add(player);
         PopulateLeaderboardUI();
     }

@@ -8,6 +8,28 @@ class PlayerData
     // declare persistent data fields
     // initialize with <b>default value</b>, i.e. factory reset value
     public string playerName = "Pet Owner";
+    public int drivingPoint = 0;
+
+    [Serializable]
+    public class LeaderboardOtherPlayerData
+    {
+        public string name;
+        public int point;
+    }
+
+    public LeaderboardOtherPlayerData[] leaderBoardOtherPlayerData =
+    {
+        new LeaderboardOtherPlayerData { name = "John", point = 123 },
+        new LeaderboardOtherPlayerData { name = "Emma", point = 234 },
+        new LeaderboardOtherPlayerData { name = "Oliver", point = 198 },
+        new LeaderboardOtherPlayerData { name = "Sophia", point = 265 },
+        new LeaderboardOtherPlayerData { name = "Liam", point = 121 },
+        new LeaderboardOtherPlayerData { name = "Ava", point = 289 },
+        new LeaderboardOtherPlayerData { name = "Ethan", point = 177 },
+        new LeaderboardOtherPlayerData { name = "Isabella", point = 256 },
+        new LeaderboardOtherPlayerData { name = "Mason", point = 210 },
+        new LeaderboardOtherPlayerData { name = "Mia", point = 178 },
+    };
 
     public static PlayerData playerData;
 
