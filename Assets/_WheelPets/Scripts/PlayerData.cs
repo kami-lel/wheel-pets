@@ -38,6 +38,18 @@ class PlayerData
         new LeaderboardOtherPlayerData { name = "Mia", point = 178 },
     };
 
+    // New driving statistics
+    public int leftTurnSignals = 0;
+    public int rightTurnSignals = 0;
+    public int timesParkedWithoutTouchingLines = 0;
+    public int stopSignsStoppedAt = 0;
+
+    // New minigame statistics
+    public int tugOfWarGamesWon = 0;
+    public int timesPetWashed = 0;
+    public int timesHideNSeekWon = 0;
+    public int cosmeticsUnlocked = 0;
+
     /// <summary>
     /// statistics of mini games
     /// </summary>

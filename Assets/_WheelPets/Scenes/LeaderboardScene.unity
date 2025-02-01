@@ -1160,8 +1160,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -207.56, y: -15.829}
-  m_SizeDelta: {x: 443.72, y: 312.0254}
+  m_AnchoredPosition: {x: -235, y: -16.39701}
+  m_SizeDelta: {x: 443.72, y: 330.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &673599689
 MonoBehaviour:
@@ -1716,7 +1716,6 @@ RectTransform:
   - {fileID: 1146418418}
   - {fileID: 1625550515}
   - {fileID: 1411352556}
-  - {fileID: 1425868300}
   m_Father: {fileID: 148313855}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1924,58 +1923,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95809204caa9e6943b4a1dec28f119ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerNameText: {fileID: 108922574}
-  drivingMilesText: {fileID: 154240831}
-  gamePointsText: {fileID: 523813445}
-  minigameStatsText: {fileID: 2040268898}
---- !u!1 &1425868299
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1425868300}
-  - component: {fileID: 1425868301}
-  m_Layer: 5
-  m_Name: LeaderboardLargePanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1425868300
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425868299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 965743160}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1425868301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1425868299}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76cb79a331d3543aa8e6dcf7fb7b28b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   userScore: {fileID: 1384020775}
@@ -2384,7 +2331,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leaderboardEntryPrefab: {fileID: 4759266785318220372, guid: fcc29d0aef69d44b8b9b95287c7e5b98, type: 3}
   entryContainer: {fileID: 1093413604}
-  largePanel: {fileID: 1425868301}
+  leaderboardPlayer: {fileID: 1411352557}
 --- !u!4 &2114872882
 Transform:
   m_ObjectHideFlags: 0

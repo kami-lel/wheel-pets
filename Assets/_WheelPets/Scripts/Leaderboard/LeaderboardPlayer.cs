@@ -38,8 +38,8 @@ public class LeaderboardPlayer : MonoBehaviour
         pointsText.text = data.drivingPoint.ToString() + " Points";
 
         // Update stats texts
-        Text drivingStatsText = stats.transform.Find("DrivingStats").GetComponent<Text>();
-        Text minigameStatsText = stats.transform.Find("MinigameStats").GetComponent<Text>();
+        Text drivingStatsText = stats.transform.Find("Driving Stats").GetComponent<Text>();
+        Text minigameStatsText = stats.transform.Find("Minigame Stats").GetComponent<Text>();
 
         if (drivingStatsText == null || minigameStatsText == null)
         {
@@ -47,17 +47,14 @@ public class LeaderboardPlayer : MonoBehaviour
             return;
         }
 
-        drivingStatsText.text = "Miles: " + data.drivingMiles.ToString();
-        minigameStatsText.text = "Minigame Stats: " + GetMinigameStats(data);
-    }
+        drivingStatsText.text = $"Left Turn Signals: {data.leftTurnSignals}\n" +
+                                $"Right Turn Signals: {data.rightTurnSignals}\n" +
+                                $"Times Parked Without Touching Lines: {data.timesParkedWithoutTouchingLines}\n" +
+                                $"Stop Signs Stopped At: {data.stopSignsStoppedAt}";
 
-    private string GetMinigameStats(PlayerData data)
-    {
-        return $"Bath: {data.statBath.playCount}/{data.statBath.winCount}, " +
-               $"Feed: {data.statFeed.playCount}/{data.statFeed.winCount}, " +
-               $"Fetch: {data.statFetch.playCount}/{data.statFetch.winCount}, " +
-               $"HideNSeek: {data.statHideNSeek.playCount}/{data.statHideNSeek.winCount}, " +
-               $"TugOWar: {data.statTugOWar.playCount}/{data.statTugOWar.winCount}, " +
-               $"WalkScene: {data.statWalkScene.playCount}/{data.statWalkScene.winCount}";
+        minigameStatsText.text = $"Tug Of War Games Won: {data.tugOfWarGamesWon}\n" +
+                                 $"Times Pet Washed: {data.timesPetWashed}\n" +
+                                 $"Times Hide-N-Seek Won: {data.timesHideNSeekWon}\n" +
+                                 $"Cosmetics Unlocked: {data.cosmeticsUnlocked}";
     }
 }
