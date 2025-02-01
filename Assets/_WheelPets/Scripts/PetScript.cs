@@ -11,37 +11,53 @@ public class PetScript : MonoBehaviour
     [SerializeField]
     private GameObject rabbit;
 
+    /// <summary>
+    /// Updates the appearance of the pet from petData
+    /// </summary>
+    public void UpdateLook()
+    {
+        // decide type of the animal
+        activePet = petData.animalType switch
+        {
+            0 => dog,
+            1 => cat,
+            2 => rabbit,
+            _ => dog,
+        };
+
+        dog.SetActive(false);
+        cat.SetActive(false);
+        rabbit.SetActive(false);
+        Debug.Log(petData.animalType); // HACK
+        activePet.SetActive(true);
+
+        // update dominant color
+        SpriteRenderer dominantRenderer = activePet
+            .transform.Find("Dominant")
+            .gameObject.GetComponent<SpriteRenderer>();
+        dominantRenderer.color = Color.HSVToRGB(petData.dominantColorHue, 0.8f, 0.2f);
+
+        // update secondary color
+        SpriteRenderer secondaryRenderer = activePet
+            .transform.Find("Secondary")
+            .gameObject.GetComponent<SpriteRenderer>();
+        secondaryRenderer.color = Color.HSVToRGB(petData.secondaryColorHue, 0.1f, 1f);
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("Pet\tLook Updated");
+        }
+    }
+
     private PlayerData playerData;
     private PlayerData.PetData petData;
+    private GameObject activePet;
 
     private void Start()
     {
-        playerData = PlayerData.LoadFromFile();
+        playerData = PlayerData.Data;
         petData = playerData.petData;
-        StartPet();
-        StartSyncAnimations();
-    }
-
-    private void StartPet()
-    {
-        switch (petData.animalType)
-        {
-            case 0:
-                dog.SetActive(true);
-                break;
-
-            case 1:
-                cat.SetActive(true);
-                break;
-
-            case 2:
-                rabbit.SetActive(true);
-                break;
-
-            default:
-                dog.SetActive(true);
-                break;
-        }
+        UpdateLook();
     }
 
     private void StartSyncAnimations()
@@ -50,9 +66,4 @@ public class PetScript : MonoBehaviour
     }
 
     private void Update() { }
-
-    private void OnApplicationQuit()
-    {
-        PlayerData.SaveToFile();
-    }
 }

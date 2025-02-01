@@ -5,7 +5,17 @@ using UnityEngine;
 [Serializable]
 class PlayerData
 {
-    public static PlayerData playerData;
+    public static PlayerData Data
+    {
+        get
+        {
+            if (_data == null)
+            {
+                LoadFromFile();
+            }
+            return _data;
+        }
+    }
 
     // declare persistent data fields
     // initialize with <b>default value</b>, i.e. factory reset value
@@ -75,21 +85,21 @@ class PlayerData
         try
         {
             string jsonText = File.ReadAllText(saveFilePath);
-            playerData = JsonUtility.FromJson<PlayerData>(jsonText);
+            _data = JsonUtility.FromJson<PlayerData>(jsonText);
 
             if (Debug.isDebugBuild)
             {
-                Debug.Log($"PlayerData\tLoad from File: {saveFilePath}");
+                Debug.Log($"PlayerData\tload from File: {saveFilePath}");
             }
 
-            return playerData;
+            return _data;
         }
         catch (Exception ex)
         {
             if (ex is FileNotFoundException || ex is ArgumentException)
             {
                 // create an default PlayerData instance
-                playerData = new PlayerData();
+                _data = new PlayerData();
 
                 if (Debug.isDebugBuild)
                 {
@@ -98,7 +108,7 @@ class PlayerData
                     );
                 }
 
-                return playerData;
+                return _data;
             }
             else
             {
@@ -114,7 +124,7 @@ class PlayerData
     {
         string saveFilePath = GetSaveFilePath();
 
-        string jsonText = JsonUtility.ToJson(playerData, Debug.isDebugBuild);
+        string jsonText = JsonUtility.ToJson(_data, Debug.isDebugBuild);
 
         try
         {
@@ -144,7 +154,7 @@ class PlayerData
     /// </summary>
     public static void ResetPlayerData()
     {
-        playerData = new PlayerData();
+        _data = new PlayerData();
         SaveToFile();
         Debug.Log("PlayerData\tReset");
     }
@@ -155,4 +165,6 @@ class PlayerData
         string filePath = Path.Combine(Application.persistentDataPath, fileName + ".json");
         return filePath;
     }
+
+    private static PlayerData _data = null;
 }
