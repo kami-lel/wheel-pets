@@ -1,7 +1,9 @@
 using System;
 using System.Linq;
 using TMPro;
+using UnityEditor.Scripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DebugConsole : MonoBehaviour
 {
@@ -44,17 +46,17 @@ public class DebugConsole : MonoBehaviour
             container.SetActive(!container.activeInHierarchy);
             Debug.Log("DebugConsole\tToggled");
         }
+
+        if (container.activeInHierarchy && Input.GetKeyDown(KeyCode.UpArrow) && lastComamnd != null)
+        {
+            inputField.text = lastComamnd;
+        }
     }
 
     private static string lastComamnd = null;
 
     private void HandleEndEdit(string inputText)
     {
-        if (inputText == "." && lastComamnd != null)
-        {
-            inputText = lastComamnd;
-        }
-
         string[] args = inputText.Split(" ", StringSplitOptions.RemoveEmptyEntries);
 
         bool success;
@@ -102,8 +104,9 @@ public class DebugConsole : MonoBehaviour
 
     private bool ExecuteCommandScene(string[] args)
     {
-        string rest = string.Join(" ", args.Skip(1).ToArray());
-        return false; // TODO
+        string sceneName = string.Join(" ", args.Skip(1).ToArray());
+        SceneManager.LoadScene(sceneName);
+        return true;
     }
 
     private void OnDestroy()
