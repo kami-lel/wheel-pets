@@ -1,10 +1,14 @@
 using System;
 using System.Linq;
 using TMPro;
-using UnityEditor.Scripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// DebugConsole allows developers to input and execute debug commands during development builds.
+/// This console can be toggled using the ` key.
+/// Place the Prefab under a Canvas for it to work.
+/// </summary>
 public class DebugConsole : MonoBehaviour
 {
     [SerializeField]
