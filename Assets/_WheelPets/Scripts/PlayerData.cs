@@ -59,7 +59,7 @@ class PlayerData
 
             if (Debug.isDebugBuild)
             {
-                Debug.Log($"PlayerData\tSave to File: {saveFilePath}");
+                Debug.Log($"PlayerData\tsave to file: {saveFilePath}");
             }
         }
         catch (Exception ex)
@@ -71,7 +71,7 @@ class PlayerData
             )
                 if (Debug.isDebugBuild)
                 {
-                    Debug.LogError($"PlayerData\tFail to Save to file: {saveFilePath}");
+                    Debug.LogError($"PlayerData\tfail to save to file: {saveFilePath}");
                 }
         }
     }
@@ -83,6 +83,7 @@ class PlayerData
     {
         instance = new PlayerData();
         SaveToFile();
+        Debug.Log("PlayerData\tReset");
     }
 
     private static string GetSaveFilePath()
