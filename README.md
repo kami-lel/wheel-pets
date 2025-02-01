@@ -27,7 +27,10 @@ ___
 14. [Soap Foam Set](https://www.vecteezy.com/png/23265022-soap-foam-set-with-bubbles-carton-light-blue-suds-of-bath-water-shampoo-shaving-mousse)  
 15. [Hairbrush Clip Art](https://www.creativefabrica.com/product/hairbrush-png-file-cute-clip-art/)  
 16. [Nail Clipper Icon](https://www.flaticon.com/free-icon/nail-clipper_1581637)  
-17. [Rending Scissors Slash](https://www.pixilart.com/art/rending-scissors-slash-51ea972a215c4f9)  
+17. [Rending Scissors Slash](https://www.pixilart.com/art/rending-scissors-slash-51ea972a215c4f9)
+18. [Pixel Art Rabbit](https://www.vexels.com/png-svg/preview/320106/cute-rabbit-in-pixel-art-style)  
+19. [Pixel Art Cat](https://www.vexels.com/png-svg/preview/320109/cute-cat-in-pixel-art-style)  
+
 
 ### Mood Board Inspirations  
 1. [Pixel Art Button](https://www.shutterstock.com/search/pixel-art-button)  
