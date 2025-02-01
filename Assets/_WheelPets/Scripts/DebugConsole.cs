@@ -16,6 +16,15 @@ public class DebugConsole : MonoBehaviour
     private GameObject container;
 
     [SerializeField]
+    private TMP_Text drivingPoint;
+
+    [SerializeField]
+    private TMP_Text gamePoint;
+
+    [SerializeField]
+    private TMP_Text drivingMiles;
+
+    [SerializeField]
     private TMP_InputField commandField;
 
     [SerializeField]
@@ -29,6 +38,8 @@ public class DebugConsole : MonoBehaviour
 
     private void Start()
     {
+        playerData = PlayerData.Data;
+
         // Debug Console is only available in dev builds
         if (!Debug.isDebugBuild)
         {
@@ -75,13 +86,22 @@ public class DebugConsole : MonoBehaviour
             Debug.Log("DebugConsole\tToggled");
         }
 
-        if (container.activeInHierarchy && Input.GetKeyDown(KeyCode.UpArrow) && lastComamnd != null)
+        if (container.activeInHierarchy)
         {
-            commandField.text = lastComamnd;
+            if (Input.GetKeyDown(KeyCode.UpArrow) && lastComamnd != null)
+            {
+                commandField.text = lastComamnd;
+            }
+
+            // update data
+            drivingPoint.text = $"Driving Point:{playerData.drivingPoint}";
+            gamePoint.text = $"Game Point:{playerData.gamePoint}";
+            drivingMiles.text = $"Driving Miles:{playerData.drivingMiles}";
         }
     }
 
     private static string lastComamnd = null;
+    private static PlayerData playerData;
 
     private void HandleEndEdit(string inputText)
     {
