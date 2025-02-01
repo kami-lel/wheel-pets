@@ -6,21 +6,35 @@ using UnityEngine.UI;
 
 public class LeaderboardManager : MonoBehaviour
 {
-    [SerializeField] private GameObject leaderboardEntryPrefab;
-    [SerializeField] private Transform entryContainer;
+    [SerializeField]
+    private GameObject leaderboardEntryPrefab;
+
+    [SerializeField]
+    private Transform entryContainer;
     private LeaderboardEntry player;
-    [SerializeField] private LeaderboardLargePanel largePanel;
+
+    [SerializeField]
+    private LeaderboardLargePanel largePanel;
 
     private List<LeaderboardEntry> leaderboardEntries = new List<LeaderboardEntry>();
+
+    private PlayerData playerData;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        player = new LeaderboardEntry("UserName", 5204);
-        leaderboardEntries.Add(new LeaderboardEntry("Player1", 10000));
-        leaderboardEntries.Add(new LeaderboardEntry("Player2", 9000));
-        leaderboardEntries.Add(new LeaderboardEntry("Player3", 8000));
-        leaderboardEntries.Add(new LeaderboardEntry("Player4", 7000));
-        leaderboardEntries.Add(new LeaderboardEntry("Player5", 6500));
+        playerData = PlayerData.LoadFromFile();
+
+        for (int i = 0; i < 5; i++)
+        {
+            PlayerData.LeaderboardOtherPlayerData otherPlayer =
+                playerData.leaderBoardOtherPlayerData[i];
+
+            LeaderboardEntry entry = new LeaderboardEntry(otherPlayer.name, otherPlayer.point);
+            leaderboardEntries.Add(entry);
+        }
+
+        player = new LeaderboardEntry(playerData.playerName, playerData.drivingPoint);
         leaderboardEntries.Add(player);
         PopulateLeaderboardUI();
     }
@@ -43,10 +57,22 @@ public class LeaderboardManager : MonoBehaviour
             sortedEntries[i].rank = i + 1;
 
             GameObject newEntry = Instantiate(leaderboardEntryPrefab, entryContainer);
-            newEntry.transform.Find("LeaderboardContent").GetComponent<HorizontalLayoutGroup>().enabled = true;
-            newEntry.transform.Find("LeaderboardContent/RankText").GetComponent<TextMeshProUGUI>().text = "#" + sortedEntries[i].rank.ToString();
-            newEntry.transform.Find("LeaderboardContent/NameText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].playerName + ": ";
-            newEntry.transform.Find("LeaderboardContent/ScoreText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].score.ToString() + " Points";
+            newEntry
+                .transform.Find("LeaderboardContent")
+                .GetComponent<HorizontalLayoutGroup>()
+                .enabled = true;
+            newEntry
+                .transform.Find("LeaderboardContent/RankText")
+                .GetComponent<TextMeshProUGUI>()
+                .text = "#" + sortedEntries[i].rank.ToString();
+            newEntry
+                .transform.Find("LeaderboardContent/NameText")
+                .GetComponent<TextMeshProUGUI>()
+                .text = sortedEntries[i].playerName + ": ";
+            newEntry
+                .transform.Find("LeaderboardContent/ScoreText")
+                .GetComponent<TextMeshProUGUI>()
+                .text = sortedEntries[i].score.ToString() + " Points";
         }
 
         // update large panel
@@ -62,5 +88,10 @@ public class LeaderboardManager : MonoBehaviour
     public LeaderboardEntry GetPlayer()
     {
         return player;
+    }
+
+    private void OnApplicationQuit()
+    {
+        PlayerData.SaveToFile();
     }
 }
