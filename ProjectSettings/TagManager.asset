@@ -10,6 +10,7 @@ TagManager:
   - scissors
   - clippers
   - towel
+  - GoalLine
   layers:
   - Default
   - TransparentFX
@@ -42,7 +43,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - DebugConsole
   m_SortingLayers:
   - name: Default
     uniqueID: 0
