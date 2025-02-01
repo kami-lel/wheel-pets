@@ -5,6 +5,10 @@ using UnityEngine;
 [Serializable]
 class PlayerData
 {
+    // declare persistent data fields
+    // initialize with <b>default value</b>, i.e. factory reset value
+    public string playerName = "Pet Owner";
+
     public static PlayerData instance;
 
     /// <summary>
