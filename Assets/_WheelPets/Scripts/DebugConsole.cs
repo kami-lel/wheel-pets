@@ -3,6 +3,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// DebugConsole allows developers to input and execute debug commands during development builds.
@@ -15,7 +16,16 @@ public class DebugConsole : MonoBehaviour
     private GameObject container;
 
     [SerializeField]
-    private TMP_InputField inputField;
+    private TMP_InputField commandField;
+
+    [SerializeField]
+    private Button SaveToFileButton;
+
+    [SerializeField]
+    private Button LoadFromFileButton;
+
+    [SerializeField]
+    private Button ResetButton;
 
     private void Start()
     {
@@ -29,11 +39,25 @@ public class DebugConsole : MonoBehaviour
         container.SetActive(false);
         Debug.Log("DebugConsole\tStart");
 
-        // set up event listner
-        if (inputField != null)
+        // event listner for commandField
+        if (commandField != null)
         {
-            inputField.onEndEdit.AddListener(HandleEndEdit);
+            commandField.onEndEdit.AddListener(HandleEndEdit);
         }
+
+        // player data
+        SaveToFileButton.onClick.AddListener(() =>
+        {
+            PlayerData.SaveToFile();
+        });
+        LoadFromFileButton.onClick.AddListener(() =>
+        {
+            PlayerData.LoadFromFile();
+        });
+        ResetButton.onClick.AddListener(() =>
+        {
+            PlayerData.ResetPlayerData();
+        });
     }
 
     private void Update()
@@ -53,7 +77,7 @@ public class DebugConsole : MonoBehaviour
 
         if (container.activeInHierarchy && Input.GetKeyDown(KeyCode.UpArrow) && lastComamnd != null)
         {
-            inputField.text = lastComamnd;
+            commandField.text = lastComamnd;
         }
     }
 
@@ -87,7 +111,7 @@ public class DebugConsole : MonoBehaviour
 
         lastComamnd = inputText;
         // clean up
-        inputField.text = string.Empty;
+        commandField.text = string.Empty;
         container.SetActive(false);
     }
 
@@ -115,9 +139,9 @@ public class DebugConsole : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (inputField != null)
+        if (commandField != null)
         {
-            inputField.onEndEdit.RemoveListener(HandleEndEdit);
+            commandField.onEndEdit.RemoveListener(HandleEndEdit);
         }
     }
 }
