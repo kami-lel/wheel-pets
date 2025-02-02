@@ -11,10 +11,9 @@ public class LeaderboardManager : MonoBehaviour
 
     [SerializeField]
     private Transform entryContainer;
-    private LeaderboardEntry player;
 
     [SerializeField]
-    private LeaderboardLargePanel largePanel;
+    private LeaderboardPlayer leaderboardPlayer;
 
     private List<LeaderboardEntry> leaderboardEntries = new List<LeaderboardEntry>();
 
@@ -23,75 +22,47 @@ public class LeaderboardManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        playerData = PlayerData.LoadFromFile();
+        playerData = PlayerData.Data;
 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < playerData.leaderBoardOtherPlayerData.Length; i++)
         {
-            PlayerData.LeaderboardOtherPlayerData otherPlayer =
-                playerData.leaderBoardOtherPlayerData[i];
-
+            PlayerData.LeaderboardOtherPlayerData otherPlayer = playerData.leaderBoardOtherPlayerData[i];
             LeaderboardEntry entry = new LeaderboardEntry(otherPlayer.name, otherPlayer.point);
             leaderboardEntries.Add(entry);
         }
 
-        player = new LeaderboardEntry(playerData.playerName, playerData.drivingPoint);
-        leaderboardEntries.Add(player);
+        LeaderboardEntry playerEntry = new LeaderboardEntry(playerData.playerName, playerData.drivingPoint);
+        leaderboardEntries.Add(playerEntry);
         PopulateLeaderboardUI();
     }
 
     private void PopulateLeaderboardUI()
     {
-        // sort entries by rank
         var sortedEntries = leaderboardEntries.OrderByDescending(entry => entry.score).ToList();
 
-        // clear entries before refilling
         foreach (Transform child in entryContainer)
         {
             Destroy(child.gameObject);
         }
 
-        // add new entries
+        int userRank = 0;
+
         for (int i = 0; i < sortedEntries.Count; i++)
         {
-            // assigns entry rank
             sortedEntries[i].rank = i + 1;
 
+            if (sortedEntries[i].playerName == playerData.playerName)
+            {
+                userRank = sortedEntries[i].rank;
+            }
+
             GameObject newEntry = Instantiate(leaderboardEntryPrefab, entryContainer);
-            newEntry
-                .transform.Find("LeaderboardContent")
-                .GetComponent<HorizontalLayoutGroup>()
-                .enabled = true;
-            newEntry
-                .transform.Find("LeaderboardContent/RankText")
-                .GetComponent<TextMeshProUGUI>()
-                .text = "#" + sortedEntries[i].rank.ToString();
-            newEntry
-                .transform.Find("LeaderboardContent/NameText")
-                .GetComponent<TextMeshProUGUI>()
-                .text = sortedEntries[i].playerName + ": ";
-            newEntry
-                .transform.Find("LeaderboardContent/ScoreText")
-                .GetComponent<TextMeshProUGUI>()
-                .text = sortedEntries[i].score.ToString() + " Points";
+            Transform leaderboardContent = newEntry.transform.Find("LeaderboardContent");
+            leaderboardContent.Find("RankText").GetComponent<TextMeshProUGUI>().text = "#" + sortedEntries[i].rank.ToString();
+            leaderboardContent.Find("NameText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].playerName;
+            leaderboardContent.Find("ScoreText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].score.ToString() + " Points";
         }
 
-        // update large panel
-        largePanel.LoadPlayerData();
-    }
-
-    public void AddEntry(string playerName, int score)
-    {
-        leaderboardEntries.Add(new LeaderboardEntry(playerName, score));
-        PopulateLeaderboardUI();
-    }
-
-    public LeaderboardEntry GetPlayer()
-    {
-        return player;
-    }
-
-    private void OnApplicationQuit()
-    {
-        PlayerData.SaveToFile();
+        leaderboardPlayer.LoadPlayerData(userRank);
     }
 }
