@@ -1,10 +1,13 @@
-// FIXME do not use this class
-
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public class SceneChange : MonoBehaviour
+{
+    // TODO
+}
+
+// FIXME do not use this class
 public class SceneSwapping : MonoBehaviour
 {
     public AudioSource buttonClickSound;
