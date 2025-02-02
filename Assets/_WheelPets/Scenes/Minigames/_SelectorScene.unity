@@ -828,9 +828,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 969996062}
+      - m_Target: {fileID: 969996061}
         m_TargetAssemblyTypeName: SceneSwapping, Assembly-CSharp
-        m_MethodName: LoadDogCareScene
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
