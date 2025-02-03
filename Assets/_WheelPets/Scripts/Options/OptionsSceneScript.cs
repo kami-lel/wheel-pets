@@ -12,6 +12,6 @@ public class OptionsSceneScript : MonoBehaviour
 
     public void AdoptButtonOnClick()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("AdoptionScene");
     }
 }

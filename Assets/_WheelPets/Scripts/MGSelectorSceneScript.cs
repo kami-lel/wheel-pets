@@ -10,21 +10,26 @@ public class MGSelectorSceneScript : MonoBehaviour
 
     public void DogWalkButtonOnClick()
     {
-        // TODO
+        SceneManager.LoadScene("WalkScene");
     }
 
     public void DogBathButtonOnClick()
     {
-        // TODO
+        SceneManager.LoadScene("BathScene");
     }
 
     public void TugOWarButtonButtonOnClick()
     {
-        // TODO
+        SceneManager.LoadScene("TugOWarScene");
     }
 
     public void FetchButtonOnClick()
     {
-        // TODO
+        SceneManager.LoadScene("FetchScene");
+    }
+
+    public void HideNSeekButtonOnClick()
+    {
+        SceneManager.LoadScene("HideNSeekScene");
     }
 }
