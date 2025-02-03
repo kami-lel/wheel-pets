@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LeaderboardManager : MonoBehaviour
@@ -26,14 +27,23 @@ public class LeaderboardManager : MonoBehaviour
 
         for (int i = 0; i < playerData.leaderBoardOtherPlayerData.Length; i++)
         {
-            PlayerData.LeaderboardOtherPlayerData otherPlayer = playerData.leaderBoardOtherPlayerData[i];
+            PlayerData.LeaderboardOtherPlayerData otherPlayer =
+                playerData.leaderBoardOtherPlayerData[i];
             LeaderboardEntry entry = new LeaderboardEntry(otherPlayer.name, otherPlayer.point);
             leaderboardEntries.Add(entry);
         }
 
-        LeaderboardEntry playerEntry = new LeaderboardEntry(playerData.playerName, playerData.drivingPoint);
+        LeaderboardEntry playerEntry = new LeaderboardEntry(
+            playerData.playerName,
+            playerData.drivingPoint
+        );
         leaderboardEntries.Add(playerEntry);
         PopulateLeaderboardUI();
+    }
+
+    public void ClickBackButton()
+    {
+        SceneManager.LoadScene("TitleScene");
     }
 
     private void PopulateLeaderboardUI()
@@ -58,9 +68,12 @@ public class LeaderboardManager : MonoBehaviour
 
             GameObject newEntry = Instantiate(leaderboardEntryPrefab, entryContainer);
             Transform leaderboardContent = newEntry.transform.Find("LeaderboardContent");
-            leaderboardContent.Find("RankText").GetComponent<TextMeshProUGUI>().text = "#" + sortedEntries[i].rank.ToString();
-            leaderboardContent.Find("NameText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].playerName;
-            leaderboardContent.Find("ScoreText").GetComponent<TextMeshProUGUI>().text = sortedEntries[i].score.ToString() + " Points";
+            leaderboardContent.Find("RankText").GetComponent<TextMeshProUGUI>().text =
+                "#" + sortedEntries[i].rank.ToString();
+            leaderboardContent.Find("NameText").GetComponent<TextMeshProUGUI>().text =
+                sortedEntries[i].playerName;
+            leaderboardContent.Find("ScoreText").GetComponent<TextMeshProUGUI>().text =
+                sortedEntries[i].score.ToString() + " Points";
         }
 
         leaderboardPlayer.LoadPlayerData(userRank);
