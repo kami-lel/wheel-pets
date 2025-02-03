@@ -1085,6 +1085,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DebugConsole
       objectReference: {fileID: 0}
+    - target: {fileID: 5314429305726116001, guid: 966a86e34cd39d34eb1596cfebe8e542, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
