@@ -32,4 +32,9 @@ public class MGSelectorSceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("HideNSeekScene");
     }
+
+    public void FeedButtonOnClick()
+    {
+        SceneManager.LoadScene("FeedScene");
+    }
 }

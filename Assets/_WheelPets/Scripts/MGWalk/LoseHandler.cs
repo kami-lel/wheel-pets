@@ -1,11 +1,16 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class LoseHandler : MonoBehaviour
 {
     public AudioSource LoseSound; // Reference to the AudioSource (assign in Inspector)
     public string loseTag = "Rock"; // Tag for objects that trigger a loss
+
+    public void BackButtonOnClick()
+    {
+        SceneManager.LoadScene("_SelectorScene");
+    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {

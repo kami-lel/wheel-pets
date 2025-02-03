@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Hide_n_Seek : MonoBehaviour
 {
-    [SerializeField] private Button[] buttons; // Array of 4 buttons
+    [SerializeField]
+    private Button[] buttons; // Array of 4 buttons
     private int correctButtonIndex; // Index of the correct button
 
     void Start()
@@ -43,5 +45,10 @@ public class Hide_n_Seek : MonoBehaviour
         {
             Debug.Log($"YOu search the area but do not find your pet...");
         }
+    }
+
+    public void BackButtonOnClick()
+    {
+        SceneManager.LoadScene("_SelectorScene");
     }
 }

@@ -1,23 +1,23 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
     public GameObject flag;
-    public GameObject goalLine; 
-    public GameObject player; 
+    public GameObject goalLine;
+    public GameObject player;
     public float moveSpeed = 1.0f;
     public float tapMoveSpeed = 2.0f;
     public GameObject readyText;
     public GameObject tapText;
     public GameObject winText;
-    public GameObject losesText; 
-    public GameObject playAgainPopup; 
-    public GameObject yesButton; 
-    public GameObject noButton; 
-    public AudioSource buttonClickSound; 
+    public GameObject losesText;
+    public GameObject playAgainPopup;
+    public GameObject yesButton;
+    public GameObject noButton;
+    public AudioSource buttonClickSound;
     public AudioSource cheeringSound;
     public AudioSource booingSound; // Add booingSound
 
@@ -64,13 +64,20 @@ public class TugOfWarManager : MonoBehaviour
 
     void MoveRopeLine()
     {
-        if (ropeLine != null && gameStarted && !gameWon && !gameLost) 
+        if (ropeLine != null && gameStarted && !gameWon && !gameLost)
         {
             ropeLine.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
         }
         else
         {
-            Debug.Log("MoveRopeLine - Conditions not met. gameStarted: " + gameStarted + ", gameWon: " + gameWon + ", gameLost: " + gameLost);
+            Debug.Log(
+                "MoveRopeLine - Conditions not met. gameStarted: "
+                    + gameStarted
+                    + ", gameWon: "
+                    + gameWon
+                    + ", gameLost: "
+                    + gameLost
+            );
         }
     }
 
@@ -268,5 +275,10 @@ public class TugOfWarManager : MonoBehaviour
     public bool IsGameStarted()
     {
         return gameStarted;
+    }
+
+    public void BackButtonOnClick()
+    {
+        SceneManager.LoadScene("_SelectorScene");
     }
 }
