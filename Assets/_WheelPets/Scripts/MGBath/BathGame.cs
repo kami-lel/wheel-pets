@@ -1,14 +1,19 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using TMPro;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 public class BathGame : SceneSwapping
 {
-    [SerializeField] public GameObject targetObject; // The object to check for collisions with
-    [SerializeField] public TextMeshProUGUI mistakeText; // Text to display mistakes
-    [SerializeField] public TextMeshProUGUI messageText; // Text to display messages
+    [SerializeField]
+    public GameObject targetObject; // The object to check for collisions with
+
+    [SerializeField]
+    public TextMeshProUGUI mistakeText; // Text to display mistakes
+
+    [SerializeField]
+    public TextMeshProUGUI messageText; // Text to display messages
 
     // Order booleans
     private bool isBrushUsed = false;
@@ -31,12 +36,17 @@ public class BathGame : SceneSwapping
         }
     }
 
+    public void BackButtonOnClick()
+    {
+        SceneManager.LoadScene("_SelectorScene");
+    }
+
     void Update()
     {
         // Check if mistakes reached "XXX" and switch to PetGame Scene
         if (mistakeText.text == "XXX")
         {
-            LoadPetGameScene();
+            SceneManager.LoadScene("_SelectorScene");
         }
     }
 
@@ -118,7 +128,7 @@ public class BathGame : SceneSwapping
             }
             else if (itemTag == "scissors")
             {
-                if(isTowelUsed && !isScissorsUsed)
+                if (isTowelUsed && !isScissorsUsed)
                 {
                     isScissorsUsed = true;
                     DisplayMessage("All done");

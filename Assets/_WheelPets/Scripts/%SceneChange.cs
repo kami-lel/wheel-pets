@@ -7,7 +7,7 @@ public class SceneChange : MonoBehaviour
     // TODO
 }
 
-// FIXME do not use this class
+// FIXME do not use this class, just use SceneManager.LoadScene
 public class SceneSwapping : MonoBehaviour
 {
     public AudioSource buttonClickSound;

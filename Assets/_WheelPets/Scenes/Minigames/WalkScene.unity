@@ -203,7 +203,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -34.449997, y: -25.899994}
+  m_AnchoredPosition: {x: -34.450012, y: -25.900024}
   m_SizeDelta: {x: 51.791992, y: 24.544205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356257481
@@ -1441,7 +1441,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -138.9, y: -26.4}
+  m_AnchoredPosition: {x: -138.90002, y: -26.400024}
   m_SizeDelta: {x: 260.6846, y: 5.558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1453555675
@@ -1534,7 +1534,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e91198ef4d0e94e3ebecb1562c683335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonClickSound: {fileID: 0}
 --- !u!114 &1470089624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1579,9 +1578,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1470089623}
-        m_TargetAssemblyTypeName: SceneSwapping, Assembly-CSharp
-        m_MethodName: LoadPetGameScene
+      - m_Target: {fileID: 971748418}
+        m_TargetAssemblyTypeName: LoseHandler, Assembly-CSharp
+        m_MethodName: BackButtonOnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
