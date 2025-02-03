@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AdoptionSceneScript : MonoBehaviour
@@ -8,22 +9,10 @@ public class AdoptionSceneScript : MonoBehaviour
     private TMP_InputField petNameField;
 
     [SerializeField]
-    private Button puppyButton;
-
-    [SerializeField]
-    private Button kittenButton;
-
-    [SerializeField]
-    private Button rabbitButton;
-
-    [SerializeField]
     private Slider dominantColorSlider;
 
     [SerializeField]
     private Slider secondaryColorSlider;
-
-    [SerializeField]
-    private Button saveButton;
 
     [SerializeField]
     private PetScript petObject;
@@ -31,29 +20,10 @@ public class AdoptionSceneScript : MonoBehaviour
     private PlayerData playerData;
     private PlayerData.PetData petData;
 
-    void Start()
+    private void Start()
     {
         playerData = PlayerData.Data;
         petData = playerData.petData;
-
-        // set up animal selection buttons
-        puppyButton.onClick.AddListener(() =>
-        {
-            petData.animalType = 0;
-            petObject.UpdateLook();
-        });
-
-        kittenButton.onClick.AddListener(() =>
-        {
-            petData.animalType = 1;
-            petObject.UpdateLook();
-        });
-
-        rabbitButton.onClick.AddListener(() =>
-        {
-            petData.animalType = 2;
-            petObject.UpdateLook();
-        });
 
         // set up sliders values
         dominantColorSlider.value = petData.dominantColorHue;
@@ -74,21 +44,41 @@ public class AdoptionSceneScript : MonoBehaviour
                 petObject.UpdateLook();
             }
         );
-
-        // set up save button
-        saveButton.onClick.AddListener(() =>
-        {
-            // todo add feedback
-            if (petNameField.text != "")
-            {
-                petData.name = petNameField.text;
-            }
-
-            PlayerData.SaveToFile(); // fixme should save button save to file?
-        });
     }
 
-    void Update() { }
+    public void PuppyButtonOnClick()
+    {
+        petData.animalType = 0;
+        petObject.UpdateLook();
+    }
+
+    public void KittenButtonOnClick()
+    {
+        petData.animalType = 1;
+        petObject.UpdateLook();
+    }
+
+    public void RabbitButtonOnClick()
+    {
+        petData.animalType = 2;
+        petObject.UpdateLook();
+    }
+
+    public void SaveButtonOnClick()
+    {
+        // todo add feedback
+        if (petNameField.text != "")
+        {
+            petData.name = petNameField.text;
+        }
+
+        PlayerData.SaveToFile(); // fixme should save button save to file?
+    }
+
+    public void BackButtonOnClick()
+    {
+        SceneManager.LoadScene("OptionsScene");
+    }
 
     private void OnApplicationQuit()
     {
