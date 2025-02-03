@@ -814,7 +814,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1587718456}
         m_TargetAssemblyTypeName: PlaySceneScript, Assembly-CSharp
-        m_MethodName: ClickClosetButton
+        m_MethodName: ClickStoreButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
