@@ -5,7 +5,7 @@ public class TitleSceneScript : MonoBehaviour
 {
     public void ClickPlayButton()
     {
-        Debug.LogWarning("play"); // TODO
+        SceneManager.LoadScene("PlayScene");
     }
 
     public void ClickOptionsButton()
