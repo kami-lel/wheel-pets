@@ -804,7 +804,7 @@ GameObject:
   - component: {fileID: 310611161}
   m_Layer: 5
   m_Name: HideNSeek
-  m_TagString: Untagged
+  m_TagString: Unlockable MG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1206,7 +1206,7 @@ GameObject:
   - component: {fileID: 444387316}
   m_Layer: 5
   m_Name: TugOfWar
-  m_TagString: Untagged
+  m_TagString: Unlockable MG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2223,7 +2223,7 @@ GameObject:
   - component: {fileID: 1692837946}
   m_Layer: 5
   m_Name: Fetch
-  m_TagString: Untagged
+  m_TagString: Unlockable MG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2684,6 +2684,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 397306179075244427, guid: 966a86e34cd39d34eb1596cfebe8e542, type: 3}
   m_PrefabInstance: {fileID: 1789057645}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1875809838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1875809840}
+  - component: {fileID: 1875809839}
+  m_Layer: 0
+  m_Name: MGUnlockManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1875809839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875809838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76b6d84794b0b405988af706130dde71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1875809840
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875809838}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 522.9083, y: 111.33627, z: -4.8379097}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2693,3 +2737,4 @@ SceneRoots:
   - {fileID: 282643985}
   - {fileID: 1723729014}
   - {fileID: 502577741}
+  - {fileID: 1875809840}
