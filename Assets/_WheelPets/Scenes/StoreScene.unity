@@ -1592,7 +1592,6 @@ GameObject:
   - component: {fileID: 450207443}
   - component: {fileID: 450207445}
   - component: {fileID: 450207444}
-  - component: {fileID: 450207446}
   m_Layer: 5
   m_Name: Item3
   m_TagString: Untagged
@@ -1927,7 +1926,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1886518735}
-  - {fileID: 599463465}
   - {fileID: 1294813018}
   m_Father: {fileID: 1074919523}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2188,7 +2186,6 @@ GameObject:
   - component: {fileID: 527397053}
   - component: {fileID: 527397055}
   - component: {fileID: 527397054}
-  - component: {fileID: 527397056}
   m_Layer: 5
   m_Name: DogBathScene
   m_TagString: Untagged
@@ -3155,7 +3152,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 599463465}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4268,19 +4265,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1424374803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 455724940}
-        m_TargetAssemblyTypeName: StoreSceneScript, Assembly-CSharp
-        m_MethodName: MinigameButtonOnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1424374803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5657,19 +5642,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2003246897}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 455724940}
-        m_TargetAssemblyTypeName: StoreSceneScript, Assembly-CSharp
-        m_MethodName: ClosetButtonOnClick
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2003246897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5959,3 +5932,4 @@ SceneRoots:
   - {fileID: 1605728471}
   - {fileID: 786662563}
   - {fileID: 455724939}
+  - {fileID: 1065852563}
