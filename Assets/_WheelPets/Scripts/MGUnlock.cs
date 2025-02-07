@@ -5,10 +5,10 @@ public class MGUnlock
     public GameObject button;
     public int req;
 
-    public MGUnlock(GameObject button, int req)
+    public MGUnlock(GameObject button)
     {
         this.button = button;
-        this.req = req;
+        this.req = 0;
     }
 
     public void CheckPointReq(int score)
@@ -19,5 +19,10 @@ public class MGUnlock
         } else {
             this.button.SetActive(false);
         }
+    }
+
+    public void SetReq(int req)
+    {
+        this.req = req;
     }
 }

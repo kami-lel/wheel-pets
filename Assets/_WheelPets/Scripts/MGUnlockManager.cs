@@ -12,8 +12,15 @@ public class MGUnlockManager : MonoBehaviour
         {
             if (MG.tag == "Unlockable MG")
             {
-                MGUnlocks.Add(new MGUnlock(MG, 500));
+                MGUnlocks.Add(new MGUnlock(MG));
             }
+        }
+
+        // sets the unlockable minigames to require 100 more points than the last
+        for (int i = 0; i < MGUnlocks.Count; i++)
+        {
+            MGUnlocks[i].SetReq(100 + i);
+            MGUnlocks[i].CheckPointReq();
         }
     }
 }
