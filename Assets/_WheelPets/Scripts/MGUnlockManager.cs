@@ -1,18 +1,22 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MGUnlockManager : MonoBehaviour
 {
     [SerializeField] public List<MGUnlock> MGUnlocks;
     public GameObject MGContainer; 
+    private PlayerData playerData;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        foreach(GameObject MG in MGContainer.transform)
+        playerData = PlayerData.Data;
+
+        foreach(Transform MG in MGContainer.transform)
         {
-            if (MG.tag == "Unlockable MG")
+            if (MG.gameObject.tag == "Unlockable MG")
             {
-                MGUnlocks.Add(new MGUnlock(MG));
+                MGUnlocks.Add(new MGUnlock(MG.gameObject));
             }
         }
 
@@ -20,7 +24,7 @@ public class MGUnlockManager : MonoBehaviour
         for (int i = 0; i < MGUnlocks.Count; i++)
         {
             MGUnlocks[i].SetReq(100 + i);
-            MGUnlocks[i].CheckPointReq();
+            MGUnlocks[i].CheckPointReq(playerData.gamePoint);
         }
     }
 }
