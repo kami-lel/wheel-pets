@@ -7,6 +7,7 @@ public class Hide_n_Seek : MonoBehaviour
     [SerializeField]
     private Button[] buttons; // Array of 4 buttons
     private int correctButtonIndex; // Index of the correct button
+    [SerializeField] AudioSource backgroundMusic; // Audio source for background music
 
     void Start()
     {
@@ -25,7 +26,12 @@ public class Hide_n_Seek : MonoBehaviour
         }
 
         // Randomly choose the initial correct button
+        // Randomly choose the initial correct button
         AssignCorrectButton();
+
+        // Play the background music on start
+        PlayBackgroundMusic();
+
     }
 
     void AssignCorrectButton()
@@ -43,12 +49,22 @@ public class Hide_n_Seek : MonoBehaviour
         }
         else
         {
-            Debug.Log($"YOu search the area but do not find your pet...");
+            Debug.Log($"You search the area but do not find your pet...");
         }
     }
 
     public void BackButtonOnClick()
     {
         SceneManager.LoadScene("_SelectorScene");
+    }
+
+    void PlayBackgroundMusic()
+    {
+        backgroundMusic.Play();
+    }
+
+    void PauseBackgroundMusic()
+    {
+        backgroundMusic.Pause();
     }
 }

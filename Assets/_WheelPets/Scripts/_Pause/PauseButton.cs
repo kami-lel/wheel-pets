@@ -16,6 +16,7 @@ public class PauseButton : MonoBehaviour
     public void PauseGame()
     {
         Debug.Log("PauseGame called.");
+
         if (pausePrefab != null)
         {
             if (pauseInstance == null)
