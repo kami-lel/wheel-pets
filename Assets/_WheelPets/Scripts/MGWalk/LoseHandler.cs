@@ -6,7 +6,7 @@ public class LoseHandler : MonoBehaviour
 {
     public AudioSource LoseSound; // Reference to the AudioSource (assign in Inspector)
     public string loseTag = "Rock"; // Tag for objects that trigger a loss
-
+    public AudioSource MusicSource; // cue to end music
     public void BackButtonOnClick()
     {
         SceneManager.LoadScene("_SelectorScene");
@@ -40,6 +40,7 @@ public class LoseHandler : MonoBehaviour
             else
             {
                 Debug.LogError("LoseSound AudioSource is not assigned.");
+                MusicSource.Stop();
                 SceneManager.LoadScene("PetGameScene"); // Fallback if sound is not assigned
             }
         }

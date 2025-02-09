@@ -18,6 +18,7 @@ public class UIMovement : MonoBehaviour
     public Rigidbody2D body; // Rigidbody2D component for the player (assign in Inspector)
     public float jumpAmount = 5f; // Adjust jump strength as needed
     public AudioSource jumpSound; // Sound effect for jumping
+    public AudioSource MusicSource; // cue to end music
     private bool jumpRequested = false; // Input buffer for jump
 
     // Completion Fields
@@ -112,6 +113,7 @@ public class UIMovement : MonoBehaviour
             if (completionText != null)
             {
                 completionText.text = "You finished walking!";
+                MusicSource.Stop();
             }
             else
             {

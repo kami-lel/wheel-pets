@@ -6,7 +6,6 @@ public class DogJump : MonoBehaviour
     // Common Fields
     public bool controlsEnabled = true; // Enable/disable functionality globally
     [SerializeField] private RectTransform grass; // Reference to the grass (UI element)
-
     // Jump Fields
     public float yVariation = 2f; // Vertical randomization range
     private float yStart; // Initial Y position
@@ -66,7 +65,6 @@ public class DogJump : MonoBehaviour
     private void ProcessJump()
     {
         if (!jumpRequested || body == null) return;
-
         body.linearVelocity = new Vector2(body.linearVelocity.x, jumpAmount);
         Debug.Log("Player jumped!");
 
