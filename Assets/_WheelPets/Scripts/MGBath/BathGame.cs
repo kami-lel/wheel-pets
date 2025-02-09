@@ -48,7 +48,7 @@ public class BathGame : SceneSwapping
         // Check if mistakes reached "XXX" and switch to PetGame Scene
         if (mistakeText.text == "XXX")
         {
-            SceneManager.LoadScene("_SelectorScene");
+            gameOverManager.ShowGameOver();
         }
     }
 
@@ -142,9 +142,6 @@ public class BathGame : SceneSwapping
                     DisplayMessage("You can't use that yet.");
                 }
             }
-        } else // Conditions for when the game finishes
-        {
-            gameOverManager.ShowGameOver();
         }
     }
 
