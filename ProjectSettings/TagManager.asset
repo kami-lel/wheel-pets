@@ -11,6 +11,7 @@ TagManager:
   - clippers
   - towel
   - GoalLine
+  - Unlockable MG
   layers:
   - Default
   - TransparentFX
