@@ -4,20 +4,19 @@ using UnityEngine.SceneManagement;
 
 public class MGSelectorSceneScript : MonoBehaviour
 {
-    public List<MGUnlock> MGUnlocks;
-    public GameObject MGContainer;
+    [SerializeField]
+    private GameObject MGButtons; // the group contains all minigame buttons
+
     private PlayerData playerData;
+    private readonly List<MGUnlock> MGUnlocks = new();
 
     private void Start()
     {
         playerData = PlayerData.Data;
 
-        foreach (Transform MG in MGContainer.transform)
+        foreach (Transform child in MGButtons.transform)
         {
-            if (MG.gameObject.tag == "Unlockable MG")
-            {
-                MGUnlocks.Add(new MGUnlock(MG.gameObject));
-            }
+            MGUnlocks.Add(new MGUnlock(child.gameObject));
         }
 
         // sets the unlockable minigames to require 100 more points than the last
