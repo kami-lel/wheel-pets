@@ -9,6 +9,8 @@ public class PauseManager : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("test");
+
         // Hook up the Back Button's OnClick event
         if (backButton != null)
         {
@@ -38,6 +40,7 @@ public class PauseManager : MonoBehaviour
 
     public void ToggleOffPause()
     {
+
         Debug.Log("ToggleOffPause called.");
         if (PauseButton.pauseInstance != null)
         {
