@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 502577741}
   - component: {fileID: 502577740}
   m_Layer: 0
-  m_Name: MGSelectorSceneScript
+  m_Name: SelectorSceneScript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2713,6 +2713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76b6d84794b0b405988af706130dde71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MGUnlocks: []
+  MGContainer: {fileID: 0}
 --- !u!4 &1875809840
 Transform:
   m_ObjectHideFlags: 0
