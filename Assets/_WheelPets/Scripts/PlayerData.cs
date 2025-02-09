@@ -50,6 +50,12 @@ class PlayerData
     public int timesHideNSeekWon = 0;
     public int cosmeticsUnlocked = 0;
 
+    // Audio settings
+    public float musicVolume = 1f;
+    public float sfxVolume = 1f;
+    public bool muteMusic = false;
+    public bool muteSfx = false;
+
     /// <summary>
     /// statistics of mini games
     /// </summary>
