@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+
 [System.Serializable]
 public class MGUnlock
 {
@@ -17,7 +18,9 @@ public class MGUnlock
         if (score >= this.req)
         {
             this.button.GetComponent<Button>().interactable = true;
-        } else {
+        }
+        else
+        {
             this.button.GetComponent<Button>().interactable = false;
         }
     }
