@@ -4,13 +4,14 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverPrefab;
-    private GameObject gameOverInstance;   
+    private GameObject gameOverInstance;
+    public GameObject panelObject;   
     void Start()
     {
         // create prefab if it doesn't exist
         if (gameOverInstance == null)
         {
-            gameOverInstance = Instantiate(gameOverPrefab);
+            gameOverInstance = Instantiate(gameOverPrefab, parent:panelObject.transform);
             gameOverInstance.SetActive(false);
         }
     }
@@ -19,17 +20,5 @@ public class GameOverManager : MonoBehaviour
     {
         gameOverInstance.SetActive(true);
         Time.timeScale = 0f;
-    }
-
-    public void RestartGame()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-
-    public void ReturnToMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("_SelectorScene");
     }
 }
