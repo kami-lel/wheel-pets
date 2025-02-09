@@ -15,6 +15,8 @@ public class BathGame : SceneSwapping
     [SerializeField]
     public TextMeshProUGUI messageText; // Text to display messages
 
+    public GameOverManager gameOverManager;
+
     // Order booleans
     private bool isBrushUsed = false;
     private bool isClippersUsed = false;
@@ -140,6 +142,9 @@ public class BathGame : SceneSwapping
                     DisplayMessage("You can't use that yet.");
                 }
             }
+        } else // Conditions for when the game finishes
+        {
+            gameOverManager.ShowGameOver();
         }
     }
 
