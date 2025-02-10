@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPrefab: {fileID: 6625420772675503311}
+  panelObject: {fileID: 330467787}
 --- !u!4 &259139142
 Transform:
   m_ObjectHideFlags: 0
