@@ -20,7 +20,7 @@ public class MGSelectorSceneScript : MonoBehaviour
         }
 
         // sets the unlockable minigames to require 100 more points than the last
-        // fixme use game parameters
+        // FIXME use game parameters
         for (int i = 0; i < MGUnlocks.Count; i++)
         {
             MGUnlocks[i].SetReq(100 + i);

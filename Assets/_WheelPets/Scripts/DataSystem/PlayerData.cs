@@ -23,14 +23,14 @@ public class PlayerData
         new LeaderboardOtherPlayerData { name = "Mia", point = 178 },
     };
 
-    // fixme better data structure
+    // FIXME better data structure
     // driving statistics
     public int leftTurnSignals = 0;
     public int rightTurnSignals = 0;
     public int timesParkedWithoutTouchingLines = 0;
     public int stopSignsStoppedAt = 0;
 
-    // fixme better data structure
+    // FIXME better data structure
     //  minigame statistics
     public int tugOfWarGamesWon = 0;
     public int timesPetWashed = 0;

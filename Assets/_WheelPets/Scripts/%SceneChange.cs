@@ -4,10 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    // TODO
+    // todo
 }
 
-// FIXME do not use this class, just use SceneManager.LoadScene
+// fixme do not use this class, just use SceneManager.LoadScene
 public class SceneSwapping : MonoBehaviour
 {
     public AudioSource buttonClickSound;
