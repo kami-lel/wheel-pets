@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 /* Implement Pause Function for any Scene
  *
@@ -13,6 +14,9 @@ public class PauseOverlay : MonoBehaviour
     [SerializeField]
     private GameObject container;
 
+    [SerializeField]
+    private Slider volumeSlider;
+
     // UI interface functions
     public void PauseButtonOnClick()
     {
@@ -21,6 +25,11 @@ public class PauseOverlay : MonoBehaviour
 
         // stop game stime
         Time.timeScale = 0f;
+
+        // update slider visually with current settings
+
+        // BUG
+        // volumeSlider.value = playerData.mainVolume;
 
         if (Debug.isDebugBuild)
         {
@@ -32,6 +41,7 @@ public class PauseOverlay : MonoBehaviour
     {
         container.SetActive(false);
         Time.timeScale = 1f;
+
         if (Debug.isDebugBuild)
         {
             Debug.Log("PauseOverlay\tGame Resumed");
@@ -45,7 +55,14 @@ public class PauseOverlay : MonoBehaviour
 
     public void VolumeSliderOnValueChanged(System.Single value)
     {
-        // TODO
+        // BUG
+        // playerData.mainVolume = value;
+        // todo inform audio player to update volume
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log($"PauseOverlay\tmain volume changed to {value}");
+        }
     }
 
     private PlayerData playerData;
