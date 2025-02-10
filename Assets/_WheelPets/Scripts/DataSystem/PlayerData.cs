@@ -49,6 +49,10 @@ public class PlayerData
     public bool hasAdoptPet = false;
     public PetData petData = new();
 
+    public float mainVolume = 0.75f; // 0~1
+    public float sfxVolume = 1f;
+    public float bgmVolume = 1f;
+
     // declare classes
     [Serializable]
     public class LeaderboardOtherPlayerData
