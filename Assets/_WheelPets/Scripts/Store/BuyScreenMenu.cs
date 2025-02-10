@@ -1,11 +1,14 @@
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 
 public class BuyScreenMenu : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] TMP_Text name_text;
+    [SerializeField]
+    TMP_Text name_text;
     private int costu;
+    private string itemSelected;
+
     public void Enable(string name, int cost)
     {
         itemSelected = name;
@@ -29,7 +32,9 @@ public class BuyScreenMenu : MonoBehaviour
             PlayerData.Data.drivingPoint -= costu;
 
             // Optional confirm message
-            Debug.Log("Purchased " + itemSelected + " for " + costu + " driving point");
+            Debug.Log(
+                "Purchased " + itemSelected + " for " + costu + " driving point"
+            );
 
             // Save updated player data to file
             PlayerData.SaveToFile();
@@ -39,15 +44,13 @@ public class BuyScreenMenu : MonoBehaviour
             // Inform that user doesn't have enough points
             Debug.Log("Not enough driving point");
         }
-        
+
         // Disable the purchase screen regardless of purchase
         Disable();
     }
-    
+
     public void Disable()
     {
         this.gameObject.SetActive(false);
     }
-    
-    
 }
