@@ -1,3 +1,5 @@
+// FIXME remove this script
+
 using System;
 using System.IO;
 using UnityEngine;
@@ -156,7 +158,9 @@ class PlayerData
             )
                 if (Debug.isDebugBuild)
                 {
-                    Debug.LogError($"PlayerData\tfail to save to file: {saveFilePath}");
+                    Debug.LogError(
+                        $"PlayerData\tfail to save to file: {saveFilePath}"
+                    );
                 }
         }
     }
@@ -174,7 +178,10 @@ class PlayerData
     private static string GetSaveFilePath()
     {
         string fileName = "playerData";
-        string filePath = Path.Combine(Application.persistentDataPath, fileName + ".json");
+        string filePath = Path.Combine(
+            Application.persistentDataPath,
+            fileName + ".json"
+        );
         return filePath;
     }
 

@@ -7,11 +7,13 @@ public class MGSelectorSceneScript : MonoBehaviour
     [SerializeField]
     private GameObject MGButtons; // the group contains all minigame buttons
 
+    // TODO use new data system
     private PlayerData playerData;
     private readonly List<MGUnlock> MGUnlocks = new();
 
     private void Start()
     {
+        // TODO use new data system
         playerData = PlayerData.Data;
 
         foreach (Transform child in MGButtons.transform)
@@ -25,6 +27,7 @@ public class MGSelectorSceneScript : MonoBehaviour
         {
             MGUnlocks[i].SetReq(100 + i);
             MGUnlocks[i].CheckPointReq(playerData.gamePoint);
+            // TODO use new data system
         }
     }
 

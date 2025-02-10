@@ -16,20 +16,27 @@ public class LeaderboardManager : MonoBehaviour
     [SerializeField]
     private LeaderboardPlayer leaderboardPlayer;
 
-    private List<LeaderboardEntry> leaderboardEntries = new List<LeaderboardEntry>();
+    private List<LeaderboardEntry> leaderboardEntries =
+        new List<LeaderboardEntry>();
 
     private PlayerData playerData;
+
+    // TODO use new data system
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         playerData = PlayerData.Data;
+        // TODO use new data system
 
         for (int i = 0; i < playerData.leaderBoardOtherPlayerData.Length; i++)
         {
             PlayerData.LeaderboardOtherPlayerData otherPlayer =
                 playerData.leaderBoardOtherPlayerData[i];
-            LeaderboardEntry entry = new LeaderboardEntry(otherPlayer.name, otherPlayer.point);
+            LeaderboardEntry entry = new LeaderboardEntry(
+                otherPlayer.name,
+                otherPlayer.point
+            );
             leaderboardEntries.Add(entry);
         }
 
@@ -48,7 +55,9 @@ public class LeaderboardManager : MonoBehaviour
 
     private void PopulateLeaderboardUI()
     {
-        var sortedEntries = leaderboardEntries.OrderByDescending(entry => entry.score).ToList();
+        var sortedEntries = leaderboardEntries
+            .OrderByDescending(entry => entry.score)
+            .ToList();
 
         foreach (Transform child in entryContainer)
         {
@@ -66,14 +75,25 @@ public class LeaderboardManager : MonoBehaviour
                 userRank = sortedEntries[i].rank;
             }
 
-            GameObject newEntry = Instantiate(leaderboardEntryPrefab, entryContainer);
-            Transform leaderboardContent = newEntry.transform.Find("LeaderboardContent");
-            leaderboardContent.Find("RankText").GetComponent<TextMeshProUGUI>().text =
-                "#" + sortedEntries[i].rank.ToString();
-            leaderboardContent.Find("NameText").GetComponent<TextMeshProUGUI>().text =
-                sortedEntries[i].playerName;
-            leaderboardContent.Find("ScoreText").GetComponent<TextMeshProUGUI>().text =
-                sortedEntries[i].score.ToString() + " Points";
+            GameObject newEntry = Instantiate(
+                leaderboardEntryPrefab,
+                entryContainer
+            );
+            Transform leaderboardContent = newEntry.transform.Find(
+                "LeaderboardContent"
+            );
+            leaderboardContent
+                .Find("RankText")
+                .GetComponent<TextMeshProUGUI>()
+                .text = "#" + sortedEntries[i].rank.ToString();
+            leaderboardContent
+                .Find("NameText")
+                .GetComponent<TextMeshProUGUI>()
+                .text = sortedEntries[i].playerName;
+            leaderboardContent
+                .Find("ScoreText")
+                .GetComponent<TextMeshProUGUI>()
+                .text = sortedEntries[i].score.ToString() + " Points";
         }
 
         leaderboardPlayer.LoadPlayerData(userRank);
