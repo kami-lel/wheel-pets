@@ -28,9 +28,7 @@ public class PauseOverlay : MonoBehaviour
         Time.timeScale = 0f;
 
         // update slider visually with current settings
-
-        // BUG
-        // volumeSlider.value = playerData.mainVolume;
+        volumeSlider.value = playerData.mainVolume;
 
         if (Debug.isDebugBuild)
         {
@@ -56,8 +54,7 @@ public class PauseOverlay : MonoBehaviour
 
     public void VolumeSliderOnValueChanged(System.Single value)
     {
-        // BUG
-        // playerData.mainVolume = value;
+        playerData.mainVolume = value;
         // todo inform audio player to update volume
 
         if (Debug.isDebugBuild)
@@ -70,7 +67,7 @@ public class PauseOverlay : MonoBehaviour
 
     void Start()
     {
-        playerData = PlayerData.Data; // FIXME
+        playerData = Data.GetPlayerData();
 
         // pause screen is disabled by default
         container.SetActive(false);
@@ -78,6 +75,6 @@ public class PauseOverlay : MonoBehaviour
 
     void OnApplicationQuit()
     {
-        PlayerData.SaveToFile();
+        Data.SavePlayerDataToFile();
     }
 }

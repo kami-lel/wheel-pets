@@ -6,8 +6,16 @@ public class BuyScreenMenu : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     [SerializeField]
     TMP_Text name_text;
+
     private int costu;
     private string itemSelected;
+
+    private PlayerData playerData;
+
+    private void Start()
+    {
+        playerData = Data.GetPlayerData();
+    }
 
     public void Enable(string name, int cost)
     {
@@ -26,18 +34,19 @@ public class BuyScreenMenu : MonoBehaviour
     public void ConfirmPurchase()
     {
         // Check if the user has enough driving points
-        if (PlayerData.Data.drivingPoint >= costu)
+        if (playerData.drivingPoint >= costu)
         {
             // if enoguh points subtract cost
-            PlayerData.Data.drivingPoint -= costu;
+            playerData.drivingPoint -= costu;
 
             // Optional confirm message
             Debug.Log(
-                "Purchased " + itemSelected + " for " + costu + " driving point"
+                "Purchased "
+                    + itemSelected
+                    + " for "
+                    + costu
+                    + " driving point"
             );
-
-            // Save updated player data to file
-            PlayerData.SaveToFile();
         }
         else
         {
@@ -52,5 +61,10 @@ public class BuyScreenMenu : MonoBehaviour
     public void Disable()
     {
         this.gameObject.SetActive(false);
+    }
+
+    private void OnApplicationQuit()
+    {
+        Data.SavePlayerDataToFile();
     }
 }

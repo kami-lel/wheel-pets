@@ -34,13 +34,21 @@ public class PetScript : MonoBehaviour
         SpriteRenderer dominantRenderer = activePet
             .transform.Find("Dominant")
             .gameObject.GetComponent<SpriteRenderer>();
-        dominantRenderer.color = Color.HSVToRGB(petData.dominantColorHue, 0.8f, 0.2f);
+        dominantRenderer.color = Color.HSVToRGB(
+            petData.dominantColorHue,
+            0.8f,
+            0.2f
+        );
 
         // update secondary color
         SpriteRenderer secondaryRenderer = activePet
             .transform.Find("Secondary")
             .gameObject.GetComponent<SpriteRenderer>();
-        secondaryRenderer.color = Color.HSVToRGB(petData.secondaryColorHue, 0.1f, 1f);
+        secondaryRenderer.color = Color.HSVToRGB(
+            petData.secondaryColorHue,
+            0.1f,
+            1f
+        );
 
         if (Debug.isDebugBuild)
         {
@@ -54,10 +62,7 @@ public class PetScript : MonoBehaviour
 
     private void Start()
     {
-        playerData = PlayerData.Data;
         petData = playerData.petData;
         UpdateLook();
     }
-
-    private void Update() { }
 }

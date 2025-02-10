@@ -38,7 +38,7 @@ public class DebugConsole : MonoBehaviour
 
     private void Start()
     {
-        playerData = PlayerData.Data;
+        playerData = Data.GetPlayerData();
 
         // Debug Console is only available in dev builds
         if (!Debug.isDebugBuild)
@@ -59,15 +59,15 @@ public class DebugConsole : MonoBehaviour
         // player data
         SaveToFileButton.onClick.AddListener(() =>
         {
-            PlayerData.SaveToFile();
+            Data.SavePlayerDataToFile();
         });
         LoadFromFileButton.onClick.AddListener(() =>
         {
-            PlayerData.LoadFromFile();
+            Data.LoadPlayerDataFromFile();
         });
         ResetButton.onClick.AddListener(() =>
         {
-            PlayerData.ResetPlayerData();
+            Data.ResetPlayerData();
         });
     }
 
@@ -101,11 +101,15 @@ public class DebugConsole : MonoBehaviour
     }
 
     private static string lastComamnd = null;
+
     private static PlayerData playerData;
 
     private void HandleEndEdit(string inputText)
     {
-        string[] args = inputText.Split(" ", StringSplitOptions.RemoveEmptyEntries);
+        string[] args = inputText.Split(
+            " ",
+            StringSplitOptions.RemoveEmptyEntries
+        );
 
         bool success;
 

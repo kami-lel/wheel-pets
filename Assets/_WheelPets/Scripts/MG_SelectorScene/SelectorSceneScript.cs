@@ -12,7 +12,7 @@ public class MGSelectorSceneScript : MonoBehaviour
 
     private void Start()
     {
-        playerData = PlayerData.Data;
+        playerData = Data.GetPlayerData();
 
         foreach (Transform child in MGButtons.transform)
         {
@@ -20,7 +20,7 @@ public class MGSelectorSceneScript : MonoBehaviour
         }
 
         // sets the unlockable minigames to require 100 more points than the last
-        // TODO use game parameters
+        // fixme use game parameters
         for (int i = 0; i < MGUnlocks.Count; i++)
         {
             MGUnlocks[i].SetReq(100 + i);
