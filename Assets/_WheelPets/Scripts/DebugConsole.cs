@@ -38,8 +38,7 @@ public class DebugConsole : MonoBehaviour
 
     private void Start()
     {
-        // TODO use new data system
-        playerData = PlayerData.Data;
+        playerData = Data.GetPlayerData();
 
         // Debug Console is only available in dev builds
         if (!Debug.isDebugBuild)
@@ -60,18 +59,15 @@ public class DebugConsole : MonoBehaviour
         // player data
         SaveToFileButton.onClick.AddListener(() =>
         {
-            // TODO use new data system
-            PlayerData.SaveToFile();
+            Data.SavePlayerDataToFile();
         });
         LoadFromFileButton.onClick.AddListener(() =>
         {
-            // TODO use new data system
-            PlayerData.LoadFromFile();
+            Data.LoadPlayerDataFromFile();
         });
         ResetButton.onClick.AddListener(() =>
         {
-            // TODO use new data system
-            PlayerData.ResetPlayerData();
+            Data.ResetPlayerData();
         });
     }
 
@@ -98,7 +94,6 @@ public class DebugConsole : MonoBehaviour
             }
 
             // update data
-            // TODO use new data system
             drivingPoint.text = $"Driving Point:{playerData.drivingPoint}";
             gamePoint.text = $"Game Point:{playerData.gamePoint}";
             drivingMiles.text = $"Driving Miles:{playerData.drivingMiles}";
@@ -107,7 +102,6 @@ public class DebugConsole : MonoBehaviour
 
     private static string lastComamnd = null;
 
-    // TODO use new data system
     private static PlayerData playerData;
 
     private void HandleEndEdit(string inputText)

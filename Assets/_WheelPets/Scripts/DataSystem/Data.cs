@@ -29,7 +29,7 @@ public class Data
 
             if (Debug.isDebugBuild)
             {
-                Debug.Log($"Data\tload from File: {saveFilePath}");
+                Debug.Log($"Data\tPlayer Data load from File: {saveFilePath}");
             }
         }
         catch (Exception ex)
@@ -42,7 +42,7 @@ public class Data
                 if (Debug.isDebugBuild)
                 {
                     Debug.LogWarning(
-                        $"Data\tFail to Load from file: {saveFilePath}. An empty player data is used."
+                        $"Data\tPlayer Data Fail to Load from file: {saveFilePath}. An empty player data is used."
                     );
                 }
             }
@@ -65,7 +65,7 @@ public class Data
 
             if (Debug.isDebugBuild)
             {
-                Debug.Log($"Data\tsave to file: {saveFilePath}");
+                Debug.Log($"Data\tPlayer Data save to file: {saveFilePath}");
             }
         }
         catch (Exception ex)
@@ -78,9 +78,19 @@ public class Data
                 if (Debug.isDebugBuild)
                 {
                     Debug.LogError(
-                        $"Data\tfail to save to file: {saveFilePath}"
+                        $"Data\tPlayer Data fail to save to file: {saveFilePath}"
                     );
                 }
+        }
+    }
+
+    public static void ResetPlayerData()
+    {
+        _playerData = new PlayerData();
+        SavePlayerDataToFile();
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("Data\tPlayer Data Reset");
         }
     }
 
