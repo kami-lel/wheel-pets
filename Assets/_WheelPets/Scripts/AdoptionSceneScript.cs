@@ -17,11 +17,13 @@ public class AdoptionSceneScript : MonoBehaviour
     [SerializeField]
     private PetScript petObject;
 
+    // TODO use new data system
     private PlayerData playerData;
     private PlayerData.PetData petData;
 
     private void Start()
     {
+        // TODO use new data system
         playerData = PlayerData.Data;
         petData = playerData.petData;
 
@@ -72,6 +74,7 @@ public class AdoptionSceneScript : MonoBehaviour
             petData.name = petNameField.text;
         }
 
+        // TODO use new data system
         PlayerData.SaveToFile(); // fixme should save button save to file?
     }
 
@@ -82,6 +85,7 @@ public class AdoptionSceneScript : MonoBehaviour
 
     private void OnApplicationQuit()
     {
+        // TODO use new data system
         PlayerData.SaveToFile();
     }
 }
