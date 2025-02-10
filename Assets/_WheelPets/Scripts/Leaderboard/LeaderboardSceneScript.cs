@@ -26,18 +26,17 @@ public class LeaderboardManager : MonoBehaviour
     {
         playerData = Data.GetPlayerData();
 
-        for (int i = 0; i < playerData.leaderBoardOtherPlayerData.Length; i++)
+        // add other players' data into leaderboard
+        foreach (
+            PlayerData.LeaderboardOtherPlayerData otherPlayer in playerData.leaderBoardOtherPlayerData
+        )
         {
-            PlayerData.LeaderboardOtherPlayerData otherPlayer =
-                playerData.leaderBoardOtherPlayerData[i];
-            LeaderboardEntry entry = new LeaderboardEntry(
-                otherPlayer.name,
-                otherPlayer.point
-            );
+            LeaderboardEntry entry = new(otherPlayer.name, otherPlayer.point);
             leaderboardEntries.Add(entry);
         }
 
-        LeaderboardEntry playerEntry = new LeaderboardEntry(
+        // add our player's data into leaderboard
+        LeaderboardEntry playerEntry = new(
             playerData.playerName,
             playerData.drivingPoint
         );
@@ -94,5 +93,10 @@ public class LeaderboardManager : MonoBehaviour
         }
 
         leaderboardPlayer.LoadPlayerData(userRank);
+    }
+
+    private void OnApplicationQuit()
+    {
+        Data.SavePlayerDataToFile();
     }
 }

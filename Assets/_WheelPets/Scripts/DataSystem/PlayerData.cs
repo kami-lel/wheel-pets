@@ -9,7 +9,7 @@ public class PlayerData
     public int gamePoint = 0;
     public float drivingMiles = 0;
 
-    public LeaderboardOtherPlayerData[] leaderBoardOtherPlayerData =
+    public LeaderboardOtherPlayerData[] leaderBoardOtherPlayerData = new[]
     {
         new LeaderboardOtherPlayerData { name = "John", point = 123 },
         new LeaderboardOtherPlayerData { name = "Emma", point = 234 },

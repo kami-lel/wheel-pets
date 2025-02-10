@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// TODO fix all warnings
+
 public class TitleSceneScript : MonoBehaviour
 {
     public void ClickPlayButton()
