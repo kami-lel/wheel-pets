@@ -21,13 +21,10 @@ public class LeaderboardManager : MonoBehaviour
 
     private PlayerData playerData;
 
-    // TODO use new data system
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        playerData = PlayerData.Data;
-        // TODO use new data system
+        playerData = Data.GetPlayerData();
 
         for (int i = 0; i < playerData.leaderBoardOtherPlayerData.Length; i++)
         {
