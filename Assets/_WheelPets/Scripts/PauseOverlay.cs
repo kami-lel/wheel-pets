@@ -16,17 +16,31 @@ public class PauseOverlay : MonoBehaviour
     // UI interface functions
     public void PauseButtonOnClick()
     {
-        // TODO
+        // display the overlay
+        container.SetActive(true);
+
+        // stop game stime
+        Time.timeScale = 0f;
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tGame Paused");
+        }
     }
 
     public void ResumeButtonOnClick()
     {
-        // TODO
+        container.SetActive(false);
+        Time.timeScale = 1f;
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tGame Resumed");
+        }
     }
 
     public void ExitButtonOnClick()
     {
-        // TODO
+        Application.Quit();
     }
 
     public void VolumeSliderOnValueChanged(System.Single value)
@@ -36,7 +50,6 @@ public class PauseOverlay : MonoBehaviour
 
     private PlayerData playerData;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerData = PlayerData.Data; // FIXME
@@ -45,6 +58,8 @@ public class PauseOverlay : MonoBehaviour
         container.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update() { }
+    void OnApplicationQuit()
+    {
+        PlayerData.SaveToFile();
+    }
 }
