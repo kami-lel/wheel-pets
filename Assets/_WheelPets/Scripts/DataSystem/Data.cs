@@ -13,7 +13,11 @@ public class Data
         return _playerData;
     }
 
-    public static ParameterData parameterData = new();
+    public static ParameterData GetParameterData()
+    {
+        _parameterData ??= new();
+        return _parameterData;
+    }
 
     public static void LoadPlayerDataFromFile()
     {
@@ -81,6 +85,7 @@ public class Data
     }
 
     private static PlayerData _playerData = null;
+    private static ParameterData _parameterData = null;
 
     private static string GenerateSaveFilePath()
     {

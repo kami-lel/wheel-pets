@@ -67,4 +67,17 @@ Add `[Serializable]` before classes declared in `PlayerData`, such that they can
 
 **ParameterData** store constant values such as award for each good driving behavior, unlocking point for mini games, ...
 
-TODO
+Use `ParameterData` by:
+
+```
+public class MyScene : MonoBehavior {
+
+    private ParameterData parameterData;
+
+    private void Start() {
+        parameterData = Data.GetParameterData();
+        ...
+    }
+
+}
+```
