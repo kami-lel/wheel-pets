@@ -12,6 +12,9 @@ TagManager:
   - towel
   - GoalLine
   - Unlockable MG
+  - target
+  - Ground
+  - Rock
   layers:
   - Default
   - TransparentFX
@@ -29,7 +32,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - PauseOverlay
   - 
   - 
   - 
