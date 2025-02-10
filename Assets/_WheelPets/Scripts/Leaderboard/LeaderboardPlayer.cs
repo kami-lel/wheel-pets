@@ -9,16 +9,9 @@ public class LeaderboardPlayer : MonoBehaviour
     [SerializeField]
     private GameObject stats;
 
-    private void Start()
-    {
-        // TODO use new data system
-        // LoadPlayerData will be called by LeaderboardManager with the correct rank
-    }
-
     public void LoadPlayerData(int userRank)
     {
-        // TODO use new data system
-        PlayerData data = PlayerData.Data;
+        PlayerData data = Data.GetPlayerData();
 
         // Ensure userScore and stats are assigned
         if (userScore == null || stats == null)
