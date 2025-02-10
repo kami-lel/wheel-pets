@@ -23,6 +23,15 @@ public class BathGame : SceneSwapping
     private bool isTowelUsed = false;
     private bool isScissorsUsed = false;
 
+    // sfx
+    [SerializeField] private AudioSource Soapy;
+    [SerializeField] private AudioSource watery;
+    [SerializeField] private AudioSource towely;
+    [SerializeField] private AudioSource cutty;
+    [SerializeField] private AudioSource brushy;
+    [SerializeField] private AudioSource clippy;
+    [SerializeField] private AudioSource incorrect_sound;
+
     void Start()
     {
         if (targetObject == null)
@@ -63,11 +72,13 @@ public class BathGame : SceneSwapping
                     isBrushUsed = true;
                     DisplayMessage("The dog is brushed and looking tidy.");
                     RemoveItem(draggedItem);
+                    brushy.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    incorrect_sound.Play();
                 }
             }
             else if (itemTag == "clippers")
@@ -77,11 +88,13 @@ public class BathGame : SceneSwapping
                     isClippersUsed = true;
                     DisplayMessage("The dog has been clipped.");
                     RemoveItem(draggedItem);
+                    clippy.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    incorrect_sound.Play();
                 }
             }
             else if (itemTag == "soap")
@@ -91,11 +104,13 @@ public class BathGame : SceneSwapping
                     isSoapUsed = true;
                     DisplayMessage("The dog is lathered.");
                     RemoveItem(draggedItem);
+                    Soapy.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    incorrect_sound.Play();
                 }
             }
             else if (itemTag == "water")
@@ -105,11 +120,13 @@ public class BathGame : SceneSwapping
                     isWaterUsed = true;
                     DisplayMessage("The dog is rinsed.");
                     RemoveItem(draggedItem);
+                    watery.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    incorrect_sound.Play();
                 }
             }
             else if (itemTag == "towel")
@@ -119,11 +136,13 @@ public class BathGame : SceneSwapping
                     isTowelUsed = true;
                     DisplayMessage("The dog is dried off.");
                     RemoveItem(draggedItem);
+                    towely.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    incorrect_sound.Play();
                 }
             }
             else if (itemTag == "scissors")
@@ -133,11 +152,13 @@ public class BathGame : SceneSwapping
                     isScissorsUsed = true;
                     DisplayMessage("All done");
                     RemoveItem(draggedItem);
+                    cutty.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    incorrect_sound.Play();
                 }
             }
         }
