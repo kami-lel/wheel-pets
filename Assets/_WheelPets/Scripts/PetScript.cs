@@ -56,15 +56,12 @@ public class PetScript : MonoBehaviour
         }
     }
 
-    // TODO use new data system
     private PlayerData playerData;
     private PlayerData.PetData petData;
     private GameObject activePet;
 
     private void Start()
     {
-        // TODO use new data system
-        playerData = PlayerData.Data;
         petData = playerData.petData;
         UpdateLook();
     }
