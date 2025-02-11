@@ -13,7 +13,7 @@ public class MGSelectorSceneScript : MonoBehaviour
     private void Start()
     {
         playerData = Data.GetPlayerData();
-        // HACK give player some point so mingame ares unlcoked
+        // hack give player some point so mingame ares unlcoked
         playerData.drivingPoint = 1000;
 
         foreach (Transform child in MGButtons.transform)

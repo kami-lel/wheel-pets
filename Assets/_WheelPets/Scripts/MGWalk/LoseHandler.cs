@@ -17,10 +17,12 @@ public class LoseHandler : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(loseTag))
         {
-            // TODO fix this
-            Debug.Log(
-                "Player collided with a lose-triggering object. Disabling controls..."
-            );
+            if (Debug.isDebugBuild)
+            {
+                Debug.Log(
+                    "LoseHandler\tPlayer collided with a lose-triggering object. Disabling controls..."
+                );
+            }
 
             // Disable DogJump scripts
             var dogJump = GetComponent<DogJump>();
@@ -29,9 +31,10 @@ public class LoseHandler : MonoBehaviour
                 dogJump.DisableControls();
             }
 
-            // FIXME deprecated code
             // Disable RockMovement scripts
-            var rockMovements = FindObjectsOfType<RockMovement>(true);
+            var rockMovements = FindObjectsByType<RockMovement>(
+                FindObjectsSortMode.None
+            );
             foreach (var rockMovement in rockMovements)
             {
                 rockMovement.enabled = false;

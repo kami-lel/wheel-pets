@@ -26,8 +26,7 @@ public class BathDraggables
     {
         isDragging = false;
 
-        // FIXME deprecated code
-        BathGame bathGame = FindObjectOfType<BathGame>();
+        BathGame bathGame = FindFirstObjectByType<BathGame>();
         if (
             bathGame != null
             && RectTransformUtility.RectangleContainsScreenPoint(
@@ -45,13 +44,13 @@ public class BathDraggables
     {
         if (isDragging && canvas != null)
         {
-            Vector2 position;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(
                 canvas.transform as RectTransform,
                 eventData.position,
                 canvas.worldCamera,
-                out position
+                out Vector2 position
             );
+
             rectTransform.localPosition = position;
         }
     }

@@ -12,9 +12,8 @@ public class ColorSelection : MonoBehaviour
 
     void Start()
     {
-        // FIXME deprecated code
         // Find the PetSelection script in the scene
-        petSelection = FindObjectOfType<PetSelection>();
+        petSelection = FindFirstObjectByType<PetSelection>();
 
         if (petSelection != null)
         {
