@@ -15,6 +15,8 @@ public class BathGame : SceneSwapping
     [SerializeField]
     public TextMeshProUGUI messageText; // Text to display messages
 
+    public GameOverManager gameOverManager;
+
     // Order booleans
     private bool isBrushUsed = false;
     private bool isClippersUsed = false;
@@ -46,7 +48,7 @@ public class BathGame : SceneSwapping
         // Check if mistakes reached "XXX" and switch to PetGame Scene
         if (mistakeText.text == "XXX")
         {
-            SceneManager.LoadScene("_SelectorScene");
+            gameOverManager.ShowGameOver();
         }
     }
 

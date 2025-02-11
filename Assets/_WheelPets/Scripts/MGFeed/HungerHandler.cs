@@ -18,6 +18,8 @@ public class HungerHandler : MonoBehaviour
     private FoodObject.FoodTypes[] foods = new FoodObject.FoodTypes[6];
     [SerializeField] private TMP_Text texty;
     [SerializeField] private TMP_Text textytoo;
+    [SerializeField] private AudioSource audo;
+    [SerializeField] private AudioSource audo2;
 
     // At some point, a singleton needs to be coordinated + implemented so that this can just search for it by name. For now, I will initialize an object for it.
     [SerializeField] GameObject Spawner;
@@ -58,11 +60,13 @@ public class HungerHandler : MonoBehaviour
         {
             CurrentHunger += FoodAmount;
             score += ScoreAmount;
+            audo.Play();
         }
         else
         {
             CurrentHunger -= FoodAmount;
             score -= ScoreAmount;
+            audo2.Play();
         }
         if((CurrentHunger - Hunger) > .01f)
         {

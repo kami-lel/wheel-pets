@@ -251,7 +251,7 @@ public class TugOfWarManager : MonoBehaviour
         {
             buttonClickSound.Play();
         }
-        StartCoroutine(GoToDifferentSceneAfterSound());
+        SceneManager.LoadScene("_SelectorScene");
     }
 
     IEnumerator RestartGameAfterSound()

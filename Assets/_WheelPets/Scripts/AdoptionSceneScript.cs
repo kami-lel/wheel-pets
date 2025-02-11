@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// todo only "save" button confirms pet look change
 public class AdoptionSceneScript : MonoBehaviour
 {
     [SerializeField]
@@ -22,7 +23,7 @@ public class AdoptionSceneScript : MonoBehaviour
 
     private void Start()
     {
-        playerData = PlayerData.Data;
+        playerData = Data.GetPlayerData();
         petData = playerData.petData;
 
         // set up sliders values
@@ -71,8 +72,6 @@ public class AdoptionSceneScript : MonoBehaviour
         {
             petData.name = petNameField.text;
         }
-
-        PlayerData.SaveToFile(); // fixme should save button save to file?
     }
 
     public void BackButtonOnClick()
@@ -82,6 +81,6 @@ public class AdoptionSceneScript : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        PlayerData.SaveToFile();
+        Data.SavePlayerDataToFile();
     }
 }
