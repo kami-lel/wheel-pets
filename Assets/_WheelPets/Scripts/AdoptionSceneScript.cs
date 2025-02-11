@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// todo only "save" button confirms pet look change
 public class AdoptionSceneScript : MonoBehaviour
 {
     [SerializeField]

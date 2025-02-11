@@ -56,13 +56,12 @@ public class PetScript : MonoBehaviour
         }
     }
 
-    private PlayerData playerData;
     private PlayerData.PetData petData;
     private GameObject activePet;
 
     private void Start()
     {
-        petData = playerData.petData;
+        petData = Data.GetPlayerData().petData;
         UpdateLook();
     }
 }

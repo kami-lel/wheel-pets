@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// TODO fix bugs in this scene
-
 public class StoreSceneScript : MonoBehaviour
 {
     public void ClosetButtonOnClick()

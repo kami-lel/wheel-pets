@@ -32,18 +32,18 @@ public class CarAPI
         SuddenTurnRight,
 
         // driver behavior events, used for point scoring
-        // TODO this is just some example, will be changed
         RunRedLight,
         FailToStopAtStopSign,
         HitACyclist,
     }
 
     public class CarEventArgs
-        : EventArgs { // TODO
+        : EventArgs { // todo
     }
 
     // static to ensure work across different instances
-    private static readonly Dictionary<Event, Action<CarEventArgs>> eventDict = new();
+    private static readonly Dictionary<Event, Action<CarEventArgs>> eventDict =
+        new();
 
     /// <summary>
     /// adds a listener for a specific car event identified by `id`.
@@ -51,7 +51,11 @@ public class CarAPI
     /// <param name="id">The identifier of the car event to listen for.</param>
     /// <param name="listener">The action to be performed when the event is triggered.</param>
     /// <param name="listenerDescription">An optional description of the listener, used for logging purposes.</param>
-    public static void Add(Event id, Action<CarEventArgs> listener, string listenerDescription = "")
+    public static void Add(
+        Event id,
+        Action<CarEventArgs> listener,
+        string listenerDescription = ""
+    )
     {
         if (!eventDict.ContainsKey(id))
         {
