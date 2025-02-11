@@ -1,7 +1,11 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BathDraggables : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
+public class BathDraggables
+    : MonoBehaviour,
+        IPointerDownHandler,
+        IPointerUpHandler,
+        IDragHandler
 {
     private RectTransform rectTransform;
     private Canvas canvas;
@@ -22,9 +26,16 @@ public class BathDraggables : MonoBehaviour, IPointerDownHandler, IPointerUpHand
     {
         isDragging = false;
 
+        // FIXME deprecated code
         BathGame bathGame = FindObjectOfType<BathGame>();
-        if (bathGame != null && RectTransformUtility.RectangleContainsScreenPoint(
-            bathGame.targetObject.GetComponent<RectTransform>(), rectTransform.position, canvas.worldCamera))
+        if (
+            bathGame != null
+            && RectTransformUtility.RectangleContainsScreenPoint(
+                bathGame.targetObject.GetComponent<RectTransform>(),
+                rectTransform.position,
+                canvas.worldCamera
+            )
+        )
         {
             bathGame.NotifyItemDragged(gameObject.tag);
         }

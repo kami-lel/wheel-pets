@@ -9,7 +9,7 @@ using UnityEngine.UI;
  */
 
 
-// TODO applied to all scenes
+// todo applied to all scenes
 public class PauseOverlay : MonoBehaviour
 {
     [SerializeField]

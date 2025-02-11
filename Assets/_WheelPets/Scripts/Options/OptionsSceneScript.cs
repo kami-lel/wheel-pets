@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class OptionsSceneScript : MonoBehaviour
 {
-    // TODO connect more buttons, etc.
+    // todo connect more buttons, etc.
 
     public void BackButtonOnClick()
     {

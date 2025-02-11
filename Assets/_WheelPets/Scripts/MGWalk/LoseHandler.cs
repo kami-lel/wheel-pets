@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// a single loose
 public class LoseHandler : MonoBehaviour
 {
     public AudioSource LoseSound; // Reference to the AudioSource (assign in Inspector)
@@ -16,7 +17,10 @@ public class LoseHandler : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(loseTag))
         {
-            Debug.Log("Player collided with a lose-triggering object. Disabling controls...");
+            // TODO fix this
+            Debug.Log(
+                "Player collided with a lose-triggering object. Disabling controls..."
+            );
 
             // Disable DogJump scripts
             var dogJump = GetComponent<DogJump>();
@@ -25,6 +29,7 @@ public class LoseHandler : MonoBehaviour
                 dogJump.DisableControls();
             }
 
+            // FIXME deprecated code
             // Disable RockMovement scripts
             var rockMovements = FindObjectsOfType<RockMovement>(true);
             foreach (var rockMovement in rockMovements)

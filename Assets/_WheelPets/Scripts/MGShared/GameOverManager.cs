@@ -1,6 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+// todo make this work across scenes?
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverPrefab;

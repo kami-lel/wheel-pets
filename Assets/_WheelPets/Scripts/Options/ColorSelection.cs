@@ -12,6 +12,7 @@ public class ColorSelection : MonoBehaviour
 
     void Start()
     {
+        // FIXME deprecated code
         // Find the PetSelection script in the scene
         petSelection = FindObjectOfType<PetSelection>();
 
@@ -21,9 +22,26 @@ public class ColorSelection : MonoBehaviour
         }
 
         // Assign button click listeners
-        brownButton.onClick.AddListener(() => ChangePetColor(ColorUtility.TryParseHtmlString("#8B4513", out Color brown) ? brown : Color.white));
+        brownButton.onClick.AddListener(
+            () =>
+                ChangePetColor(
+                    ColorUtility.TryParseHtmlString("#8B4513", out Color brown)
+                        ? brown
+                        : Color.white
+                )
+        );
         greyButton.onClick.AddListener(() => ChangePetColor(Color.grey));
-        orangeButton.onClick.AddListener(() => ChangePetColor(ColorUtility.TryParseHtmlString("#FFA500", out Color orange) ? orange : Color.white));
+        orangeButton.onClick.AddListener(
+            () =>
+                ChangePetColor(
+                    ColorUtility.TryParseHtmlString(
+                        "#FFA500",
+                        out Color orange
+                    )
+                        ? orange
+                        : Color.white
+                )
+        );
     }
 
     void ChangePetColor(Color newColor)
