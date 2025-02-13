@@ -73,6 +73,7 @@ public class AudioControls : MonoBehaviour
     {
         PlayerData.Data.musicVolume = value;
         SaveSettings();
+        AudioManager.Instance.UpdateMusicVolume(value);
         // Update the UI
         UpdateUI();
     }
@@ -81,6 +82,7 @@ public class AudioControls : MonoBehaviour
     {
         PlayerData.Data.sfxVolume = value;
         SaveSettings();
+        AudioManager.Instance.UpdateSFXVolume(value);
         // Update the UI
         UpdateUI();
     }
@@ -89,6 +91,7 @@ public class AudioControls : MonoBehaviour
     {
         PlayerData.Data.muteMusic = isMuted;
         SaveSettings();
+        AudioManager.Instance.MuteMusic(isMuted);
         // Update the UI
         UpdateUI();
     }
@@ -97,6 +100,7 @@ public class AudioControls : MonoBehaviour
     {
         PlayerData.Data.muteSfx = isMuted;
         SaveSettings();
+        AudioManager.Instance.MuteSFX(isMuted);
         // Update the UI
         UpdateUI();
     }
