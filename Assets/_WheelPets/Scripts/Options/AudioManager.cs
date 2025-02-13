@@ -1,11 +1,13 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    private AudioSource musicSource;
-    private AudioSource sfxSource;
+    [SerializeField] private AudioMixer audioMixer;
+    private const string MusicVolumeParam = "MusicVolume";
+    private const string SFXVolumeParam = "SFXVolume";
 
     private void Awake()
     {
@@ -20,10 +22,6 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        // Initialize audio sources
-        musicSource = gameObject.AddComponent<AudioSource>();
-        sfxSource = gameObject.AddComponent<AudioSource>();
-
         // Load settings from PlayerData
         LoadSettings();
     }
@@ -32,29 +30,29 @@ public class AudioManager : MonoBehaviour
     {
         PlayerData data = PlayerData.Data;
 
-        musicSource.volume = data.musicVolume;
-        sfxSource.volume = data.sfxVolume;
-        musicSource.mute = data.muteMusic;
-        sfxSource.mute = data.muteSfx;
+        audioMixer.SetFloat(MusicVolumeParam, Mathf.Log10(data.musicVolume) * 20);
+        audioMixer.SetFloat(SFXVolumeParam, Mathf.Log10(data.sfxVolume) * 20);
+        audioMixer.SetFloat(MusicVolumeParam + "Mute", data.muteMusic ? -80 : 0);
+        audioMixer.SetFloat(SFXVolumeParam + "Mute", data.muteSfx ? -80 : 0);
     }
 
     public void UpdateMusicVolume(float volume)
     {
-        musicSource.volume = volume;
+        audioMixer.SetFloat(MusicVolumeParam, Mathf.Log10(volume) * 20);
     }
 
     public void UpdateSFXVolume(float volume)
     {
-        sfxSource.volume = volume;
+        audioMixer.SetFloat(SFXVolumeParam, Mathf.Log10(volume) * 20);
     }
 
     public void MuteMusic(bool mute)
     {
-        musicSource.mute = mute;
+        audioMixer.SetFloat(MusicVolumeParam + "Mute", mute ? -80 : 0);
     }
 
     public void MuteSFX(bool mute)
     {
-        sfxSource.mute = mute;
+        audioMixer.SetFloat(SFXVolumeParam + "Mute", mute ? -80 : 0);
     }
 }
