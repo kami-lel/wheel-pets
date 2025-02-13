@@ -32,8 +32,8 @@ public class AudioManager : MonoBehaviour
 
         audioMixer.SetFloat(MusicVolumeParam, Mathf.Log10(data.musicVolume) * 20);
         audioMixer.SetFloat(SFXVolumeParam, Mathf.Log10(data.sfxVolume) * 20);
-        audioMixer.SetFloat(MusicVolumeParam + "Mute", data.muteMusic ? -80 : 0);
-        audioMixer.SetFloat(SFXVolumeParam + "Mute", data.muteSfx ? -80 : 0);
+        audioMixer.SetFloat(MusicVolumeParam, data.muteMusic ? -80 : Mathf.Log10(data.musicVolume) * 20);
+        audioMixer.SetFloat(SFXVolumeParam, data.muteSfx ? -80 : Mathf.Log10(data.sfxVolume) * 20);
     }
 
     public void UpdateMusicVolume(float volume)
@@ -48,11 +48,11 @@ public class AudioManager : MonoBehaviour
 
     public void MuteMusic(bool mute)
     {
-        audioMixer.SetFloat(MusicVolumeParam + "Mute", mute ? -80 : 0);
+        audioMixer.SetFloat(MusicVolumeParam, mute ? -80 : Mathf.Log10(PlayerData.Data.musicVolume) * 20);
     }
 
     public void MuteSFX(bool mute)
     {
-        audioMixer.SetFloat(SFXVolumeParam + "Mute", mute ? -80 : 0);
+        audioMixer.SetFloat(SFXVolumeParam, mute ? -80 : Mathf.Log10(PlayerData.Data.sfxVolume) * 20);
     }
 }
