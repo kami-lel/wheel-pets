@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3960878960794244781}
   - component: {fileID: 5714482301847883743}
   - component: {fileID: 8388783993682055750}
-  - component: {fileID: 1751962726798070963}
   - component: {fileID: 8492613285133245142}
+  - component: {fileID: 3948843110821367758}
   m_Layer: 5
   m_Name: Rock
   m_TagString: Untagged
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3452003437791708593, guid: 03d7cbd4ed4944516b6087c4dd568817, type: 3}
+  m_Sprite: {fileID: 7609978136934355157, guid: 0bbfdac08ed2744568fac096690bc112, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -142,22 +142,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1751962726798070963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 646488732353102520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e63a8bae6b3f4410c85e8c407dbbeec0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 20
-  xBound: -20
-  xRestart: 20
-  yVariation: 2
 --- !u!114 &8492613285133245142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +155,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LoseSound: {fileID: 0}
+  loseTag: Rock
+--- !u!95 &3948843110821367758
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646488732353102520}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c4e6563eab58845dfbc9d9b4cc104390, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
