@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: UI Text_es
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: es
+  m_SharedData: {fileID: 11400000, guid: 791866cbaf199d646968cfb7515ab202, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 14811987968
+    m_Localized: "\xBFListo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2229807153152
+    m_Localized: "\xA1Pulsa!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2784789069824
+    m_Localized: "\xA1Ganaste!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3237669044224
+    m_Localized: "\xA1Perdiste!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3649662943232
+    m_Localized: "\xBFVolver a jugar?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3957021540352
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3927254564864
+    m_Localized: SI
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []
