@@ -146,6 +146,66 @@ MonoBehaviour:
     m_Localized: Salir
     m_Metadata:
       m_Items: []
+  - m_Id: 327986743934976
+    m_Localized: Cachorro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328098656354304
+    m_Localized: Gatito
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328263068876800
+    m_Localized: Conejo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328403859079168
+    m_Localized: Guardar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329151258886144
+    m_Localized: Nombre de mascota...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331793188061184
+    m_Localized: Manejar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331938315173888
+    m_Localized: Minijuegos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335262171070464
+    m_Localized: "Hora del ba\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335545961873408
+    m_Localized: "No puedes usar eso a\xFAn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336267197612032
+    m_Localized: Paseo del perro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336351687671808
+    m_Localized: "Ba\xF1o del perro"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336620181848064
+    m_Localized: Tira y afloja
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336921408372736
+    m_Localized: Alimentar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337568170049536
+    m_Localized: Escondite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337948442427392
+    m_Localized: Buscar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

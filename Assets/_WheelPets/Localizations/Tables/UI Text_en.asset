@@ -150,6 +150,66 @@ MonoBehaviour:
     m_Localized: Exit
     m_Metadata:
       m_Items: []
+  - m_Id: 327986743934976
+    m_Localized: Puppy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328098656354304
+    m_Localized: Kitten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328263068876800
+    m_Localized: Rabbit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328403859079168
+    m_Localized: Save
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329151258886144
+    m_Localized: Enter Pet Name...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331793188061184
+    m_Localized: Driving
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331938315173888
+    m_Localized: Minigames
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335262171070464
+    m_Localized: Bath Time
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335545961873408
+    m_Localized: You can't use that yet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336267197612032
+    m_Localized: Dog Walk
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336351687671808
+    m_Localized: Dog Bath
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336620181848064
+    m_Localized: Tug of War
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336921408372736
+    m_Localized: Feed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337568170049536
+    m_Localized: Hide-N-Seek
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337948442427392
+    m_Localized: Fetch
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

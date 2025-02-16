@@ -146,6 +146,66 @@ MonoBehaviour:
     m_Localized: Quitter
     m_Metadata:
       m_Items: []
+  - m_Id: 327986743934976
+    m_Localized: Chiot
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328098656354304
+    m_Localized: Chaton
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328263068876800
+    m_Localized: Lapin
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328403859079168
+    m_Localized: Enregistrer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329151258886144
+    m_Localized: Nom de l'animal...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331793188061184
+    m_Localized: Conduire
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331938315173888
+    m_Localized: Mini-juex
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335262171070464
+    m_Localized: L'heure du bain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335545961873408
+    m_Localized: "Tu ne peux pas encore utiliser \xE7a"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336267197612032
+    m_Localized: Promenade du chien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336351687671808
+    m_Localized: Bain du chien
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336620181848064
+    m_Localized: "Tire \xE0 la corde"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336921408372736
+    m_Localized: Nourrir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337568170049536
+    m_Localized: Cache-cache
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337948442427392
+    m_Localized: Rapporter
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

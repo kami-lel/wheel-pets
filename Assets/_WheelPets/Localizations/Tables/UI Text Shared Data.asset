@@ -143,6 +143,66 @@ MonoBehaviour:
     m_Key: Exit Tex
     m_Metadata:
       m_Items: []
+  - m_Id: 327986743934976
+    m_Key: Puppy Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328098656354304
+    m_Key: Kitten Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328263068876800
+    m_Key: Rabbit Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 328403859079168
+    m_Key: Save Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 329151258886144
+    m_Key: Enter Pet Name Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331793188061184
+    m_Key: Driving Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 331938315173888
+    m_Key: Minigames Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335262171070464
+    m_Key: Bath Time Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 335545961873408
+    m_Key: You can't use that yet text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336267197612032
+    m_Key: Dog Walk Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336351687671808
+    m_Key: Dog Bath Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336620181848064
+    m_Key: Tug of War Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 336921408372736
+    m_Key: Feed Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337568170049536
+    m_Key: Hide-N-Seek Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337948442427392
+    m_Key: Fetch Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
