@@ -46,6 +46,42 @@ MonoBehaviour:
     m_Localized: SI
     m_Metadata:
       m_Items: []
+  - m_Id: 5490232590336
+    m_Localized: "Escondite\n\xBFD\xF3nde est\xE1 tu mascota?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8431786065920
+    m_Localized: Chimenea
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8667896020992
+    m_Localized: "Sof\xE1"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8839942176768
+    m_Localized: Silla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8942627127296
+    m_Localized: Mesa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9041268768768
+    m_Localized: Pausa
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9112471273472
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10164583071744
+    m_Localized: Reanudar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10293599862784
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

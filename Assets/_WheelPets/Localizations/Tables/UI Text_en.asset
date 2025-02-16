@@ -46,6 +46,44 @@ MonoBehaviour:
     m_Localized: No
     m_Metadata:
       m_Items: []
+  - m_Id: 5490232590336
+    m_Localized: 'Hide-n-Seek
+
+      Where''s your Pet?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8431786065920
+    m_Localized: Fireplace
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8667896020992
+    m_Localized: Couch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8839942176768
+    m_Localized: Chair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8942627127296
+    m_Localized: Table
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9041268768768
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9112471273472
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10164583071744
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10293599862784
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

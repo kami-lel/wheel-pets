@@ -46,6 +46,42 @@ MonoBehaviour:
     m_Localized: Non
     m_Metadata:
       m_Items: []
+  - m_Id: 5490232590336
+    m_Localized: "Cache-cache\nO\xF9 est ton animal?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8431786065920
+    m_Localized: "Chemin\xE9e"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8667896020992
+    m_Localized: "Canap\xE9"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8839942176768
+    m_Localized: Chaise
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8942627127296
+    m_Localized: Table
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9041268768768
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9112471273472
+    m_Localized: Revenir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10164583071744
+    m_Localized: Reprendre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10293599862784
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

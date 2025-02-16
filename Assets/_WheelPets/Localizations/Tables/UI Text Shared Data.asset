@@ -43,6 +43,42 @@ MonoBehaviour:
     m_Key: No Text
     m_Metadata:
       m_Items: []
+  - m_Id: 5490232590336
+    m_Key: Hide-n-Seek Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8431786065920
+    m_Key: Fireplace Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8667896020992
+    m_Key: Couch Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8839942176768
+    m_Key: Chair Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8942627127296
+    m_Key: Table Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9041268768768
+    m_Key: Pause Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9112471273472
+    m_Key: Back Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10164583071744
+    m_Key: Resume Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10293599862784
+    m_Key: Exit Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
