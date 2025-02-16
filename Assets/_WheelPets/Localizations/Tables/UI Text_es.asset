@@ -82,6 +82,18 @@ MonoBehaviour:
     m_Localized: Salir
     m_Metadata:
       m_Items: []
+  - m_Id: 11998836097024
+    m_Localized: "\xA1Vamos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12318630805504
+    m_Localized: "\xA1Juego Terminado!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12971042209792
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

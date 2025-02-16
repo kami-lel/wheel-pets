@@ -84,6 +84,18 @@ MonoBehaviour:
     m_Localized: Exit
     m_Metadata:
       m_Items: []
+  - m_Id: 11998836097024
+    m_Localized: Go!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12318630805504
+    m_Localized: Game Over!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12971042209792
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
