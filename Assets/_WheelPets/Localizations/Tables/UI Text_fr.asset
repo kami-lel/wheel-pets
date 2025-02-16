@@ -130,6 +130,22 @@ MonoBehaviour:
     m_Localized: "Fran\xE7ais"
     m_Metadata:
       m_Items: []
+  - m_Id: 24328466661376
+    m_Localized: Jouer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24434746130432
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24522155425792
+    m_Localized: Classement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24700920856576
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

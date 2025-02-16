@@ -127,6 +127,22 @@ MonoBehaviour:
     m_Key: French Text
     m_Metadata:
       m_Items: []
+  - m_Id: 24328466661376
+    m_Key: Play Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24434746130432
+    m_Key: Options Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24522155425792
+    m_Key: Leaderboard Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24700920856576
+    m_Key: Exit Tex
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

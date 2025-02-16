@@ -130,6 +130,22 @@ MonoBehaviour:
     m_Localized: "Franc\xE9s"
     m_Metadata:
       m_Items: []
+  - m_Id: 24328466661376
+    m_Localized: Jugar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24434746130432
+    m_Localized: Opciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24522155425792
+    m_Localized: "Clasificaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 24700920856576
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
