@@ -206,6 +206,14 @@ MonoBehaviour:
     m_Localized: Buscar
     m_Metadata:
       m_Items: []
+  - m_Id: 342146097676288
+    m_Localized: "Sim\xF3n dice"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 342815684755456
+    m_Localized: Encontrar golosinas
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
