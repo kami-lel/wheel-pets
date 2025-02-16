@@ -53,6 +53,9 @@ public class PlayerData
     public float sfxVolume = 1f;
     public float bgmVolume = 1f;
 
+    // Language preference
+    public string language = "en";
+
     // declare classes
     [Serializable]
     public class LeaderboardOtherPlayerData

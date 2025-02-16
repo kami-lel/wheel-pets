@@ -94,6 +94,42 @@ MonoBehaviour:
     m_Localized: Reiniciar
     m_Metadata:
       m_Items: []
+  - m_Id: 14994454151168
+    m_Localized: "Configuraci\xF3n del perfil"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15088922460160
+    m_Localized: Adoptar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15179351654400
+    m_Localized: Nombre de usuario
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15290542653440
+    m_Localized: "Configuraci\xF3n de audio"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15388928442368
+    m_Localized: "Configuraci\xF3n de idioma"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16773304614912
+    m_Localized: Ingresa texto...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17840427827200
+    m_Localized: "Ingl\xE9s"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17928839561216
+    m_Localized: "Espa\xF1ol"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18232653971456
+    m_Localized: "Franc\xE9s"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -91,6 +91,42 @@ MonoBehaviour:
     m_Key: Restart Text
     m_Metadata:
       m_Items: []
+  - m_Id: 14994454151168
+    m_Key: Profile settings Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15088922460160
+    m_Key: Adopt Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15179351654400
+    m_Key: Username Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15290542653440
+    m_Key: Audio Settings Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15388928442368
+    m_Key: Language Settings Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16773304614912
+    m_Key: Enter Text Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17840427827200
+    m_Key: English Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17928839561216
+    m_Key: Spanish Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 18232653971456
+    m_Key: French Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
