@@ -229,6 +229,21 @@ MonoBehaviour:
     m_Localized: Quiero... {0}!
     m_Metadata:
       m_Items: []
+  - m_Id: 379813141217280
+    m_Localized: "- {0} Juegos de tira y afloja ganados\n- {0} Veces al perro lavado\n-
+      {0} Veces al escondite ganado\n- {0} Cosm\xE9ticos desbloqueados"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381760392986624
+    m_Localized: "- {0} Se\xF1ales de giro a la izquierda\n- {0} Se\xF1ales de giro
+      a la derecha\n- {0} Veces estacionado sin tocar las l\xEDneas the lines\n-
+      {0} Se\xF1ales de pare detenidas"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382664559099904
+    m_Localized: '{0} Puntos'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

@@ -223,6 +223,18 @@ MonoBehaviour:
     m_Key: Feed Want Text
     m_Metadata:
       m_Items: []
+  - m_Id: 379813141217280
+    m_Key: Minigame Stats Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381760392986624
+    m_Key: Driving Stats Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382664559099904
+    m_Key: Leaderboard Points
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

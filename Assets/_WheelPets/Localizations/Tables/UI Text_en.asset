@@ -233,6 +233,33 @@ MonoBehaviour:
     m_Localized: I want... {0}!
     m_Metadata:
       m_Items: []
+  - m_Id: 379813141217280
+    m_Localized: '- {0} Tug Of War Games Won
+
+      - {0} Times Pet Washed
+
+      -
+      {0} Times Hide-N-Seek Won
+
+      - {0} Cosmetics Unlocked'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 381760392986624
+    m_Localized: '- {0} Left Turn Signals
+
+      - {0} Right Turn Signals
+
+      -
+      {0} Times Parked without touching the lines
+
+      - {0} Stop Signs Stopped
+      At'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 382664559099904
+    m_Localized: '{0} Points'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
