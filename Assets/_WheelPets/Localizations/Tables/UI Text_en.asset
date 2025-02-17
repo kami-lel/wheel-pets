@@ -243,7 +243,8 @@ MonoBehaviour:
 
       - {0} Cosmetics Unlocked'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190686
   - m_Id: 381760392986624
     m_Localized: '- {0} Left Turn Signals
 
@@ -255,11 +256,13 @@ MonoBehaviour:
       - {0} Stop Signs Stopped
       At'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190686
   - m_Id: 382664559099904
     m_Localized: '{0} Points'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190686
   references:
     version: 2
     RefIds:
@@ -270,3 +273,6 @@ MonoBehaviour:
         m_SharedEntries:
         - id: 357932379996160
         - id: 357950780407808
+        - id: 381760392986624
+        - id: 379813141217280
+        - id: 382664559099904

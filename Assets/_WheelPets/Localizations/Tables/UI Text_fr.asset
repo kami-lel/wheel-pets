@@ -233,17 +233,20 @@ MonoBehaviour:
     m_Localized: "- {0} Jeux de tir \xE0 la corde gagn\xE9s\n- {0} Fois l'animal
       lav\xE9\n- {0} Fois cache-cache gagn\xE9\n- {0} Cosm\xE9tiques d\xE9bloqu\xE9s"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190687
   - m_Id: 381760392986624
     m_Localized: "- {0} Signaux de virage \xE0 gauche\n- {0} Signaux de virage \xE0
       droite\n- {0} Fois gar\xE9 sans toucher les lignes the lines\n- {0} Arr\xEAts
       aux panneaux stop"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190687
   - m_Id: 382664559099904
     m_Localized: '{0} Points'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190687
   references:
     version: 2
     RefIds:
@@ -254,3 +257,6 @@ MonoBehaviour:
         m_SharedEntries:
         - id: 357932379996160
         - id: 357950780407808
+        - id: 381760392986624
+        - id: 379813141217280
+        - id: 382664559099904
