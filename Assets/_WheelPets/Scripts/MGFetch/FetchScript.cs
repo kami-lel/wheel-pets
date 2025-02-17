@@ -11,14 +11,14 @@ public class FetchScript : MonoBehaviour
     public GameObject goText;
     public GameObject gameOverText;
     public GameObject playAgainButton; // Add this line to declare the PlayAgainButton variable
-    public Text scoreText; // Add this line to declare the ScoreText variable
+    public LocalizedScoreText localizedScoreText; // Reference to the LocalizedScoreText script
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
 
     private float currentSpeed;
     private bool isMovingRight = true;
     private bool gameActive = false;
-    private int score = 0;
+    public int score = 0;
 
     private int timingBarLength = 100;
     public int lineLength = 10;
@@ -82,7 +82,7 @@ public class FetchScript : MonoBehaviour
             // Successful hit
             score++;
             currentSpeed += speedIncrement;
-            UpdateScoreText(); // Update the score text
+            localizedScoreText.IncrementScore(); // Update the localized score text
             ResetLine();
             PositionCheckArea();
         }
@@ -149,13 +149,5 @@ public class FetchScript : MonoBehaviour
         goText.SetActive(false);
         gameOverText.SetActive(true);
         playAgainButton.SetActive(true); // Enable the play again button
-    }
-
-    void UpdateScoreText()
-    {
-        if (scoreText != null)
-        {
-            scoreText.text = "Score: " + score;
-        }
     }
 }

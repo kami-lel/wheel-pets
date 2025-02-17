@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: fr
   m_SharedData: {fileID: 11400000, guid: 791866cbaf199d646968cfb7515ab202, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 1463304124142190687
   m_TableData:
   - m_Id: 14811987968
     m_Localized: "Pr\xEAt?"
@@ -214,6 +215,17 @@ MonoBehaviour:
     m_Localized: Trouver des friandises
     m_Metadata:
       m_Items: []
+  - m_Id: 357932379996160
+    m_Localized: 'Score: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 1463304124142190687
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1463304124142190687
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 
+        m_SharedEntries:
+        - id: 357932379996160

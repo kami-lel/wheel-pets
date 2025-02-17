@@ -211,6 +211,14 @@ MonoBehaviour:
     m_Key: Find Treats Text
     m_Metadata:
       m_Items: []
+  - m_Id: 357932379996160
+    m_Key: Fetch Score Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 357950780407808
+    m_Key: New Entry 1
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

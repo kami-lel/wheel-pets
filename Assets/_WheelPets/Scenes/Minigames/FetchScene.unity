@@ -216,9 +216,10 @@ MonoBehaviour:
   goText: {fileID: 1366304608}
   gameOverText: {fileID: 1732292777}
   playAgainButton: {fileID: 612366118}
-  scoreText: {fileID: 578971307}
+  localizedScoreText: {fileID: 578971310}
   initialSpeed: 1
   speedIncrement: 0.05
+  score: 0
   lineLength: 10
   checkAreaLength: 20
 --- !u!1 &259139140
@@ -697,7 +698,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 416408726}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: TMPro.TextMeshProUGUI, Unity.TextMeshPro
         m_MethodName: 
         m_Mode: 1
         m_Arguments:
@@ -976,6 +977,8 @@ GameObject:
   - component: {fileID: 578971306}
   - component: {fileID: 578971308}
   - component: {fileID: 578971307}
+  - component: {fileID: 578971309}
+  - component: {fileID: 578971310}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -1044,6 +1047,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578971305}
   m_CullTransparentMesh: 1
+--- !u!114 &578971309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578971305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:791866cbaf199d646968cfb7515ab202
+    m_TableEntryReference:
+      m_KeyId: 357932379996160
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 578971307}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
+--- !u!114 &578971310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578971305}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4d648faf13b3dd4eb89b02cbb6bf5f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizeStringEvent: {fileID: 578971309}
+  scoreText: {fileID: 578971307}
 --- !u!1 &612366118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,7 +1841,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 53.648, y: -22.6783}
+  m_AnchoredPosition: {x: 53.64795, y: -22.678284}
   m_SizeDelta: {x: 107.296, y: 45.3568}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1420882256
