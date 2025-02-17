@@ -20,6 +20,6 @@ public class StoreSceneScript : MonoBehaviour
 
     public void LeaveButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneManager.LoadScene("PlayScene");
     }
 }

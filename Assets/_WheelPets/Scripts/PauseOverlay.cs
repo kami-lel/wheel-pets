@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /* Implement Pause Function for any Scene
@@ -49,7 +50,7 @@ public class PauseOverlay : MonoBehaviour
 
     public void ExitButtonOnClick()
     {
-        Application.Quit();
+        SceneManager.LoadScene("PlayScene");
     }
 
     public void VolumeSliderOnValueChanged(System.Single value)
