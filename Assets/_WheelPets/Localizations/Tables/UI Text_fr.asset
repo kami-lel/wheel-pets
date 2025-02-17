@@ -220,6 +220,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 1463304124142190687
+  - m_Id: 357950780407808
+    m_Localized: 'Score: {0}'
+    m_Metadata:
+      m_Items:
+      - rid: 1463304124142190687
+  - m_Id: 369411346989056
+    m_Localized: Je veux... {0}!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
@@ -229,3 +238,4 @@ MonoBehaviour:
         m_Entries: 
         m_SharedEntries:
         - id: 357932379996160
+        - id: 357950780407808

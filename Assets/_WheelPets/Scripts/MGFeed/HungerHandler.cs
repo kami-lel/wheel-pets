@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UIElements;
 using UnityEngine.UI;
 using TMPro;
 
@@ -11,7 +10,7 @@ public class HungerHandler : MonoBehaviour
     [SerializeField] private float HungerTimer = 10f;
     [SerializeField] private float acceleration = .1f;
     [SerializeField] private float acceleration2 = .05f;
-    [SerializeField] private UnityEngine.UI.Slider HungerSlider;
+    [SerializeField] private Slider HungerSlider;
     private FoodObject.FoodTypes FoodIWant;
     private float timer = 0f;
     private int score = 0;
@@ -20,8 +19,8 @@ public class HungerHandler : MonoBehaviour
     [SerializeField] private TMP_Text textytoo;
     [SerializeField] private AudioSource audo;
     [SerializeField] private AudioSource audo2;
+    [SerializeField] private LocalizedGameText localizedGameText; // Reference to the LocalizedGameText script
 
-    // At some point, a singleton needs to be coordinated + implemented so that this can just search for it by name. For now, I will initialize an object for it.
     [SerializeField] GameObject Spawner;
     private void Start()
     {
@@ -36,14 +35,14 @@ public class HungerHandler : MonoBehaviour
         foods[5] = FoodObject.FoodTypes.Food6;
         int bleh = Random.Range(0, Spawner.GetComponent<SpawnHandler>().NumPrefabs);
         FoodIWant = foods[bleh];
-        texty.text = "I want... " + (bleh + 1).ToString() + "!";
-        textytoo.text = "Score: " + score.ToString();
+        localizedGameText.UpdateWantText(bleh); // Update the localized want text
+        localizedGameText.UpdateScoreText(); // Update the localized score text
     }
-    // Update is called once per frame
+
     void Update()
     {
         timer += Time.deltaTime;
-        if(timer > HungerTimer)
+        if (timer > HungerTimer)
         {
             CurrentHunger -= AmountChanged;
             HungerSlider.value = CurrentHunger;
@@ -51,7 +50,6 @@ public class HungerHandler : MonoBehaviour
             AmountChanged += acceleration;
             acceleration += acceleration2;
         }
-        
     }
 
     public void SatiateHunger(float FoodAmount, int ScoreAmount, FoodObject.FoodTypes foodType)
@@ -60,23 +58,24 @@ public class HungerHandler : MonoBehaviour
         {
             CurrentHunger += FoodAmount;
             score += ScoreAmount;
+            localizedGameText.IncrementScore(ScoreAmount); // Update the localized score text
             audo.Play();
         }
         else
         {
             CurrentHunger -= FoodAmount;
             score -= ScoreAmount;
+            localizedGameText.IncrementScore(-ScoreAmount); // Update the localized score text
             audo2.Play();
         }
-        if((CurrentHunger - Hunger) > .01f)
+        if ((CurrentHunger - Hunger) > .01f)
         {
             CurrentHunger = Hunger;
         }
         HungerSlider.value = CurrentHunger;
         int bleh = Random.Range(0, Spawner.GetComponent<SpawnHandler>().NumPrefabs);
         FoodIWant = foods[bleh];
-        texty.text = "I want... " + (bleh + 1).ToString() + "!";
+        localizedGameText.UpdateWantText(bleh); // Update the localized want text
         Spawner.GetComponent<SpawnHandler>().ResetFoods();
-        textytoo.text = "Score: " + score.ToString();
     }
 }
