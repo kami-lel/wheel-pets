@@ -37,6 +37,16 @@ public class PlayerData
     public int timesHideNSeekWon = 0;
     public int cosmeticsUnlocked = 0;
 
+    // Audio settings
+    public float musicVolume = 1f;
+    public float sfxVolume = 1f;
+    public bool muteMusic = false;
+    public bool muteSfx = false;
+
+    // fixme combine fileds before and after this line
+    public float mainVolume = 0.75f; // 0~1
+    public float bgmVolume = 1f;
+
     // statistics of mini games
     public MinigameStatistics statBath = new();
     public MinigameStatistics statFeed = new();
@@ -48,10 +58,6 @@ public class PlayerData
     // pet's data
     public bool hasAdoptPet = false;
     public PetData petData = new();
-
-    public float mainVolume = 0.75f; // 0~1
-    public float sfxVolume = 1f;
-    public float bgmVolume = 1f;
 
     // declare classes
     [Serializable]

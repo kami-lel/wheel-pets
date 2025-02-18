@@ -24,6 +24,7 @@ public class BathGame : SceneSwapping
     private bool isWaterUsed = false;
     private bool isTowelUsed = false;
     private bool isScissorsUsed = false;
+    [SerializeField] AudioSource backgroundMusic; // Audio source for background music
 
     void Start()
     {
@@ -36,6 +37,9 @@ public class BathGame : SceneSwapping
         {
             Debug.LogError("TextMeshProUGUI components not assigned in the Inspector!");
         }
+
+        // Play BG music on start
+        PlayBackgroundMusic();
     }
 
     public void BackButtonOnClick()
@@ -167,5 +171,15 @@ public class BathGame : SceneSwapping
         {
             messageText.text = message;
         }
+    }
+
+    void PlayBackgroundMusic()
+    {
+        backgroundMusic.Play();
+    }
+
+    void PauseBackgroundMusic()
+    {
+        backgroundMusic.Pause();
     }
 }
