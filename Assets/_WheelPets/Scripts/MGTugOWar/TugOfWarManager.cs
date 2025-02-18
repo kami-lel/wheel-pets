@@ -20,6 +20,7 @@ public class TugOfWarManager : MonoBehaviour
     public AudioSource buttonClickSound;
     public AudioSource cheeringSound;
     public AudioSource booingSound; // Add booingSound
+    public AudioSource BackgroundMusic; // add music
 
     private bool gameStarted = false;
     private bool gameWon = false;
@@ -38,6 +39,7 @@ public class TugOfWarManager : MonoBehaviour
         {
             noButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnNoButtonClick);
         }
+        BackgroundMusic.Play();
     }
 
     void Update()
