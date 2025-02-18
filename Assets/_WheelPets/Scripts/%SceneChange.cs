@@ -4,7 +4,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    // todo
+    public static void LoadPlayMenu()
+    {
+        SceneManager.LoadScene("PlayScene");
+    }
+
+    public static void LoadSelector()
+    {
+        SceneManager.LoadScene("_Selector");
+    }
 }
 
 // fixme do not use this class, just use SceneManager.LoadScene

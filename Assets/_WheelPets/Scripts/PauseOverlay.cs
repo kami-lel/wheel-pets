@@ -50,7 +50,7 @@ public class PauseOverlay : MonoBehaviour
 
     public void ExitButtonOnClick()
     {
-        SceneManager.LoadScene("PlayScene");
+        SceneChange.LoadPlayMenu();
     }
 
     public void VolumeSliderOnValueChanged(System.Single value)
