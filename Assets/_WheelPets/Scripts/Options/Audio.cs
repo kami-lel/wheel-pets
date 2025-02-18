@@ -3,13 +3,23 @@ using UnityEngine.UI;
 
 public class AudioControls : MonoBehaviour
 {
-    [SerializeField] private Slider musicVolumeSlider;
-    [SerializeField] private Slider sfxVolumeSlider;
-    [SerializeField] private Toggle muteMusicToggle;
-    [SerializeField] private Toggle muteSfxToggle;
+    [SerializeField]
+    private Slider musicVolumeSlider;
+
+    [SerializeField]
+    private Slider sfxVolumeSlider;
+
+    [SerializeField]
+    private Toggle muteMusicToggle;
+
+    [SerializeField]
+    private Toggle muteSfxToggle;
+
+    private PlayerData data;
 
     private void Start()
     {
+        data = Data.GetPlayerData();
         // Load settings from PlayerData
         LoadSettings();
 
@@ -25,8 +35,6 @@ public class AudioControls : MonoBehaviour
 
     private void LoadSettings()
     {
-        PlayerData data = PlayerData.Data;
-
         musicVolumeSlider.value = data.musicVolume;
         sfxVolumeSlider.value = data.sfxVolume;
         muteMusicToggle.isOn = data.muteMusic;
@@ -35,14 +43,12 @@ public class AudioControls : MonoBehaviour
 
     private void SaveSettings()
     {
-        PlayerData data = PlayerData.Data;
-
         data.musicVolume = musicVolumeSlider.value;
         data.sfxVolume = sfxVolumeSlider.value;
         data.muteMusic = muteMusicToggle.isOn;
         data.muteSfx = muteSfxToggle.isOn;
 
-        PlayerData.SaveToFile();
+        Data.SavePlayerDataToFile();
     }
 
     private void UpdateUI()
@@ -50,28 +56,28 @@ public class AudioControls : MonoBehaviour
         // Update the UI elements based on the current values
         if (musicVolumeSlider != null)
         {
-            musicVolumeSlider.value = PlayerData.Data.musicVolume;
+            musicVolumeSlider.value = data.musicVolume;
         }
 
         if (sfxVolumeSlider != null)
         {
-            sfxVolumeSlider.value = PlayerData.Data.sfxVolume;
+            sfxVolumeSlider.value = data.sfxVolume;
         }
 
         if (muteMusicToggle != null)
         {
-            muteMusicToggle.isOn = PlayerData.Data.muteMusic;
+            muteMusicToggle.isOn = data.muteMusic;
         }
 
         if (muteSfxToggle != null)
         {
-            muteSfxToggle.isOn = PlayerData.Data.muteSfx;
+            muteSfxToggle.isOn = data.muteSfx;
         }
     }
 
     public void SetMusicVolume(float value)
     {
-        PlayerData.Data.musicVolume = value;
+        data.musicVolume = value;
         SaveSettings();
         AudioManager.Instance.UpdateMusicVolume(value);
         // Update the UI
@@ -80,7 +86,7 @@ public class AudioControls : MonoBehaviour
 
     public void SetSFXVolume(float value)
     {
-        PlayerData.Data.sfxVolume = value;
+        data.sfxVolume = value;
         SaveSettings();
         AudioManager.Instance.UpdateSFXVolume(value);
         // Update the UI
@@ -89,7 +95,7 @@ public class AudioControls : MonoBehaviour
 
     public void SetMuteMusic(bool isMuted)
     {
-        PlayerData.Data.muteMusic = isMuted;
+        data.muteMusic = isMuted;
         SaveSettings();
         AudioManager.Instance.MuteMusic(isMuted);
         // Update the UI
@@ -98,7 +104,7 @@ public class AudioControls : MonoBehaviour
 
     public void SetMuteSFX(bool isMuted)
     {
-        PlayerData.Data.muteSfx = isMuted;
+        data.muteSfx = isMuted;
         SaveSettings();
         AudioManager.Instance.MuteSFX(isMuted);
         // Update the UI
