@@ -7,7 +7,6 @@ We are the Car *Owner* × Pet *Owner* × Studio *Owner*!
 A game and prototype for CMPM 171, UCSC
 
 TODO merge arts
-TODO merge driving sims
 FIXME store bad placeholder
 todo closet code
 todo store code
