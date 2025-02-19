@@ -8,7 +8,6 @@ A game and prototype for CMPM 171, UCSC
 
 todo closet code
 todo store code
-bug tug of war bgm not working
 fixme hide n seek unity file is not updated from walk-images
 
 ## References

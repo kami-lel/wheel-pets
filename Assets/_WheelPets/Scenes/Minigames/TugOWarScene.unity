@@ -824,7 +824,7 @@ MonoBehaviour:
   buttonClickSound: {fileID: 1897128503}
   cheeringSound: {fileID: 291144472}
   booingSound: {fileID: 1972591475}
-  BackgroundMusic: {fileID: 0}
+  BackgroundMusic: {fileID: 557860985}
 --- !u!1 &555609521
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,7 +928,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &557860985
 AudioSource:
   m_ObjectHideFlags: 0
