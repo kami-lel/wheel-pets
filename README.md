@@ -6,10 +6,10 @@ We are the Car *Owner* × Pet *Owner* × Studio *Owner*!
 
 A game and prototype for CMPM 171, UCSC
 
-TODO merge arts
 FIXME store bad placeholder
 todo closet code
 todo store code
+bug tug of war bgm not working
 
 ## References
 ___
