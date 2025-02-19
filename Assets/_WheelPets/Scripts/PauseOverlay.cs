@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /* Implement Pause Function for any Scene
@@ -50,7 +51,8 @@ public class PauseOverlay : MonoBehaviour
 
     public void ExitButtonOnClick()
     {
-        Application.Quit();
+        // fixme use scene changer
+        SceneManager.LoadScene("DrivingGameScene");
     }
 
     public void VolumeSliderOnValueChanged(System.Single value)
@@ -73,7 +75,8 @@ public class PauseOverlay : MonoBehaviour
         {
             Debug.Log("Player data loaded");
             Debug.Log(playerData);
-        } else
+        }
+        else
         {
             Debug.Log("Player data not loaded");
         }
