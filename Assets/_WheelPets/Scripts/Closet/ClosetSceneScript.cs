@@ -5,6 +5,6 @@ public class ClosetSceneScript : MonoBehaviour
 {
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("PlayScene");
+        SceneChange.LoadPlayMenu();
     }
 }

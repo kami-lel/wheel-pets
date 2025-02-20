@@ -5,22 +5,21 @@ public class TitleSceneScript : MonoBehaviour
 {
     public void ClickPlayButton()
     {
-        SceneManager.LoadScene("PlayScene");
+        SceneChange.LoadPlayMenu();
     }
 
     public void ClickOptionsButton()
     {
-        SceneManager.LoadScene("OptionsScene");
+        SceneChange.LoadOptions();
     }
 
     public void ClickLeaderboardButton()
     {
-        SceneManager.LoadScene("LeaderboardScene");
+        SceneChange.LoadLeaderboard();
     }
 
     public void ClickExitButton()
     {
-        // fixme use scene changer
-        SceneManager.LoadScene("DrivingGameScene");
+        SceneChange.LoadDrivingGame();
     }
 }

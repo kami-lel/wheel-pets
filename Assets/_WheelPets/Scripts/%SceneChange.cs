@@ -1,26 +1,77 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public static void LoadAdoption()
+    {
+        SceneManager.LoadScene("AdoptionScene");
+    }
+    public static void LoadCloset()
+    {
+        SceneManager.LoadScene("ClosetScene");
+    }
     public static void LoadDrivingGame()
     {
         SceneManager.LoadScene("DrivingGameScene");
+    }
+    public static void LoadLeaderboard()
+    {
+        SceneManager.LoadScene("LeaderboardScene");
+    }
+    public static void LoadOptions()
+    {
+        SceneManager.LoadScene("OptionsScene");
     }
     public static void LoadPlayMenu()
     {
         SceneManager.LoadScene("PlayScene");
     }
-
     public static void LoadSelector()
     {
         SceneManager.LoadScene("_Selector");
     }
-
-    public static void LoadOptions()
+    public static void LoadStore()
     {
-        SceneManager.LoadScene("OptionsScene");
+        SceneManager.LoadScene("StoreScene");
+    }
+    public static void LoadTitle()
+    {
+        SceneManager.LoadScene("TitleScene");
+    }
+
+
+    public static void LoadBath()
+    {
+        SceneManager.LoadScene("BathScene");
+    }
+    public static void LoadFeed()
+    {
+        SceneManager.LoadScene("FeedScene");
+    }
+    public static void LoadFetch()
+    {
+        SceneManager.LoadScene("FetchScene");
+    }
+    public static void LoadHideAndSeek()
+    {
+        SceneManager.LoadScene("HideNSeekScene");
+    }
+    public static void LoadTOW()
+    {
+        SceneManager.LoadScene("TugOWarScene");
+    }
+    public static void LoadWalk()
+    {
+        SceneManager.LoadScene("WalkScene");
+    }
+
+
+    public static void LoadFeedInstructions()
+    {
+        SceneManager.LoadScene("FeedingInstructions");
     }
 }
 

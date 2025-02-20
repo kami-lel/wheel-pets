@@ -44,7 +44,7 @@ public class BathGame : SceneSwapping
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     void Update()

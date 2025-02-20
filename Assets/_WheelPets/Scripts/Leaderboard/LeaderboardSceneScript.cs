@@ -46,7 +46,7 @@ public class LeaderboardManager : MonoBehaviour
 
     public void ClickBackButton()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneChange.LoadTitle();
     }
 
     private void PopulateLeaderboardUI()

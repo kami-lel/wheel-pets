@@ -10,11 +10,11 @@ public class FeedSceneScript : MonoBehaviour
 
     public void InfoButtonOnClick()
     {
-        SceneManager.LoadScene("FeedingInstructions");
+        SceneChange.LoadFeedInstructions();
     }
 
     public void BackGameButtonOnClick()
     {
-        SceneManager.LoadScene("FeedScene");
+        SceneChange.LoadFeed();
     }
 }

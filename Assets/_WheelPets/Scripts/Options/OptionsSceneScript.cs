@@ -7,11 +7,11 @@ public class OptionsSceneScript : MonoBehaviour
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneChange.LoadTitle();
     }
 
     public void AdoptButtonOnClick()
     {
-        SceneManager.LoadScene("AdoptionScene");
+        SceneChange.LoadAdoption();
     }
 }
