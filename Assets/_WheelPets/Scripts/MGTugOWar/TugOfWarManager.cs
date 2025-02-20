@@ -34,7 +34,7 @@ public class TugOfWarManager : MonoBehaviour
         StartCoroutine(StartGameRoutine());
 
         // Get reference to the TugOfWarSceneScript
-        sceneScript = FindObjectOfType<TugOfWarSceneScript>();
+        sceneScript = FindFirstObjectByType<TugOfWarSceneScript>();
 
         BackgroundMusic.Play();
     }

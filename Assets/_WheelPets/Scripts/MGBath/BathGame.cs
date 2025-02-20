@@ -36,8 +36,11 @@ public class BathGame : SceneSwapping
     [SerializeField]
     AudioSource backgroundMusic; // Audio source for background music
 
-    [SerializeField] private List<GameObject> draggableItems; // List of draggable items
-    [SerializeField] private float circleRadius = 200f; // Radius of the circle around the dog
+    [SerializeField]
+    private List<GameObject> draggableItems; // List of draggable items
+
+    [SerializeField]
+    private float circleRadius = 200f; // Radius of the circle around the dog
 
     private float timer = 0f;
     private bool gameActive = false;
@@ -68,7 +71,7 @@ public class BathGame : SceneSwapping
         gameActive = true;
 
         // Get reference to the BathSceneScript
-        sceneScript = FindObjectOfType<BathSceneScript>();
+        sceneScript = FindFirstObjectByType<BathSceneScript>();
     }
 
     public void BackButtonOnClick()
@@ -247,8 +250,12 @@ public class BathGame : SceneSwapping
 
         foreach (GameObject item in draggableItems)
         {
-            float itemPosX = targetObject.transform.position.x + Mathf.Sin(angle * Mathf.Deg2Rad) * circleRadius;
-            float itemPosY = targetObject.transform.position.y + Mathf.Cos(angle * Mathf.Deg2Rad) * circleRadius;
+            float itemPosX =
+                targetObject.transform.position.x
+                + Mathf.Sin(angle * Mathf.Deg2Rad) * circleRadius;
+            float itemPosY =
+                targetObject.transform.position.y
+                + Mathf.Cos(angle * Mathf.Deg2Rad) * circleRadius;
 
             Vector3 itemPos = new Vector3(itemPosX, itemPosY, 0);
             item.transform.position = itemPos;
@@ -274,14 +281,22 @@ public class BathGame : SceneSwapping
         PlayerData playerData = Data.GetPlayerData();
         if (timerText != null)
         {
-            timerText.text = "Lowest Time: " + playerData.bathMinigameBestTime.ToString("F2") + "s\nTime: " + timer.ToString("F2") + "s";
+            timerText.text =
+                "Lowest Time: "
+                + playerData.bathMinigameBestTime.ToString("F2")
+                + "s\nTime: "
+                + timer.ToString("F2")
+                + "s";
         }
     }
 
     private void SaveHighScore()
     {
         PlayerData playerData = Data.GetPlayerData();
-        if (timer < playerData.bathMinigameBestTime || playerData.bathMinigameBestTime == 60f)
+        if (
+            timer < playerData.bathMinigameBestTime
+            || playerData.bathMinigameBestTime == 60f
+        )
         {
             playerData.bathMinigameBestTime = timer;
             Data.SavePlayerDataToFile();
