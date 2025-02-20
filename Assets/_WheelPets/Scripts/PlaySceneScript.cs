@@ -5,26 +5,26 @@ public class PlaySceneScript : MonoBehaviour
 {
     public void ClickLeaveButton()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneChange.LoadTitle();
     }
 
     public void ClickStoreButton()
     {
-        SceneManager.LoadScene("StoreScene");
+        SceneChange.LoadStore();
     }
 
     public void ClickClosetButton()
     {
-        SceneManager.LoadScene("ClosetScene");
+        SceneChange.LoadCloset();
     }
 
     public void ClickMingamesButton()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     public void ClickSettingsButton()
     {
-        SceneManager.LoadScene("OptionsScene");
+        SceneChange.LoadOptions();
     }
 }

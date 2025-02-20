@@ -20,6 +20,6 @@ public class GameOverButtons : MonoBehaviour {
     public void ReturnToMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 }

@@ -5,16 +5,16 @@ public class FeedSceneScript : MonoBehaviour
 {
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     public void InfoButtonOnClick()
     {
-        SceneManager.LoadScene("FeedingInstructions");
+        SceneChange.LoadFeedInstructions();
     }
 
     public void BackGameButtonOnClick()
     {
-        SceneManager.LoadScene("FeedScene");
+        SceneChange.LoadFeed();
     }
 }

@@ -5,21 +5,21 @@ public class StoreSceneScript : MonoBehaviour
 {
     public void ClosetButtonOnClick()
     {
-        SceneManager.LoadScene("ClosetScene");
+        SceneChange.LoadCloset();
     }
 
     public void SettingsButtonOnClick()
     {
-        SceneManager.LoadScene("OptionsScene");
+        SceneChange.LoadOptions();
     }
 
     public void MinigameButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     public void LeaveButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadPlayMenu();
     }
 }

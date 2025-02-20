@@ -79,7 +79,7 @@ public class Hide_n_Seek : MonoBehaviour
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     void PlayBackgroundMusic()

@@ -76,7 +76,7 @@ public class AdoptionSceneScript : MonoBehaviour
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("OptionsScene");
+        SceneChange.LoadOptions();
     }
 
     private void OnApplicationQuit()

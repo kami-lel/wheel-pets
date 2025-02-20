@@ -253,7 +253,7 @@ public class TugOfWarManager : MonoBehaviour
         {
             buttonClickSound.Play();
         }
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     IEnumerator RestartGameAfterSound()
@@ -281,6 +281,6 @@ public class TugOfWarManager : MonoBehaviour
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 }

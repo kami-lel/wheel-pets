@@ -10,7 +10,7 @@ public class LoseHandler : MonoBehaviour
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
