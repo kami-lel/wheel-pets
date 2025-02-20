@@ -1,11 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class BathDraggables
-    : MonoBehaviour,
-        IPointerDownHandler,
-        IPointerUpHandler,
-        IDragHandler
+public class BathDraggables : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler
 {
     private RectTransform rectTransform;
     private Canvas canvas;
@@ -26,7 +22,7 @@ public class BathDraggables
     {
         isDragging = false;
 
-        BathGame bathGame = FindFirstObjectByType<BathGame>();
+        BathGame bathGame = FindObjectOfType<BathGame>();
         if (
             bathGame != null
             && RectTransformUtility.RectangleContainsScreenPoint(

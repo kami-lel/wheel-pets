@@ -38,6 +38,8 @@ public class PlayerData
     public int cosmeticsUnlocked = 0;
     // High score for the fetch minigame
     public int fetchHighScore = 0;
+    // Best time for the bath minigame
+    public float bathMinigameBestTime = 60f;
 
     // Audio settings
     public float musicVolume = 1f;
