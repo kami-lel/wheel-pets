@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
+// bug replace static pet with PetPrebab
 public class BathGame : SceneSwapping
 {
     [SerializeField]
@@ -24,7 +25,9 @@ public class BathGame : SceneSwapping
     private bool isWaterUsed = false;
     private bool isTowelUsed = false;
     private bool isScissorsUsed = false;
-    [SerializeField] AudioSource backgroundMusic; // Audio source for background music
+
+    [SerializeField]
+    AudioSource backgroundMusic; // Audio source for background music
 
     void Start()
     {
@@ -35,7 +38,9 @@ public class BathGame : SceneSwapping
 
         if (messageText == null || mistakeText == null)
         {
-            Debug.LogError("TextMeshProUGUI components not assigned in the Inspector!");
+            Debug.LogError(
+                "TextMeshProUGUI components not assigned in the Inspector!"
+            );
         }
 
         // Play BG music on start
@@ -106,7 +111,12 @@ public class BathGame : SceneSwapping
             }
             else if (itemTag == "water")
             {
-                if (isBrushUsed && isClippersUsed && isSoapUsed && !isWaterUsed)
+                if (
+                    isBrushUsed
+                    && isClippersUsed
+                    && isSoapUsed
+                    && !isWaterUsed
+                )
                 {
                     isWaterUsed = true;
                     DisplayMessage("The dog is rinsed.");

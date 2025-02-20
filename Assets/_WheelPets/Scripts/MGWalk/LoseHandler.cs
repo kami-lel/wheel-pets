@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// bug replace static pet with PetPrebab
+
 // a single loose
 public class LoseHandler : MonoBehaviour
 {

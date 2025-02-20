@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// bug replace static pet with PetPrebab
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
@@ -33,11 +34,15 @@ public class TugOfWarManager : MonoBehaviour
         // Add button listeners
         if (yesButton != null)
         {
-            yesButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnYesButtonClick);
+            yesButton
+                .GetComponent<UnityEngine.UI.Button>()
+                .onClick.AddListener(OnYesButtonClick);
         }
         if (noButton != null)
         {
-            noButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnNoButtonClick);
+            noButton
+                .GetComponent<UnityEngine.UI.Button>()
+                .onClick.AddListener(OnNoButtonClick);
         }
         BackgroundMusic.Play();
     }
@@ -68,7 +73,9 @@ public class TugOfWarManager : MonoBehaviour
     {
         if (ropeLine != null && gameStarted && !gameWon && !gameLost)
         {
-            ropeLine.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            ropeLine.transform.Translate(
+                Vector3.right * moveSpeed * Time.deltaTime
+            );
         }
         else
         {
@@ -155,7 +162,12 @@ public class TugOfWarManager : MonoBehaviour
         // Show Play Again Popup after 2 seconds
         StartCoroutine(ShowPlayAgainPopup());
 
-        Debug.Log("TriggerWinState - Game Started: " + gameStarted + ", gameWon: " + gameWon);
+        Debug.Log(
+            "TriggerWinState - Game Started: "
+                + gameStarted
+                + ", gameWon: "
+                + gameWon
+        );
     }
 
     public void TriggerLoseState()
@@ -190,7 +202,12 @@ public class TugOfWarManager : MonoBehaviour
         // Show Play Again Popup after 2 seconds
         StartCoroutine(ShowPlayAgainPopup());
 
-        Debug.Log("TriggerLoseState - Game Started: " + gameStarted + ", gameLost: " + gameLost);
+        Debug.Log(
+            "TriggerLoseState - Game Started: "
+                + gameStarted
+                + ", gameLost: "
+                + gameLost
+        );
     }
 
     void FreezeRopeLine()
@@ -209,7 +226,10 @@ public class TugOfWarManager : MonoBehaviour
     {
         if (flag != null && goalLine != null)
         {
-            if (flag.GetComponent<Collider2D>().IsTouching(goalLine.GetComponent<Collider2D>()))
+            if (
+                flag.GetComponent<Collider2D>()
+                    .IsTouching(goalLine.GetComponent<Collider2D>())
+            )
             {
                 Debug.Log("Flag touched the goal line");
                 TriggerWinState();
@@ -221,7 +241,11 @@ public class TugOfWarManager : MonoBehaviour
     {
         if (player != null && goalLine != null)
         {
-            if (player.GetComponent<Collider2D>().IsTouching(goalLine.GetComponent<Collider2D>()))
+            if (
+                player
+                    .GetComponent<Collider2D>()
+                    .IsTouching(goalLine.GetComponent<Collider2D>())
+            )
             {
                 Debug.Log("Player touched the goal line");
                 TriggerLoseState();

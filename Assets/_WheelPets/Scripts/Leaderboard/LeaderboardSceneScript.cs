@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// bug pet prefab not proper render
 public class LeaderboardManager : MonoBehaviour
 {
     [SerializeField]

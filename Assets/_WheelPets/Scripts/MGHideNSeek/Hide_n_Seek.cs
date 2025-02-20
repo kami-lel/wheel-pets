@@ -1,21 +1,35 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
 
+// bug replace static pet with PetPrebab
 public class Hide_n_Seek : MonoBehaviour
 {
     [SerializeField]
     private Button[] buttons; // Array of 4 buttons
     private int correctButtonIndex; // Index of the correct button
-    [SerializeField] private Sprite petSprite; 
 
-    [SerializeField] AudioSource backgroundMusic; // Audio source for background music
-    [SerializeField] AudioSource footstepAudio; // Audio source for footstep sfx
-    [SerializeField] AudioSource correctGuessAudio; // Audio source for correct guess
-    [SerializeField] AudioSource incorrectGuessAudio; // Audio source for incorrect guess
-    [SerializeField] AudioSource searching1Audio; // Audio source for searching1 sfx
-    [SerializeField] AudioSource searching2Audio; // Audio source for searching2 sfx
+    [SerializeField]
+    private Sprite petSprite;
+
+    [SerializeField]
+    AudioSource backgroundMusic; // Audio source for background music
+
+    [SerializeField]
+    AudioSource footstepAudio; // Audio source for footstep sfx
+
+    [SerializeField]
+    AudioSource correctGuessAudio; // Audio source for correct guess
+
+    [SerializeField]
+    AudioSource incorrectGuessAudio; // Audio source for incorrect guess
+
+    [SerializeField]
+    AudioSource searching1Audio; // Audio source for searching1 sfx
+
+    [SerializeField]
+    AudioSource searching2Audio; // Audio source for searching2 sfx
     private int delayGuess = 3; // Int to delay guess sound
     private AudioSource randomAudio;
 
@@ -40,7 +54,6 @@ public class Hide_n_Seek : MonoBehaviour
 
         // Play the background music on start
         PlayBackgroundMusic();
-
     }
 
     void AssignCorrectButton()
@@ -108,12 +121,10 @@ public class Hide_n_Seek : MonoBehaviour
         {
             randomAudio = footstepAudio;
         }
-
         else if (chooseAudio == 2)
         {
             randomAudio = searching1Audio;
         }
-
         else
         {
             randomAudio = searching2Audio;

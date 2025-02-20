@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// bug replace static pet with PetPrebab
 public class StoreSceneScript : MonoBehaviour
 {
     public void ClosetButtonOnClick()

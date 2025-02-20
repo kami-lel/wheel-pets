@@ -2,6 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// fixme make "back" button (e.g. in settings) actual go back
+// bug start the entire game in Driving Sim
 public class SceneChange : MonoBehaviour
 {
     public static void LoadAdoption()
