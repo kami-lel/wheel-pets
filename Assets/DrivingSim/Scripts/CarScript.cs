@@ -240,6 +240,7 @@ public class CarScript : MonoBehaviour
                         currentpoints += 10;
                         score += 10;
                         playerData.drivingPoint+=10;
+                        signstop.GetComponent<SignScript>().endpoint.GetComponent<AudioSource>().Play();
                     }
                     else if (signtype == 2 && spin < 0 && rturn)
                     {
@@ -248,6 +249,7 @@ public class CarScript : MonoBehaviour
                             currentpoints += 10;
                             score += 10;
                             playerData.drivingPoint += 10;
+                            signstop.GetComponent<SignScript>().endpoint.GetComponent<AudioSource>().Play();
                         }
                         else
                         {
@@ -261,6 +263,7 @@ public class CarScript : MonoBehaviour
                             currentpoints += 10;
                             score += 10;
                             playerData.drivingPoint += 10;
+                            signstop.GetComponent<SignScript>().endpoint.GetComponent<AudioSource>().Play();
                         }
                         else
                         {
