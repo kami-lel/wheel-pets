@@ -19,35 +19,23 @@ public class TugOfWarManager : MonoBehaviour
     public GameObject tapText;
     public GameObject winText;
     public GameObject losesText;
-    public GameObject playAgainPopup;
-    public GameObject yesButton;
-    public GameObject noButton;
-    public AudioSource buttonClickSound;
     public AudioSource cheeringSound;
-    public AudioSource booingSound; // Add booingSound
-    public AudioSource BackgroundMusic; // add music
+    public AudioSource booingSound;
+    public AudioSource BackgroundMusic;
 
     private bool gameStarted = false;
     private bool gameWon = false;
     private bool gameLost = false;
 
+    private TugOfWarSceneScript sceneScript;
+
     void Start()
     {
         StartCoroutine(StartGameRoutine());
 
-        // Add button listeners
-        if (yesButton != null)
-        {
-            yesButton
-                .GetComponent<UnityEngine.UI.Button>()
-                .onClick.AddListener(OnYesButtonClick);
-        }
-        if (noButton != null)
-        {
-            noButton
-                .GetComponent<UnityEngine.UI.Button>()
-                .onClick.AddListener(OnNoButtonClick);
-        }
+        // Get reference to the TugOfWarSceneScript
+        sceneScript = FindObjectOfType<TugOfWarSceneScript>();
+
         BackgroundMusic.Play();
     }
 
@@ -163,8 +151,11 @@ public class TugOfWarManager : MonoBehaviour
         // Freeze the RopeLine
         FreezeRopeLine();
 
-        // Show Play Again Popup after 2 seconds
-        StartCoroutine(ShowPlayAgainPopup());
+        // Show Play Again Button after 2 seconds
+        if (sceneScript != null)
+        {
+            sceneScript.ShowPlayAgainButton();
+        }
 
         Debug.Log(
             "TriggerWinState - Game Started: "
@@ -180,7 +171,7 @@ public class TugOfWarManager : MonoBehaviour
 
         // Stop the game
         gameStarted = false;
-        gameLost = true; // Set gameLost to true
+        gameLost = true;
 
         // Hide TapText
         if (tapText != null)
@@ -203,8 +194,11 @@ public class TugOfWarManager : MonoBehaviour
         // Freeze the RopeLine
         FreezeRopeLine();
 
-        // Show Play Again Popup after 2 seconds
-        StartCoroutine(ShowPlayAgainPopup());
+        // Show Play Again Button after 2 seconds
+        if (sceneScript != null)
+        {
+            sceneScript.ShowPlayAgainButton();
+        }
 
         Debug.Log(
             "TriggerLoseState - Game Started: "
@@ -257,58 +251,8 @@ public class TugOfWarManager : MonoBehaviour
         }
     }
 
-    IEnumerator ShowPlayAgainPopup()
-    {
-        yield return new WaitForSeconds(2.0f);
-        if (playAgainPopup != null)
-        {
-            playAgainPopup.SetActive(true);
-        }
-    }
-
-    void OnYesButtonClick()
-    {
-        if (buttonClickSound != null)
-        {
-            buttonClickSound.Play();
-        }
-        StartCoroutine(RestartGameAfterSound());
-    }
-
-    void OnNoButtonClick()
-    {
-        if (buttonClickSound != null)
-        {
-            buttonClickSound.Play();
-        }
-        SceneChange.LoadSelector();
-    }
-
-    IEnumerator RestartGameAfterSound()
-    {
-        if (buttonClickSound != null)
-        {
-            yield return new WaitForSeconds(buttonClickSound.clip.length);
-        }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    IEnumerator GoToDifferentSceneAfterSound()
-    {
-        if (buttonClickSound != null)
-        {
-            yield return new WaitForSeconds(buttonClickSound.clip.length);
-        }
-        SceneManager.LoadScene("DifferentSceneName"); // Replace with the actual scene name
-    }
-
     public bool IsGameStarted()
     {
         return gameStarted;
-    }
-
-    public void BackButtonOnClick()
-    {
-        SceneChange.LoadSelector();
     }
 }
