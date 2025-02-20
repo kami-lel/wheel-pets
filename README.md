@@ -6,10 +6,6 @@ We are the Car *Owner* × Pet *Owner* × Studio *Owner*!
 
 A game and prototype for CMPM 171, UCSC
 
-todo closet code
-todo store code
-fixme hide n seek unity file is not updated from walk-images
-
 ## References
 ___
 

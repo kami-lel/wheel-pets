@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// todo implement pet wearing hats, etc.
 public class PetScript : MonoBehaviour
 {
     [SerializeField]
