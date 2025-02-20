@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 // todo add start button
 // todo add more instruction for how to play the game
 // todo add high score function
+// todo Feels too easy to spam tap, Maybe make a restriction on tapping?
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
