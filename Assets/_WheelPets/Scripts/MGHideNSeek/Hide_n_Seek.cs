@@ -8,6 +8,7 @@ public class Hide_n_Seek : MonoBehaviour
     [SerializeField]
     private Button[] buttons; // Array of 4 buttons
     private int correctButtonIndex; // Index of the correct button
+    [SerializeField] private Sprite petSprite; 
 
     [SerializeField] AudioSource backgroundMusic; // Audio source for background music
     [SerializeField] AudioSource footstepAudio; // Audio source for footstep sfx
@@ -55,16 +56,21 @@ public class Hide_n_Seek : MonoBehaviour
         randomAudio.Play();
         randomAudio.SetScheduledEndTime(2 + AudioSettings.dspTime);
 
-
         // Check if the pressed button is the correct one
         if (buttonIndex == correctButtonIndex)
         {
+            // Replace button image with petSprite
+            buttons[buttonIndex].image.sprite = petSprite;
+
             // Play correct guess audio with delay
             StartCoroutine(PlayGuessSound(correctGuessAudio));
             Debug.Log("You search the area... You found your pet!");
         }
         else
         {
+            // Hide & disable the button
+            buttons[buttonIndex].gameObject.SetActive(false);
+
             // Play incorrect guess audio with delay
             StartCoroutine(PlayGuessSound(incorrectGuessAudio));
             Debug.Log($"You search the area but do not find your pet...");
