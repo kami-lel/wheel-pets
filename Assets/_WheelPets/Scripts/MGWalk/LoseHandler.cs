@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // bug replace static pet with PetPrebab
+// todo add start button
+// todo add more instruction for how to play the game
+// todo add high score function
 
 // a single loose
 public class LoseHandler : MonoBehaviour

@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 // bug replace static pet with PetPrebab
+// todo add start button
+// todo add more instruction for how to play the game
+// todo add high score function
 public class BathGame : SceneSwapping
 {
     [SerializeField]

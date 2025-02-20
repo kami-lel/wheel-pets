@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // bug replace static pet with PetPrebab
+// todo add start button
+// todo add more instruction for how to play the game
+// todo add high score function
 public class Hide_n_Seek : MonoBehaviour
 {
     [SerializeField]
