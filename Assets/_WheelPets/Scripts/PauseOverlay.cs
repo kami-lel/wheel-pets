@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 
 // todo applied to all scenes
+// bug doesn't stop sound & bgm
 public class PauseOverlay : MonoBehaviour
 {
     [SerializeField]
@@ -51,8 +52,7 @@ public class PauseOverlay : MonoBehaviour
 
     public void ExitButtonOnClick()
     {
-        // fixme use scene changer
-        SceneManager.LoadScene("DrivingGameScene");
+        SceneChange.LoadDrivingGame();
     }
 
     public void VolumeSliderOnValueChanged(System.Single value)

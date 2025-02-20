@@ -1,20 +1,38 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using System.Collections;
 
+// bug replace static pet with PetPrebab
+// todo add start button
+// todo add more instruction for how to play the game
+// todo add high score function
 public class Hide_n_Seek : MonoBehaviour
 {
     [SerializeField]
     private Button[] buttons; // Array of 4 buttons
     private int correctButtonIndex; // Index of the correct button
 
-    [SerializeField] AudioSource backgroundMusic; // Audio source for background music
-    [SerializeField] AudioSource footstepAudio; // Audio source for footstep sfx
-    [SerializeField] AudioSource correctGuessAudio; // Audio source for correct guess
-    [SerializeField] AudioSource incorrectGuessAudio; // Audio source for incorrect guess
-    [SerializeField] AudioSource searching1Audio; // Audio source for searching1 sfx
-    [SerializeField] AudioSource searching2Audio; // Audio source for searching2 sfx
+    [SerializeField]
+    private Sprite petSprite;
+
+    [SerializeField]
+    AudioSource backgroundMusic; // Audio source for background music
+
+    [SerializeField]
+    AudioSource footstepAudio; // Audio source for footstep sfx
+
+    [SerializeField]
+    AudioSource correctGuessAudio; // Audio source for correct guess
+
+    [SerializeField]
+    AudioSource incorrectGuessAudio; // Audio source for incorrect guess
+
+    [SerializeField]
+    AudioSource searching1Audio; // Audio source for searching1 sfx
+
+    [SerializeField]
+    AudioSource searching2Audio; // Audio source for searching2 sfx
     private int delayGuess = 3; // Int to delay guess sound
     private AudioSource randomAudio;
 
@@ -39,7 +57,6 @@ public class Hide_n_Seek : MonoBehaviour
 
         // Play the background music on start
         PlayBackgroundMusic();
-
     }
 
     void AssignCorrectButton()
@@ -55,16 +72,21 @@ public class Hide_n_Seek : MonoBehaviour
         randomAudio.Play();
         randomAudio.SetScheduledEndTime(2 + AudioSettings.dspTime);
 
-
         // Check if the pressed button is the correct one
         if (buttonIndex == correctButtonIndex)
         {
+            // Replace button image with petSprite
+            buttons[buttonIndex].image.sprite = petSprite;
+
             // Play correct guess audio with delay
             StartCoroutine(PlayGuessSound(correctGuessAudio));
             Debug.Log("You search the area... You found your pet!");
         }
         else
         {
+            // Hide & disable the button
+            buttons[buttonIndex].gameObject.SetActive(false);
+
             // Play incorrect guess audio with delay
             StartCoroutine(PlayGuessSound(incorrectGuessAudio));
             Debug.Log($"You search the area but do not find your pet...");
@@ -73,7 +95,7 @@ public class Hide_n_Seek : MonoBehaviour
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     void PlayBackgroundMusic()
@@ -102,12 +124,10 @@ public class Hide_n_Seek : MonoBehaviour
         {
             randomAudio = footstepAudio;
         }
-
         else if (chooseAudio == 2)
         {
             randomAudio = searching1Audio;
         }
-
         else
         {
             randomAudio = searching2Audio;

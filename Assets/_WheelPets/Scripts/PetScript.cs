@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// todo implement pet wearing hats, etc.
 public class PetScript : MonoBehaviour
 {
     [SerializeField]
@@ -29,6 +30,7 @@ public class PetScript : MonoBehaviour
         cat.SetActive(false);
         rabbit.SetActive(false);
         activePet.SetActive(true);
+        Debug.Log("Pet\tSelect: " + activePet);
 
         // update dominant color
         SpriteRenderer dominantRenderer = activePet

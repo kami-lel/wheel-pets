@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// bug pet prefab not proper render
 public class LeaderboardManager : MonoBehaviour
 {
     [SerializeField]
@@ -46,7 +47,7 @@ public class LeaderboardManager : MonoBehaviour
 
     public void ClickBackButton()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneChange.LoadTitle();
     }
 
     private void PopulateLeaderboardUI()

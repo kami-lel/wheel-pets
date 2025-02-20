@@ -2,6 +2,11 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// bug replace static pet with PetPrebab
+// todo add start button
+// todo add more instruction for how to play the game
+// todo add high score function
+// todo Feels too easy to spam tap, Maybe make a restriction on tapping?
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
@@ -14,31 +19,23 @@ public class TugOfWarManager : MonoBehaviour
     public GameObject tapText;
     public GameObject winText;
     public GameObject losesText;
-    public GameObject playAgainPopup;
-    public GameObject yesButton;
-    public GameObject noButton;
-    public AudioSource buttonClickSound;
     public AudioSource cheeringSound;
-    public AudioSource booingSound; // Add booingSound
-    public AudioSource BackgroundMusic; // add music
+    public AudioSource booingSound;
+    public AudioSource BackgroundMusic;
 
     private bool gameStarted = false;
     private bool gameWon = false;
     private bool gameLost = false;
 
+    private TugOfWarSceneScript sceneScript;
+
     void Start()
     {
         StartCoroutine(StartGameRoutine());
 
-        // Add button listeners
-        if (yesButton != null)
-        {
-            yesButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnYesButtonClick);
-        }
-        if (noButton != null)
-        {
-            noButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnNoButtonClick);
-        }
+        // Get reference to the TugOfWarSceneScript
+        sceneScript = FindFirstObjectByType<TugOfWarSceneScript>();
+
         BackgroundMusic.Play();
     }
 
@@ -68,7 +65,9 @@ public class TugOfWarManager : MonoBehaviour
     {
         if (ropeLine != null && gameStarted && !gameWon && !gameLost)
         {
-            ropeLine.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            ropeLine.transform.Translate(
+                Vector3.right * moveSpeed * Time.deltaTime
+            );
         }
         else
         {
@@ -152,10 +151,18 @@ public class TugOfWarManager : MonoBehaviour
         // Freeze the RopeLine
         FreezeRopeLine();
 
-        // Show Play Again Popup after 2 seconds
-        StartCoroutine(ShowPlayAgainPopup());
+        // Show Play Again Button after 2 seconds
+        if (sceneScript != null)
+        {
+            sceneScript.ShowPlayAgainButton();
+        }
 
-        Debug.Log("TriggerWinState - Game Started: " + gameStarted + ", gameWon: " + gameWon);
+        Debug.Log(
+            "TriggerWinState - Game Started: "
+                + gameStarted
+                + ", gameWon: "
+                + gameWon
+        );
     }
 
     public void TriggerLoseState()
@@ -164,7 +171,7 @@ public class TugOfWarManager : MonoBehaviour
 
         // Stop the game
         gameStarted = false;
-        gameLost = true; // Set gameLost to true
+        gameLost = true;
 
         // Hide TapText
         if (tapText != null)
@@ -187,10 +194,18 @@ public class TugOfWarManager : MonoBehaviour
         // Freeze the RopeLine
         FreezeRopeLine();
 
-        // Show Play Again Popup after 2 seconds
-        StartCoroutine(ShowPlayAgainPopup());
+        // Show Play Again Button after 2 seconds
+        if (sceneScript != null)
+        {
+            sceneScript.ShowPlayAgainButton();
+        }
 
-        Debug.Log("TriggerLoseState - Game Started: " + gameStarted + ", gameLost: " + gameLost);
+        Debug.Log(
+            "TriggerLoseState - Game Started: "
+                + gameStarted
+                + ", gameLost: "
+                + gameLost
+        );
     }
 
     void FreezeRopeLine()
@@ -209,7 +224,10 @@ public class TugOfWarManager : MonoBehaviour
     {
         if (flag != null && goalLine != null)
         {
-            if (flag.GetComponent<Collider2D>().IsTouching(goalLine.GetComponent<Collider2D>()))
+            if (
+                flag.GetComponent<Collider2D>()
+                    .IsTouching(goalLine.GetComponent<Collider2D>())
+            )
             {
                 Debug.Log("Flag touched the goal line");
                 TriggerWinState();
@@ -221,7 +239,11 @@ public class TugOfWarManager : MonoBehaviour
     {
         if (player != null && goalLine != null)
         {
-            if (player.GetComponent<Collider2D>().IsTouching(goalLine.GetComponent<Collider2D>()))
+            if (
+                player
+                    .GetComponent<Collider2D>()
+                    .IsTouching(goalLine.GetComponent<Collider2D>())
+            )
             {
                 Debug.Log("Player touched the goal line");
                 TriggerLoseState();
@@ -229,58 +251,8 @@ public class TugOfWarManager : MonoBehaviour
         }
     }
 
-    IEnumerator ShowPlayAgainPopup()
-    {
-        yield return new WaitForSeconds(2.0f);
-        if (playAgainPopup != null)
-        {
-            playAgainPopup.SetActive(true);
-        }
-    }
-
-    void OnYesButtonClick()
-    {
-        if (buttonClickSound != null)
-        {
-            buttonClickSound.Play();
-        }
-        StartCoroutine(RestartGameAfterSound());
-    }
-
-    void OnNoButtonClick()
-    {
-        if (buttonClickSound != null)
-        {
-            buttonClickSound.Play();
-        }
-        SceneManager.LoadScene("_SelectorScene");
-    }
-
-    IEnumerator RestartGameAfterSound()
-    {
-        if (buttonClickSound != null)
-        {
-            yield return new WaitForSeconds(buttonClickSound.clip.length);
-        }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    IEnumerator GoToDifferentSceneAfterSound()
-    {
-        if (buttonClickSound != null)
-        {
-            yield return new WaitForSeconds(buttonClickSound.clip.length);
-        }
-        SceneManager.LoadScene("DifferentSceneName"); // Replace with the actual scene name
-    }
-
     public bool IsGameStarted()
     {
         return gameStarted;
-    }
-
-    public void BackButtonOnClick()
-    {
-        SceneManager.LoadScene("_SelectorScene");
     }
 }

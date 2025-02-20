@@ -1,17 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// bug pet prefab is not properly rendered
 public class OptionsSceneScript : MonoBehaviour
 {
     // todo connect more buttons, etc.
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneChange.LoadTitle();
     }
 
     public void AdoptButtonOnClick()
     {
-        SceneManager.LoadScene("AdoptionScene");
+        SceneChange.LoadAdoption();
     }
 }
