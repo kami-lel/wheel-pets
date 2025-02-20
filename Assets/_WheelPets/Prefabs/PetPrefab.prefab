@@ -526,7 +526,7 @@ GameObject:
   - component: {fileID: 8024345900797591538}
   - component: {fileID: 7329160227167309070}
   m_Layer: 0
-  m_Name: Pet
+  m_Name: PetPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
