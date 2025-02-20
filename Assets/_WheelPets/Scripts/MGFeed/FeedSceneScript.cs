@@ -7,4 +7,14 @@ public class FeedSceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("_SelectorScene");
     }
+
+    public void InfoButtonOnClick()
+    {
+        SceneManager.LoadScene("FeedingInstructions");
+    }
+
+    public void BackGameButtonOnClick()
+    {
+        SceneManager.LoadScene("FeedScene");
+    }
 }

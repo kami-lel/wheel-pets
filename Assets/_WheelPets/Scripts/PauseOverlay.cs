@@ -23,6 +23,7 @@ public class PauseOverlay : MonoBehaviour
     public void PauseButtonOnClick()
     {
         // display the overlay
+        Debug.Log(playerData);
         container.SetActive(true);
 
         // stop game stime
@@ -50,7 +51,8 @@ public class PauseOverlay : MonoBehaviour
 
     public void ExitButtonOnClick()
     {
-        SceneChange.LoadPlayMenu();
+        // fixme use scene changer
+        SceneManager.LoadScene("DrivingGameScene");
     }
 
     public void VolumeSliderOnValueChanged(System.Single value)
@@ -69,6 +71,15 @@ public class PauseOverlay : MonoBehaviour
     void Start()
     {
         playerData = Data.GetPlayerData();
+        if (playerData != null)
+        {
+            Debug.Log("Player data loaded");
+            Debug.Log(playerData);
+        }
+        else
+        {
+            Debug.Log("Player data not loaded");
+        }
 
         // pause screen is disabled by default
         container.SetActive(false);

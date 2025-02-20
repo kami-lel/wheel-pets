@@ -20,6 +20,7 @@ public class TitleSceneScript : MonoBehaviour
 
     public void ClickExitButton()
     {
-        Application.Quit();
+        // fixme use scene changer
+        SceneManager.LoadScene("DrivingGameScene");
     }
 }

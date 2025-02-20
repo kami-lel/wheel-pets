@@ -3,18 +3,26 @@ using UnityEngine.UI;
 
 public class AudioControls : MonoBehaviour
 {
-    [SerializeField] private Slider musicVolumeSlider;
-    [SerializeField] private Slider sfxVolumeSlider;
-    [SerializeField] private Toggle muteMusicToggle;
-    [SerializeField] private Toggle muteSfxToggle;
+    [SerializeField]
+    private Slider musicVolumeSlider;
 
-    public float MusicVolume = 1f;
-    public float SFXVolume = 1f;
-    public bool MuteMusic = false;
-    public bool MuteSFX = false;
+    [SerializeField]
+    private Slider sfxVolumeSlider;
+
+    [SerializeField]
+    private Toggle muteMusicToggle;
+
+    [SerializeField]
+    private Toggle muteSfxToggle;
+
+    private PlayerData data;
 
     private void Start()
     {
+        data = Data.GetPlayerData();
+        // Load settings from PlayerData
+        LoadSettings();
+
         // Initialize the sliders and toggles
         musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxVolumeSlider.onValueChanged.AddListener(SetSFXVolume);
@@ -22,13 +30,25 @@ public class AudioControls : MonoBehaviour
         muteSfxToggle.onValueChanged.AddListener(SetMuteSFX);
 
         // Set initial values
-        musicVolumeSlider.value = MusicVolume;
-        sfxVolumeSlider.value = SFXVolume;
-        muteMusicToggle.isOn = MuteMusic;
-        muteSfxToggle.isOn = MuteSFX;
-
-        // Update the UI
         UpdateUI();
+    }
+
+    private void LoadSettings()
+    {
+        musicVolumeSlider.value = data.musicVolume;
+        sfxVolumeSlider.value = data.sfxVolume;
+        muteMusicToggle.isOn = data.muteMusic;
+        muteSfxToggle.isOn = data.muteSfx;
+    }
+
+    private void SaveSettings()
+    {
+        data.musicVolume = musicVolumeSlider.value;
+        data.sfxVolume = sfxVolumeSlider.value;
+        data.muteMusic = muteMusicToggle.isOn;
+        data.muteSfx = muteSfxToggle.isOn;
+
+        Data.SavePlayerDataToFile();
     }
 
     private void UpdateUI()
@@ -36,49 +56,57 @@ public class AudioControls : MonoBehaviour
         // Update the UI elements based on the current values
         if (musicVolumeSlider != null)
         {
-            musicVolumeSlider.value = MusicVolume;
+            musicVolumeSlider.value = data.musicVolume;
         }
 
         if (sfxVolumeSlider != null)
         {
-            sfxVolumeSlider.value = SFXVolume;
+            sfxVolumeSlider.value = data.sfxVolume;
         }
 
         if (muteMusicToggle != null)
         {
-            muteMusicToggle.isOn = MuteMusic;
+            muteMusicToggle.isOn = data.muteMusic;
         }
 
         if (muteSfxToggle != null)
         {
-            muteSfxToggle.isOn = MuteSFX;
+            muteSfxToggle.isOn = data.muteSfx;
         }
     }
 
     public void SetMusicVolume(float value)
     {
-        MusicVolume = value;
+        data.musicVolume = value;
+        SaveSettings();
+        AudioManager.Instance.UpdateMusicVolume(value);
         // Update the UI
         UpdateUI();
     }
 
     public void SetSFXVolume(float value)
     {
-        SFXVolume = value;
+        data.sfxVolume = value;
+        SaveSettings();
+        AudioManager.Instance.UpdateSFXVolume(value);
         // Update the UI
         UpdateUI();
     }
 
     public void SetMuteMusic(bool isMuted)
     {
-        MuteMusic = isMuted;
+        data.muteMusic = isMuted;
+        SaveSettings();
+        AudioManager.Instance.MuteMusic(isMuted);
         // Update the UI
         UpdateUI();
     }
 
     public void SetMuteSFX(bool isMuted)
     {
-        MuteSFX = isMuted;
+        data.muteSfx = isMuted;
+        SaveSettings();
+        AudioManager.Instance.MuteSFX(isMuted);
         // Update the UI
         UpdateUI();
     }

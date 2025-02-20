@@ -53,5 +53,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_WheelPets/Scenes/PlayScene.unity
     guid: 6409b4fb9b54249e49c15d4262187265
+  - enabled: 1
+    path: Assets/_WheelPets/Scenes/Minigames/FeedingInstructions.unity
+    guid: c4f8cb15801775f458af7686764d425c
+  - enabled: 1
+    path: Assets/DrivingSim/Scenes/DrivingGameScene.unity
+    guid: 7e6cbac9e7daf4ad4be82b661c4f3374
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

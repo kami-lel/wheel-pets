@@ -20,6 +20,7 @@ public class HungerHandler : MonoBehaviour
     [SerializeField] private TMP_Text textytoo;
     [SerializeField] private AudioSource audo;
     [SerializeField] private AudioSource audo2;
+    public GameOverManager gameOverManager;
 
     // At some point, a singleton needs to be coordinated + implemented so that this can just search for it by name. For now, I will initialize an object for it.
     [SerializeField] GameObject Spawner;
@@ -51,7 +52,10 @@ public class HungerHandler : MonoBehaviour
             AmountChanged += acceleration;
             acceleration += acceleration2;
         }
-        
+        if (CurrentHunger <= 0f)
+        {
+            gameOverManager.ShowGameOver();
+        }
     }
 
     public void SatiateHunger(float FoodAmount, int ScoreAmount, FoodObject.FoodTypes foodType)
