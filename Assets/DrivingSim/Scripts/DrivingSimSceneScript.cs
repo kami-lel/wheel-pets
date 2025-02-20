@@ -6,6 +6,8 @@ using UnityEngine;
 // fixme Convey clearly that  you have points to spend in the pet game as a result of what you did in the driving game
 // fixme Make the turn signal UI intuitive through art dept
 // fixme Add Instructions for controls
+// fixme connect data w/ pet game
+// bug runtime error The referenced script (Unknown) on this Behaviour is missing!
 public class DrivingSimSceneScript : MonoBehaviour
 {
     public void ExitSimluationButtonOnClick()
