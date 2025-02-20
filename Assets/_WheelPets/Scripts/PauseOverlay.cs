@@ -11,6 +11,7 @@ using UnityEngine.UI;
 
 
 // todo applied to all scenes
+// bug doesn't stop sound & bgm
 public class PauseOverlay : MonoBehaviour
 {
     [SerializeField]
