@@ -60,6 +60,6 @@ public class LoseHandler : MonoBehaviour
         Debug.Log("Playing LoseSound...");
         yield return new WaitForSeconds(LoseSound.clip.length); // Wait for the sound to finish
         Debug.Log("Sound finished. Loading Menu scene...");
-        SceneManager.LoadScene("PetGameScene");
+        SceneManager.LoadScene("_SelectorScene");
     }
 }
