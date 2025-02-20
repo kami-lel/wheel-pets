@@ -3,10 +3,11 @@ using UnityEngine;
 public class ShakyScript : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private float posx;
+    public float posx;
     private float posy;
     public bool active = false;
     public float degree = 1;
+    public float degreefactor;
 
     public float xrad = 0.5f;
     public float yrad = 0.5f;
@@ -32,8 +33,10 @@ public class ShakyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (active)
         {
+            degreefactor = 1;
             if (xcool > 0)
             {
                 xamount = 0;
@@ -65,6 +68,7 @@ public class ShakyScript : MonoBehaviour
                     xamount = 0;
                     xcool = Random.Range(12, 120);
                     xprog = 1;
+
                 }
                 else
                 {
@@ -153,7 +157,7 @@ public class ShakyScript : MonoBehaviour
 
 
 
-            transform.position = new Vector3(transform.position.x + Mathf.Sqrt(2f)*Mathf.Sin(Mathf.PI*xprog) * xamount, transform.position.y + Mathf.Sqrt(2f) * Mathf.Sin(Mathf.PI * yprog) * yamount, 0); 
+            transform.position = new Vector3(transform.position.x + Mathf.Sqrt(2f)*Mathf.Sin(Mathf.PI*xprog) * xamount* degreefactor, transform.position.y + Mathf.Sqrt(2f) * Mathf.Sin(Mathf.PI * yprog) * yamount* degreefactor, 0); 
             //Debug.Log(transform.position.x);
         }
         
