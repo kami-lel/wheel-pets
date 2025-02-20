@@ -48,7 +48,7 @@ public class LoseHandler : MonoBehaviour
             else
             {
                 Debug.LogError("LoseSound AudioSource is not assigned.");
-                SceneManager.LoadScene("PetGameScene"); // Fallback if sound is not assigned
+                SceneManager.LoadScene("PlayScene"); // Fallback if sound is not assigned
             }
         }
     }
