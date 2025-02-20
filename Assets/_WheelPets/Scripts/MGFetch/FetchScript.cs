@@ -19,6 +19,7 @@ public class FetchScript : MonoBehaviour
     private bool isMovingRight = true;
     private bool gameActive = false;
     private int score = 0;
+    private int highScore = 0;
 
     private int timingBarLength = 100;
     public int lineLength = 10;
@@ -32,6 +33,10 @@ public class FetchScript : MonoBehaviour
         ResetLine();
         PositionCheckArea();
         StartCoroutine(StartGameRoutine());
+
+        // Fetch the high score from PlayerData
+        highScore = Data.GetPlayerData().fetchHighScore;
+        UpdateScoreText();
     }
 
     void Update()
@@ -83,8 +88,7 @@ public class FetchScript : MonoBehaviour
             score++;
             currentSpeed += speedIncrement;
             UpdateScoreText(); // Update the score text
-            ResetLine();
-            PositionCheckArea();
+            PositionCheckArea(); // Reposition the check area without resetting the line
         }
         else
         {
@@ -92,6 +96,14 @@ public class FetchScript : MonoBehaviour
             gameActive = false;
             ShowGameOverText();
             Debug.Log("Game Over! Final Score: " + score);
+
+            // Update the high score if the current score is higher
+            if (score > highScore)
+            {
+                highScore = score;
+                Data.GetPlayerData().fetchHighScore = highScore;
+                Data.SavePlayerDataToFile();
+            }
         }
     }
 
@@ -155,7 +167,7 @@ public class FetchScript : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + score;
+            scoreText.text = "High Score: " + highScore + "\nScore: " + score;
         }
     }
 }

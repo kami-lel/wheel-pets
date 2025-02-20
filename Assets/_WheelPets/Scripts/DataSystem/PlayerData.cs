@@ -36,6 +36,8 @@ public class PlayerData
     public int timesPetWashed = 0;
     public int timesHideNSeekWon = 0;
     public int cosmeticsUnlocked = 0;
+    // High score for the fetch minigame
+    public int fetchHighScore = 0;
 
     // Audio settings
     public float musicVolume = 1f;

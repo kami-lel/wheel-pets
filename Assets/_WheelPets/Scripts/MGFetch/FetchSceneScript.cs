@@ -7,4 +7,9 @@ public class FetchSceneScript : MonoBehaviour
     {
         SceneManager.LoadScene("_SelectorScene");
     }
+
+    public void PlayAgainButtonOnClick()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
