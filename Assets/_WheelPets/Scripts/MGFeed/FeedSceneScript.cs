@@ -5,7 +5,7 @@ public class FeedSceneScript : MonoBehaviour
 {
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     public void InfoButtonOnClick()

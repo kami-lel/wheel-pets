@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
+    public static void LoadDrivingGame()
+    {
+        SceneManager.LoadScene("DrivingGameScene");
+    }
     public static void LoadPlayMenu()
     {
         SceneManager.LoadScene("PlayScene");
@@ -12,6 +16,11 @@ public class SceneChange : MonoBehaviour
     public static void LoadSelector()
     {
         SceneManager.LoadScene("_Selector");
+    }
+
+    public static void LoadOptions()
+    {
+        SceneManager.LoadScene("OptionsScene");
     }
 }
 
