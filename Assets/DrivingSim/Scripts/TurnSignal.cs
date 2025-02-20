@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class TurnSignal : MonoBehaviour
 {
-    private int signspeed = 150;
-    private int signprog = 0;
+    private float signspeed = 0.3f;
+    private float signprog = 0;
     public bool turning = false;
     private SpriteRenderer sr;
     private KeyHole hole;
@@ -23,7 +23,7 @@ public class TurnSignal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        signprog++;
+        signprog+= Time.deltaTime;
         if (turning && signprog > signspeed)
         {
             signprog = 0;
@@ -38,8 +38,10 @@ public class TurnSignal : MonoBehaviour
                 sr.color = new Color(1, 1, 1, 1);
             }
         }
-
-        
+        else if (!turning && sr.color != new Color(1, 1, 1, 1))
+        {
+            sr.color = new Color(1, 1, 1, 1);
+        }
     }
 
     private void OnMouseDown()

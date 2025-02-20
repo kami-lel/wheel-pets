@@ -30,7 +30,7 @@ public class WheelTurn : MonoBehaviour
         if (lturn && !rturn)
         {
             spin++;
-            transform.Rotate(new Vector3(0, 0, 1));
+            transform.Rotate(new Vector3(0, 0, 2));
             if (!wheelsound.isPlaying)
             {
                 wheelsound.Play();
@@ -40,7 +40,7 @@ public class WheelTurn : MonoBehaviour
         else if (rturn && !lturn)
         {
             spin--;
-            transform.Rotate(new Vector3(0, 0, -1));
+            transform.Rotate(new Vector3(0, 0, -2));
             if (!wheelsound.isPlaying)
             {
                 wheelsound.Play();

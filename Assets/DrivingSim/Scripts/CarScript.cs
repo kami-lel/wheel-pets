@@ -8,6 +8,8 @@ public class CarScript : MonoBehaviour
     Transform turnl;
     Transform turnr;
     Transform screen;
+    Transform signstop;
+    Transform signturn;
 
     GameObject cloud1;
     GameObject cloud2;
@@ -19,6 +21,19 @@ public class CarScript : MonoBehaviour
     ShakyScript sroad;
     ShakyScript shill;
     ShakyScript sland;
+
+
+
+    public int score = 0; // When the car is in park, you can see your score.
+    public int maxscore = 0; // This is the maximum amount of points you could have earned during this scene. Each perfect encounter is +3, each flawed is +1.
+    public int turns = 0; // The number of turns (from turn sign) where you turned on your turn signal before turning.
+    public int stops = 0; // The number of stop signs where you stopped before passing the sign.
+    public int parks = 0; // The number of times you put the car in park after making sure it was stopped.
+
+
+    private int signprog = 0; // From 0 to 100, fades from 0-20, and you have until 80 (80 to 100 fades out) to respond.
+    private int signtype = 0; // 0 is cooldown, 1 is stop, 2 is turn right, 3 is turn left.
+    private int currentpoints = 0; // this is added to score each event, but by being more than zero, you know the event has concluded.
     
     private bool lturn = false;
     private bool rturn = false;
@@ -40,6 +55,7 @@ public class CarScript : MonoBehaviour
     void Start()
     {
         wheel = GameObject.Find("carwheel_0");
+        
         keyhole = transform.Find("carkey_0");
         stick = transform.Find("carshift_0").GetComponent<ParkStick>();
         turnl = transform.Find("carturn_0");
@@ -50,6 +66,8 @@ public class CarScript : MonoBehaviour
         cloud2 = GameObject.Find("bgcloud_1");
         hill = GameObject.Find("bghill_1");
         road = GameObject.Find("bgroad_0");
+        signstop = road.transform.Find("signstop");
+        signturn = road.transform.Find("signturn");
         land = GameObject.Find("bgland_0");
         sky = GameObject.Find("bgsky_0");
         hillspeed = hill.GetComponent<ShakyScript>().degree;
@@ -174,9 +192,11 @@ public class CarScript : MonoBehaviour
 
         if (speed > 0)
         {
-            if (Random.Range(1, 50) == 50)
+            if (Random.Range(1, 50) == 49)
             {
                 playerData.drivingPoint++;
+                score++;
+                maxscore++;
             }
             playerData.drivingMiles += 0.0001f;
             if (!drivesound.isPlaying)
