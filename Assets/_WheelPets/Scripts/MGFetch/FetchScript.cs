@@ -12,6 +12,7 @@ public class FetchScript : MonoBehaviour
     public GameObject gameOverText;
     public GameObject playAgainButton; // Add this line to declare the PlayAgainButton variable
     public Text scoreText; // Add this line to declare the ScoreText variable
+    public Text timerText; // Add this line to declare the TimerText variable
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
 
@@ -20,6 +21,7 @@ public class FetchScript : MonoBehaviour
     private bool gameActive = false;
     private int score = 0;
     private int highScore = 0;
+    private float timer = 5.0f; // Initialize the timer to 5 seconds
 
     private int timingBarLength = 100;
     public int lineLength = 10;
@@ -37,6 +39,7 @@ public class FetchScript : MonoBehaviour
         // Fetch the high score from PlayerData
         highScore = Data.GetPlayerData().fetchHighScore;
         UpdateScoreText();
+        UpdateTimerText(); // Update the timer text
     }
 
     void Update()
@@ -47,6 +50,26 @@ public class FetchScript : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 CheckHit();
+            }
+
+            // Update the timer
+            timer -= Time.deltaTime;
+            UpdateTimerText();
+
+            if (timer <= 0)
+            {
+                // Game over
+                gameActive = false;
+                ShowGameOverText();
+                Debug.Log("Game Over! Timer reached 0.");
+
+                // Update the high score if the current score is higher
+                if (score > highScore)
+                {
+                    highScore = score;
+                    Data.GetPlayerData().fetchHighScore = highScore;
+                    Data.SavePlayerDataToFile();
+                }
             }
         }
     }
@@ -89,6 +112,10 @@ public class FetchScript : MonoBehaviour
             currentSpeed += speedIncrement;
             UpdateScoreText(); // Update the score text
             PositionCheckArea(); // Reposition the check area without resetting the line
+
+            // Reset the timer to 5 seconds
+            timer = 5.0f;
+            UpdateTimerText();
         }
         else
         {
@@ -168,6 +195,14 @@ public class FetchScript : MonoBehaviour
         if (scoreText != null)
         {
             scoreText.text = "High Score: " + highScore + "\nScore: " + score;
+        }
+    }
+
+    void UpdateTimerText()
+    {
+        if (timerText != null)
+        {
+            timerText.text = "Time: " + Mathf.Ceil(timer).ToString();
         }
     }
 }
