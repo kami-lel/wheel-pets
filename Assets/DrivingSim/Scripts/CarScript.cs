@@ -10,6 +10,7 @@ public class CarScript : MonoBehaviour
     Transform screen;
     Transform signstop;
     Transform signturn;
+    Transform currentsign;
 
     GameObject cloud1;
     GameObject cloud2;
@@ -42,7 +43,7 @@ public class CarScript : MonoBehaviour
     private bool accel = false;
     private float basespeed = 50;
     private float maxspeed = 100;
-    private float speed = 0;
+    public float speed = 0;
 
     private float hillspeed = 0;
     private float landspeed = 0;
@@ -58,8 +59,8 @@ public class CarScript : MonoBehaviour
         
         keyhole = transform.Find("carkey_0");
         stick = transform.Find("carshift_0").GetComponent<ParkStick>();
-        turnl = transform.Find("carturn_0");
-        turnr = transform.Find("carturn_1");
+        turnl = transform.Find("carturn_1");
+        turnr = transform.Find("carturn_0");
         screen = transform.Find("carscreen_0");
 
         cloud1 = GameObject.Find("bgcloud_0");
@@ -102,9 +103,9 @@ public class CarScript : MonoBehaviour
             if (brakes)
             {
                 // Grind to halt
-                speed = speed / 1.01f;
+                speed = speed / 1.14f;
 
-                if (speed < 0.001f)
+                if (speed < 0.4f)
                 {
                     speed = 0;
                 }
@@ -192,16 +193,111 @@ public class CarScript : MonoBehaviour
 
         if (speed > 0)
         {
-            if (Random.Range(1, 50) == 49)
+            if (signprog == 0 && Random.Range(1, 150) == 49)
             {
-                playerData.drivingPoint++;
-                score++;
-                maxscore++;
+                
+                signprog = 1;
+                signtype = Random.Range(1, 4);
+
+                if (signtype == 1)
+                {
+                    currentsign = signstop;
+                }
+                else if (signtype == 2)
+                {
+                    currentsign = signturn;
+                    signturn.GetComponent<SpriteRenderer>().flipX = false;
+                }
+                else
+                {
+                    currentsign = signturn;
+                    signturn.GetComponent<SpriteRenderer>().flipX = true;
+                }
+
+                currentsign.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1,((float) signprog ) / 20f);
+                currentsign.position = currentsign.GetComponent<SignScript>().startpos + (currentsign.GetComponent<SignScript>().endpoint.position - currentsign.GetComponent<SignScript>().startpos) / 100;
+                currentsign.localScale = currentsign.GetComponent<SignScript>().startscale + (currentsign.GetComponent<SignScript>().endpoint.localScale - currentsign.GetComponent<SignScript>().startscale) / 100;
+
             }
+            else if (signprog > 0 && signprog < 20 )
+            {
+                signprog++;
+                currentsign.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, ((float)signprog) / 20f);
+                currentsign.position = currentsign.GetComponent<SignScript>().startpos + (currentsign.GetComponent<SignScript>().endpoint.position - currentsign.GetComponent<SignScript>().startpos) * signprog / 100;
+                currentsign.localScale = currentsign.GetComponent<SignScript>().startscale + (currentsign.GetComponent<SignScript>().endpoint.localScale - currentsign.GetComponent<SignScript>().startscale) * signprog / 100;
+
+            }
+            else if (signprog > 0 && signprog < 80)
+            {
+                signprog++;
+                currentsign.position = currentsign.GetComponent<SignScript>().startpos + (currentsign.GetComponent<SignScript>().endpoint.position - currentsign.GetComponent<SignScript>().startpos) * signprog / 100;
+                currentsign.localScale = currentsign.GetComponent<SignScript>().startscale + (currentsign.GetComponent<SignScript>().endpoint.localScale - currentsign.GetComponent<SignScript>().startscale) * signprog / 100;
+
+                if (currentpoints == 0)
+                {
+                    if (signtype == 1 && brakes)
+                    {
+                        currentpoints += 10;
+                        score += 10;
+                        playerData.drivingPoint+=10;
+                    }
+                    else if (signtype == 2 && spin < 0 && rturn)
+                    {
+                        if (turnr.GetComponent<TurnSignal>().turning)
+                        {
+                            currentpoints += 10;
+                            score += 10;
+                            playerData.drivingPoint += 10;
+                        }
+                        else
+                        {
+                            currentpoints--;
+                        }
+                    }
+                    else if (signtype == 3 && spin > 0 && lturn)
+                    {
+                        if (turnl.GetComponent<TurnSignal>().turning)
+                        {
+                            currentpoints += 10;
+                            score += 10;
+                            playerData.drivingPoint += 10;
+                        }
+                        else
+                        {
+                            currentpoints--;
+                        }
+                    }
+                }
+            }
+            else if (signprog > 0 && signprog < 100)
+            {
+                signprog++;
+                currentsign.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f - (((float)signprog - 80f) / 20f));
+                currentsign.position = currentsign.GetComponent<SignScript>().startpos + (currentsign.GetComponent<SignScript>().endpoint.position - currentsign.GetComponent<SignScript>().startpos) * signprog / 100;
+                currentsign.localScale = currentsign.GetComponent<SignScript>().startscale + (currentsign.GetComponent<SignScript>().endpoint.localScale - currentsign.GetComponent<SignScript>().startscale) * signprog / 100;
+
+
+
+                if (signprog == 100)
+                {
+                    signprog = 0;
+                    signtype = 0;
+                    if (currentpoints == 0)
+                    {
+                        maxscore += 10;
+                    }
+                    currentpoints = 0;
+                    
+                    
+                }
+            }
+
             playerData.drivingMiles += 0.0001f;
             if (!drivesound.isPlaying)
             {
                 
+                //score++;
+                //maxscore++;
                 //drivesound.Play();
             }
         else

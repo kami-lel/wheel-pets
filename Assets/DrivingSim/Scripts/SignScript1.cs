@@ -5,6 +5,7 @@ public class SignScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Vector3 startpos;
     public Vector3 startscale;
+    public Transform endpoint;
     void Start()
     {
         startscale = transform.localScale;
