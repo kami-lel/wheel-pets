@@ -53,7 +53,7 @@ public class LoseHandler : MonoBehaviour
             else
             {
                 Debug.LogError("LoseSound AudioSource is not assigned.");
-                SceneManager.LoadScene("PlayScene"); // Fallback if sound is not assigned
+                SceneChange.LoadPlayMenu(); // Fallback if sound is not assigned
             }
         }
     }
@@ -65,6 +65,6 @@ public class LoseHandler : MonoBehaviour
         Debug.Log("Playing LoseSound...");
         yield return new WaitForSeconds(LoseSound.clip.length); // Wait for the sound to finish
         Debug.Log("Sound finished. Loading Menu scene...");
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 }

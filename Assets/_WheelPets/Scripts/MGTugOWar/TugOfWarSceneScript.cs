@@ -50,6 +50,6 @@ public class TugOfWarSceneScript : MonoBehaviour
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 }

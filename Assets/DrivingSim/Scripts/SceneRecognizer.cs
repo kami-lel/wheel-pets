@@ -49,7 +49,7 @@ public class SceneRecognizer : MonoBehaviour
         if (sr.color == new Color(1,1,1,1))
         {
             //Debug.Log("Why not?");
-            SceneManager.LoadScene("TitleScene");
+            SceneChange.LoadTitle();
             //GameObject.Find("SceneManager").GetComponent<SceneChange>().lo
         }
     }
