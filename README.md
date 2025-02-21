@@ -6,6 +6,8 @@ We are the Car *Owner* × Pet *Owner* × Studio *Owner*!
 
 A game and prototype for CMPM 171, UCSC
 
+FIXME cleanup not-used scripts & assets
+
 ## References
 ___
 

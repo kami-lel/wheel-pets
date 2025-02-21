@@ -1,8 +1,8 @@
 using UnityEngine;
 
-// todo make this work across scenes?
-// bug is game over overlay bug fixed?
-// fixme gameover overlay needs a background color
+// TODO make this work across scenes?
+// BUG is game over overlay bug fixed?
+// FIXME gameover overlay needs a background color
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverPrefab;

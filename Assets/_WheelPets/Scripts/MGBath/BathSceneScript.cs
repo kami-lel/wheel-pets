@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
-// bug tools hide instruction text
+// BUG tools hide instruction text
 public class BathSceneScript : MonoBehaviour
 {
     public GameObject playAgainButton;

@@ -10,8 +10,8 @@ using UnityEngine.UI;
  */
 
 
-// todo applied to all scenes
-// bug doesn't stop sound & bgm
+// TODO check if applied to all scenes correctly;w
+// BUG currently it doesn't stop sound & bgm
 public class PauseOverlay : MonoBehaviour
 {
     [SerializeField]
@@ -59,7 +59,7 @@ public class PauseOverlay : MonoBehaviour
     public void VolumeSliderOnValueChanged(System.Single value)
     {
         playerData.mainVolume = value;
-        // todo inform audio player to update volume
+        // TODO inform audio player to update volume
 
         if (Debug.isDebugBuild)
         {

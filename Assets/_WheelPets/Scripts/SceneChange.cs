@@ -2,8 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// fixme make "back" button (e.g. in settings) actual go back
-// bug start the entire game in Driving Sim
+// FIXME make "back" button (e.g. in settings) actual go back
+// BUG start the entire game in Driving Sim
 public class SceneChange : MonoBehaviour
 {
     public static void LoadAdoption()
@@ -87,7 +87,7 @@ public class SceneChange : MonoBehaviour
     }
 }
 
-// fixme do not use this class, just use SceneManager.LoadScene
+// FIXME rm this class is not in use anymore
 public class SceneSwapping : MonoBehaviour
 {
     public AudioSource buttonClickSound;

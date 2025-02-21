@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// bug replace static pet with PetPrebab
+// BUG replace static pet with PetPrebab
 public class PlaySceneScript : MonoBehaviour
 {
     public void ClickLeaveButton()

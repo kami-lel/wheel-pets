@@ -30,14 +30,16 @@ public class PlayerData
     public int timesParkedWithoutTouchingLines = 0;
     public int stopSignsStoppedAt = 0;
 
-    // fixme better data structure
+    // FIXME better data structure
     //  minigame statistics
     public int tugOfWarGamesWon = 0;
     public int timesPetWashed = 0;
     public int timesHideNSeekWon = 0;
     public int cosmeticsUnlocked = 0;
+
     // High score for the fetch minigame
     public int fetchHighScore = 0;
+
     // Best time for the bath minigame
     public float bathMinigameBestTime = 60f;
 
@@ -47,7 +49,7 @@ public class PlayerData
     public bool muteMusic = false;
     public bool muteSfx = false;
 
-    // fixme combine fileds before and after this line
+    // FIXME combine fileds before and after this line
     public float mainVolume = 0.75f; // 0~1
     public float bgmVolume = 1f;
 
@@ -71,6 +73,8 @@ public class PlayerData
         public int point;
     }
 
+    // TODO add high score
+    // FIXME makesure these are connected with the game
     [Serializable]
     public class MinigameStatistics
     {

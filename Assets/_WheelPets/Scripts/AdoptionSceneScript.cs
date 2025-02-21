@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// todo only "save" button confirms pet look change
-// fixme combine all functions into option scene, then remove AdoptionScene
+// TODO only "save" button confirms pet look change
+// FIXME combine all functions into option scene, then remove AdoptionScene
 public class AdoptionSceneScript : MonoBehaviour
 {
     [SerializeField]
