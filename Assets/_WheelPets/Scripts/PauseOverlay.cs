@@ -53,7 +53,7 @@ public class PauseOverlay : MonoBehaviour
     public void ExitButtonOnClick()
     {
         Time.timeScale = 1f;
-        SceneChange.LoadDrivingGame();
+        SceneChange.LoadSelector();
     }
 
     public void VolumeSliderOnValueChanged(System.Single value)
