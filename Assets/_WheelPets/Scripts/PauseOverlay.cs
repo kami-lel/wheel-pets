@@ -51,6 +51,7 @@ public class PauseOverlay : MonoBehaviour
 
     public void ExitButtonOnClick()
     {
+        Time.timeScale = 1f;
         SceneChange.LoadDrivingGame();
     }
 
@@ -86,6 +87,7 @@ public class PauseOverlay : MonoBehaviour
 
     void OnApplicationQuit()
     {
+        Time.timeScale = 1f;
         Data.SavePlayerDataToFile();
     }
 }
