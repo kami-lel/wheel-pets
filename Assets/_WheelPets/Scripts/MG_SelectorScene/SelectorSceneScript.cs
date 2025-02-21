@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// todo implement better ui design for selection screen, e.g. screen shots of minigames
 public class MGSelectorSceneScript : MonoBehaviour
 {
     [SerializeField]

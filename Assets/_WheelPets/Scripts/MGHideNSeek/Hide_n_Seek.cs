@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // bug replace static pet with PetPrebab
+// bug implment visual cue for find/not find dog (in addition to audio cue) for accesssibility reason
 // todo add start button
 // todo add more instruction for how to play the game
 // todo add high score function
+// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
 public class Hide_n_Seek : MonoBehaviour
 {
     [SerializeField]

@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 // todo add start button
 // todo add more instruction for how to play the game
 // todo add high score function
+// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
 public class FeedSceneScript : MonoBehaviour
 {
     public void BackButtonOnClick()
