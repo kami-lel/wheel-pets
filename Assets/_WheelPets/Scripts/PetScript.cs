@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 
 // todo show name of the pet above
+// TODO remove unusable pet accessories
 public class PetScript : MonoBehaviour
 {
     [SerializeField]
