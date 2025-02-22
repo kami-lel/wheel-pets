@@ -7,7 +7,7 @@ public class ReAdoptPopUpScript : MonoBehaviour
         // clear all data about the pet
         Data.GetPlayerData().petData = new();
 
-        // SceneChange.LoadAdoption();
+        SceneChange.LoadAdoption();
     }
 
     public void OnClickCancelButton()
