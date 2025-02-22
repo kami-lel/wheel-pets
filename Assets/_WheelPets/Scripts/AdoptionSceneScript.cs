@@ -48,18 +48,27 @@ public class AdoptionSceneScript : MonoBehaviour
         );
     }
 
+    /// <summary>
+    /// Handles the Puppy button click event. Sets the pet type to Dog
+    /// </summary>
     public void PuppyButtonOnClick()
     {
         petData.animalType = PlayerData.AnimalType.Dog;
         petPrefabObject.UpdateLook();
     }
 
+    /// <summary>
+    /// Handles the Kitten button click event. Sets the pet type to Cat
+    /// </summary>
     public void KittenButtonOnClick()
     {
         petData.animalType = PlayerData.AnimalType.Cat;
         petPrefabObject.UpdateLook();
     }
 
+    /// <summary>
+    /// Handles the Rabbit button click event. Sets the pet type to Rabbit
+    /// </summary>
     public void RabbitButtonOnClick()
     {
         petData.animalType = PlayerData.AnimalType.Rabbit;
