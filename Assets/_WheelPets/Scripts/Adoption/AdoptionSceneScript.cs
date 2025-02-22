@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // TODO only "save" button confirms pet look change
@@ -80,11 +79,7 @@ public class AdoptionSceneScript : MonoBehaviour
 
     public void SaveButtonOnClick()
     {
-        // todo add feedback
-        if (petNameField.text != "")
-        {
-            petData.name = petNameField.text;
-        }
+        confirmPopUp.SetActive(true);
     }
 
     public void BackButtonOnClick()
