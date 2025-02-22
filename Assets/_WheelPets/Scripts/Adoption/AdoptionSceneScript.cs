@@ -2,8 +2,6 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-// TODO only "save" button confirms pet look change
-// TODO make adoption scene part of game loop
 public class AdoptionSceneScript : MonoBehaviour
 {
     [SerializeField]
