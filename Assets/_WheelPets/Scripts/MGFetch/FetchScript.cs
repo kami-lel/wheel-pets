@@ -1,6 +1,7 @@
 using UnityEngine;
-using UnityEngine.UI; // Add this line to use the Text component
+using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class FetchScript : MonoBehaviour
 {
@@ -10,15 +11,15 @@ public class FetchScript : MonoBehaviour
     public GameObject readyText;
     public GameObject goText;
     public GameObject gameOverText;
-    public GameObject playAgainButton; // Add this line to declare the PlayAgainButton variable
-    public Text scoreText; // Add this line to declare the ScoreText variable
-    public Text timerText; // Add this line to declare the TimerText variable
+    public GameObject playAgainButton;
+    public Text scoreText;
+    public Text timerText;
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
-    public GameObject ballPrefab; // Add this line to declare the BallPrefab variable
-    public Transform ballSpawnPoint; // Add this line to declare the BallSpawnPoint variable
-    public Transform dogTransform; // Add this line to declare the DogTransform variable
-    public Vector3 dogPositionOffset; // Add this line to declare the DogPositionOffset variable
+    public GameObject ballPrefab;
+    public Transform ballSpawnPoint;
+    public Transform dogTransform;
+    public Vector3 dogPositionOffset;
 
     private float currentSpeed;
     private bool isMovingRight = true;
@@ -32,6 +33,8 @@ public class FetchScript : MonoBehaviour
     public int checkAreaLength = 20;
     private float linePosition = 0f;
     private int checkAreaPosition = 0;
+
+    private List<GameObject> activeBalls = new List<GameObject>(); // List to track active balls
 
     void Start()
     {
@@ -218,6 +221,7 @@ public class FetchScript : MonoBehaviour
         if (ballPrefab != null && ballSpawnPoint != null && dogTransform != null)
         {
             GameObject ball = Instantiate(ballPrefab, ballSpawnPoint.position, Quaternion.identity);
+            activeBalls.Add(ball); // Add the ball to the list of active balls
             StartCoroutine(MoveBall(ball));
         }
     }
@@ -237,6 +241,20 @@ public class FetchScript : MonoBehaviour
             yield return null;
         }
 
+        activeBalls.Remove(ball); // Remove the ball from the list of active balls
         Destroy(ball); // Destroy the ball when it reaches the dog
+    }
+
+    public void FreezeGame()
+    {
+        gameActive = false;
+        StopAllCoroutines();
+
+        // Destroy all active balls
+        foreach (GameObject ball in activeBalls)
+        {
+            Destroy(ball);
+        }
+        activeBalls.Clear();
     }
 }
