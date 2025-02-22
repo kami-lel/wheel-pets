@@ -36,7 +36,11 @@ public class Hide_n_Seek : MonoBehaviour
     [SerializeField]
     AudioSource searching2Audio; // Audio source for searching2 sfx
     private int delayGuess = 3; // Int to delay guess sound
-    private AudioSource randomAudio;
+    private AudioSource randomAudio; // Stores random audio to be played on button press
+
+    private bool buttonCooldown = false; 
+
+    private int delayButtonPress = 5; // Int to delay button pressw
 
     void Start()
     {
@@ -69,29 +73,36 @@ public class Hide_n_Seek : MonoBehaviour
 
     void OnButtonPressed(int buttonIndex)
     {
-        // Choose random search audio and play it for 2 seconds
-        chooseRandomAudio();
-        randomAudio.Play();
-        randomAudio.SetScheduledEndTime(2 + AudioSettings.dspTime);
+        if (!buttonCooldown)
+        { 
+            // Choose random search audio and play it for 2 seconds
+            chooseRandomAudio();
+            randomAudio.Play();
+            randomAudio.SetScheduledEndTime(2 + AudioSettings.dspTime);
 
-        // Check if the pressed button is the correct one
-        if (buttonIndex == correctButtonIndex)
-        {
-            // Replace button image with petSprite
-            buttons[buttonIndex].image.sprite = petSprite;
+            // Check if the pressed button is the correct one
+            if (buttonIndex == correctButtonIndex)
+            {
+                // Replace button image with petSprite
+                buttons[buttonIndex].image.sprite = petSprite;
 
-            // Play correct guess audio with delay
-            StartCoroutine(PlayGuessSound(correctGuessAudio));
-            Debug.Log("You search the area... You found your pet!");
-        }
-        else
-        {
-            // Hide & disable the button
-            buttons[buttonIndex].gameObject.SetActive(false);
+                // Play correct guess audio with delay
+                StartCoroutine(PlayGuessSound(correctGuessAudio));
+                Debug.Log("You search the area... You found your pet!");
+            }
 
-            // Play incorrect guess audio with delay
-            StartCoroutine(PlayGuessSound(incorrectGuessAudio));
-            Debug.Log($"You search the area but do not find your pet...");
+            else
+            {
+                // Hide & disable the button
+                buttons[buttonIndex].gameObject.SetActive(false);
+
+                // Play incorrect guess audio with delay
+                StartCoroutine(PlayGuessSound(incorrectGuessAudio));
+                Debug.Log($"You search the area but do not find your pet...");
+            }
+
+            StartCoroutine(ResetButtonCooldown());
+            buttonCooldown = true;
         }
     }
 
@@ -115,6 +126,12 @@ public class Hide_n_Seek : MonoBehaviour
         //delay guess audio by 3 seconds before playing it
         yield return new WaitForSeconds(delayGuess);
         guessSound.Play();
+    }
+
+    IEnumerator ResetButtonCooldown()
+    {
+        yield return new WaitForSeconds(delayButtonPress);
+        buttonCooldown = false;
     }
 
     void chooseRandomAudio()
