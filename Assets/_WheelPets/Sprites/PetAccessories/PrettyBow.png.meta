@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      PrettyBow_0: -6730164916194166310
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      RainbowHeadband_0: 107288629005542233
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
