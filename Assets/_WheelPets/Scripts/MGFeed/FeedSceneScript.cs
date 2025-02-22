@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 // BUG replace static pet with PetPrebab
 // fixme Confusion on how to play because there were no numbers
 // BUG Feeding the correct food would cause it to break
-// TODO add start button
 // todo add more instruction for how to play the game
 // todo add high score function
 // fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
