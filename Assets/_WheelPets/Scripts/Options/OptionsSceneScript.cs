@@ -7,15 +7,40 @@ using UnityEngine.SceneManagement;
 // TODO reset all data option
 public class OptionsSceneScript : MonoBehaviour
 {
-    // TODO connect more buttons, etc. & combine w/ other code
+    // todo connect more buttons, etc. & combine w/ other code
 
-    public void BackButtonOnClick()
+    public void OnClickBackButon()
     {
         SceneChange.LoadTitle();
     }
 
-    public void AdoptButtonOnClick()
+    public void OnClickSaveButton()
     {
-        SceneChange.LoadAdoption();
+        // fixme is saving button even neccessary?
+    }
+
+    public void OnClickEnglishButton()
+    {
+        // todo connect with langauge manager
+    }
+
+    public void OnClickSpanishButton()
+    {
+        // todo connect with langauge manager
+    }
+
+    public void OnClickFrenchButton()
+    {
+        // todo connect with langauge manager
+    }
+
+    public void OnClickReAdoptButton()
+    {
+        // TODO
+    }
+
+    public void OnClickFactorResetButton()
+    {
+        // TODO
     }
 }
