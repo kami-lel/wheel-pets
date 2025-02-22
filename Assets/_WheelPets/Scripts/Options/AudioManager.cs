@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
+// fixme make audio manager an prefab?
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;

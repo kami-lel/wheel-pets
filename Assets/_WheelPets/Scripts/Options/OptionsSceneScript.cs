@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 // TODO reset all data option
 public class OptionsSceneScript : MonoBehaviour
 {
-    // todo connect more buttons, etc.
+    // TODO connect more buttons, etc. & combine w/ other code
 
     public void BackButtonOnClick()
     {
