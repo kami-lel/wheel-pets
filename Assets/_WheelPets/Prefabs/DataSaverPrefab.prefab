@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2244159948399567811}
   - component: {fileID: 7494283263646244071}
   m_Layer: 0
-  m_Name: DataSystemPrefab
+  m_Name: DataSaverPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
