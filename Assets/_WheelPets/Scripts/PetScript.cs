@@ -32,6 +32,16 @@ public class PetScript : MonoBehaviour
         activePet.SetActive(true);
         Debug.Log("Pet\tSelect: " + activePet);
 
+        UpdateLookColor();
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("Pet\tLook Updated");
+        }
+    }
+
+    private void UpdateLookColor()
+    {
         // update dominant color
         SpriteRenderer dominantRenderer = activePet
             .transform.Find("Dominant")
@@ -51,11 +61,11 @@ public class PetScript : MonoBehaviour
             0.1f,
             1f
         );
+    }
 
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log("Pet\tLook Updated");
-        }
+    private void UpdateLookAccessory()
+    {
+        // TODO update accessory situation
     }
 
     private PlayerData.PetData petData;

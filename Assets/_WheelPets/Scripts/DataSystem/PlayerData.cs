@@ -103,10 +103,18 @@ public class PlayerData
     }
 
     [Serializable]
+    public enum AnimalType
+    {
+        Dog,
+        Cat,
+        Rabbit,
+    }
+
+    [Serializable]
     public class PetData
     {
         public string name = "Buddy";
-        public int animalType = 0;
+        public AnimalType animalType = AnimalType.Dog; // BUG was int, make sure works
         public float dominantColorHue = 0f;
         public float secondaryColorHue = 0f;
         public List<PetAccessory> currentAccessories = new();
