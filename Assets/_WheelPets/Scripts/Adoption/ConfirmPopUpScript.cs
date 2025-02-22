@@ -7,13 +7,21 @@ public class ConfirmPopUpScript : MonoBehaviour
     [SerializeField]
     private TMP_InputField petNameField;
 
+    private PlayerData playerData;
+
+    private void Start()
+    {
+        playerData = Data.GetPlayerData();
+    }
+
     public void ConfirmButtonOnClick()
     {
-        // TODO
         if (petNameField.text != "")
         {
-            Data.GetPlayerData().petData.name = petNameField.text;
+            playerData.petData.name = petNameField.text;
         }
+
+        SceneChange.LeaveAdoptionScene();
     }
 
     public void CancelButtonOnClick()
