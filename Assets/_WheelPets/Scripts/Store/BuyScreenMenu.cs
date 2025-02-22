@@ -62,9 +62,4 @@ public class BuyScreenMenu : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
-
-    private void OnApplicationQuit()
-    {
-        Data.SavePlayerDataToFile();
-    }
 }
