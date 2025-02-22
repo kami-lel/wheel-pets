@@ -1,7 +1,9 @@
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+// fixme translate this doc as google doc
 /* Implement Pause Function for any Scene
  *
  * How to use:
@@ -10,8 +12,7 @@ using UnityEngine.UI;
  */
 
 
-// TODO check if applied to all scenes correctly;w
-// BUG currently it doesn't stop sound & bgm
+// TODO check if applied to all scenes correctly
 public class PauseOverlay : MonoBehaviour
 {
     /// <summary>
@@ -20,9 +21,18 @@ public class PauseOverlay : MonoBehaviour
     /// This function is often called by a Pause Button.
     /// It serves as an interface function to work with the PauseOverlay.
     /// </summary>
-    public void MinigamePause()
+    public void PauseButtonOnClick()
     {
-        // TODO implement the logic to pause the minigame and display the pause overlay
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tPause Button Clicked");
+        }
+
+        minigameStage = MinigameStage.Paused;
+        pauseContainer.SetActive(true);
+
+        // stop game stime
+        Time.timeScale = 0f;
     }
 
     /// <summary>
@@ -32,6 +42,11 @@ public class PauseOverlay : MonoBehaviour
     /// </summary>
     public void MinigameWin()
     {
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tWin Triggered");
+        }
+
         // TODO Implementation for handling win conditions goes here
     }
 
@@ -42,6 +57,11 @@ public class PauseOverlay : MonoBehaviour
     /// </summary>
     public void MinigameLost()
     {
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tLose Triggered");
+        }
+
         // TODO Implementation for handling loss conditions goes here
     }
 
@@ -53,7 +73,7 @@ public class PauseOverlay : MonoBehaviour
     private GameObject preStartContainer;
 
     [SerializeField]
-    private GameObject pauseContainer;
+    private PauseContainer pauseContainer;
 
     [SerializeField]
     private GameObject winContainer;
@@ -61,73 +81,36 @@ public class PauseOverlay : MonoBehaviour
     [SerializeField]
     private GameObject loseContainer;
 
-    [SerializeField]
-    private Slider volumeSlider;
-
-    // UI interface functions
-    public void PauseButtonOnClick()
+    public enum MinigameStage
     {
-        // display the overlay
-        Debug.Log(playerData);
-        pauseContainer.SetActive(true);
-
-        // stop game stime
-        Time.timeScale = 0f;
-
-        // update slider visually with current settings
-        volumeSlider.value = playerData.mainVolume;
-
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log("PauseOverlay\tGame Paused");
-        }
+        PreStart, // before mingame start, with prestart screen
+        Running,
+        Paused,
+        Won,
+        Lost,
     }
 
-    public void ResumeButtonOnClick()
-    {
-        pauseContainer.SetActive(false);
-        Time.timeScale = 1f;
+    private MinigameStage minigameStage;
 
-        if (Debug.isDebugBuild)
+    private void Start()
+    {
+        // turn off pause/win/lose containers
+        pauseContainer.gameObject.SetActive(false);
+        winContainer.SetActive(false);
+        loseContainer.SetActive(false);
+
+        if (requireStartButtonToStart)
         {
-            Debug.Log("PauseOverlay\tGame Resumed");
-        }
-    }
-
-    public void ExitButtonOnClick()
-    {
-        Time.timeScale = 1f;
-        SceneChange.LoadSelector();
-    }
-
-    public void VolumeSliderOnValueChanged(System.Single value)
-    {
-        playerData.mainVolume = value;
-        // TODO inform audio player to update volume
-
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log($"PauseOverlay\tmain volume changed to {value}");
-        }
-    }
-
-    private PlayerData playerData;
-
-    void Start()
-    {
-        playerData = Data.GetPlayerData();
-        if (playerData != null)
-        {
-            Debug.Log("Player data loaded");
-            Debug.Log(playerData);
+            // showing a pre-start screen before game start
+            minigameStage = MinigameStage.PreStart;
+            preStartContainer.SetActive(true);
         }
         else
         {
-            Debug.Log("Player data not loaded");
+            // maek game run directly
+            minigameStage = MinigameStage.Running;
+            preStartContainer.SetActive(false);
         }
-
-        // pause screen is disabled by default
-        pauseContainer.SetActive(false);
     }
 
     void OnApplicationQuit()
