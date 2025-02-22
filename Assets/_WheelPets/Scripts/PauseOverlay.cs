@@ -89,6 +89,5 @@ public class PauseOverlay : MonoBehaviour
     void OnApplicationQuit()
     {
         Time.timeScale = 1f;
-        Data.SavePlayerDataToFile();
     }
 }
