@@ -95,9 +95,4 @@ public class LeaderboardManager : MonoBehaviour
 
         leaderboardPlayer.LoadPlayerData(userRank);
     }
-
-    private void OnApplicationQuit()
-    {
-        Data.SavePlayerDataToFile();
-    }
 }

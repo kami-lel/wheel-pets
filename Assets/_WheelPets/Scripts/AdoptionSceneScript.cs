@@ -79,9 +79,4 @@ public class AdoptionSceneScript : MonoBehaviour
     {
         SceneChange.LoadOptions();
     }
-
-    private void OnApplicationQuit()
-    {
-        Data.SavePlayerDataToFile();
-    }
 }

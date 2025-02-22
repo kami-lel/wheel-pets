@@ -2,8 +2,6 @@ using System;
 using System.IO;
 using UnityEngine;
 
-// todo timed auto-save
-
 public class Data
 {
     public static PlayerData GetPlayerData()
@@ -102,10 +100,12 @@ public class Data
     private static string GenerateSaveFilePath()
     {
         string fileName = "playerData";
-        string filePath = Path.Combine(
-            Application.persistentDataPath,
-            fileName + ".json"
-        );
+        string fileExtension = ".json";
+        string folderPath = Debug.isDebugBuild
+            ? Directory.GetParent(Application.dataPath).FullName
+            : Application.persistentDataPath;
+
+        string filePath = Path.Combine(folderPath, fileName + fileExtension);
         return filePath;
     }
 }

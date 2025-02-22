@@ -138,3 +138,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
+# don't upload player data
+playerData.json
+playerData.json.meta
