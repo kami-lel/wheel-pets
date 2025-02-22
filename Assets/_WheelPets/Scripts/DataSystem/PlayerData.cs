@@ -89,7 +89,7 @@ public class PlayerData
     [Serializable]
     public enum PetAccessory
     {
-        None, // default value
+        None = 0, // default value
         Atelier,
         CloudyGlasses,
         DeliveryCap,
@@ -100,7 +100,7 @@ public class PlayerData
         RainbowHeadband,
         StarCowlo,
         UnicornHorn,
-        Xddcc,
+        XDDCC,
     }
 
     [Serializable]
