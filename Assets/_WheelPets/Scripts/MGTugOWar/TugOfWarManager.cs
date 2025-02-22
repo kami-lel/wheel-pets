@@ -28,10 +28,11 @@ public class TugOfWarManager : MonoBehaviour
     private bool gameLost = false;
 
     private TugOfWarSceneScript sceneScript;
+    private Coroutine gameRoutine;
 
     void Start()
     {
-        StartCoroutine(StartGameRoutine());
+        gameRoutine = StartCoroutine(StartGameRoutine());
 
         // Get reference to the TugOfWarSceneScript
         sceneScript = FindFirstObjectByType<TugOfWarSceneScript>();
@@ -247,6 +248,15 @@ public class TugOfWarManager : MonoBehaviour
                 Debug.Log("Flag touched the pet goal line");
                 TriggerLoseState();
             }
+        }
+    }
+
+    public void FreezeGame()
+    {
+        gameStarted = false;
+        if (gameRoutine != null)
+        {
+            StopCoroutine(gameRoutine);
         }
     }
 
