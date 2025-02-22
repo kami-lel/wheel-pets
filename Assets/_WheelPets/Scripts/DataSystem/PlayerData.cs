@@ -117,6 +117,6 @@ public class PlayerData
         public AnimalType animalType = AnimalType.Dog;
         public float dominantColorHue = 0f;
         public float secondaryColorHue = 0f;
-        public HashSet<PetAccessory> currentAccessories = new();
+        public List<PetAccessory> currentAccessories = new();
     }
 }

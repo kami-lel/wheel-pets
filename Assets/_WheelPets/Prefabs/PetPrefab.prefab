@@ -358,7 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 980310395168660866}
   m_Layer: 1
-  m_Name: Accessories
+  m_Name: AccessoryGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,7 +488,7 @@ GameObject:
   - component: {fileID: 3921365916278004658}
   - component: {fileID: 4268813513682374048}
   m_Layer: 1
-  m_Name: HawiaanFlower
+  m_Name: HawaiianFlower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

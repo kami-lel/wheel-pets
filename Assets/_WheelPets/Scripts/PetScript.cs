@@ -1,7 +1,6 @@
 using System;
 using UnityEngine;
 
-// TODO implement pet wearing hats, etc.
 public class PetScript : MonoBehaviour
 {
     [SerializeField]
@@ -69,6 +68,16 @@ public class PetScript : MonoBehaviour
     {
         // fixme make sure all accessories are placed properly
 
+        Transform accessoryGroupTransform = activePet.transform.Find(
+            "AccessoryGroup"
+        );
+        if (Debug.isDebugBuild && accessoryGroupTransform == null)
+        {
+            Debug.LogError(
+                "PetPrefab\tCan't find AccessoryGroup in " + activePet
+            );
+        }
+
         // loop via all possible accessories in enum PetAccessory
         foreach (
             PlayerData.PetAccessory accessory in Enum.GetValues(
@@ -78,9 +87,8 @@ public class PetScript : MonoBehaviour
         {
             // find accessory as game object
             string accessoryName = accessory.ToString();
-            Transform accessoryTransform = activePet.transform.Find(
-                accessoryName
-            ); // BUG cant find children of chldren
+            Transform accessoryTransform =
+                accessoryGroupTransform.transform.Find(accessoryName);
             if (accessoryTransform != null)
             {
                 // set active condition
@@ -105,9 +113,6 @@ public class PetScript : MonoBehaviour
     private void Start()
     {
         petData = Data.GetPlayerData().petData;
-        // HACK
-        petData.currentAccessories.Add(PlayerData.PetAccessory.Atelier);
-        petData.currentAccessories.Add(PlayerData.PetAccessory.CloudyGlasses);
         UpdateLook();
     }
 }
