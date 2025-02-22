@@ -62,8 +62,9 @@ public class PlayerData
     public MinigameStatistics statWalkScene = new();
 
     // pet's data
-    public bool hasAdoptPet = false; // TODO make adoptionn scene working
+    public bool hasAdoptPet = false;
     public PetData petData = new();
+    public List<PetAccessory> purchasedAccessories = new();
 
     // declare classes
     [Serializable]
