@@ -21,6 +21,7 @@ public class ConfirmPopUpScript : MonoBehaviour
             playerData.petData.name = petNameField.text;
         }
 
+        playerData.hasAdoptPet = true;
         SceneChange.LeaveAdoptionScene();
     }
 
