@@ -40,7 +40,7 @@ public class Hide_n_Seek : MonoBehaviour
 
     private bool buttonCooldown = false; 
 
-    private int delayButtonPress = 5; // Int to delay button pressw
+    private int delayButtonPress = 4; // Int to delay button pressw
 
     void Start()
     {
@@ -101,6 +101,7 @@ public class Hide_n_Seek : MonoBehaviour
                 Debug.Log($"You search the area but do not find your pet...");
             }
 
+            // Start button cooldown timer
             StartCoroutine(ResetButtonCooldown());
             buttonCooldown = true;
         }
@@ -130,6 +131,7 @@ public class Hide_n_Seek : MonoBehaviour
 
     IEnumerator ResetButtonCooldown()
     {
+        //start button cooldown for 5 seconds
         yield return new WaitForSeconds(delayButtonPress);
         buttonCooldown = false;
     }
