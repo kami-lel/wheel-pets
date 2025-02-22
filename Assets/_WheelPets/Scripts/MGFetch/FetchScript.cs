@@ -15,6 +15,10 @@ public class FetchScript : MonoBehaviour
     public Text timerText; // Add this line to declare the TimerText variable
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
+    public GameObject ballPrefab; // Add this line to declare the BallPrefab variable
+    public Transform ballSpawnPoint; // Add this line to declare the BallSpawnPoint variable
+    public Transform dogTransform; // Add this line to declare the DogTransform variable
+    public Vector3 dogPositionOffset; // Add this line to declare the DogPositionOffset variable
 
     private float currentSpeed;
     private bool isMovingRight = true;
@@ -116,6 +120,9 @@ public class FetchScript : MonoBehaviour
             // Reset the timer to 5 seconds
             timer = 5.0f;
             UpdateTimerText();
+
+            // Launch a ball towards the dog
+            LaunchBall();
         }
         else
         {
@@ -204,5 +211,32 @@ public class FetchScript : MonoBehaviour
         {
             timerText.text = "Time: " + Mathf.Ceil(timer).ToString();
         }
+    }
+
+    void LaunchBall()
+    {
+        if (ballPrefab != null && ballSpawnPoint != null && dogTransform != null)
+        {
+            GameObject ball = Instantiate(ballPrefab, ballSpawnPoint.position, Quaternion.identity);
+            StartCoroutine(MoveBall(ball));
+        }
+    }
+
+    IEnumerator MoveBall(GameObject ball)
+    {
+        Vector3 startPosition = ball.transform.position;
+        Vector3 endPosition = dogTransform.position + dogPositionOffset; // Apply the offset to the dog's position
+        float duration = 1.0f; // Duration of the ball's flight
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            elapsedTime += Time.deltaTime;
+            float t = elapsedTime / duration;
+            ball.transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            yield return null;
+        }
+
+        Destroy(ball); // Destroy the ball when it reaches the dog
     }
 }
