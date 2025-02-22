@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 // TODO implement pet wearing hats, etc.
@@ -30,13 +31,14 @@ public class PetScript : MonoBehaviour
         cat.SetActive(false);
         rabbit.SetActive(false);
         activePet.SetActive(true);
-        Debug.Log("Pet\tSelect: " + activePet);
+        Debug.Log("PetPrefab\tSelect: " + activePet);
 
         UpdateLookColor();
+        UpdateLookAccessory();
 
         if (Debug.isDebugBuild)
         {
-            Debug.Log("Pet\tLook Updated");
+            Debug.Log("PetPrefab\tLook Updated");
         }
     }
 
@@ -65,7 +67,36 @@ public class PetScript : MonoBehaviour
 
     private void UpdateLookAccessory()
     {
-        // TODO update accessory situation
+        // fixme make sure all accessories are placed properly
+
+        // loop via all possible accessories in enum PetAccessory
+        foreach (
+            PlayerData.PetAccessory accessory in Enum.GetValues(
+                typeof(PlayerData.PetAccessory)
+            )
+        )
+        {
+            // find accessory as game object
+            string accessoryName = accessory.ToString();
+            Transform accessoryTransform = activePet.transform.Find(
+                accessoryName
+            ); // BUG cant find children of chldren
+            if (accessoryTransform != null)
+            {
+                // set active condition
+                bool isWearing = petData.currentAccessories.Contains(
+                    accessory
+                );
+                accessoryTransform.gameObject.SetActive(isWearing);
+            }
+            else if (Debug.isDebugBuild)
+            {
+                Debug.LogWarning(
+                    "PetPrefab\tcan't find accessory as game object:"
+                        + accessoryName
+                );
+            }
+        }
     }
 
     private PlayerData.PetData petData;
@@ -74,6 +105,9 @@ public class PetScript : MonoBehaviour
     private void Start()
     {
         petData = Data.GetPlayerData().petData;
+        // HACK
+        petData.currentAccessories.Add(PlayerData.PetAccessory.Atelier);
+        petData.currentAccessories.Add(PlayerData.PetAccessory.CloudyGlasses);
         UpdateLook();
     }
 }

@@ -226,7 +226,7 @@ MonoBehaviour:
   petNameField: {fileID: 1629152635}
   dominantColorSlider: {fileID: 835821831}
   secondaryColorSlider: {fileID: 1537025404}
-  petObject: {fileID: 0}
+  petPrefabObject: {fileID: 1348404424}
 --- !u!4 &140765547
 Transform:
   m_ObjectHideFlags: 0
@@ -1818,6 +1818,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8024345900797591538, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
   m_PrefabInstance: {fileID: 1348404422}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1348404424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7329160227167309070, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
+  m_PrefabInstance: {fileID: 1348404422}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38c916cddec9d7429dc48d62c3ef4c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1382687757
 GameObject:
   m_ObjectHideFlags: 0

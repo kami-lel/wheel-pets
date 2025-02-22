@@ -17,7 +17,7 @@ public class AdoptionSceneScript : MonoBehaviour
     private Slider secondaryColorSlider;
 
     [SerializeField]
-    private PetScript petObject;
+    private PetScript petPrefabObject;
 
     private PlayerData playerData;
     private PlayerData.PetData petData;
@@ -36,14 +36,14 @@ public class AdoptionSceneScript : MonoBehaviour
             (value) =>
             {
                 petData.dominantColorHue = value;
-                petObject.UpdateLook();
+                petPrefabObject.UpdateLook();
             }
         );
         secondaryColorSlider.onValueChanged.AddListener(
             (value) =>
             {
                 petData.secondaryColorHue = value;
-                petObject.UpdateLook();
+                petPrefabObject.UpdateLook();
             }
         );
     }
@@ -51,19 +51,19 @@ public class AdoptionSceneScript : MonoBehaviour
     public void PuppyButtonOnClick()
     {
         petData.animalType = PlayerData.AnimalType.Dog;
-        petObject.UpdateLook();
+        petPrefabObject.UpdateLook();
     }
 
     public void KittenButtonOnClick()
     {
         petData.animalType = PlayerData.AnimalType.Cat;
-        petObject.UpdateLook();
+        petPrefabObject.UpdateLook();
     }
 
     public void RabbitButtonOnClick()
     {
         petData.animalType = PlayerData.AnimalType.Rabbit;
-        petObject.UpdateLook();
+        petPrefabObject.UpdateLook();
     }
 
     public void SaveButtonOnClick()
