@@ -1,5 +1,5 @@
 using System;
-using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerData
 {
@@ -89,7 +89,6 @@ public class PlayerData
     [Serializable]
     public enum PetAccessory
     {
-        None = 0, // default value
         Atelier,
         CloudyGlasses,
         DeliveryCap,
@@ -110,6 +109,6 @@ public class PlayerData
         public int animalType = 0;
         public float dominantColorHue = 0f;
         public float secondaryColorHue = 0f;
-        public PetAccessory currentAccessory = PetAccessory.None;
+        public List<PetAccessory> currentAccessories = new();
     }
 }
