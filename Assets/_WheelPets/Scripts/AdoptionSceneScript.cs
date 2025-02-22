@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // TODO only "save" button confirms pet look change
-// FIXME combine all functions into option scene, then remove AdoptionScene
+// TODO make adoption scene part of game loop
 public class AdoptionSceneScript : MonoBehaviour
 {
     [SerializeField]
