@@ -28,11 +28,7 @@ public class PauseOverlay : MonoBehaviour
             Debug.Log("PauseOverlay\tPause Button Clicked");
         }
 
-        minigameStage = MinigameStage.Paused;
-        pauseContainer.SetActive(true);
-
-        // stop game stime
-        Time.timeScale = 0f;
+        pauseContainer.gameObject.SetActive(true);
     }
 
     /// <summary>
@@ -90,7 +86,7 @@ public class PauseOverlay : MonoBehaviour
         Lost,
     }
 
-    private MinigameStage minigameStage;
+    public MinigameStage minigameStage;
 
     private void Start()
     {

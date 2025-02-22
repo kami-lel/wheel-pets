@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96868ae046d6c0948b08de5dd6527aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseOverlay: {fileID: 8752070828892271677}
 --- !u!1 &1149118955564041616
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +381,7 @@ MonoBehaviour:
   pauseContainer: {fileID: 711375854549207529}
   winContainer: {fileID: 2089509270130251450}
   loseContainer: {fileID: 277697271670172338}
+  minigameStage: 0
 --- !u!1 &4556031330348265145
 GameObject:
   m_ObjectHideFlags: 0
