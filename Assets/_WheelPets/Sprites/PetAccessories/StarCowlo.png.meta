@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      StarCowlo_0: -348184103147581848
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

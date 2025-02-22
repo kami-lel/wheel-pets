@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      HawiaanFlower_0: -4026501613192836999
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

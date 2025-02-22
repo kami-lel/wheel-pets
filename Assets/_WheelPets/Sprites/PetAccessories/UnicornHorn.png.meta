@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UnicornHorn_0: 6149161054517270118
+      UnicornHorn_1: -7386249127046274077
+      UnicornHorn_2: -7328478132156614123
+      UnicornHorn_3: 990087561249642963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
