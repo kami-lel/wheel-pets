@@ -14,8 +14,52 @@ using UnityEngine.UI;
 // BUG currently it doesn't stop sound & bgm
 public class PauseOverlay : MonoBehaviour
 {
+    /// <summary>
+    /// This function should be called when one wants to pause the minigame
+    /// and bring the pause screen.
+    /// This function is often called by a Pause Button.
+    /// It serves as an interface function to work with the PauseOverlay.
+    /// </summary>
+    public void MinigamePause()
+    {
+        // TODO implement the logic to pause the minigame and display the pause overlay
+    }
+
+    /// <summary>
+    /// This function should be called when the minigame ends
+    /// with a victory.
+    /// It serves as an interface function to work with the PauseOverlay.
+    /// </summary>
+    public void MinigameWin()
+    {
+        // TODO Implementation for handling win conditions goes here
+    }
+
+    /// <summary>
+    /// This function should be called when the minigame ends
+    /// in a loss.
+    /// It serves as an interface function to work with the PauseOverlay.
+    /// </summary>
+    public void MinigameLost()
+    {
+        // TODO Implementation for handling loss conditions goes here
+    }
+
+    // whether to require a click on the "start" button to begin the game
     [SerializeField]
-    private GameObject container;
+    private bool requireStartButtonToStart = true;
+
+    [SerializeField]
+    private GameObject preStartContainer;
+
+    [SerializeField]
+    private GameObject pauseContainer;
+
+    [SerializeField]
+    private GameObject winContainer;
+
+    [SerializeField]
+    private GameObject loseContainer;
 
     [SerializeField]
     private Slider volumeSlider;
@@ -25,7 +69,7 @@ public class PauseOverlay : MonoBehaviour
     {
         // display the overlay
         Debug.Log(playerData);
-        container.SetActive(true);
+        pauseContainer.SetActive(true);
 
         // stop game stime
         Time.timeScale = 0f;
@@ -41,7 +85,7 @@ public class PauseOverlay : MonoBehaviour
 
     public void ResumeButtonOnClick()
     {
-        container.SetActive(false);
+        pauseContainer.SetActive(false);
         Time.timeScale = 1f;
 
         if (Debug.isDebugBuild)
@@ -83,7 +127,7 @@ public class PauseOverlay : MonoBehaviour
         }
 
         // pause screen is disabled by default
-        container.SetActive(false);
+        pauseContainer.SetActive(false);
     }
 
     void OnApplicationQuit()

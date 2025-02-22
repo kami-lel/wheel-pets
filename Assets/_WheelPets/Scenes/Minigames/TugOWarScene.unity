@@ -4054,6 +4054,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 711375854549207529, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
+      propertyPath: m_Name
+      value: PauseContainer
+      objectReference: {fileID: 0}
     - target: {fileID: 3994813054359744121, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
       propertyPath: m_Name
       value: PauseOverlay
