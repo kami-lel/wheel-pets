@@ -2,8 +2,6 @@ using System;
 using System.IO;
 using UnityEngine;
 
-// todo timed auto-save
-
 public class Data
 {
     public static PlayerData GetPlayerData()
