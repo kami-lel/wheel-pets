@@ -1,10 +1,7 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// TODO only "save" button confirms pet look change
-// TODO make adoption scene part of game loop
 public class AdoptionSceneScript : MonoBehaviour
 {
     [SerializeField]
@@ -18,6 +15,9 @@ public class AdoptionSceneScript : MonoBehaviour
 
     [SerializeField]
     private PetScript petPrefabObject;
+
+    [SerializeField]
+    private GameObject confirmPopUp;
 
     private PlayerData playerData;
     private PlayerData.PetData petData;
@@ -48,35 +48,48 @@ public class AdoptionSceneScript : MonoBehaviour
         );
     }
 
+    /// <summary>
+    /// Handles the Puppy button click event. Sets the pet type to Dog
+    /// </summary>
     public void PuppyButtonOnClick()
     {
         petData.animalType = PlayerData.AnimalType.Dog;
         petPrefabObject.UpdateLook();
     }
 
+    /// <summary>
+    /// Handles the Kitten button click event. Sets the pet type to Cat
+    /// </summary>
     public void KittenButtonOnClick()
     {
-        petData.animalType = PlayerData.AnimalType.Cat;
-        petPrefabObject.UpdateLook();
+        // bug
+        Debug.LogWarning("Cat asset not ready yet.");
+
+        // restore after implmenting cat
+        // petData.animalType = PlayerData.AnimalType.Cat;
+        // petPrefabObject.UpdateLook();
     }
 
+    /// <summary>
+    /// Handles the Rabbit button click event. Sets the pet type to Rabbit
+    /// </summary>
     public void RabbitButtonOnClick()
     {
-        petData.animalType = PlayerData.AnimalType.Rabbit;
-        petPrefabObject.UpdateLook();
+        // bug
+        Debug.LogWarning("Cat Avatar not ready yet.");
+
+        // restore after implmenting rabbit
+        // petData.animalType = PlayerData.AnimalType.Rabbit;
+        // petPrefabObject.UpdateLook();
     }
 
     public void SaveButtonOnClick()
     {
-        // todo add feedback
-        if (petNameField.text != "")
-        {
-            petData.name = petNameField.text;
-        }
+        confirmPopUp.SetActive(true);
     }
 
     public void BackButtonOnClick()
     {
-        SceneChange.LoadOptions();
+        SceneChange.LeaveAdoptionScene();
     }
 }

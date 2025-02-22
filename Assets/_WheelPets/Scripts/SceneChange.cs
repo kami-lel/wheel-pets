@@ -85,6 +85,26 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("FeedingInstructions");
     }
+
+    /// <summary>
+    /// Manages the logic for exiting the adoption scene intelligently based on pet adoption status.
+    /// </summary>
+    /// <remarks>
+    /// If a pet has never been adopted, which often occurs after a factor reset,
+    /// exiting the adoption scene will navigate the user to the Driving Simulator.
+    /// If a pet has already been adopted, exiting the adoption scene will navigate the user to the Options scene.
+    /// </remarks>
+    public static void LeaveAdoptionScene()
+    {
+        if (Data.GetPlayerData().hasAdoptPet)
+        {
+            LoadOptions();
+        }
+        else
+        {
+            LoadDrivingGame();
+        }
+    }
 }
 
 // FIXME rm this class is not in use anymore
