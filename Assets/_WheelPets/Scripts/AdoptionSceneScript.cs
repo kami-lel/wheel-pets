@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 // TODO only "save" button confirms pet look change
-// FIXME combine all functions into option scene, then remove AdoptionScene
+// TODO make adoption scene part of game loop
 public class AdoptionSceneScript : MonoBehaviour
 {
     [SerializeField]
@@ -17,7 +17,7 @@ public class AdoptionSceneScript : MonoBehaviour
     private Slider secondaryColorSlider;
 
     [SerializeField]
-    private PetScript petObject;
+    private PetScript petPrefabObject;
 
     private PlayerData playerData;
     private PlayerData.PetData petData;
@@ -36,34 +36,34 @@ public class AdoptionSceneScript : MonoBehaviour
             (value) =>
             {
                 petData.dominantColorHue = value;
-                petObject.UpdateLook();
+                petPrefabObject.UpdateLook();
             }
         );
         secondaryColorSlider.onValueChanged.AddListener(
             (value) =>
             {
                 petData.secondaryColorHue = value;
-                petObject.UpdateLook();
+                petPrefabObject.UpdateLook();
             }
         );
     }
 
     public void PuppyButtonOnClick()
     {
-        petData.animalType = 0;
-        petObject.UpdateLook();
+        petData.animalType = PlayerData.AnimalType.Dog;
+        petPrefabObject.UpdateLook();
     }
 
     public void KittenButtonOnClick()
     {
-        petData.animalType = 1;
-        petObject.UpdateLook();
+        petData.animalType = PlayerData.AnimalType.Cat;
+        petPrefabObject.UpdateLook();
     }
 
     public void RabbitButtonOnClick()
     {
-        petData.animalType = 2;
-        petObject.UpdateLook();
+        petData.animalType = PlayerData.AnimalType.Rabbit;
+        petPrefabObject.UpdateLook();
     }
 
     public void SaveButtonOnClick()

@@ -1,6 +1,6 @@
+using System;
 using UnityEngine;
 
-// TODO implement pet wearing hats, etc.
 public class PetScript : MonoBehaviour
 {
     [SerializeField]
@@ -20,9 +20,9 @@ public class PetScript : MonoBehaviour
         // decide type of the animal
         activePet = petData.animalType switch
         {
-            0 => dog,
-            1 => cat,
-            2 => rabbit,
+            PlayerData.AnimalType.Dog => dog,
+            PlayerData.AnimalType.Cat => cat,
+            PlayerData.AnimalType.Rabbit => rabbit,
             _ => dog,
         };
 
@@ -30,8 +30,19 @@ public class PetScript : MonoBehaviour
         cat.SetActive(false);
         rabbit.SetActive(false);
         activePet.SetActive(true);
-        Debug.Log("Pet\tSelect: " + activePet);
+        Debug.Log("PetPrefab\tSelect: " + activePet);
 
+        UpdateLookColor();
+        UpdateLookAccessory();
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PetPrefab\tLook Updated");
+        }
+    }
+
+    private void UpdateLookColor()
+    {
         // update dominant color
         SpriteRenderer dominantRenderer = activePet
             .transform.Find("Dominant")
@@ -51,10 +62,48 @@ public class PetScript : MonoBehaviour
             0.1f,
             1f
         );
+    }
 
-        if (Debug.isDebugBuild)
+    private void UpdateLookAccessory()
+    {
+        // fixme make sure all accessories are placed properly
+
+        Transform accessoryGroupTransform = activePet.transform.Find(
+            "AccessoryGroup"
+        );
+        if (Debug.isDebugBuild && accessoryGroupTransform == null)
         {
-            Debug.Log("Pet\tLook Updated");
+            Debug.LogError(
+                "PetPrefab\tCan't find AccessoryGroup in " + activePet
+            );
+        }
+
+        // loop via all possible accessories in enum PetAccessory
+        foreach (
+            PlayerData.PetAccessory accessory in Enum.GetValues(
+                typeof(PlayerData.PetAccessory)
+            )
+        )
+        {
+            // find accessory as game object
+            string accessoryName = accessory.ToString();
+            Transform accessoryTransform =
+                accessoryGroupTransform.transform.Find(accessoryName);
+            if (accessoryTransform != null)
+            {
+                // set active condition
+                bool isWearing = petData.currentAccessories.Contains(
+                    accessory
+                );
+                accessoryTransform.gameObject.SetActive(isWearing);
+            }
+            else if (Debug.isDebugBuild)
+            {
+                Debug.LogWarning(
+                    "PetPrefab\tcan't find accessory as game object:"
+                        + accessoryName
+                );
+            }
         }
     }
 

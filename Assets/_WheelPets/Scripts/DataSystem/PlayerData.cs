@@ -1,5 +1,5 @@
 using System;
-using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerData
 {
@@ -62,7 +62,7 @@ public class PlayerData
     public MinigameStatistics statWalkScene = new();
 
     // pet's data
-    public bool hasAdoptPet = false;
+    public bool hasAdoptPet = false; // TODO make adoptionn scene working
     public PetData petData = new();
 
     // declare classes
@@ -82,12 +82,41 @@ public class PlayerData
         public int winCount = 0;
     }
 
+    /// <summary>
+    /// Data type for pet accessories.
+    /// Renderable in PetPrefab, purchasable in Store, and usable in Closet.
+    /// </summary>
+    [Serializable]
+    public enum PetAccessory
+    {
+        Atelier,
+        CloudyGlasses,
+        DeliveryCap,
+        HawaiianFlower,
+        Leaf,
+        PiratePatch,
+        PrettyBow,
+        RainbowHeadband,
+        StarCowlo,
+        UnicornHorn,
+        XDDCC,
+    }
+
+    [Serializable]
+    public enum AnimalType
+    {
+        Dog,
+        Cat,
+        Rabbit,
+    }
+
     [Serializable]
     public class PetData
     {
         public string name = "Buddy";
-        public int animalType = 0;
+        public AnimalType animalType = AnimalType.Dog;
         public float dominantColorHue = 0f;
         public float secondaryColorHue = 0f;
+        public List<PetAccessory> currentAccessories = new();
     }
 }
