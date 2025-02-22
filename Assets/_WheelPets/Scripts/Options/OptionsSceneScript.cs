@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 // TODO reset all data option
 public class OptionsSceneScript : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject reAdoptPopUp;
+
+    [SerializeField]
+    private GameObject resetDataPopUp;
+
     // todo connect more buttons, etc. & combine w/ other code
 
     public void OnClickBackButon()
@@ -38,11 +44,11 @@ public class OptionsSceneScript : MonoBehaviour
 
     public void OnClickReAdoptButton()
     {
-        // TODO
+        reAdoptPopUp.SetActive(true);
     }
 
     public void OnClickFactorResetButton()
     {
-        // TODO
+        resetDataPopUp.SetActive(true);
     }
 }
