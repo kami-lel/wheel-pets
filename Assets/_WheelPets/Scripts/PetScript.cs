@@ -20,9 +20,9 @@ public class PetScript : MonoBehaviour
         // decide type of the animal
         activePet = petData.animalType switch
         {
-            0 => dog,
-            1 => cat,
-            2 => rabbit,
+            PlayerData.AnimalType.Dog => dog,
+            PlayerData.AnimalType.Cat => cat,
+            PlayerData.AnimalType.Rabbit => rabbit,
             _ => dog,
         };
 

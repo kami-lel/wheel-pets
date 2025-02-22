@@ -50,19 +50,19 @@ public class AdoptionSceneScript : MonoBehaviour
 
     public void PuppyButtonOnClick()
     {
-        petData.animalType = 0;
+        petData.animalType = PlayerData.AnimalType.Dog;
         petObject.UpdateLook();
     }
 
     public void KittenButtonOnClick()
     {
-        petData.animalType = 1;
+        petData.animalType = PlayerData.AnimalType.Cat;
         petObject.UpdateLook();
     }
 
     public void RabbitButtonOnClick()
     {
-        petData.animalType = 2;
+        petData.animalType = PlayerData.AnimalType.Rabbit;
         petObject.UpdateLook();
     }
 
