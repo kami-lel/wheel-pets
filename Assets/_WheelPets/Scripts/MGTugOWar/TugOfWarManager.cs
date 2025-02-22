@@ -11,10 +11,10 @@ public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
     public GameObject flag;
-    public GameObject goalLine;
-    public GameObject player;
-    public float moveSpeed = 1.0f;
-    public float tapMoveSpeed = 2.0f;
+    public GameObject playerGoalLine;
+    public GameObject petGoalLine;
+    public float moveSpeed = .001f;
+    public float tapMoveSpeed = .002f;
     public GameObject readyText;
     public GameObject tapText;
     public GameObject winText;
@@ -36,6 +36,16 @@ public class TugOfWarManager : MonoBehaviour
         // Get reference to the TugOfWarSceneScript
         sceneScript = FindFirstObjectByType<TugOfWarSceneScript>();
 
+        // Set the z position of the goal lines to be behind other objects
+        if (playerGoalLine != null)
+        {
+            playerGoalLine.transform.position = new Vector3(playerGoalLine.transform.position.x, playerGoalLine.transform.position.y, 1);
+        }
+        if (petGoalLine != null)
+        {
+            petGoalLine.transform.position = new Vector3(petGoalLine.transform.position.x, petGoalLine.transform.position.y, 1);
+        }
+
         BackgroundMusic.Play();
     }
 
@@ -45,7 +55,6 @@ public class TugOfWarManager : MonoBehaviour
         {
             MoveRopeLine();
             CheckFlagGoalCollision();
-            CheckPlayerGoalCollision();
         }
         else if (gameWon || gameLost)
         {
@@ -56,7 +65,7 @@ public class TugOfWarManager : MonoBehaviour
         {
             if (gameStarted && !gameWon && !gameLost)
             {
-                MoveRopeLineLeft();
+                MoveRopeLineRight();
             }
         }
     }
@@ -65,9 +74,7 @@ public class TugOfWarManager : MonoBehaviour
     {
         if (ropeLine != null && gameStarted && !gameWon && !gameLost)
         {
-            ropeLine.transform.Translate(
-                Vector3.right * moveSpeed * Time.deltaTime
-            );
+            ropeLine.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
         }
         else
         {
@@ -82,11 +89,11 @@ public class TugOfWarManager : MonoBehaviour
         }
     }
 
-    void MoveRopeLineLeft()
+    void MoveRopeLineRight()
     {
         if (ropeLine != null)
         {
-            ropeLine.transform.Translate(Vector3.left * tapMoveSpeed);
+            ropeLine.transform.Translate(Vector3.right * tapMoveSpeed);
         }
         else
         {
@@ -222,30 +229,22 @@ public class TugOfWarManager : MonoBehaviour
 
     void CheckFlagGoalCollision()
     {
-        if (flag != null && goalLine != null)
+        if (flag != null && playerGoalLine != null && petGoalLine != null)
         {
             if (
                 flag.GetComponent<Collider2D>()
-                    .IsTouching(goalLine.GetComponent<Collider2D>())
+                    .IsTouching(playerGoalLine.GetComponent<Collider2D>())
             )
             {
-                Debug.Log("Flag touched the goal line");
+                Debug.Log("Flag touched the player goal line");
                 TriggerWinState();
             }
-        }
-    }
-
-    void CheckPlayerGoalCollision()
-    {
-        if (player != null && goalLine != null)
-        {
-            if (
-                player
-                    .GetComponent<Collider2D>()
-                    .IsTouching(goalLine.GetComponent<Collider2D>())
+            else if (
+                flag.GetComponent<Collider2D>()
+                    .IsTouching(petGoalLine.GetComponent<Collider2D>())
             )
             {
-                Debug.Log("Player touched the goal line");
+                Debug.Log("Flag touched the pet goal line");
                 TriggerLoseState();
             }
         }
