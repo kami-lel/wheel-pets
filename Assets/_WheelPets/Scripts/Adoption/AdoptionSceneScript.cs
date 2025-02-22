@@ -63,10 +63,11 @@ public class AdoptionSceneScript : MonoBehaviour
     public void KittenButtonOnClick()
     {
         // bug
-        Debug.LogWarning("Cat Avatar not ready yet.");
-        return;
-        petData.animalType = PlayerData.AnimalType.Cat;
-        petPrefabObject.UpdateLook();
+        Debug.LogWarning("Cat asset not ready yet.");
+
+        // restore after implmenting cat
+        // petData.animalType = PlayerData.AnimalType.Cat;
+        // petPrefabObject.UpdateLook();
     }
 
     /// <summary>
@@ -76,9 +77,10 @@ public class AdoptionSceneScript : MonoBehaviour
     {
         // bug
         Debug.LogWarning("Cat Avatar not ready yet.");
-        return;
-        petData.animalType = PlayerData.AnimalType.Rabbit;
-        petPrefabObject.UpdateLook();
+
+        // restore after implmenting rabbit
+        // petData.animalType = PlayerData.AnimalType.Rabbit;
+        // petPrefabObject.UpdateLook();
     }
 
     public void SaveButtonOnClick()
