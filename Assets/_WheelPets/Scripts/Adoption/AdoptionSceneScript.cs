@@ -19,6 +19,9 @@ public class AdoptionSceneScript : MonoBehaviour
     [SerializeField]
     private PetScript petPrefabObject;
 
+    [SerializeField]
+    private GameObject confirmPopUp;
+
     private PlayerData playerData;
     private PlayerData.PetData petData;
 
