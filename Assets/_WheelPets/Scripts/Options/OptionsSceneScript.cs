@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// BUG pet prefab is not properly rendered
-// BUG should disallow change pet after first adopted it
 // TODO option to re-adopt a new pet (accessory is kept though)
 // TODO reset all data option
 public class OptionsSceneScript : MonoBehaviour
@@ -17,21 +15,25 @@ public class OptionsSceneScript : MonoBehaviour
     public void OnClickSaveButton()
     {
         // fixme is saving button even neccessary?
+        Debug.LogWarning("save button pushed, no effect yet");
     }
 
     public void OnClickEnglishButton()
     {
         // todo connect with langauge manager
+        Debug.LogWarning("language->English, no effect yet");
     }
 
     public void OnClickSpanishButton()
     {
         // todo connect with langauge manager
+        Debug.LogWarning("language->Spanish, no effect yet");
     }
 
     public void OnClickFrenchButton()
     {
         // todo connect with langauge manager
+        Debug.LogWarning("language->French, no effect yet");
     }
 
     public void OnClickReAdoptButton()
