@@ -1,7 +1,7 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class FetchScript : MonoBehaviour
 {
@@ -75,7 +75,6 @@ public class FetchScript : MonoBehaviour
                 {
                     highScore = score;
                     Data.GetPlayerData().fetchHighScore = highScore;
-                    Data.SavePlayerDataToFile();
                 }
             }
         }
@@ -139,7 +138,6 @@ public class FetchScript : MonoBehaviour
             {
                 highScore = score;
                 Data.GetPlayerData().fetchHighScore = highScore;
-                Data.SavePlayerDataToFile();
             }
         }
     }
@@ -161,22 +159,42 @@ public class FetchScript : MonoBehaviour
 
     void UpdateVisuals()
     {
-        float timingBarWidth = timingBar.GetComponent<RectTransform>().rect.width;
+        float timingBarWidth = timingBar
+            .GetComponent<RectTransform>()
+            .rect.width;
         float unitWidth = timingBarWidth / timingBarLength;
 
         // Update the line's size and position
-        line.GetComponent<RectTransform>().sizeDelta = new Vector2(lineLength * unitWidth, line.GetComponent<RectTransform>().sizeDelta.y);
-        line.GetComponent<RectTransform>().anchoredPosition = new Vector2(linePosition * unitWidth - timingBarWidth / 2, line.GetComponent<RectTransform>().anchoredPosition.y);
+        line.GetComponent<RectTransform>().sizeDelta = new Vector2(
+            lineLength * unitWidth,
+            line.GetComponent<RectTransform>().sizeDelta.y
+        );
+        line.GetComponent<RectTransform>().anchoredPosition = new Vector2(
+            linePosition * unitWidth - timingBarWidth / 2,
+            line.GetComponent<RectTransform>().anchoredPosition.y
+        );
 
         // Update the check area's size and position
-        checkArea.GetComponent<RectTransform>().sizeDelta = new Vector2(checkAreaLength * unitWidth, checkArea.GetComponent<RectTransform>().sizeDelta.y);
-        checkArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(checkAreaPosition * unitWidth - timingBarWidth / 2, checkArea.GetComponent<RectTransform>().anchoredPosition.y);
+        checkArea.GetComponent<RectTransform>().sizeDelta = new Vector2(
+            checkAreaLength * unitWidth,
+            checkArea.GetComponent<RectTransform>().sizeDelta.y
+        );
+        checkArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(
+            checkAreaPosition * unitWidth - timingBarWidth / 2,
+            checkArea.GetComponent<RectTransform>().anchoredPosition.y
+        );
 
         // Ensure the line is above the check area
         line.transform.SetAsLastSibling();
 
-        Debug.Log("Line position: " + line.GetComponent<RectTransform>().anchoredPosition);
-        Debug.Log("Check area position: " + checkArea.GetComponent<RectTransform>().anchoredPosition);
+        Debug.Log(
+            "Line position: "
+                + line.GetComponent<RectTransform>().anchoredPosition
+        );
+        Debug.Log(
+            "Check area position: "
+                + checkArea.GetComponent<RectTransform>().anchoredPosition
+        );
     }
 
     IEnumerator StartGameRoutine()
@@ -218,9 +236,17 @@ public class FetchScript : MonoBehaviour
 
     void LaunchBall()
     {
-        if (ballPrefab != null && ballSpawnPoint != null && dogTransform != null)
+        if (
+            ballPrefab != null
+            && ballSpawnPoint != null
+            && dogTransform != null
+        )
         {
-            GameObject ball = Instantiate(ballPrefab, ballSpawnPoint.position, Quaternion.identity);
+            GameObject ball = Instantiate(
+                ballPrefab,
+                ballSpawnPoint.position,
+                Quaternion.identity
+            );
             activeBalls.Add(ball); // Add the ball to the list of active balls
             StartCoroutine(MoveBall(ball));
         }
@@ -237,7 +263,11 @@ public class FetchScript : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
-            ball.transform.position = Vector3.Lerp(startPosition, endPosition, t);
+            ball.transform.position = Vector3.Lerp(
+                startPosition,
+                endPosition,
+                t
+            );
             yield return null;
         }
 

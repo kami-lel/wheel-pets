@@ -299,7 +299,6 @@ public class BathGame : SceneSwapping
         )
         {
             playerData.bathMinigameBestTime = timer;
-            Data.SavePlayerDataToFile();
         }
     }
 }

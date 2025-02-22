@@ -47,8 +47,6 @@ public class AudioControls : MonoBehaviour
         data.sfxVolume = sfxVolumeSlider.value;
         data.muteMusic = muteMusicToggle.isOn;
         data.muteSfx = muteSfxToggle.isOn;
-
-        Data.SavePlayerDataToFile();
     }
 
     private void UpdateUI()
