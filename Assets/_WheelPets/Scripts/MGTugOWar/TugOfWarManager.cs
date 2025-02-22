@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 // todo add more instruction for how to play the game
 // todo add high score function
 // todo Feels too easy to spam tap, Maybe make a restriction on tapping?
+// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
@@ -40,11 +41,19 @@ public class TugOfWarManager : MonoBehaviour
         // Set the z position of the goal lines to be behind other objects
         if (playerGoalLine != null)
         {
-            playerGoalLine.transform.position = new Vector3(playerGoalLine.transform.position.x, playerGoalLine.transform.position.y, 1);
+            playerGoalLine.transform.position = new Vector3(
+                playerGoalLine.transform.position.x,
+                playerGoalLine.transform.position.y,
+                1
+            );
         }
         if (petGoalLine != null)
         {
-            petGoalLine.transform.position = new Vector3(petGoalLine.transform.position.x, petGoalLine.transform.position.y, 1);
+            petGoalLine.transform.position = new Vector3(
+                petGoalLine.transform.position.x,
+                petGoalLine.transform.position.y,
+                1
+            );
         }
 
         BackgroundMusic.Play();
@@ -75,7 +84,9 @@ public class TugOfWarManager : MonoBehaviour
     {
         if (ropeLine != null && gameStarted && !gameWon && !gameLost)
         {
-            ropeLine.transform.Translate(Vector3.left * moveSpeed * Time.deltaTime);
+            ropeLine.transform.Translate(
+                Vector3.left * moveSpeed * Time.deltaTime
+            );
         }
         else
         {

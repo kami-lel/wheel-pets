@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 // fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
 // BUG tools hide instruction text
+// FIXME use MinigameOverPrefab instead of GameOverPanel
 public class BathSceneScript : MonoBehaviour
 {
     public GameObject playAgainButton;

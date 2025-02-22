@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
 public class TugOfWarSceneScript : MonoBehaviour
 {
     public GameObject playAgainButton;
