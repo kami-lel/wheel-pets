@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// fixme need ui re-design
 public class PauseContainer : MonoBehaviour
 {
     [SerializeField]
@@ -7,11 +8,7 @@ public class PauseContainer : MonoBehaviour
 
     private void OnEnable()
     {
-        pauseOverlay.minigameStage = PauseOverlay.MinigameStage.Paused;
-
-        // stop game time
-        Time.timeScale = 0f;
-        // BUG currently it doesn't stop sound & bgm
+        pauseOverlay.StopMinigameTimeAndAudio();
     }
 
     public void OnClickResumeButton()
@@ -21,15 +18,13 @@ public class PauseContainer : MonoBehaviour
             Debug.Log("PauseOverlay\tGame Resumed");
         }
 
-        // resume game time
-        Time.timeScale = 1f;
-        pauseOverlay.minigameStage = PauseOverlay.MinigameStage.Paused;
+        pauseOverlay.ContinueMinigameTimeAndAudio();
         gameObject.SetActive(false);
     }
 
     public void OnClickExitButton()
     {
-        Time.timeScale = 1f;
+        pauseOverlay.ContinueMinigameTimeAndAudio();
         SceneChange.LoadSelector();
     }
 

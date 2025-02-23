@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Scripting;
 
 // fixme translate this doc as google doc
 /* Implement Pause Function for any Scene
@@ -74,17 +75,6 @@ public class PauseOverlay : MonoBehaviour
     [SerializeField]
     private LoseContainer loseContainer;
 
-    public enum MinigameStage
-    {
-        PreStart, // before mingame start, with prestart screen
-        Running,
-        Paused,
-        Won,
-        Lost,
-    }
-
-    public MinigameStage minigameStage;
-
     private void Start()
     {
         // turn off pause/win/lose containers
@@ -92,18 +82,22 @@ public class PauseOverlay : MonoBehaviour
         winContainer.gameObject.SetActive(false);
         loseContainer.gameObject.SetActive(false);
 
-        if (requireStartButtonToStart)
-        {
-            // showing a pre-start screen before game start
-            minigameStage = MinigameStage.PreStart;
-            preStartContainer.SetActive(true);
-        }
-        else
-        {
-            // maek game run directly
-            minigameStage = MinigameStage.Running;
-            preStartContainer.SetActive(false);
-        }
+        // showing a pre-start screen before game start
+        preStartContainer.SetActive(requireStartButtonToStart);
+    }
+
+    // used by containers
+    public void StopMinigameTimeAndAudio()
+    {
+        Time.timeScale = 0f;
+        // BUG currently it doesn't stop sound & bgm
+    }
+
+    // used by containers
+    public void ContinueMinigameTimeAndAudio()
+    {
+        Time.timeScale = 1f;
+        // BUG currently it doesn't stop sound & bgm
     }
 
     void OnApplicationQuit()

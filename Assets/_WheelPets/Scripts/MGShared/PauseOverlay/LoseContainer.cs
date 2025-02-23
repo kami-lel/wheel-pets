@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// fixme need ui re-design
 public class LoseContainer : MonoBehaviour
 {
     [SerializeField]

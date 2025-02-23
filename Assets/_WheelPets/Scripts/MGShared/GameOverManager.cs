@@ -1,8 +1,5 @@
 using UnityEngine;
 
-// TODO make this work across scenes?
-// BUG is game over overlay bug fixed?
-// FIXME gameover overlay needs a background color
 // FIXME deprecation of GameOverPanel, use MinigameOverPrefab
 public class GameOverManager : MonoBehaviour
 {
