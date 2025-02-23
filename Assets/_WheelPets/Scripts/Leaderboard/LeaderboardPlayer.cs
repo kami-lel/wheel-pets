@@ -67,6 +67,8 @@ public class LeaderboardPlayer : MonoBehaviour
             $"Tug Of War Games Won: {data.tugOfWarGamesWon}\n"
             + $"Times Pet Washed: {data.timesPetWashed}\n"
             + $"Times Hide-N-Seek Won: {data.timesHideNSeekWon}\n"
-            + $"Cosmetics Unlocked: {data.cosmeticsUnlocked}";
+            + $"Cosmetics Unlocked: {data.cosmeticsUnlocked}\n"
+            + $"Fetch High Score: {data.fetchHighScore}\n"
+            + $"Best Time for Bath Minigame: {data.bathMinigameBestTime:F2} seconds";
     }
 }
