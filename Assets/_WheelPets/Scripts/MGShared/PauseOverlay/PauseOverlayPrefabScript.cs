@@ -127,6 +127,12 @@ public class PauseOverlay : MonoBehaviour
         // BUG currently it doesn't stop sound & bgm
     }
 
+    // used by containers
+    public void ReloadMinigameScene()
+    {
+        // TODO
+    }
+
     void OnApplicationQuit()
     {
         Time.timeScale = 1f;
