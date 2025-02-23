@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SpikedEdgeGlasses_0: -2587570159528051348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
