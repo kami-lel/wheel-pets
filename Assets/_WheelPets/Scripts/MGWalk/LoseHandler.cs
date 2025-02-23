@@ -2,8 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// BUG replace static pet with PetPrebab
-// TODO add start button
+// BUG yazmyn replace static pet with PetPrebab
+// TODO josh use PauseOverlay to handle game start/pause/win/loss
 // todo add more instruction for how to play the game
 // todo add high score function
 

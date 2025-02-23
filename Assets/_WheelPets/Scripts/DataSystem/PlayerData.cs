@@ -62,7 +62,7 @@ public class PlayerData
     public MinigameStatistics statWalkScene = new();
 
     // pet's data
-    public bool hasAdoptPet = false; // TODO make adoptionn scene working
+    public bool hasAdoptPet = false;
     public PetData petData = new();
 
     // declare classes
@@ -89,17 +89,16 @@ public class PlayerData
     [Serializable]
     public enum PetAccessory
     {
-        Atelier,
-        CloudyGlasses,
-        DeliveryCap,
-        HawaiianFlower,
-        Leaf,
-        PiratePatch,
-        PrettyBow,
-        RainbowHeadband,
-        StarCowlo,
-        UnicornHorn,
-        XDDCC,
+        Bowtie,
+        Tie,
+        Chain,
+        CapHat,
+        CowboyHat,
+        TopHat,
+        AngularChevronGlasses,
+        RectangularGlasses,
+        SpikedEdgeGlasses,
+        WingGlasses,
     }
 
     [Serializable]
@@ -117,6 +116,11 @@ public class PlayerData
         public AnimalType animalType = AnimalType.Dog;
         public float dominantColorHue = 0f;
         public float secondaryColorHue = 0f;
-        public List<PetAccessory> currentAccessories = new();
+        public List<PetAccessory> currentAccessories = new() // HACK initialze with some accessory
+        {
+            PetAccessory.Chain,
+            PetAccessory.CapHat,
+            PetAccessory.WingGlasses,
+        };
     }
 }
