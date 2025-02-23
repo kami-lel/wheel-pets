@@ -90,17 +90,6 @@ public class PlayerData
     public enum PetAccessory
     {
         Bowtie,
-        Atelier, // FIXME remove these
-        CloudyGlasses,
-        DeliveryCap,
-        HawaiianFlower,
-        Leaf,
-        PiratePatch,
-        PrettyBow,
-        RainbowHeadband,
-        StarCowlo,
-        UnicornHorn,
-        XDDCC,
     }
 
     [Serializable]
