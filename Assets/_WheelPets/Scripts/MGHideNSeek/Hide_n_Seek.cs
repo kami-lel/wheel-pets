@@ -47,6 +47,8 @@ public class Hide_n_Seek : MonoBehaviour
 
     private int strikeCounter = 0; // Int to count # of strikes
 
+    [SerializeField] private Button restartButton;
+
     void Start()
     {
         // Ensure there are 4 buttons assigned
@@ -94,9 +96,12 @@ public class Hide_n_Seek : MonoBehaviour
                 // Play correct guess audio with delay
                 StartCoroutine(PlayGuessSound(correctGuessAudio));
                 Debug.Log("You search the area... You found your pet!");
+
+                // Display restart button on win
+                restartButton.gameObject.SetActive(true);
             }
 
-            else
+            else if (buttonIndex != correctButtonIndex)
             {
                 // Hide & disable the button
                 buttons[buttonIndex].gameObject.SetActive(false);
@@ -105,10 +110,13 @@ public class Hide_n_Seek : MonoBehaviour
                 StartCoroutine(PlayGuessSound(incorrectGuessAudio));
                 Debug.Log($"You search the area but do not find your pet...");
 
-                // Display a strike on screen on incorrect guess
-                strikeImages[strikeCounter].gameObject.SetActive(true);
-                strikeCounter += 1;
-                Debug.Log("Current strike count: " + strikeCounter);
+                StartCoroutine(DisplayStrikes());
+
+                // If there are 3 strikes, display restart button
+                if (strikeCounter == 3)
+                {
+                    restartButton.gameObject.SetActive(true);
+                }
             }
 
             // Start button cooldown timer
@@ -120,6 +128,11 @@ public class Hide_n_Seek : MonoBehaviour
     public void BackButtonOnClick()
     {
         SceneChange.LoadSelector();
+    }
+
+    public void RestartButtonOnClick()
+    {
+        SceneChange.LoadHideAndSeek();
     }
 
     void PlayBackgroundMusic()
@@ -144,6 +157,17 @@ public class Hide_n_Seek : MonoBehaviour
         //start button cooldown for 5 seconds
         yield return new WaitForSeconds(delayButtonPress);
         buttonCooldown = false;
+    }
+
+    IEnumerator DisplayStrikes()
+    {
+        //delay display of strikes to match sfx
+        yield return new WaitForSeconds(delayGuess);
+
+        strikeImages[strikeCounter].gameObject.SetActive(true);
+        strikeCounter += 1;
+        Debug.Log("Current strike count: " + strikeCounter);
+
     }
 
     void chooseRandomAudio()
