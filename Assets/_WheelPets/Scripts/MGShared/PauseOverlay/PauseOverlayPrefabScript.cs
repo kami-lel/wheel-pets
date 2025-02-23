@@ -1,7 +1,4 @@
-using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 // fixme translate this doc as google doc
 /* Implement Pause Function for any Scene
@@ -72,10 +69,10 @@ public class PauseOverlay : MonoBehaviour
     private PauseContainer pauseContainer;
 
     [SerializeField]
-    private GameObject winContainer;
+    private WinContainer winContainer;
 
     [SerializeField]
-    private GameObject loseContainer;
+    private LoseContainer loseContainer;
 
     public enum MinigameStage
     {
@@ -92,8 +89,8 @@ public class PauseOverlay : MonoBehaviour
     {
         // turn off pause/win/lose containers
         pauseContainer.gameObject.SetActive(false);
-        winContainer.SetActive(false);
-        loseContainer.SetActive(false);
+        winContainer.gameObject.SetActive(false);
+        loseContainer.gameObject.SetActive(false);
 
         if (requireStartButtonToStart)
         {
