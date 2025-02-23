@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 // fixme need ui re-design
@@ -9,6 +10,7 @@ public class PauseContainer : MonoBehaviour
     private void OnEnable()
     {
         pauseOverlay.StopMinigameTimeAndAudio();
+        pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.Paused;
     }
 
     public void OnClickResumeButton()
@@ -19,6 +21,7 @@ public class PauseContainer : MonoBehaviour
         }
 
         pauseOverlay.ContinueMinigameTimeAndAudio();
+        pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.Running;
         gameObject.SetActive(false);
     }
 
@@ -28,7 +31,7 @@ public class PauseContainer : MonoBehaviour
         SceneChange.LoadSelector();
     }
 
-    public void VolumeSliderOnValueChanged(System.Single value)
+    public void VolumeSliderOnValueChanged(Single value)
     {
         if (Debug.isDebugBuild)
         {

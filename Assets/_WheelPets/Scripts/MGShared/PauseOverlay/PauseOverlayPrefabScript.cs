@@ -81,6 +81,17 @@ public class PauseOverlay : MonoBehaviour
     [SerializeField]
     private LoseContainer loseContainer;
 
+    public enum MinigameStatus
+    {
+        Running = 0,
+        PreStart,
+        Paused,
+        Won,
+        Lost,
+    }
+
+    public MinigameStatus minigameStatus;
+
     private void Start()
     {
         // turn off pause/win/lose containers
@@ -88,8 +99,18 @@ public class PauseOverlay : MonoBehaviour
         winContainer.gameObject.SetActive(false);
         loseContainer.gameObject.SetActive(false);
 
-        // showing a pre-start screen before game start
-        preStartContainer.SetActive(requireStartButtonToStart);
+        if (requireStartButtonToStart)
+        {
+            // showing a pre-start screen before game start
+            preStartContainer.SetActive(true);
+            minigameStatus = MinigameStatus.PreStart;
+        }
+        else
+        {
+            // start game directly
+            preStartContainer.SetActive(false);
+            minigameStatus = MinigameStatus.Running;
+        }
     }
 
     // used by containers
