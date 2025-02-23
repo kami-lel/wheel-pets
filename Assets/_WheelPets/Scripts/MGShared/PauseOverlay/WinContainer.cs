@@ -17,7 +17,7 @@ public class WinContainer : MonoBehaviour
         {
             Debug.Log("PauseOverlay\tWin Screen Shown");
         }
-        pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.Won;
+        pauseOverlay.status = PauseOverlay.Status.Won;
     }
 
     public void OnClickRestartButton()

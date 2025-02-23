@@ -66,7 +66,7 @@ public class PauseOverlay : MonoBehaviour
     [SerializeField]
     private LoseContainer loseContainer;
 
-    public enum MinigameStatus
+    public enum Status
     {
         Running = 0,
         PreStart,
@@ -75,7 +75,7 @@ public class PauseOverlay : MonoBehaviour
         Lost,
     }
 
-    public MinigameStatus minigameStatus = MinigameStatus.Running;
+    public Status status = Status.Running;
 
     private void Start()
     {

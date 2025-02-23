@@ -17,7 +17,7 @@ public class PreStartContainer : MonoBehaviour
         }
 
         pauseOverlay.StopMinigameTimeAndAudio();
-        pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.PreStart;
+        pauseOverlay.status = PauseOverlay.Status.PreStart;
     }
 
     public void OnClickStartButton()
@@ -28,7 +28,7 @@ public class PreStartContainer : MonoBehaviour
         }
 
         pauseOverlay.ContinueMinigameTimeAndAudio();
-        pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.Running;
+        pauseOverlay.status = PauseOverlay.Status.Running;
         gameObject.SetActive(false);
     }
 }

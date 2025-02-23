@@ -18,7 +18,7 @@ public class PauseContainer : MonoBehaviour
             Debug.Log("PauseOverlay\tPause Screen Shown");
         }
         pauseOverlay.StopMinigameTimeAndAudio();
-        pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.Paused;
+        pauseOverlay.status = PauseOverlay.Status.Paused;
     }
 
     public void OnClickResumeButton()
@@ -29,7 +29,7 @@ public class PauseContainer : MonoBehaviour
         }
 
         pauseOverlay.ContinueMinigameTimeAndAudio();
-        pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.Running;
+        pauseOverlay.status = PauseOverlay.Status.Running;
         gameObject.SetActive(false);
     }
 
