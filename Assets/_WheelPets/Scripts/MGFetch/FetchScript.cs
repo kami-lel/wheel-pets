@@ -74,7 +74,9 @@ public class FetchScript : MonoBehaviour
                 if (score > highScore)
                 {
                     highScore = score;
-                    Data.GetPlayerData().fetchHighScore = highScore;
+                    PlayerData data = Data.GetPlayerData();
+                    data.fetchHighScore = highScore;
+                    Data.SavePlayerDataToFile();
                 }
             }
         }
@@ -137,7 +139,9 @@ public class FetchScript : MonoBehaviour
             if (score > highScore)
             {
                 highScore = score;
-                Data.GetPlayerData().fetchHighScore = highScore;
+                PlayerData data = Data.GetPlayerData();
+                data.fetchHighScore = highScore;
+                Data.SavePlayerDataToFile();
             }
         }
     }
