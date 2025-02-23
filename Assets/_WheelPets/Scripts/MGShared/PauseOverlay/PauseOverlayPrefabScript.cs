@@ -1,16 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// FIXME translate this doc as google doc
-/* Implement Pause Function for any Scene
- *
- * How to use:
- * 1. Drag `PauseOverlay` **Prefab** into Hierachy, as a child of main Canvas
- * 2. create a Pause Button, links its On Click() with PauseOverlay.PauseButtonOnClick()
- */
-
-
-// TODO check if applied to all scenes correctly
 public class PauseOverlay : MonoBehaviour
 {
     /// <summary>

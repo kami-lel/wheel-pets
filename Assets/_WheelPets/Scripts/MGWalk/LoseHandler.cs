@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // BUG replace static pet with PetPrebab
-// TODO add start/win/lose/restart function
+// TODO use PauseOverlay to handle game start/pause/win/loss
 // todo add more instruction for how to play the game
 // todo add high score function
 

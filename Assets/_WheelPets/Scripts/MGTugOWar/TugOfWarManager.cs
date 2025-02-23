@@ -5,7 +5,6 @@ using UnityEngine;
 // todo add high score function
 // todo Feels too easy to spam tap, Maybe make a restriction on tapping?
 // fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
-// BUG pause is not working with click to play
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
@@ -201,7 +200,6 @@ public class TugOfWarManager : MonoBehaviour
             booingSound.Play();
         }
 
-        // FIXME alt implementation
         // Freeze the RopeLine
         FreezeRopeLine();
 
