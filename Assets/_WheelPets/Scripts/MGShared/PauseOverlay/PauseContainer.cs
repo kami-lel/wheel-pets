@@ -4,8 +4,12 @@ using UnityEngine;
 // fixme need ui re-design
 public class PauseContainer : MonoBehaviour
 {
-    [SerializeField]
-    private PauseOverlay pauseOverlay; // FIXME dynamically get
+    private PauseOverlay pauseOverlay;
+
+    private void Awake()
+    {
+        pauseOverlay = FindFirstObjectByType<PauseOverlay>();
+    }
 
     private void OnEnable()
     {

@@ -4,8 +4,12 @@ using UnityEngine;
 // todo linked with game stat
 public class WinContainer : MonoBehaviour
 {
-    [SerializeField]
-    private PauseOverlay pauseOverlay; // FIXME dynamically get
+    private PauseOverlay pauseOverlay;
+
+    private void Awake()
+    {
+        pauseOverlay = FindFirstObjectByType<PauseOverlay>();
+    }
 
     public void OnEnable()
     {
