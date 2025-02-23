@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -48,6 +49,9 @@ public class Hide_n_Seek : MonoBehaviour
     private int strikeCounter = 0; // Int to count # of strikes
 
     [SerializeField] private Button restartButton; // Holds restart button 
+
+    [SerializeField] private GameObject winText; // Stores win text display
+    [SerializeField] private GameObject loseText; // Stores lose text display
 
     void Start()
     {
@@ -99,6 +103,9 @@ public class Hide_n_Seek : MonoBehaviour
 
                 // Display restart button on win
                 restartButton.gameObject.SetActive(true);
+
+                // Display win text
+                winText.gameObject.SetActive(true);
             }
 
             else if (buttonIndex != correctButtonIndex)
@@ -167,6 +174,9 @@ public class Hide_n_Seek : MonoBehaviour
         if (strikeCounter == 3)
         {
             restartButton.gameObject.SetActive(true);
+
+            // Display lose text
+            loseText.gameObject.SetActive(true);
         }
 
     }
