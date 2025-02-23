@@ -57,7 +57,6 @@ public class StoreAccessoryEntry : MonoBehaviour
             );
         }
         // todo check if has enough point
-
         // TODO Implement purchase logic here
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
@@ -102,9 +101,9 @@ public class StoreAccessoryEntry : MonoBehaviour
     /// </summary>
     private void UpdateButtonInteractable()
     {
-        bool purchased = playerData.purchasedAccessories.Contains(
-            accessoryType
-        );
+        bool purchased = Data.accessoryManager.HasPurchased(accessoryType);
+
+        // HACK replace
         bool wearing = playerData.petData.currentAccessories.Contains(
             accessoryType
         );
