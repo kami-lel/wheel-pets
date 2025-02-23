@@ -19,7 +19,7 @@ public class PauseOverlay : MonoBehaviour
     /// This function is often called by a Pause Button.
     /// It serves as an interface function to work with the PauseOverlay.
     /// </summary>
-    public void PauseButtonOnClick()
+    public void MinigamePause()
     {
         if (Debug.isDebugBuild)
         {
@@ -27,6 +27,12 @@ public class PauseOverlay : MonoBehaviour
         }
 
         pauseContainer.gameObject.SetActive(true);
+    }
+
+    // hack backward compatiblity
+    public void PauseButtonOnClick()
+    {
+        MinigamePause();
     }
 
     /// <summary>

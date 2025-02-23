@@ -1087,8 +1087,7 @@ MonoBehaviour:
   preStartContainer: {fileID: 1149118955564041616}
   pauseContainer: {fileID: 3669888268016259091}
   winContainer: {fileID: 5721916902724440549}
-  loseContainer: {fileID: 277697271670172338}
-  minigameStage: 0
+  loseContainer: {fileID: 6653432323996696480}
 --- !u!1 &4076919939159446587
 GameObject:
   m_ObjectHideFlags: 0
@@ -1967,8 +1966,8 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8752070828892271677}
-        m_TargetAssemblyTypeName: PauseOverlay, Assembly-CSharp
+      - m_Target: {fileID: 3669888268016259091}
+        m_TargetAssemblyTypeName: PauseContainer, Assembly-CSharp
         m_MethodName: VolumeSliderOnValueChanged
         m_Mode: 0
         m_Arguments:
@@ -2100,9 +2099,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8752070828892271677}
-        m_TargetAssemblyTypeName: PauseOverlay, Assembly-CSharp
-        m_MethodName: ExitButtonOnClick
+      - m_Target: {fileID: 3669888268016259091}
+        m_TargetAssemblyTypeName: PauseContainer, Assembly-CSharp
+        m_MethodName: OnClickExitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2366,9 +2365,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8752070828892271677}
-        m_TargetAssemblyTypeName: PauseOverlay, Assembly-CSharp
-        m_MethodName: ResumeButtonOnClick
+      - m_Target: {fileID: 3669888268016259091}
+        m_TargetAssemblyTypeName: PauseContainer, Assembly-CSharp
+        m_MethodName: OnClickResumeButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
