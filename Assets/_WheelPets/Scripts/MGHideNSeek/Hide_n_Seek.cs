@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 // BUG replace static pet with PetPrebab
 // todo xiimplment visual cue for find/not find dog (in addition to audio cue) for accesssibility reason
-// TODO add start button
+// TODO use PauseOverlay to handle game start/pause/win/loss
 // todo add more instruction for how to play the game
 // todo add high score function
 // fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
