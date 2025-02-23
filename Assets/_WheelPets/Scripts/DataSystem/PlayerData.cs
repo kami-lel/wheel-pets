@@ -64,7 +64,7 @@ public class PlayerData
     // pet's data
     public bool hasAdoptPet = false;
     public PetData petData = new();
-    public List<PetAccessory> purchasedAccessories = new();
+    public List<AccessoryType> purchasedAccessories = new();
 
     // declare classes
     [Serializable]
@@ -83,25 +83,6 @@ public class PlayerData
         public int winCount = 0;
     }
 
-    /// <summary>
-    /// Data type for pet accessories.
-    /// Renderable in PetPrefab, purchasable in Store, and usable in Closet.
-    /// </summary>
-    [Serializable]
-    public enum PetAccessory
-    {
-        Bowtie,
-        Tie,
-        Chain,
-        CapHat,
-        CowboyHat,
-        TopHat,
-        AngularChevronGlasses,
-        RectangularGlasses,
-        SpikedEdgeGlasses,
-        WingGlasses,
-    }
-
     [Serializable]
     public enum AnimalType
     {
@@ -117,11 +98,11 @@ public class PlayerData
         public AnimalType animalType = AnimalType.Dog;
         public float dominantColorHue = 0f;
         public float secondaryColorHue = 0f;
-        public List<PetAccessory> currentAccessories = new() // HACK initialze with some accessory
+        public List<AccessoryType> currentAccessories = new() // HACK initialze with some accessory
         {
-            PetAccessory.Chain,
-            PetAccessory.CapHat,
-            PetAccessory.WingGlasses,
+            AccessoryType.Chain,
+            AccessoryType.CapHat,
+            AccessoryType.WingGlasses,
         };
     }
 }

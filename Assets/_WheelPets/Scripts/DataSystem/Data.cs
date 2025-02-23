@@ -51,6 +51,9 @@ public class Data
                 throw;
             }
         }
+
+        // create a accessory manager that is linked with playerData
+        accessoryManager = new AccessoryManager(_playerData);
     }
 
     public static void SavePlayerDataToFile()
@@ -94,6 +97,7 @@ public class Data
         }
     }
 
+    public static AccessoryManager accessoryManager;
     private static PlayerData _playerData = null;
     private static ParameterData _parameterData = null;
 

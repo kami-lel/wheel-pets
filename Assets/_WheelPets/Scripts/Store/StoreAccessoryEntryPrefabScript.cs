@@ -19,7 +19,7 @@ public class StoreAccessoryEntry : MonoBehaviour
     [SerializeField]
     private PetScript petPrefab;
 
-    private PlayerData.PetAccessory accessoryType;
+    private AccessoryType accessoryType;
     private PlayerData playerData;
 
     private void Start()
@@ -28,9 +28,9 @@ public class StoreAccessoryEntry : MonoBehaviour
 
         // attempt to decide what accessory this prefab is containing
         // based on **name** of accessory sprite
-        bool result = Enum.TryParse<PlayerData.PetAccessory>(
+        bool result = Enum.TryParse<AccessoryType>(
             accessorySprite.name,
-            out PlayerData.PetAccessory accessory_temp
+            out AccessoryType accessory_temp
         );
         if (Debug.isDebugBuild && !result)
         {
@@ -38,7 +38,7 @@ public class StoreAccessoryEntry : MonoBehaviour
                 "StoreAccessoryEntry Prefab\t"
                     + "Can not decide which accessory contained, "
                     + "make sure name of sprite gameobject match "
-                    + "exactly PlayerData.PetAccessory"
+                    + "exactly AccessoryType"
             );
         }
         accessoryType = accessory_temp;
