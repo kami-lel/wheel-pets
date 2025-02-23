@@ -38,7 +38,7 @@ public class Hide_n_Seek : MonoBehaviour
     private int delayGuess = 3; // Int to delay guess sound
     private AudioSource randomAudio; // Stores random audio to be played on button press
 
-    private bool buttonCooldown = false; 
+    private bool buttonCooldown = false; // Bool to check if button is on cooldown
 
     private int delayButtonPress = 4; // Int to delay button press
 
@@ -47,7 +47,7 @@ public class Hide_n_Seek : MonoBehaviour
 
     private int strikeCounter = 0; // Int to count # of strikes
 
-    [SerializeField] private Button restartButton;
+    [SerializeField] private Button restartButton; // Holds restart button 
 
     void Start()
     {
@@ -110,6 +110,7 @@ public class Hide_n_Seek : MonoBehaviour
                 StartCoroutine(PlayGuessSound(incorrectGuessAudio));
                 Debug.Log($"You search the area but do not find your pet...");
 
+                // Display strikes on screen with delay
                 StartCoroutine(DisplayStrikes());
 
                 // If there are 3 strikes, display restart button
