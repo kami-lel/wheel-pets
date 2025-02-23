@@ -117,6 +117,11 @@ public class PlayerData
         public AnimalType animalType = AnimalType.Dog;
         public float dominantColorHue = 0f;
         public float secondaryColorHue = 0f;
-        public List<PetAccessory> currentAccessories = new();
+        public List<PetAccessory> currentAccessories = new() // HACK initialze with some accessory
+        {
+            PetAccessory.Chain,
+            PetAccessory.CapHat,
+            PetAccessory.WingGlasses,
+        };
     }
 }

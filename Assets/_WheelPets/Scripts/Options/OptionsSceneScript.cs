@@ -1,8 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// TODO option to re-adopt a new pet (accessory is kept though)
-// TODO reset all data option
 public class OptionsSceneScript : MonoBehaviour
 {
     [SerializeField]

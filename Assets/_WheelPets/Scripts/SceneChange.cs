@@ -2,8 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// FIXME make "back" button (e.g. in settings) actual go back
-// BUG start the entire game in Driving Sim
+// FIXME test "back" button (e.g. in settings) actual go back
 public class SceneChange : MonoBehaviour
 {
     public static void LoadAdoption()
