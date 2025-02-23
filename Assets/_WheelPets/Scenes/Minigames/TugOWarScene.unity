@@ -1161,6 +1161,7 @@ MonoBehaviour:
   cheeringSound: {fileID: 291144472}
   booingSound: {fileID: 1972591475}
   BackgroundMusic: {fileID: 557860985}
+  pauseOverlay: {fileID: 1928920053}
 --- !u!1 &555609521
 GameObject:
   m_ObjectHideFlags: 0

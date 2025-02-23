@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.Scripting;
+using UnityEngine.SceneManagement;
 
-// fixme translate this doc as google doc
+// FIXME translate this doc as google doc
 /* Implement Pause Function for any Scene
  *
  * How to use:
@@ -21,11 +21,6 @@ public class PauseOverlay : MonoBehaviour
     /// </summary>
     public void MinigamePause()
     {
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log("PauseOverlay\tPause Button Clicked");
-        }
-
         pauseContainer.gameObject.SetActive(true);
     }
 
@@ -42,12 +37,7 @@ public class PauseOverlay : MonoBehaviour
     /// </summary>
     public void MinigameWin()
     {
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log("PauseOverlay\tWin Triggered");
-        }
-
-        // TODO Implementation for handling win conditions goes here
+        winContainer.gameObject.SetActive(true);
     }
 
     /// <summary>
@@ -57,12 +47,7 @@ public class PauseOverlay : MonoBehaviour
     /// </summary>
     public void MinigameLost()
     {
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log("PauseOverlay\tLose Triggered");
-        }
-
-        // TODO Implementation for handling loss conditions goes here
+        loseContainer.gameObject.SetActive(true);
     }
 
     // whether to require a click on the "start" button to begin the game
@@ -130,7 +115,7 @@ public class PauseOverlay : MonoBehaviour
     // used by containers
     public void ReloadMinigameScene()
     {
-        // TODO
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void OnApplicationQuit()

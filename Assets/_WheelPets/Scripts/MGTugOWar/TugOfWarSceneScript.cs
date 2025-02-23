@@ -47,7 +47,6 @@ public class TugOfWarSceneScript : MonoBehaviour
         {
             yield return new WaitForSeconds(buttonClickSound.clip.length);
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void BackButtonOnClick()

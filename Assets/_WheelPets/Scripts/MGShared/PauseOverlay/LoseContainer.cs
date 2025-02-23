@@ -9,6 +9,10 @@ public class LoseContainer : MonoBehaviour
 
     public void OnEnable()
     {
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tLose Screen Shown");
+        }
         pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.Lost;
     }
 

@@ -9,6 +9,10 @@ public class PauseContainer : MonoBehaviour
 
     private void OnEnable()
     {
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tPause Screen Shown");
+        }
         pauseOverlay.StopMinigameTimeAndAudio();
         pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.Paused;
     }

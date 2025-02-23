@@ -9,6 +9,10 @@ public class WinContainer : MonoBehaviour
 
     public void OnEnable()
     {
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tWin Screen Shown");
+        }
         pauseOverlay.minigameStatus = PauseOverlay.MinigameStatus.Won;
     }
 
