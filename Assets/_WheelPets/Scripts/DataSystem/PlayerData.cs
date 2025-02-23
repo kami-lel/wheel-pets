@@ -89,7 +89,8 @@ public class PlayerData
     [Serializable]
     public enum PetAccessory
     {
-        Atelier,
+        Bowtie,
+        Atelier, // FIXME remove these
         CloudyGlasses,
         DeliveryCap,
         HawaiianFlower,
