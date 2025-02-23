@@ -298,6 +298,7 @@ public class BathGame : SceneSwapping
     private void SaveHighScore()
     {
         PlayerData playerData = Data.GetPlayerData();
+        playerData.timesPetWashed++; // Increment the times pet washed stat
         if (
             timer < playerData.bathMinigameBestTime
             || playerData.bathMinigameBestTime == 60f
@@ -305,5 +306,6 @@ public class BathGame : SceneSwapping
         {
             playerData.bathMinigameBestTime = timer;
         }
+        Data.SavePlayerDataToFile(); // Save the updated player data
     }
 }

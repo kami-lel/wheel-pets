@@ -19,6 +19,9 @@ public class Hide_n_Seek : MonoBehaviour
     private Sprite petSprite;
 
     [SerializeField]
+    private GameObject petPrefab; // Reference to the pet prefab
+
+    [SerializeField]
     AudioSource backgroundMusic; // Audio source for background music
 
     [SerializeField]
@@ -77,12 +80,18 @@ public class Hide_n_Seek : MonoBehaviour
         // Check if the pressed button is the correct one
         if (buttonIndex == correctButtonIndex)
         {
-            // Replace button image with petSprite
-            buttons[buttonIndex].image.sprite = petSprite;
+            // Instantiate the pet prefab at the position of the correct button
+            Vector3 buttonPosition = buttons[buttonIndex].transform.position;
+            Instantiate(petPrefab, buttonPosition, Quaternion.identity);
 
             // Play correct guess audio with delay
             StartCoroutine(PlayGuessSound(correctGuessAudio));
             Debug.Log("You search the area... You found your pet!");
+
+            // Increment the times hide and seek won stat
+            PlayerData data = Data.GetPlayerData();
+            data.timesHideNSeekWon++;
+            Data.SavePlayerDataToFile();
         }
         else
         {
