@@ -112,12 +112,6 @@ public class Hide_n_Seek : MonoBehaviour
 
                 // Display strikes on screen with delay
                 StartCoroutine(DisplayStrikes());
-
-                // If there are 3 strikes, display restart button
-                if (strikeCounter == 3)
-                {
-                    restartButton.gameObject.SetActive(true);
-                }
             }
 
             // Start button cooldown timer
@@ -169,6 +163,12 @@ public class Hide_n_Seek : MonoBehaviour
         strikeCounter += 1;
         Debug.Log("Current strike count: " + strikeCounter);
 
+        // If there are 3 strikes, display restart button
+        if (strikeCounter == 3)
+        {
+            restartButton.gameObject.SetActive(true);
+        }
+
     }
 
     void chooseRandomAudio()
@@ -188,5 +188,10 @@ public class Hide_n_Seek : MonoBehaviour
         {
             randomAudio = searching2Audio;
         }
+    }
+
+    void DisplayInstructions()
+    {
+
     }
 }
