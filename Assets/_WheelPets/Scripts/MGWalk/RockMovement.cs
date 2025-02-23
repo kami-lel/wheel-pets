@@ -28,24 +28,22 @@ public class RockMovement : MonoBehaviour
         HandleRockMovement();
     }
 
-    private void HandleRockMovement()
+private void HandleRockMovement()
+{
+    // Move the rocks left
+    float horizontalMovement = moveSpeed * Time.deltaTime;
+
+    // Apply movement
+    transform.position += new Vector3(horizontalMovement, 0, 0);
+
+    // If the rock moves past the left bound, reset it to the right
+    if (transform.position.x < xBoundLeft)
     {
-        // Capture horizontal input from arrow keys
-        float horizontalInput = 0;
-
-        if (Input.GetKey(KeyCode.LeftArrow)) horizontalInput = -1;
-        else if (Input.GetKey(KeyCode.RightArrow)) horizontalInput = 1;
-
-        // Apply horizontal movement
-        Vector3 movement = new Vector3(horizontalInput * moveSpeed * Time.deltaTime, 0, 0);
-        transform.position += movement;
-
-        // Check if the rock goes out of bounds on the left
-        if (transform.position.x < xBoundLeft)
-        {
-            Vector3 newPosition = transform.position;
-            newPosition.x = xBoundRight; // Reappear on the right side of the panel
-            transform.position = newPosition;
-        }
+        Vector3 newPosition = transform.position;
+        newPosition.x = xBoundRight; // Respawn on the right side
+        transform.position = newPosition;
     }
+}
+
+
 }
