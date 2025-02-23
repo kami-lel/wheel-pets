@@ -12,6 +12,11 @@ public class LoseContainer : MonoBehaviour
 
     public void OnClickExitButton()
     {
-        // TODO
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tExit Game from Lose Screen");
+        }
+
+        SceneChange.LoadSelector();
     }
 }

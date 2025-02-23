@@ -12,6 +12,11 @@ public class WinContainer : MonoBehaviour
 
     public void OnClickExitButton()
     {
-        // TODO
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PauseOverlay\tExit Game from Win Screen");
+        }
+
+        SceneChange.LoadSelector();
     }
 }
