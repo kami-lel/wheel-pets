@@ -459,6 +459,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1342029227}
     m_Modifications:
+    - target: {fileID: 1174631302656884681, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3323605337135005481, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3994813054359744121, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
       propertyPath: m_Name
       value: PauseOverlay
