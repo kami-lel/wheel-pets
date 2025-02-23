@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class BathGame : SceneSwapping
 {
     [SerializeField]
-    public GameObject targetObject; // The object to check for collisions with
+    public BoxCollider2D targetCollider; // The collider to check for collisions with
 
     [SerializeField]
     public TextMeshProUGUI mistakeText; // Text to display mistakes
@@ -45,9 +45,9 @@ public class BathGame : SceneSwapping
 
     void Start()
     {
-        if (targetObject == null)
+        if (targetCollider == null)
         {
-            Debug.LogError("Target object not assigned in the Inspector!");
+            Debug.LogError("Target collider not assigned in the Inspector!");
         }
 
         if (messageText == null || mistakeText == null || timerText == null)
@@ -97,6 +97,7 @@ public class BathGame : SceneSwapping
 
     public void NotifyItemDragged(string itemTag)
     {
+        Debug.Log($"NotifyItemDragged called with itemTag: {itemTag}");
         GameObject draggedItem = GameObject.FindWithTag(itemTag);
 
         if (mistakeText.text != "XXX" && !isScissorsUsed) // Check if mistakes are less than 3 and towel is not used
@@ -247,10 +248,10 @@ public class BathGame : SceneSwapping
         foreach (GameObject item in draggableItems)
         {
             float itemPosX =
-                targetObject.transform.position.x
+                targetCollider.transform.position.x
                 + Mathf.Sin(angle * Mathf.Deg2Rad) * circleRadius;
             float itemPosY =
-                targetObject.transform.position.y
+                targetCollider.transform.position.y
                 + Mathf.Cos(angle * Mathf.Deg2Rad) * circleRadius;
 
             Vector3 itemPos = new Vector3(itemPosX, itemPosY, 0);
