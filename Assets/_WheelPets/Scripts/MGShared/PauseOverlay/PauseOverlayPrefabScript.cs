@@ -55,7 +55,7 @@ public class PauseOverlay : MonoBehaviour
     private bool requireStartButtonToStart = true;
 
     [SerializeField]
-    private GameObject preStartContainer;
+    private PreStartContainer preStartContainer;
 
     [SerializeField]
     private PauseContainer pauseContainer;
@@ -75,7 +75,7 @@ public class PauseOverlay : MonoBehaviour
         Lost,
     }
 
-    public MinigameStatus minigameStatus;
+    public MinigameStatus minigameStatus = MinigameStatus.Running;
 
     private void Start()
     {
@@ -84,18 +84,8 @@ public class PauseOverlay : MonoBehaviour
         winContainer.gameObject.SetActive(false);
         loseContainer.gameObject.SetActive(false);
 
-        if (requireStartButtonToStart)
-        {
-            // showing a pre-start screen before game start
-            preStartContainer.SetActive(true);
-            minigameStatus = MinigameStatus.PreStart;
-        }
-        else
-        {
-            // start game directly
-            preStartContainer.SetActive(false);
-            minigameStatus = MinigameStatus.Running;
-        }
+        // showing a pre-start screen before game start
+        preStartContainer.gameObject.SetActive(requireStartButtonToStart);
     }
 
     // used by containers

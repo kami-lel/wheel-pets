@@ -5,7 +5,7 @@ using UnityEngine;
 public class PauseContainer : MonoBehaviour
 {
     [SerializeField]
-    private PauseOverlay pauseOverlay;
+    private PauseOverlay pauseOverlay; // FIXME dynamically get
 
     private void OnEnable()
     {

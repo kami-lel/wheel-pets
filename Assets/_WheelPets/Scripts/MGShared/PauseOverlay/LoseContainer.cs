@@ -5,7 +5,7 @@ using UnityEngine;
 public class LoseContainer : MonoBehaviour
 {
     [SerializeField]
-    private PauseOverlay pauseOverlay;
+    private PauseOverlay pauseOverlay; // FIXME dynamically get
 
     public void OnEnable()
     {

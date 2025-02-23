@@ -1,8 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-// BUG replace static pet with PetPrebab
-// TODO add start/win/lose/restart function
 // todo add more instruction for how to play the game
 // todo add high score function
 // todo Feels too easy to spam tap, Maybe make a restriction on tapping?
