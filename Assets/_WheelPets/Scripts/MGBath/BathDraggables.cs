@@ -9,8 +9,13 @@ public class BathDraggables : MonoBehaviour, IPointerDownHandler, IPointerUpHand
 
     void Start()
     {
-        originalPosition = transform.position;
         Debug.Log($"{gameObject.name} - Start: Original position set to {originalPosition}");
+    }
+
+    public void SetOriginalPosition(Vector3 position)
+    {
+        originalPosition = position;
+        Debug.Log($"{gameObject.name} - SetOriginalPosition: Original position set to {originalPosition}");
     }
 
     public void OnPointerDown(PointerEventData eventData)

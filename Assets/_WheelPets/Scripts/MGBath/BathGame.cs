@@ -256,6 +256,14 @@ public class BathGame : SceneSwapping
 
             Vector3 itemPos = new Vector3(itemPosX, itemPosY, 0);
             item.transform.position = itemPos;
+
+            // Set the original position for each draggable item
+            BathDraggables draggableScript = item.GetComponent<BathDraggables>();
+            if (draggableScript != null)
+            {
+                draggableScript.SetOriginalPosition(itemPos);
+            }
+
             item.SetActive(true); // Make the item visible and interactable
 
             angle += angleStep;
