@@ -33,7 +33,7 @@ public class AccessoryManager
             }
             return 1;
         }
-        else if (false) // todo check if has enough point
+        else if (playerData.gamePoint < -1) // todo check if has enough point
         {
             if (Debug.isDebugBuild)
             {

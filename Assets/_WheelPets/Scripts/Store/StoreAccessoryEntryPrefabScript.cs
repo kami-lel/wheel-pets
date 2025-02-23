@@ -16,14 +16,13 @@ public class StoreAccessoryEntry : MonoBehaviour
     [SerializeField]
     private GameObject accessorySprite;
 
-    [SerializeField]
     private PetScript petPrefab;
-
     private AccessoryType accessoryType;
     private PlayerData playerData;
 
     private void Start()
     {
+        petPrefab = FindFirstObjectByType<PetScript>();
         playerData = Data.GetPlayerData();
 
         // attempt to decide what accessory this prefab is containing
@@ -48,16 +47,7 @@ public class StoreAccessoryEntry : MonoBehaviour
 
     public void OnClickPurchaseButton()
     {
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log(
-                "StoreAccessoryEntry Prefab\t"
-                    + accessoryType.ToString()
-                    + "\tPurchased"
-            );
-        }
-        // todo check if has enough point
-        // TODO Implement purchase logic here
+        Data.accessoryManager.Purchase(accessoryType);
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
     }
