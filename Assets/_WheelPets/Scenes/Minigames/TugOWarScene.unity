@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: preStartContainer
       value: 
       objectReference: {fileID: 1308771198}
+    - target: {fileID: 8752070828892271677, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
+      propertyPath: requireStartButtonToStart
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

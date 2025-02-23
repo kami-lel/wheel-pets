@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f7521acccbfbf6c4c90daf29fa5cb723
+guid: 9178dce8596651a4caec327b475d44d2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 107288629005542233
-    second: RainbowHeadband_0
+      213: -7698281358998724773
+    second: RectangularGlasses_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RainbowHeadband_0
+      name: RectangularGlasses_0
       rect:
         serializedVersion: 2
-        x: 139
-        y: 239
-        width: 412
-        height: 182
+        x: 19
+        y: 17
+        width: 154
+        height: 73
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 953605c807a2d7100800000000000000
-      internalID: 107288629005542233
+      spriteID: b5f9ed724e53a2590800000000000000
+      internalID: -7698281358998724773
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RainbowHeadband_0: 107288629005542233
+      RectangularGlasses_0: -7698281358998724773
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

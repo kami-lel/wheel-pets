@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 0f4ed1b9e08afa14f8096a8d9692262d
+guid: a59a0b7d7dad38545a7d9cda3eeffce3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6149161054517270118
-    second: UnicornHorn_0
-  - first:
-      213: -7386249127046274077
-    second: UnicornHorn_1
-  - first:
-      213: -7328478132156614123
-    second: UnicornHorn_2
-  - first:
-      213: 990087561249642963
-    second: UnicornHorn_3
+      213: 3154808032907232334
+    second: WingGlasses_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -57,7 +48,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -122,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UnicornHorn_0
+      name: WingGlasses_0
       rect:
         serializedVersion: 2
-        x: 289
-        y: 569
-        width: 22
-        height: 32
+        x: 7
+        y: 16
+        width: 178
+        height: 74
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6661b214665365550800000000000000
-      internalID: 6149161054517270118
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UnicornHorn_1
-      rect:
-        serializedVersion: 2
-        x: 329
-        y: 599
-        width: 22
-        height: 42
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3e32edf8d85ce7990800000000000000
-      internalID: -7386249127046274077
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UnicornHorn_2
-      rect:
-        serializedVersion: 2
-        x: 359
-        y: 579
-        width: 42
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 51a369c77f30c4a90800000000000000
-      internalID: -7328478132156614123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UnicornHorn_3
-      rect:
-        serializedVersion: 2
-        x: 279
-        y: 299
-        width: 122
-        height: 292
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3d951d8246f7dbd00800000000000000
-      internalID: 990087561249642963
+      spriteID: e440cf7e03128cb20800000000000000
+      internalID: 3154808032907232334
       vertices: []
       indices: 
       edges: []
@@ -223,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UnicornHorn_0: 6149161054517270118
-      UnicornHorn_1: -7386249127046274077
-      UnicornHorn_2: -7328478132156614123
-      UnicornHorn_3: 990087561249642963
+      WingGlasses_0: 3154808032907232334
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
