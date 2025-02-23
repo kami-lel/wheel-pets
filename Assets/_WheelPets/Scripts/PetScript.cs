@@ -1,8 +1,8 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 // todo show name of the pet above
+// todo implement cat & rabbit
 // fixme make sure all accessories are placed properly
 // fixme make sure accessories render order is correct, chain should be above glasses, etc.
 public class PetScript : MonoBehaviour
