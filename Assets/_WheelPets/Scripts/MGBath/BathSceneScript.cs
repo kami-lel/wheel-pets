@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 // fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
 // BUG tools hide instruction text
+// FIXME use PauseOverlay to handle game start/pause/win/loss, remove GameOverPanel
+// BUG replace static pet with PetPrebab
+// todo add more instruction for how to play the game
+// todo add high score function
 public class BathSceneScript : MonoBehaviour
 {
     public GameObject playAgainButton;

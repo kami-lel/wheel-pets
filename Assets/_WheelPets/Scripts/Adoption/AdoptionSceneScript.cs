@@ -62,7 +62,7 @@ public class AdoptionSceneScript : MonoBehaviour
     /// </summary>
     public void KittenButtonOnClick()
     {
-        // bug
+        // todo need to implement cat
         Debug.LogWarning("Cat asset not ready yet.");
 
         // restore after implmenting cat
@@ -75,8 +75,8 @@ public class AdoptionSceneScript : MonoBehaviour
     /// </summary>
     public void RabbitButtonOnClick()
     {
-        // bug
-        Debug.LogWarning("Cat Avatar not ready yet.");
+        // todo need to implement rabbit
+        Debug.LogWarning("Rabbit Avatar not ready yet.");
 
         // restore after implmenting rabbit
         // petData.animalType = PlayerData.AnimalType.Rabbit;
