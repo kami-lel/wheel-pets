@@ -8,7 +8,6 @@ using UnityEngine;
 // FIXME Add Instructions for controls
 // FIXME connect data w/ pet game
 // BUG runtime error The referenced script (Unknown) on this Behaviour is missing!
-// BUG no way of exiting the simulation
 public class DrivingSimSceneScript : MonoBehaviour
 {
     public void ExitSimluationButtonOnClick()

@@ -90,17 +90,16 @@ public class PlayerData
     [Serializable]
     public enum PetAccessory
     {
-        Atelier,
-        CloudyGlasses,
-        DeliveryCap,
-        HawaiianFlower,
-        Leaf,
-        PiratePatch,
-        PrettyBow,
-        RainbowHeadband,
-        StarCowlo,
-        UnicornHorn,
-        XDDCC,
+        Bowtie,
+        Tie,
+        Chain,
+        CapHat,
+        CowboyHat,
+        TopHat,
+        AngularChevronGlasses,
+        RectangularGlasses,
+        SpikedEdgeGlasses,
+        WingGlasses,
     }
 
     [Serializable]
