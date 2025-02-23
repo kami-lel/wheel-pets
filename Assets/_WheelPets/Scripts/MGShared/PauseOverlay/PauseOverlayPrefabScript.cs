@@ -14,6 +14,17 @@ public class PauseOverlay : MonoBehaviour
         pauseContainer.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// This function should be called when one wants to pause the minigame
+    /// and bring the Restart Confirm screen.
+    /// This function is often called by a Restart Button.
+    /// It serves as an interface function to work with the PauseOverlay.
+    /// </summary>
+    public void MinigameTryRestart()
+    {
+        restartConfirmContainer.gameObject.SetActive(true);
+    }
+
     // hack backward compatiblity
     public void PauseButtonOnClick()
     {
@@ -56,6 +67,9 @@ public class PauseOverlay : MonoBehaviour
     [SerializeField]
     private LoseContainer loseContainer;
 
+    [SerializeField]
+    private RestartConfirmContainer restartConfirmContainer;
+
     public enum Status
     {
         Running = 0,
@@ -63,6 +77,7 @@ public class PauseOverlay : MonoBehaviour
         Paused,
         Won,
         Lost,
+        RestartConfirm,
     }
 
     public Status status = Status.Running;
@@ -73,6 +88,7 @@ public class PauseOverlay : MonoBehaviour
         pauseContainer.gameObject.SetActive(false);
         winContainer.gameObject.SetActive(false);
         loseContainer.gameObject.SetActive(false);
+        restartConfirmContainer.gameObject.SetActive(false);
 
         // showing a pre-start screen before game start
         preStartContainer.gameObject.SetActive(requireStartButtonToStart);

@@ -1236,6 +1236,7 @@ MonoBehaviour:
   pauseContainer: {fileID: 3669888268016259091}
   winContainer: {fileID: 5721916902724440549}
   loseContainer: {fileID: 6653432323996696480}
+  restartConfirmContainer: {fileID: 6098507781670884728}
   status: 0
 --- !u!1 &4076919939159446587
 GameObject:
