@@ -66,7 +66,10 @@ public class TugOfWarManager : MonoBehaviour
             FreezeRopeLine();
         }
 
-        if (Input.GetMouseButtonDown(0)) // Detects mouse click or screen tap
+        if (
+            pauseOverlay.status == PauseOverlay.Status.Running
+            && Input.GetMouseButtonDown(0)
+        ) // Detects mouse click or screen tap
         {
             if (gameStarted && !gameWon && !gameLost)
             {
