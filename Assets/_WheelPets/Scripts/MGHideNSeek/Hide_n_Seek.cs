@@ -40,7 +40,12 @@ public class Hide_n_Seek : MonoBehaviour
 
     private bool buttonCooldown = false; 
 
-    private int delayButtonPress = 4; // Int to delay button pressw
+    private int delayButtonPress = 4; // Int to delay button press
+
+    [SerializeField]
+    private Image[] strikeImages; // Array to hold strike images
+
+    private int strikeCounter = 0; // Int to count # of strikes
 
     void Start()
     {
@@ -99,6 +104,11 @@ public class Hide_n_Seek : MonoBehaviour
                 // Play incorrect guess audio with delay
                 StartCoroutine(PlayGuessSound(incorrectGuessAudio));
                 Debug.Log($"You search the area but do not find your pet...");
+
+                // Display a strike on screen on incorrect guess
+                strikeImages[strikeCounter].gameObject.SetActive(true);
+                strikeCounter += 1;
+                Debug.Log("Current strike count: " + strikeCounter);
             }
 
             // Start button cooldown timer
