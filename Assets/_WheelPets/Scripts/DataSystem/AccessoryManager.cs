@@ -10,6 +10,11 @@ public class AccessoryManager
         this.playerData = playerData;
     }
 
+    public bool HasPurchased(AccessoryType accessory)
+    {
+        return playerData.purchasedAccessories.Contains(accessory);
+    }
+
     /// <summary>
     /// Tries to purchase an accessory for the player.
     /// </summary>
@@ -58,8 +63,9 @@ public class AccessoryManager
         return 0;
     }
 
-    public bool HasPurchased(AccessoryType accessory)
+    public bool IsWearing(AccessoryType accessory)
     {
-        return playerData.purchasedAccessories.Contains(accessory);
+        return HasPurchased(accessory)
+            && playerData.petData.currentAccessories.Contains(accessory);
     }
 }

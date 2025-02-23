@@ -92,14 +92,10 @@ public class StoreAccessoryEntry : MonoBehaviour
     private void UpdateButtonInteractable()
     {
         bool purchased = Data.accessoryManager.HasPurchased(accessoryType);
-
-        // HACK replace
-        bool wearing = playerData.petData.currentAccessories.Contains(
-            accessoryType
-        );
+        bool wearing = Data.accessoryManager.IsWearing(accessoryType);
 
         purchaseButton.interactable = !purchased;
-        equipButton.interactable = purchased && !wearing;
-        unequipButton.interactable = purchased && wearing;
+        equipButton.interactable = !wearing;
+        unequipButton.interactable = wearing;
     }
 }
