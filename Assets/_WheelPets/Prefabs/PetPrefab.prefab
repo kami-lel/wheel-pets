@@ -256,7 +256,7 @@ Transform:
   m_GameObject: {fileID: 4426250395428167631}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -505,7 +505,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8024345900797591538}
   - component: {fileID: 7329160227167309070}
-  - component: {fileID: 3681632730626914320}
   m_Layer: 0
   m_Name: PetPrefab
   m_TagString: Untagged
@@ -575,7 +574,7 @@ Transform:
   m_GameObject: {fileID: 7243033452618719752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1010,7 +1009,7 @@ Transform:
   m_GameObject: {fileID: 8553946587836787994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1219,7 +1218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4977416271878707175, guid: 26edba78a353b0148a027fa3b28047fa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 4977416271878707175, guid: 26edba78a353b0148a027fa3b28047fa, type: 3}
       propertyPath: m_LocalPosition.z
