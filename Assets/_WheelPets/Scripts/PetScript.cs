@@ -1,18 +1,29 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // todo show name of the pet above
-// TODO remove unusable pet accessories
+// fixme make sure all accessories are placed properly
+// fixme make sure accessories render order is correct, chain should be above glasses, etc.
 public class PetScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject dog;
 
     [SerializeField]
+    private GameObject dogAccessoryGroup;
+
+    [SerializeField]
     private GameObject cat;
 
     [SerializeField]
+    private GameObject catAccessoryGroup;
+
+    [SerializeField]
     private GameObject rabbit;
+
+    [SerializeField]
+    private GameObject rabbitAccessoryGroup;
 
     /// <summary>
     /// Updates the appearance of the pet from petData
@@ -68,17 +79,14 @@ public class PetScript : MonoBehaviour
 
     private void UpdateLookAccessory()
     {
-        // fixme make sure all accessories are placed properly
-
-        Transform accessoryGroupTransform = activePet.transform.Find(
-            "AccessoryGroup"
-        );
-        if (Debug.isDebugBuild && accessoryGroupTransform == null)
+        // decide type of the animal
+        GameObject activePetAccessoryGroup = petData.animalType switch
         {
-            Debug.LogError(
-                "PetPrefab\tCan't find AccessoryGroup in " + activePet
-            );
-        }
+            PlayerData.AnimalType.Dog => dogAccessoryGroup,
+            PlayerData.AnimalType.Cat => catAccessoryGroup,
+            PlayerData.AnimalType.Rabbit => rabbitAccessoryGroup,
+            _ => dogAccessoryGroup,
+        };
 
         // loop via all possible accessories in enum PetAccessory
         foreach (
@@ -90,7 +98,7 @@ public class PetScript : MonoBehaviour
             // find accessory as game object
             string accessoryName = accessory.ToString();
             Transform accessoryTransform =
-                accessoryGroupTransform.transform.Find(accessoryName);
+                activePetAccessoryGroup.transform.Find(accessoryName);
             if (accessoryTransform != null)
             {
                 // set active condition
