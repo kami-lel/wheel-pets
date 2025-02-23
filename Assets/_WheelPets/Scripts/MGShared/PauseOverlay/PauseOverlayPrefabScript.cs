@@ -111,11 +111,7 @@ public class PauseOverlay : MonoBehaviour
     // used by containers
     public void ReloadMinigameScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    void OnApplicationQuit()
-    {
         Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
