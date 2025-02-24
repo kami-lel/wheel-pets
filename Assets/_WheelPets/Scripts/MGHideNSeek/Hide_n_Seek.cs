@@ -38,6 +38,8 @@ public class Hide_n_Seek : MonoBehaviour
     private int delayGuess = 3; // Int to delay guess sound
     private AudioSource randomAudio;
 
+    public PauseOverlay pauseOverlay;
+
     void Start()
     {
         // Ensure there are 4 buttons assigned
@@ -83,6 +85,7 @@ public class Hide_n_Seek : MonoBehaviour
             // Play correct guess audio with delay
             StartCoroutine(PlayGuessSound(correctGuessAudio));
             Debug.Log("You search the area... You found your pet!");
+            pauseOverlay.MinigameWin();
         }
         else
         {
