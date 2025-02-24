@@ -98,14 +98,14 @@ public class PauseOverlay : MonoBehaviour
     public void StopMinigameTimeAndAudio()
     {
         Time.timeScale = 0f;
-        // BUG currently it doesn't stop sound & bgm
+        // bug currently it doesn't stop sound & bgm
     }
 
     // used by containers
     public void ContinueMinigameTimeAndAudio()
     {
         Time.timeScale = 1f;
-        // BUG currently it doesn't stop sound & bgm
+        // bug currently it doesn't stop sound & bgm
     }
 
     // used by containers

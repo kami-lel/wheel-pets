@@ -23,7 +23,7 @@ public class PlayerData
         new LeaderboardOtherPlayerData { name = "Mia", point = 178 },
     };
 
-    // fixme better data structure
+    // FIXME better data structure
     // driving statistics
     public int leftTurnSignals = 0;
     public int rightTurnSignals = 0;
@@ -49,7 +49,7 @@ public class PlayerData
     public bool muteMusic = false;
     public bool muteSfx = false;
 
-    // FIXME combine fileds before and after this line
+    // fixme combine fileds before and after this line
     public float mainVolume = 0.75f; // 0~1
     public float bgmVolume = 1f;
 
@@ -75,7 +75,7 @@ public class PlayerData
     }
 
     // TODO add high score
-    // FIXME makesure these are connected with the game
+    // fixme makesure these are connected with the game
     [Serializable]
     public class MinigameStatistics
     {

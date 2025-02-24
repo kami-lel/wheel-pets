@@ -45,6 +45,6 @@ public class PauseContainer : MonoBehaviour
         {
             Debug.Log($"PauseOverlay\tmain volume changed to {value}");
         }
-        // BUG volume slider not working
+        // bug volume slider not working
     }
 }
