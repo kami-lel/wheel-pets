@@ -16,9 +16,6 @@ public class Hide_n_Seek : MonoBehaviour
     private int correctButtonIndex; // Index of the correct button
 
     [SerializeField]
-    private Sprite petSprite;
-
-    [SerializeField]
     private GameObject petPrefab; // Reference to the pet prefab
 
     [SerializeField]
@@ -82,7 +79,13 @@ public class Hide_n_Seek : MonoBehaviour
         {
             // Instantiate the pet prefab at the position of the correct button
             Vector3 buttonPosition = buttons[buttonIndex].transform.position;
-            Instantiate(petPrefab, buttonPosition, Quaternion.identity);
+            GameObject petInstance = Instantiate(petPrefab, buttonPosition, Quaternion.identity);
+
+            // Set the scale of the pet prefab
+            petInstance.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
+
+            // Move the pet prefab to the front of the scene
+            petInstance.transform.position = new Vector3(petInstance.transform.position.x, petInstance.transform.position.y, -1f);
 
             // Play correct guess audio with delay
             StartCoroutine(PlayGuessSound(correctGuessAudio));
