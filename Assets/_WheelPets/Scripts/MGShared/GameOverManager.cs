@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// FIXME deprecation of GameOverPanel, use MinigameOverPrefab
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverPrefab;

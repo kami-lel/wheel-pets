@@ -342,7 +342,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8398259692036737289}
         m_TargetAssemblyTypeName: PauseOverlay, Assembly-CSharp
-        m_MethodName: PauseButtonOnClick
+        m_MethodName: MinigamePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3044,6 +3044,7 @@ MonoBehaviour:
   incorrectGuessAudio: {fileID: 1829149176}
   searching1Audio: {fileID: 156526075}
   searching2Audio: {fileID: 608751484}
+  pauseOverlay: {fileID: 8398259692036737289}
   strikeImages:
   - {fileID: 1546913590}
   - {fileID: 1721970733}

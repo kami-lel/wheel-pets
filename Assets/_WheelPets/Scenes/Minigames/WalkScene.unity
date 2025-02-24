@@ -2130,7 +2130,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1613202746}
         m_TargetAssemblyTypeName: PauseOverlay, Assembly-CSharp
-        m_MethodName: PauseButtonOnClick
+        m_MethodName: MinigamePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

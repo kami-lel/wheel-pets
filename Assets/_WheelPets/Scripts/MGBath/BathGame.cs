@@ -19,7 +19,7 @@ public class BathGame : SceneSwapping
     [SerializeField]
     public TextMeshProUGUI timerText; // Text to display the timer
 
-    public GameOverManager gameOverManager;
+    public PauseOverlay pauseOverlay;
 
     // Order booleans
     private bool isBrushUsed = false;
@@ -94,7 +94,7 @@ public class BathGame : SceneSwapping
         if (mistakeText.text == "XXX")
         {
             gameActive = false;
-            gameOverManager.ShowGameOver();
+            pauseOverlay.MinigameLost();
             if (sceneScript != null)
             {
                 sceneScript.ShowPlayAgainButton();
@@ -202,6 +202,7 @@ public class BathGame : SceneSwapping
                     DisplayMessage("All done");
                     RemoveItem(draggedItem);
                     ScissorSound.Play();
+                    pauseOverlay.MinigameWin();
                     gameActive = false; // Stop the timer
                     SaveHighScore(); // Save the high score if the player completes the dog washing
                     if (sceneScript != null)
