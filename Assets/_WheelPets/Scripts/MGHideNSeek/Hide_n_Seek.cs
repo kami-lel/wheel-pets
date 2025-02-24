@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -35,7 +36,21 @@ public class Hide_n_Seek : MonoBehaviour
     [SerializeField]
     AudioSource searching2Audio; // Audio source for searching2 sfx
     private int delayGuess = 3; // Int to delay guess sound
-    private AudioSource randomAudio;
+    private AudioSource randomAudio; // Stores random audio to be played on button press
+
+    private bool buttonCooldown = false; // Bool to check if button is on cooldown
+
+    private int delayButtonPress = 4; // Int to delay button press
+
+    [SerializeField]
+    private Image[] strikeImages; // Array to hold strike images
+
+    private int strikeCounter = 0; // Int to count # of strikes
+
+    [SerializeField] private Button restartButton; // Holds restart button 
+
+    [SerializeField] private GameObject winText; // Stores win text display
+    [SerializeField] private GameObject loseText; // Stores lose text display
 
     void Start()
     {
@@ -68,11 +83,18 @@ public class Hide_n_Seek : MonoBehaviour
 
     void OnButtonPressed(int buttonIndex)
     {
-        // Choose random search audio and play it for 2 seconds
-        chooseRandomAudio();
-        randomAudio.Play();
-        randomAudio.SetScheduledEndTime(2 + AudioSettings.dspTime);
+        if (!buttonCooldown)
+        { 
+            // Choose random search audio and play it for 2 seconds
+            chooseRandomAudio();
+            randomAudio.Play();
+            randomAudio.SetScheduledEndTime(2 + AudioSettings.dspTime);
 
+            // Check if the pressed button is the correct one
+            if (buttonIndex == correctButtonIndex)
+            {
+                // Replace button image with petSprite
+                buttons[buttonIndex].image.sprite = petSprite;
         // Check if the pressed button is the correct one
         if (buttonIndex == correctButtonIndex)
         {
@@ -94,29 +116,49 @@ public class Hide_n_Seek : MonoBehaviour
                 -1f
             );
 
-            // Play correct guess audio with delay
-            StartCoroutine(PlayGuessSound(correctGuessAudio));
-            Debug.Log("You search the area... You found your pet!");
+                // Play correct guess audio with delay
+                StartCoroutine(PlayGuessSound(correctGuessAudio));
+                Debug.Log("You search the area... You found your pet!");
 
+                // Display restart button on win
+                restartButton.gameObject.SetActive(true);
+
+                // Display win text
+                winText.gameObject.SetActive(true);
+    
             // Increment the times hide and seek won stat
             PlayerData data = Data.GetPlayerData();
             data.timesHideNSeekWon++;
             Data.SavePlayerDataToFile();
         }
-        else
-        {
-            // Hide & disable the button
-            buttons[buttonIndex].gameObject.SetActive(false);
 
-            // Play incorrect guess audio with delay
-            StartCoroutine(PlayGuessSound(incorrectGuessAudio));
-            Debug.Log($"You search the area but do not find your pet...");
+            else if (buttonIndex != correctButtonIndex)
+            {
+                // Hide & disable the button
+                buttons[buttonIndex].gameObject.SetActive(false);
+
+                // Play incorrect guess audio with delay
+                StartCoroutine(PlayGuessSound(incorrectGuessAudio));
+                Debug.Log($"You search the area but do not find your pet...");
+
+                // Display strikes on screen with delay
+                StartCoroutine(DisplayStrikes());
+            }
+
+            // Start button cooldown timer
+            StartCoroutine(ResetButtonCooldown());
+            buttonCooldown = true;
         }
     }
 
     public void BackButtonOnClick()
     {
         SceneChange.LoadSelector();
+    }
+
+    public void RestartButtonOnClick()
+    {
+        SceneChange.LoadHideAndSeek();
     }
 
     void PlayBackgroundMusic()
@@ -136,6 +178,33 @@ public class Hide_n_Seek : MonoBehaviour
         guessSound.Play();
     }
 
+    IEnumerator ResetButtonCooldown()
+    {
+        //start button cooldown for 5 seconds
+        yield return new WaitForSeconds(delayButtonPress);
+        buttonCooldown = false;
+    }
+
+    IEnumerator DisplayStrikes()
+    {
+        //delay display of strikes to match sfx
+        yield return new WaitForSeconds(delayGuess);
+
+        strikeImages[strikeCounter].gameObject.SetActive(true);
+        strikeCounter += 1;
+        Debug.Log("Current strike count: " + strikeCounter);
+
+        // If there are 3 strikes, display restart button
+        if (strikeCounter == 3)
+        {
+            restartButton.gameObject.SetActive(true);
+
+            // Display lose text
+            loseText.gameObject.SetActive(true);
+        }
+
+    }
+
     void chooseRandomAudio()
     {
         //choose random search/footstep audio and assign it to randomAudio
@@ -153,5 +222,10 @@ public class Hide_n_Seek : MonoBehaviour
         {
             randomAudio = searching2Audio;
         }
+    }
+
+    void DisplayInstructions()
+    {
+
     }
 }
