@@ -108,7 +108,7 @@ public class SceneChange : MonoBehaviour
     }
 }
 
-// FIXME rm this class is not in use anymore
+// fixme rm this class is not in use anymore
 public class SceneSwapping : MonoBehaviour
 {
     public AudioSource buttonClickSound;
@@ -202,50 +202,3 @@ public class SceneSwapping : MonoBehaviour
         Application.Quit();
     }
 }
-
-
-//  public class SceneSwapping : MonoBehaviour
-//  {
-//     //Load GameScene
-//     public void LoadDrivingGameScene()
-//     {
-//         SceneManager.LoadScene("DrivingGameScene");
-//     }
-//
-//      public void LoadPetGameScene()
-//     {
-//         SceneManager.LoadScene("PetGameScene");
-//     }
-//
-//     public void LoadTitleScene()
-//     {
-//         SceneManager.LoadScene("TitleScene");
-//     }
-//
-//     public void LoadLeaderboardScene()
-//     {
-//         SceneManager.LoadScene("LeaderboardScene");
-//     }
-//
-//     public void LoadOptionsScene(){
-//           SceneManager.LoadScene("OptionsScene");
-//     }
-//
-//     public void LoadDogCareScene()
-//     {
-//          SceneManager.LoadScene("DogWalkScene");
-//     }
-//
-//     public void LoadClosetScene()
-//     {
-//      SceneManager.LoadScene("ClosetScene");
-//     }
-//
-//     public void ExitGame(){
-//          Application.Quit();
-//     }
-//
-//
-//
-//  }
-//
