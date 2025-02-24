@@ -30,7 +30,7 @@ public class PlayerData
     public int timesParkedWithoutTouchingLines = 0;
     public int stopSignsStoppedAt = 0;
 
-    // fixme better data structure
+    // FIXME better data structure
     //  minigame statistics
     public int tugOfWarGamesWon = 0;
     public int timesPetWashed = 0;
@@ -38,10 +38,12 @@ public class PlayerData
     public int cosmeticsUnlocked = 0;
     public int timesPetWalked = 0;
 
+    // FIXME
     // High score for the fetch minigame
     public int fetchHighScore = 0;
 
-    // Best time for the bath minigame
+    // FIXME
+    // TODO Best time for the bath minigame
     public float bathMinigameBestTime = 60f;
 
     // Audio settings
@@ -55,6 +57,7 @@ public class PlayerData
     public float bgmVolume = 1f;
 
     // statistics of mini games
+    // BUG fix
     public MinigameStatistics statBath = new();
     public MinigameStatistics statFeed = new();
     public MinigameStatistics statFetch = new();
@@ -73,15 +76,6 @@ public class PlayerData
     {
         public string name;
         public int point;
-    }
-
-    // todo add high score
-    // fixme makesure these are connected with the game
-    [Serializable]
-    public class MinigameStatistics
-    {
-        public int playCount = 0;
-        public int winCount = 0;
     }
 
     [Serializable]
