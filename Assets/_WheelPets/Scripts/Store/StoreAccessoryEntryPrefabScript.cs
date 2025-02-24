@@ -28,7 +28,7 @@ public class StoreAccessoryEntry : MonoBehaviour
         // attempt to decide what accessory this prefab is containing
         // based on **name** of accessory sprite
         bool result = Enum.TryParse<AccessoryType>(
-            accessorySprite.name,
+            gameObject.name,
             out AccessoryType accessory_temp
         );
         if (Debug.isDebugBuild && !result)
@@ -36,7 +36,7 @@ public class StoreAccessoryEntry : MonoBehaviour
             Debug.LogWarning(
                 "StoreAccessoryEntry Prefab\t"
                     + "Can not decide which accessory contained, "
-                    + "make sure name of sprite gameobject match "
+                    + "make sure name of Prefab match "
                     + "exactly AccessoryType"
             );
         }
@@ -54,30 +54,14 @@ public class StoreAccessoryEntry : MonoBehaviour
 
     public void OnClickEquipButton()
     {
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log(
-                "StoreAccessoryEntry Prefab\t"
-                    + accessoryType.ToString()
-                    + "\tEquipped"
-            );
-        }
-        // TODO Implement equip logic here
+        Data.accessoryManager.Equip(accessoryType);
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
     }
 
     public void OnClickUnequipButton()
     {
-        if (Debug.isDebugBuild)
-        {
-            Debug.Log(
-                "StoreAccessoryEntry Prefab\t"
-                    + accessoryType.ToString()
-                    + "\tUnequipped"
-            );
-        }
-        // TODO Implement unequip logic here
+        Data.accessoryManager.Unequip(accessoryType);
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
     }
@@ -95,7 +79,7 @@ public class StoreAccessoryEntry : MonoBehaviour
         bool wearing = Data.accessoryManager.IsWearing(accessoryType);
 
         purchaseButton.interactable = !purchased;
-        equipButton.interactable = !wearing;
+        equipButton.interactable = purchased && !wearing;
         unequipButton.interactable = wearing;
     }
 }
