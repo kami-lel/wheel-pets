@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// FIXME test "back" button (e.g. in settings) actual go back
+// FIXME josh test "back" button (e.g. in settings) actual go back
 public class SceneChange : MonoBehaviour
 {
     public static void LoadAdoption()

@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// BUG marco replace static pet with PetPrebab
 // todo xiimplment visual cue for find/not find dog (in addition to audio cue) for accesssibility reason
 // TODO josh use PauseOverlay to handle game start/pause/win/loss
 // todo add more instruction for how to play the game
@@ -79,13 +78,21 @@ public class Hide_n_Seek : MonoBehaviour
         {
             // Instantiate the pet prefab at the position of the correct button
             Vector3 buttonPosition = buttons[buttonIndex].transform.position;
-            GameObject petInstance = Instantiate(petPrefab, buttonPosition, Quaternion.identity);
+            GameObject petInstance = Instantiate(
+                petPrefab,
+                buttonPosition,
+                Quaternion.identity
+            );
 
             // Set the scale of the pet prefab
             petInstance.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
 
             // Move the pet prefab to the front of the scene
-            petInstance.transform.position = new Vector3(petInstance.transform.position.x, petInstance.transform.position.y, -1f);
+            petInstance.transform.position = new Vector3(
+                petInstance.transform.position.x,
+                petInstance.transform.position.y,
+                -1f
+            );
 
             // Play correct guess audio with delay
             StartCoroutine(PlayGuessSound(correctGuessAudio));
