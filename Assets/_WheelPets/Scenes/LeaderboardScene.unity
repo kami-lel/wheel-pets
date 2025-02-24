@@ -457,8 +457,7 @@ MonoBehaviour:
 
     - 4200 Right Turn Signals
 
-    - 1000 Times
-    Parked without touching the lines
+    - 1000 Times Parked without touching the lines
 
     - 1500 Stop Signs Stopped At'
 --- !u!222 &154240832
@@ -1842,8 +1841,7 @@ MonoBehaviour:
 
     - 500 Times Pet Washed
 
-    - 300 Times
-    Hide-N-Seek Won
+    - 300 Times Hide-N-Seek Won
 
     - 5 Cosmetics Unlocked'
 --- !u!222 &2040268899

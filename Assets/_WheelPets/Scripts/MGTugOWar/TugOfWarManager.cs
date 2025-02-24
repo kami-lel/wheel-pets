@@ -166,6 +166,11 @@ public class TugOfWarManager : MonoBehaviour
             cheeringSound.Play();
         }
 
+        // Increment the tug of war games won stat
+        PlayerData data = Data.GetPlayerData();
+        data.tugOfWarGamesWon++;
+        Data.SavePlayerDataToFile();
+
         // Freeze the RopeLine
         FreezeRopeLine();
 

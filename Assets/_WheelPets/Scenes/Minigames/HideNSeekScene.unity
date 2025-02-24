@@ -2244,7 +2244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 405, y: 75}
+  m_AnchoredPosition: {x: 405, y: 115}
   m_SizeDelta: {x: 130, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754457170
@@ -2364,7 +2364,7 @@ MonoBehaviour:
   - {fileID: 1862584831}
   - {fileID: 1286757361}
   - {fileID: 1754457170}
-  petSprite: {fileID: -4213516876732360470, guid: 83088443f4efa42bd8a1e3425ea763f9, type: 3}
+  petPrefab: {fileID: 7151626241602800239, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
   backgroundMusic: {fileID: 1813838026}
   footstepAudio: {fileID: 1744018623}
   correctGuessAudio: {fileID: 1288198290}
