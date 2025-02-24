@@ -69,6 +69,7 @@ public class LeaderboardPlayer : MonoBehaviour
             + $"Times Hide-N-Seek Won: {data.timesHideNSeekWon}\n"
             + $"Cosmetics Unlocked: {data.cosmeticsUnlocked}\n"
             + $"Fetch High Score: {data.fetchHighScore}\n"
-            + $"Best Time for Bath Minigame: {data.bathMinigameBestTime:F2} seconds";
+            + $"Best Time for Bath Minigame: {data.bathMinigameBestTime:F2} seconds\n"
+            + $"Times Pet Walked: {data.timesPetWalked}";
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class UIMovement : MonoBehaviour
 {
@@ -46,6 +47,10 @@ public class UIMovement : MonoBehaviour
         // Setup for Jump Functionality
         if (body == null) Debug.LogError("Rigidbody2D (body) is null! Assign it in the Inspector.");
         if (jumpSound == null) Debug.LogWarning("Jump sound is not assigned!");
+
+        // Disable controls initially
+        controlsEnabled = false;
+        StartCoroutine(EnableControlsAfterDelay(2f)); // 2-second delay
     }
 
     void Update()
@@ -61,27 +66,25 @@ public class UIMovement : MonoBehaviour
         ProcessJump();
     }
 
-private void HandleAutoMovement()
-{
-    if (grass == null) return;
-
-    // Automatically move the UI dog to the left
-    float horizontalMovement = -moveSpeed * Time.deltaTime;
-
-    // Apply movement
-    transform.position += new Vector3(horizontalMovement, 0, 0);
-
-    // If the UI dog moves past the left bound, reset it to the right
-    if (transform.position.x < xBoundLeft)
+    private void HandleAutoMovement()
     {
-        Vector3 newPosition = transform.position;
-        newPosition.x = xBoundRight; // Reset to right side
-        newPosition.y = yStart + Random.Range(-yVariation, yVariation); // Add slight vertical variation
-        transform.position = newPosition;
+        if (grass == null) return;
+
+        // Automatically move the UI dog to the left
+        float horizontalMovement = -moveSpeed * Time.deltaTime;
+
+        // Apply movement
+        transform.position += new Vector3(horizontalMovement, 0, 0);
+
+        // If the UI dog moves past the left bound, reset it to the right
+        if (transform.position.x < xBoundLeft)
+        {
+            Vector3 newPosition = transform.position;
+            newPosition.x = xBoundRight; // Reset to right side
+            newPosition.y = yStart + Random.Range(-yVariation, yVariation); // Add slight vertical variation
+            transform.position = newPosition;
+        }
     }
-}
-
-
 
     private void HandleJumpInput()
     {
@@ -120,6 +123,11 @@ private void HandleAutoMovement()
                 Debug.LogError("CompletionText is not assigned in the Inspector.");
             }
 
+            // Increment the timesPetWalked stat
+            PlayerData data = Data.GetPlayerData();
+            data.timesPetWalked++;
+            Data.SavePlayerDataToFile();
+
             // Disable all controls
             controlsEnabled = false;
         }
@@ -128,5 +136,11 @@ private void HandleAutoMovement()
     public void DisableControls()
     {
         controlsEnabled = false;
+    }
+
+    private IEnumerator EnableControlsAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        controlsEnabled = true;
     }
 }
