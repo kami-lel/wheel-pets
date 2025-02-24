@@ -36,6 +36,8 @@ public class FetchScript : MonoBehaviour
 
     private List<GameObject> activeBalls = new List<GameObject>(); // List to track active balls
 
+    public PauseOverlay pauseOverlay;
+
     void Start()
     {
         currentSpeed = initialSpeed;
@@ -67,7 +69,7 @@ public class FetchScript : MonoBehaviour
             {
                 // Game over
                 gameActive = false;
-                ShowGameOverText();
+                pauseOverlay.MinigameLost();
                 Debug.Log("Game Over! Timer reached 0.");
 
                 // Update the high score if the current score is higher
@@ -130,7 +132,7 @@ public class FetchScript : MonoBehaviour
         {
             // Game over
             gameActive = false;
-            ShowGameOverText();
+            pauseOverlay.MinigameLost();
             Debug.Log("Game Over! Final Score: " + score);
 
             // Update the high score if the current score is higher
