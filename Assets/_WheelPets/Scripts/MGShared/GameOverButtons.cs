@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// FIXME deprecation of GameOverPanel, use MinigameOverPrefab
 public class GameOverButtons : MonoBehaviour
 {
     public Button restartButton;

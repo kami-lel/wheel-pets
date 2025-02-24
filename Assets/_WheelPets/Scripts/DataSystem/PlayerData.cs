@@ -23,14 +23,14 @@ public class PlayerData
         new LeaderboardOtherPlayerData { name = "Mia", point = 178 },
     };
 
-    // FIXME better data structure
+    // fixme better data structure
     // driving statistics
     public int leftTurnSignals = 0;
     public int rightTurnSignals = 0;
     public int timesParkedWithoutTouchingLines = 0;
     public int stopSignsStoppedAt = 0;
 
-    // FIXME better data structure
+    // fixme better data structure
     //  minigame statistics
     public int tugOfWarGamesWon = 0;
     public int timesPetWashed = 0;
@@ -75,7 +75,7 @@ public class PlayerData
         public int point;
     }
 
-    // TODO add high score
+    // todo add high score
     // fixme makesure these are connected with the game
     [Serializable]
     public class MinigameStatistics

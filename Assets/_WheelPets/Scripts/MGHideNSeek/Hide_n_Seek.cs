@@ -4,11 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// TODO implement visual cue for find/not find dog (in addition to audio cue) for accessibility reason
-// TODO use PauseOverlay to handle game start/pause/win/loss
-// TODO add more instruction for how to play the game
-// TODO add high score function
-// FIXME common buttons: back, pause, etc. should share a uniform design language / placement across scenes
+// todo implement visual cue for find/not find dog (in addition to audio cue) for accessibility reason
+// todo add more instruction for how to play the game
+// todo add high score function
 
 public class Hide_n_Seek : MonoBehaviour
 {
