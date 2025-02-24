@@ -1,7 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-// TODO make closet scene functional w/ placholder assets images
+// bug closet is not operational
 public class ClosetSceneScript : MonoBehaviour
 {
     public void BackButtonOnClick()

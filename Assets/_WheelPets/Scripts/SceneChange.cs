@@ -12,7 +12,9 @@ public class SceneChange : MonoBehaviour
 
     public static void LoadCloset()
     {
-        SceneManager.LoadScene("ClosetScene");
+        SceneManager.LoadScene("StoreScene");
+        // bug disable closet for this release
+        // SceneManager.LoadScene("ClosetScene");
     }
 
     public static void LoadDrivingGame()
