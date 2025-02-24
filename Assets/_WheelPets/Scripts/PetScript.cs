@@ -88,11 +88,9 @@ public class PetScript : MonoBehaviour
             _ => dogAccessoryGroup,
         };
 
-        // loop via all possible accessories in enum PetAccessory
+        // loop via all possible accessories in enum AccessoryType
         foreach (
-            PlayerData.PetAccessory accessory in Enum.GetValues(
-                typeof(PlayerData.PetAccessory)
-            )
+            AccessoryType accessory in Enum.GetValues(typeof(AccessoryType))
         )
         {
             // find accessory as game object
