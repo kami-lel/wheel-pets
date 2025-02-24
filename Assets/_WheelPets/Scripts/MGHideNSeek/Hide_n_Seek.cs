@@ -53,6 +53,8 @@ public class Hide_n_Seek : MonoBehaviour
     [SerializeField] private GameObject winText; // Stores win text display
     [SerializeField] private GameObject loseText; // Stores lose text display
 
+    public PauseOverlay pauseOverlay;
+
     void Start()
     {
         // Ensure there are 4 buttons assigned
@@ -126,6 +128,7 @@ public class Hide_n_Seek : MonoBehaviour
             PlayerData data = Data.GetPlayerData();
             data.timesHideNSeekWon++;
             Data.SavePlayerDataToFile();
+            pauseOverlay.MinigameWin();
         }
             else
     {
