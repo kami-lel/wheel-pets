@@ -22,6 +22,7 @@ public class UIMovement : MonoBehaviour
 
     // Completion Fields
     [SerializeField] private TextMeshProUGUI completionText; // The TextMeshProUGUI to display the message
+    public PauseOverlay pauseOverlay; // PauseOverlay object to trigger win screen
 
     void Start()
     {
@@ -122,6 +123,7 @@ private void HandleAutoMovement()
 
             // Disable all controls
             controlsEnabled = false;
+            pauseOverlay.MinigameWin();
         }
     }
 

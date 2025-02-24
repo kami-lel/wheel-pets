@@ -1469,6 +1469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoseSound: {fileID: 1578023731}
   loseTag: Rock
+  pauseOverlay: {fileID: 1613202746}
 --- !u!1 &1056199989
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,7 +2139,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1613202746}
         m_TargetAssemblyTypeName: PauseOverlay, Assembly-CSharp
-        m_MethodName: PauseButtonOnClick
+        m_MethodName: MinigamePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2927,6 +2928,7 @@ MonoBehaviour:
   jumpAmount: 0
   jumpSound: {fileID: 0}
   completionText: {fileID: 433645167}
+  pauseOverlay: {fileID: 1613202746}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
