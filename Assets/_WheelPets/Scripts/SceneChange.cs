@@ -2,8 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// fixme make "back" button (e.g. in settings) actual go back
-// bug start the entire game in Driving Sim
+// fixme josh test "back" button (e.g. in settings) actual go back
 public class SceneChange : MonoBehaviour
 {
     public static void LoadAdoption()
@@ -13,7 +12,9 @@ public class SceneChange : MonoBehaviour
 
     public static void LoadCloset()
     {
-        SceneManager.LoadScene("ClosetScene");
+        SceneManager.LoadScene("StoreScene");
+        // bug disable closet for this release
+        // SceneManager.LoadScene("ClosetScene");
     }
 
     public static void LoadDrivingGame()
@@ -85,9 +86,29 @@ public class SceneChange : MonoBehaviour
     {
         SceneManager.LoadScene("FeedingInstructions");
     }
+
+    /// <summary>
+    /// Manages the logic for exiting the adoption scene intelligently based on pet adoption status.
+    /// </summary>
+    /// <remarks>
+    /// If a pet has never been adopted, which often occurs after a factor reset,
+    /// exiting the adoption scene will navigate the user to the Driving Simulator.
+    /// If a pet has already been adopted, exiting the adoption scene will navigate the user to the Options scene.
+    /// </remarks>
+    public static void LeaveAdoptionScene()
+    {
+        if (Data.GetPlayerData().hasAdoptPet)
+        {
+            LoadOptions();
+        }
+        else
+        {
+            LoadDrivingGame();
+        }
+    }
 }
 
-// fixme do not use this class, just use SceneManager.LoadScene
+// fixme rm this class is not in use anymore
 public class SceneSwapping : MonoBehaviour
 {
     public AudioSource buttonClickSound;
@@ -181,50 +202,3 @@ public class SceneSwapping : MonoBehaviour
         Application.Quit();
     }
 }
-
-
-//  public class SceneSwapping : MonoBehaviour
-//  {
-//     //Load GameScene
-//     public void LoadDrivingGameScene()
-//     {
-//         SceneManager.LoadScene("DrivingGameScene");
-//     }
-//
-//      public void LoadPetGameScene()
-//     {
-//         SceneManager.LoadScene("PetGameScene");
-//     }
-//
-//     public void LoadTitleScene()
-//     {
-//         SceneManager.LoadScene("TitleScene");
-//     }
-//
-//     public void LoadLeaderboardScene()
-//     {
-//         SceneManager.LoadScene("LeaderboardScene");
-//     }
-//
-//     public void LoadOptionsScene(){
-//           SceneManager.LoadScene("OptionsScene");
-//     }
-//
-//     public void LoadDogCareScene()
-//     {
-//          SceneManager.LoadScene("DogWalkScene");
-//     }
-//
-//     public void LoadClosetScene()
-//     {
-//      SceneManager.LoadScene("ClosetScene");
-//     }
-//
-//     public void ExitGame(){
-//          Application.Quit();
-//     }
-//
-//
-//
-//  }
-//

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class DogJump : MonoBehaviour
 {
@@ -39,6 +40,10 @@ public class DogJump : MonoBehaviour
         {
             Debug.LogError("Grass object is not assigned for Arrow Key Movement!");
         }
+
+        // Disable controls initially
+        controlsEnabled = false;
+        StartCoroutine(EnableControlsAfterDelay(2f)); // 2-second delay
     }
 
     void Update()
@@ -97,5 +102,11 @@ public class DogJump : MonoBehaviour
     public void DisableControls()
     {
         controlsEnabled = false;
+    }
+
+    private IEnumerator EnableControlsAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        controlsEnabled = true;
     }
 }

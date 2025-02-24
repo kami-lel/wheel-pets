@@ -1,18 +1,52 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// bug pet prefab is not properly rendered
 public class OptionsSceneScript : MonoBehaviour
 {
-    // todo connect more buttons, etc.
+    [SerializeField]
+    private GameObject reAdoptPopUp;
 
-    public void BackButtonOnClick()
+    [SerializeField]
+    private GameObject resetDataPopUp;
+
+    // todo connect more buttons, etc. & combine w/ other code
+
+    public void OnClickBackButon()
     {
         SceneChange.LoadTitle();
     }
 
-    public void AdoptButtonOnClick()
+    public void OnClickSaveButton()
     {
-        SceneChange.LoadAdoption();
+        // fixme is saving button even neccessary?
+        Debug.LogWarning("save button pushed, no effect yet");
+    }
+
+    public void OnClickEnglishButton()
+    {
+        // todo connect with langauge manager
+        Debug.LogWarning("language->English, no effect yet");
+    }
+
+    public void OnClickSpanishButton()
+    {
+        // todo connect with langauge manager
+        Debug.LogWarning("language->Spanish, no effect yet");
+    }
+
+    public void OnClickFrenchButton()
+    {
+        // todo connect with langauge manager
+        Debug.LogWarning("language->French, no effect yet");
+    }
+
+    public void OnClickReAdoptButton()
+    {
+        reAdoptPopUp.SetActive(true);
+    }
+
+    public void OnClickFactorResetButton()
+    {
+        resetDataPopUp.SetActive(true);
     }
 }

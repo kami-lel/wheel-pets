@@ -21,7 +21,7 @@ public class HungerHandler : MonoBehaviour
     [SerializeField] private AudioSource FeedEffect;
     [SerializeField] private AudioSource BadFeedEffect;
     [SerializeField] private AudioSource Music;
-    public GameOverManager gameOverManager;
+    public PauseOverlay pauseOverlay;
 
     // At some point, a singleton needs to be coordinated + implemented so that this can just search for it by name. For now, I will initialize an object for it.
     [SerializeField] GameObject Spawner;
@@ -56,7 +56,7 @@ public class HungerHandler : MonoBehaviour
         }
         if (CurrentHunger <= 0f)
         {
-            gameOverManager.ShowGameOver();
+            pauseOverlay.MinigameLost();
         }
     }
 

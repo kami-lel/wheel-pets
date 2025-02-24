@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// todo make this work across scenes?
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverPrefab;

@@ -1,16 +1,30 @@
+using System;
 using UnityEngine;
 
-// todo implement pet wearing hats, etc.
+// todo show name of the pet above
+// todo implement cat & rabbit
+// fixme make sure all accessories are placed properly
+// fixme make sure accessories render order is correct, chain should be above glasses, etc.
+// bug pet animation not working in some of the scene
 public class PetScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject dog;
 
     [SerializeField]
+    private GameObject dogAccessoryGroup;
+
+    [SerializeField]
     private GameObject cat;
 
     [SerializeField]
+    private GameObject catAccessoryGroup;
+
+    [SerializeField]
     private GameObject rabbit;
+
+    [SerializeField]
+    private GameObject rabbitAccessoryGroup;
 
     /// <summary>
     /// Updates the appearance of the pet from petData
@@ -20,9 +34,9 @@ public class PetScript : MonoBehaviour
         // decide type of the animal
         activePet = petData.animalType switch
         {
-            0 => dog,
-            1 => cat,
-            2 => rabbit,
+            PlayerData.AnimalType.Dog => dog,
+            PlayerData.AnimalType.Cat => cat,
+            PlayerData.AnimalType.Rabbit => rabbit,
             _ => dog,
         };
 
@@ -30,8 +44,19 @@ public class PetScript : MonoBehaviour
         cat.SetActive(false);
         rabbit.SetActive(false);
         activePet.SetActive(true);
-        Debug.Log("Pet\tSelect: " + activePet);
+        Debug.Log("PetPrefab\tSelect: " + activePet);
 
+        UpdateLookColor();
+        UpdateLookAccessory();
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("PetPrefab\tLook Updated");
+        }
+    }
+
+    private void UpdateLookColor()
+    {
         // update dominant color
         SpriteRenderer dominantRenderer = activePet
             .transform.Find("Dominant")
@@ -51,10 +76,43 @@ public class PetScript : MonoBehaviour
             0.1f,
             1f
         );
+    }
 
-        if (Debug.isDebugBuild)
+    private void UpdateLookAccessory()
+    {
+        // decide type of the animal
+        GameObject activePetAccessoryGroup = petData.animalType switch
         {
-            Debug.Log("Pet\tLook Updated");
+            PlayerData.AnimalType.Dog => dogAccessoryGroup,
+            PlayerData.AnimalType.Cat => catAccessoryGroup,
+            PlayerData.AnimalType.Rabbit => rabbitAccessoryGroup,
+            _ => dogAccessoryGroup,
+        };
+
+        // loop via all possible accessories in enum AccessoryType
+        foreach (
+            AccessoryType accessory in Enum.GetValues(typeof(AccessoryType))
+        )
+        {
+            // find accessory as game object
+            string accessoryName = accessory.ToString();
+            Transform accessoryTransform =
+                activePetAccessoryGroup.transform.Find(accessoryName);
+            if (accessoryTransform != null)
+            {
+                // set active condition
+                bool isWearing = petData.currentAccessories.Contains(
+                    accessory
+                );
+                accessoryTransform.gameObject.SetActive(isWearing);
+            }
+            else if (Debug.isDebugBuild)
+            {
+                Debug.LogWarning(
+                    "PetPrefab\tcan't find accessory as game object:"
+                        + accessoryName
+                );
+            }
         }
     }
 

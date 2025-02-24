@@ -5,14 +5,10 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-// bug replace static pet with PetPrebab
-// todo add start button
-// todo add more instruction for how to play the game
-// todo add high score function
 public class BathGame : SceneSwapping
 {
     [SerializeField]
-    public GameObject targetObject; // The object to check for collisions with
+    public BoxCollider2D targetCollider; // The collider to check for collisions with
 
     [SerializeField]
     public TextMeshProUGUI mistakeText; // Text to display mistakes
@@ -23,15 +19,22 @@ public class BathGame : SceneSwapping
     [SerializeField]
     public TextMeshProUGUI timerText; // Text to display the timer
 
-    public GameOverManager gameOverManager;
+    public PauseOverlay pauseOverlay;
 
     // Order booleans
     private bool isBrushUsed = false;
+    [SerializeField] private AudioSource BrushSound;
     private bool isClippersUsed = false;
+    [SerializeField] private AudioSource ClipperSound;
     private bool isSoapUsed = false;
+    [SerializeField] private AudioSource SoapSound;
     private bool isWaterUsed = false;
+    [SerializeField] private AudioSource WaterSound;
     private bool isTowelUsed = false;
+    [SerializeField] private AudioSource TowelSound;
     private bool isScissorsUsed = false;
+    [SerializeField] private AudioSource ScissorSound;
+    [SerializeField] private AudioSource MistakeSound;
 
     [SerializeField]
     AudioSource backgroundMusic; // Audio source for background music
@@ -49,9 +52,9 @@ public class BathGame : SceneSwapping
 
     void Start()
     {
-        if (targetObject == null)
+        if (targetCollider == null)
         {
-            Debug.LogError("Target object not assigned in the Inspector!");
+            Debug.LogError("Target collider not assigned in the Inspector!");
         }
 
         if (messageText == null || mistakeText == null || timerText == null)
@@ -91,7 +94,7 @@ public class BathGame : SceneSwapping
         if (mistakeText.text == "XXX")
         {
             gameActive = false;
-            gameOverManager.ShowGameOver();
+            pauseOverlay.MinigameLost();
             if (sceneScript != null)
             {
                 sceneScript.ShowPlayAgainButton();
@@ -101,6 +104,7 @@ public class BathGame : SceneSwapping
 
     public void NotifyItemDragged(string itemTag)
     {
+        Debug.Log($"NotifyItemDragged called with itemTag: {itemTag}");
         GameObject draggedItem = GameObject.FindWithTag(itemTag);
 
         if (mistakeText.text != "XXX" && !isScissorsUsed) // Check if mistakes are less than 3 and towel is not used
@@ -112,11 +116,13 @@ public class BathGame : SceneSwapping
                     isBrushUsed = true;
                     DisplayMessage("The dog is brushed and looking tidy.");
                     RemoveItem(draggedItem);
+                    BrushSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "clippers")
@@ -126,11 +132,13 @@ public class BathGame : SceneSwapping
                     isClippersUsed = true;
                     DisplayMessage("The dog has been clipped.");
                     RemoveItem(draggedItem);
+                    ClipperSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "soap")
@@ -140,11 +148,13 @@ public class BathGame : SceneSwapping
                     isSoapUsed = true;
                     DisplayMessage("The dog is lathered.");
                     RemoveItem(draggedItem);
+                    SoapSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "water")
@@ -159,11 +169,13 @@ public class BathGame : SceneSwapping
                     isWaterUsed = true;
                     DisplayMessage("The dog is rinsed.");
                     RemoveItem(draggedItem);
+                    WaterSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "towel")
@@ -173,11 +185,13 @@ public class BathGame : SceneSwapping
                     isTowelUsed = true;
                     DisplayMessage("The dog is dried off.");
                     RemoveItem(draggedItem);
+                    TowelSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "scissors")
@@ -187,6 +201,8 @@ public class BathGame : SceneSwapping
                     isScissorsUsed = true;
                     DisplayMessage("All done");
                     RemoveItem(draggedItem);
+                    ScissorSound.Play();
+                    pauseOverlay.MinigameWin();
                     gameActive = false; // Stop the timer
                     SaveHighScore(); // Save the high score if the player completes the dog washing
                     if (sceneScript != null)
@@ -198,6 +214,7 @@ public class BathGame : SceneSwapping
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
 
@@ -251,14 +268,22 @@ public class BathGame : SceneSwapping
         foreach (GameObject item in draggableItems)
         {
             float itemPosX =
-                targetObject.transform.position.x
+                targetCollider.transform.position.x
                 + Mathf.Sin(angle * Mathf.Deg2Rad) * circleRadius;
             float itemPosY =
-                targetObject.transform.position.y
+                targetCollider.transform.position.y
                 + Mathf.Cos(angle * Mathf.Deg2Rad) * circleRadius;
 
             Vector3 itemPos = new Vector3(itemPosX, itemPosY, 0);
             item.transform.position = itemPos;
+
+            // Set the original position for each draggable item
+            BathDraggables draggableScript = item.GetComponent<BathDraggables>();
+            if (draggableScript != null)
+            {
+                draggableScript.SetOriginalPosition(itemPos);
+            }
+
             item.SetActive(true); // Make the item visible and interactable
 
             angle += angleStep;
@@ -293,13 +318,14 @@ public class BathGame : SceneSwapping
     private void SaveHighScore()
     {
         PlayerData playerData = Data.GetPlayerData();
+        playerData.timesPetWashed++; // Increment the times pet washed stat
         if (
             timer < playerData.bathMinigameBestTime
             || playerData.bathMinigameBestTime == 60f
         )
         {
             playerData.bathMinigameBestTime = timer;
-            Data.SavePlayerDataToFile();
         }
+        Data.SavePlayerDataToFile(); // Save the updated player data
     }
 }
