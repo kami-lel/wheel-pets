@@ -13,17 +13,13 @@ public class StoreAccessoryEntry : MonoBehaviour
     [SerializeField]
     private Button unequipButton;
 
-    [SerializeField]
-    private GameObject accessorySprite;
-
     private PetScript petPrefab;
     private AccessoryType accessoryType;
-    private PlayerData playerData;
 
     private void Start()
     {
+        Data.GetPlayerData();
         petPrefab = FindFirstObjectByType<PetScript>();
-        playerData = Data.GetPlayerData();
 
         // attempt to decide what accessory this prefab is containing
         // based on **name** of accessory sprite
