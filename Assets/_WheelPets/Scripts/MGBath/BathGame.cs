@@ -23,11 +23,18 @@ public class BathGame : SceneSwapping
 
     // Order booleans
     private bool isBrushUsed = false;
+    [SerializeField] private AudioSource BrushSound;
     private bool isClippersUsed = false;
+    [SerializeField] private AudioSource ClipperSound;
     private bool isSoapUsed = false;
+    [SerializeField] private AudioSource SoapSound;
     private bool isWaterUsed = false;
+    [SerializeField] private AudioSource WaterSound;
     private bool isTowelUsed = false;
+    [SerializeField] private AudioSource TowelSound;
     private bool isScissorsUsed = false;
+    [SerializeField] private AudioSource ScissorSound;
+    [SerializeField] private AudioSource MistakeSound;
 
     [SerializeField]
     AudioSource backgroundMusic; // Audio source for background music
@@ -109,11 +116,13 @@ public class BathGame : SceneSwapping
                     isBrushUsed = true;
                     DisplayMessage("The dog is brushed and looking tidy.");
                     RemoveItem(draggedItem);
+                    BrushSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "clippers")
@@ -123,11 +132,13 @@ public class BathGame : SceneSwapping
                     isClippersUsed = true;
                     DisplayMessage("The dog has been clipped.");
                     RemoveItem(draggedItem);
+                    ClipperSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "soap")
@@ -137,11 +148,13 @@ public class BathGame : SceneSwapping
                     isSoapUsed = true;
                     DisplayMessage("The dog is lathered.");
                     RemoveItem(draggedItem);
+                    SoapSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "water")
@@ -156,11 +169,13 @@ public class BathGame : SceneSwapping
                     isWaterUsed = true;
                     DisplayMessage("The dog is rinsed.");
                     RemoveItem(draggedItem);
+                    WaterSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "towel")
@@ -170,11 +185,13 @@ public class BathGame : SceneSwapping
                     isTowelUsed = true;
                     DisplayMessage("The dog is dried off.");
                     RemoveItem(draggedItem);
+                    TowelSound.Play();
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
             else if (itemTag == "scissors")
@@ -184,6 +201,7 @@ public class BathGame : SceneSwapping
                     isScissorsUsed = true;
                     DisplayMessage("All done");
                     RemoveItem(draggedItem);
+                    ScissorSound.Play();
                     gameActive = false; // Stop the timer
                     SaveHighScore(); // Save the high score if the player completes the dog washing
                     if (sceneScript != null)
@@ -195,6 +213,7 @@ public class BathGame : SceneSwapping
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
+                    MistakeSound.Play();
                 }
             }
 

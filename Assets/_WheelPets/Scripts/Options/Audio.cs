@@ -18,6 +18,12 @@ public class AudioControls : MonoBehaviour
 
     private PlayerData data;
 
+    [SerializeField]
+    private AudioSource SliderSound;
+
+    [SerializeField]
+    private AudioSource MusicSound;
+
     private void Start()
     {
         data = Data.GetPlayerData();
@@ -81,6 +87,7 @@ public class AudioControls : MonoBehaviour
         AudioManager.Instance.UpdateMusicVolume(value);
         // Update the UI
         UpdateUI();
+        MusicSound.Play();
     }
 
     public void SetSFXVolume(float value)
@@ -90,6 +97,7 @@ public class AudioControls : MonoBehaviour
         AudioManager.Instance.UpdateSFXVolume(value);
         // Update the UI
         UpdateUI();
+        SliderSound.Play();
     }
 
     public void SetMuteMusic(bool isMuted)
