@@ -5,6 +5,7 @@ using UnityEngine;
 // todo implement cat & rabbit
 // fixme make sure all accessories are placed properly
 // fixme make sure accessories render order is correct, chain should be above glasses, etc.
+// bug pet animation not working in some of the scene
 public class PetScript : MonoBehaviour
 {
     [SerializeField]
