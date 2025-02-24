@@ -52,7 +52,7 @@ public class UIMovement : MonoBehaviour
     {
         if (!controlsEnabled) return;
 
-        HandleArrowKeyInput();
+        HandleAutoMovement();
         HandleJumpInput();
     }
 
@@ -61,25 +61,27 @@ public class UIMovement : MonoBehaviour
         ProcessJump();
     }
 
-    private void HandleArrowKeyInput()
+private void HandleAutoMovement()
+{
+    if (grass == null) return;
+
+    // Automatically move the UI dog to the left
+    float horizontalMovement = -moveSpeed * Time.deltaTime;
+
+    // Apply movement
+    transform.position += new Vector3(horizontalMovement, 0, 0);
+
+    // If the UI dog moves past the left bound, reset it to the right
+    if (transform.position.x < xBoundLeft)
     {
-        if (grass == null) return;
-
-        float horizontalInput = 0;
-        if (Input.GetKey(KeyCode.LeftArrow)) horizontalInput = 1;
-        else if (Input.GetKey(KeyCode.RightArrow)) horizontalInput = -1;
-
-        Vector3 movement = new Vector3(horizontalInput * moveSpeed * Time.deltaTime, 0, 0);
-        transform.position += movement;
-
-        if (transform.position.x < xBoundLeft)
-        {
-            Vector3 newPosition = transform.position;
-            newPosition.x = xBoundRight;
-            newPosition.y = yStart + Random.Range(-yVariation, yVariation);
-            transform.position = newPosition;
-        }
+        Vector3 newPosition = transform.position;
+        newPosition.x = xBoundRight; // Reset to right side
+        newPosition.y = yStart + Random.Range(-yVariation, yVariation); // Add slight vertical variation
+        transform.position = newPosition;
     }
+}
+
+
 
     private void HandleJumpInput()
     {
