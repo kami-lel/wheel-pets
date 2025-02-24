@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// todo xiimplment visual cue for find/not find dog (in addition to audio cue) for accesssibility reason
-// TODO josh use PauseOverlay to handle game start/pause/win/loss
-// todo add more instruction for how to play the game
-// todo add high score function
-// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
+// TODO implement visual cue for find/not find dog (in addition to audio cue) for accessibility reason
+// TODO use PauseOverlay to handle game start/pause/win/loss
+// TODO add more instruction for how to play the game
+// TODO add high score function
+// FIXME common buttons: back, pause, etc. should share a uniform design language / placement across scenes
+
 public class Hide_n_Seek : MonoBehaviour
 {
     [SerializeField]
@@ -47,7 +48,7 @@ public class Hide_n_Seek : MonoBehaviour
 
     private int strikeCounter = 0; // Int to count # of strikes
 
-    [SerializeField] private Button restartButton; // Holds restart button 
+    [SerializeField] private Button restartButton; // Holds restart button
 
     [SerializeField] private GameObject winText; // Stores win text display
     [SerializeField] private GameObject loseText; // Stores lose text display
@@ -84,7 +85,7 @@ public class Hide_n_Seek : MonoBehaviour
     void OnButtonPressed(int buttonIndex)
     {
         if (!buttonCooldown)
-        { 
+        {
             // Choose random search audio and play it for 2 seconds
             chooseRandomAudio();
             randomAudio.Play();
@@ -93,11 +94,6 @@ public class Hide_n_Seek : MonoBehaviour
             // Check if the pressed button is the correct one
             if (buttonIndex == correctButtonIndex)
             {
-                // Replace button image with petSprite
-                buttons[buttonIndex].image.sprite = petSprite;
-        // Check if the pressed button is the correct one
-        if (buttonIndex == correctButtonIndex)
-        {
             // Instantiate the pet prefab at the position of the correct button
             Vector3 buttonPosition = buttons[buttonIndex].transform.position;
             GameObject petInstance = Instantiate(
@@ -125,30 +121,29 @@ public class Hide_n_Seek : MonoBehaviour
 
                 // Display win text
                 winText.gameObject.SetActive(true);
-    
+
             // Increment the times hide and seek won stat
             PlayerData data = Data.GetPlayerData();
             data.timesHideNSeekWon++;
             Data.SavePlayerDataToFile();
         }
-
-            else if (buttonIndex != correctButtonIndex)
-            {
+            else
+    {
                 // Hide & disable the button
                 buttons[buttonIndex].gameObject.SetActive(false);
 
                 // Play incorrect guess audio with delay
                 StartCoroutine(PlayGuessSound(incorrectGuessAudio));
-                Debug.Log($"You search the area but do not find your pet...");
+                Debug.Log("You search the area but do not find your pet...");
 
                 // Display strikes on screen with delay
                 StartCoroutine(DisplayStrikes());
-            }
+    }
 
             // Start button cooldown timer
             StartCoroutine(ResetButtonCooldown());
             buttonCooldown = true;
-        }
+    }
     }
 
     public void BackButtonOnClick()
@@ -172,22 +167,22 @@ public class Hide_n_Seek : MonoBehaviour
     }
 
     IEnumerator PlayGuessSound(AudioSource guessSound)
-    {
-        //delay guess audio by 3 seconds before playing it
+        {
+        // Delay guess audio by 3 seconds before playing it
         yield return new WaitForSeconds(delayGuess);
         guessSound.Play();
-    }
+        }
 
     IEnumerator ResetButtonCooldown()
     {
-        //start button cooldown for 5 seconds
+        // Start button cooldown for 4 seconds
         yield return new WaitForSeconds(delayButtonPress);
         buttonCooldown = false;
     }
 
     IEnumerator DisplayStrikes()
     {
-        //delay display of strikes to match sfx
+        // Delay display of strikes to match sfx
         yield return new WaitForSeconds(delayGuess);
 
         strikeImages[strikeCounter].gameObject.SetActive(true);
@@ -202,26 +197,25 @@ public class Hide_n_Seek : MonoBehaviour
             // Display lose text
             loseText.gameObject.SetActive(true);
         }
-
-    }
+        }
 
     void chooseRandomAudio()
-    {
-        //choose random search/footstep audio and assign it to randomAudio
+        {
+        // Choose random search/footstep audio and assign it to randomAudio
         int chooseAudio = Random.Range(1, 4);
 
         if (chooseAudio == 1)
         {
             randomAudio = footstepAudio;
-        }
+    }
         else if (chooseAudio == 2)
-        {
+    {
             randomAudio = searching1Audio;
-        }
+    }
         else
         {
             randomAudio = searching2Audio;
-        }
+}
     }
 
     void DisplayInstructions()
