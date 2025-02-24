@@ -57,6 +57,7 @@ public class HungerHandler : MonoBehaviour
         if (CurrentHunger <= 0f)
         {
             gameOverManager.ShowGameOver();
+            CheckAndUpdateHighScore();
         }
     }
 
@@ -84,5 +85,15 @@ public class HungerHandler : MonoBehaviour
         texty.text = "I want... " + (bleh + 1).ToString() + "!";
         Spawner.GetComponent<SpawnHandler>().ResetFoods();
         textytoo.text = "Score: " + score.ToString();
+    }
+
+    private void CheckAndUpdateHighScore()
+    {
+        PlayerData data = Data.GetPlayerData();
+        if (score > data.highestFeedingScore)
+        {
+            data.highestFeedingScore = score;
+            Data.SavePlayerDataToFile();
+        }
     }
 }

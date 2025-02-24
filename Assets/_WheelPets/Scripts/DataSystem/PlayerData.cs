@@ -37,6 +37,7 @@ public class PlayerData
     public int timesHideNSeekWon = 0;
     public int cosmeticsUnlocked = 0;
     public int timesPetWalked = 0;
+    public int highestFeedingScore = 0;
 
     // High score for the fetch minigame
     public int fetchHighScore = 0;

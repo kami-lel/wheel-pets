@@ -70,6 +70,7 @@ public class LeaderboardPlayer : MonoBehaviour
             + $"Cosmetics Unlocked: {data.cosmeticsUnlocked}\n"
             + $"Fetch High Score: {data.fetchHighScore}\n"
             + $"Best Time for Bath Minigame: {data.bathMinigameBestTime:F2} seconds\n"
-            + $"Times Pet Walked: {data.timesPetWalked}";
+            + $"Times Pet Walked: {data.timesPetWalked}\n"
+            + $"Highest Feeding Score: {data.highestFeedingScore}";
     }
 }

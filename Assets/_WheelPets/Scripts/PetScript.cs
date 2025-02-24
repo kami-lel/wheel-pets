@@ -25,6 +25,22 @@ public class PetScript : MonoBehaviour
     [SerializeField]
     private GameObject rabbitAccessoryGroup;
 
+    private PlayerData.PetData petData;
+    private GameObject activePet;
+
+    private void Start()
+    {
+        petData = Data.GetPlayerData().petData;
+
+        if (dog == null || dogAccessoryGroup == null || cat == null || catAccessoryGroup == null || rabbit == null || rabbitAccessoryGroup == null)
+        {
+            Debug.LogError("One or more required references are not assigned in the Inspector.");
+            return;
+        }
+
+        UpdateLook();
+    }
+
     /// <summary>
     /// Updates the appearance of the pet from petData
     /// </summary>
@@ -115,14 +131,5 @@ public class PetScript : MonoBehaviour
                 );
             }
         }
-    }
-
-    private PlayerData.PetData petData;
-    private GameObject activePet;
-
-    private void Start()
-    {
-        petData = Data.GetPlayerData().petData;
-        UpdateLook();
     }
 }
