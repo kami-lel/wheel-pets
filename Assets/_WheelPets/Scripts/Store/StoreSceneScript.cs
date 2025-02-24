@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-// BUG replace static pet with PetPrebab
-// TODO christina make store functional w/ placeholder pictures
+// fixme beautify store
 public class StoreSceneScript : MonoBehaviour
 {
     public void ClosetButtonOnClick()
