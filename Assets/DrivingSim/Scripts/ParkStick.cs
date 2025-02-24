@@ -9,7 +9,8 @@ public class ParkStick : MonoBehaviour
     private SpriteRenderer psr;
     private SpriteRenderer dsr;
     private AudioSource sticksound;
-
+    private CarScript car;
+    private PlayerData playerData;
     private KeyHole key;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,7 +20,8 @@ public class ParkStick : MonoBehaviour
         psr = transform.Find("carstick_0").GetComponent<SpriteRenderer>();
         dsr = transform.Find("carstick_1").GetComponent<SpriteRenderer>();
         sticksound = transform.GetComponent<AudioSource>();
-
+        car = transform.parent.GetComponent<CarScript>();
+        playerData = Data.GetPlayerData();
     }
 
     // Update is called once per frame
@@ -43,14 +45,30 @@ public class ParkStick : MonoBehaviour
         {
             sticksound.Play();
             carState = 3;
+            car.failedpark = false;
         }
         else
         {
             if (carState != 0)
             {
                 sticksound.Play();
+                car.maxscore += 3;
+                if (car.speed > 0)
+                {
+                    car.failedpark = true;
+                }
+                else
+                {
+                    car.score += 3;
+                    playerData.drivingPoint += 3;
+                    car.parks++;
+                }
+
+                carState = 0;
             }
-            carState = 0;
+            
+
+            
         }
 
     }
