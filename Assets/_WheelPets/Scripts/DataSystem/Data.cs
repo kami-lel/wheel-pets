@@ -80,9 +80,7 @@ public class Data
             )
                 if (Debug.isDebugBuild)
                 {
-                    Debug.LogError(
-                        $"Data\tPlayer Data fail to save to file: {saveFilePath}"
-                    );
+                    Debug.LogError($"Data\tPlayer Data fail to save to file: {saveFilePath}");
                 }
         }
     }
