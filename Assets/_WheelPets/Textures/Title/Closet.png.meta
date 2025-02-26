@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4bb32ea5ca60d4e4893ab5cec53a1ba7
+guid: c2b1e0544812e4d81834860953d6c6ef
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4317865073922062182
-    second: wheelpets_closet_0
+      213: 8838388076870224577
+    second: Closet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wheelpets_closet_0
+      name: Closet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 667b03f58632ceb30800000000000000
-      internalID: 4317865073922062182
+      spriteID: 1cac5ecc02348aa70800000000000000
+      internalID: 8838388076870224577
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      wheelpets_closet_0: 4317865073922062182
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
