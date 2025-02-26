@@ -1,5 +1,7 @@
 using UnityEngine;
 
+// fixme merge 2 scenes together
+
 public class ReAdoptPopUpScript : MonoBehaviour
 {
     public void OnClickConfirmButton()
