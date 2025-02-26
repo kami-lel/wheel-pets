@@ -18,7 +18,7 @@ public class OptionsSceneScript : MonoBehaviour
 
     public void OnClickSaveButton()
     {
-        // fixme is saving button even neccessary?
+        // Fixme is saving button even neccessary?
         Debug.LogWarning("save button pushed, no effect yet");
     }
 
