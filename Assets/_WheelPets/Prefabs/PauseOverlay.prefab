@@ -398,6 +398,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96868ae046d6c0948b08de5dd6527aa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volumeChangeSFX: {fileID: 8300000, guid: 2e80a6ab5e1049b4c946d611025cd080, type: 3}
+  volumeSlider: {fileID: 4476354165906894853}
 --- !u!1 &1149118955564041616
 GameObject:
   m_ObjectHideFlags: 0
