@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+// bug closet is not operational
 public class ClosetSceneScript : MonoBehaviour
 {
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("PlayScene");
+        SceneChange.LoadPlayMenu();
     }
 }

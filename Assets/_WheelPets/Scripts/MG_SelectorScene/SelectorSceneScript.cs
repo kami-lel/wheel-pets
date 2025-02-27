@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// todo implement better ui design for selection screen, e.g. screen shots of minigames
 public class MGSelectorSceneScript : MonoBehaviour
 {
     [SerializeField]
@@ -32,36 +33,36 @@ public class MGSelectorSceneScript : MonoBehaviour
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("PlayScene");
+        SceneChange.LoadPlayMenu();
     }
 
     public void DogWalkButtonOnClick()
     {
-        SceneManager.LoadScene("WalkScene");
+        SceneChange.LoadWalk();
     }
 
     public void DogBathButtonOnClick()
     {
-        SceneManager.LoadScene("BathScene");
+        SceneChange.LoadBath();
     }
 
     public void TugOWarButtonButtonOnClick()
     {
-        SceneManager.LoadScene("TugOWarScene");
+        SceneChange.LoadTOW();
     }
 
     public void FetchButtonOnClick()
     {
-        SceneManager.LoadScene("FetchScene");
+        SceneChange.LoadFetch();
     }
 
     public void HideNSeekButtonOnClick()
     {
-        SceneManager.LoadScene("HideNSeekScene");
+        SceneChange.LoadHideAndSeek();
     }
 
     public void FeedButtonOnClick()
     {
-        SceneManager.LoadScene("FeedScene");
+        SceneChange.LoadFeed();
     }
 }

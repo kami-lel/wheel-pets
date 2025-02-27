@@ -2,15 +2,19 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// todo add more instruction for how to play the game
+// todo add high score function
+
 // a single loose
 public class LoseHandler : MonoBehaviour
 {
     public AudioSource LoseSound; // Reference to the AudioSource (assign in Inspector)
     public string loseTag = "Rock"; // Tag for objects that trigger a loss
+    public PauseOverlay pauseOverlay;
 
     public void BackButtonOnClick()
     {
-        SceneManager.LoadScene("_SelectorScene");
+        SceneChange.LoadSelector();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -48,7 +52,7 @@ public class LoseHandler : MonoBehaviour
             else
             {
                 Debug.LogError("LoseSound AudioSource is not assigned.");
-                SceneManager.LoadScene("PetGameScene"); // Fallback if sound is not assigned
+                pauseOverlay.MinigameLost();
             }
         }
     }
@@ -59,7 +63,7 @@ public class LoseHandler : MonoBehaviour
         LoseSound.Play();
         Debug.Log("Playing LoseSound...");
         yield return new WaitForSeconds(LoseSound.clip.length); // Wait for the sound to finish
-        Debug.Log("Sound finished. Loading Menu scene...");
-        SceneManager.LoadScene("PetGameScene");
+        Debug.Log("Sound finished. Opening Gameover screen...");
+        pauseOverlay.MinigameLost();
     }
 }

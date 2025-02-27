@@ -1,43 +1,56 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+// todo add more instruction for how to play the game
+// todo add high score function
+// todo Feels too easy to spam tap, Maybe make a restriction on tapping?
+// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
     public GameObject flag;
-    public GameObject goalLine;
-    public GameObject player;
-    public float moveSpeed = 1.0f;
-    public float tapMoveSpeed = 2.0f;
+    public GameObject playerGoalLine;
+    public GameObject petGoalLine;
+    public float moveSpeed = .001f;
+    public float tapMoveSpeed = .002f;
     public GameObject readyText;
     public GameObject tapText;
-    public GameObject winText;
-    public GameObject losesText;
-    public GameObject playAgainPopup;
-    public GameObject yesButton;
-    public GameObject noButton;
-    public AudioSource buttonClickSound;
     public AudioSource cheeringSound;
-    public AudioSource booingSound; // Add booingSound
+    public AudioSource booingSound;
+    public AudioSource BackgroundMusic;
+
+    [SerializeField]
+    private PauseOverlay pauseOverlay;
 
     private bool gameStarted = false;
     private bool gameWon = false;
     private bool gameLost = false;
 
+    private Coroutine gameRoutine;
+
     void Start()
     {
-        StartCoroutine(StartGameRoutine());
+        gameRoutine = StartCoroutine(StartGameRoutine());
 
-        // Add button listeners
-        if (yesButton != null)
+        // Set the z position of the goal lines to be behind other objects
+        if (playerGoalLine != null)
         {
-            yesButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnYesButtonClick);
+            playerGoalLine.transform.position = new Vector3(
+                playerGoalLine.transform.position.x,
+                playerGoalLine.transform.position.y,
+                1
+            );
         }
-        if (noButton != null)
+        if (petGoalLine != null)
         {
-            noButton.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(OnNoButtonClick);
+            petGoalLine.transform.position = new Vector3(
+                petGoalLine.transform.position.x,
+                petGoalLine.transform.position.y,
+                1
+            );
         }
+
+        BackgroundMusic.Play();
     }
 
     void Update()
@@ -46,18 +59,20 @@ public class TugOfWarManager : MonoBehaviour
         {
             MoveRopeLine();
             CheckFlagGoalCollision();
-            CheckPlayerGoalCollision();
         }
         else if (gameWon || gameLost)
         {
             FreezeRopeLine();
         }
 
-        if (Input.GetMouseButtonDown(0)) // Detects mouse click or screen tap
+        if (
+            pauseOverlay.status == PauseOverlay.Status.Running
+            && Input.GetMouseButtonDown(0)
+        ) // Detects mouse click or screen tap
         {
             if (gameStarted && !gameWon && !gameLost)
             {
-                MoveRopeLineLeft();
+                MoveRopeLineRight();
             }
         }
     }
@@ -66,7 +81,9 @@ public class TugOfWarManager : MonoBehaviour
     {
         if (ropeLine != null && gameStarted && !gameWon && !gameLost)
         {
-            ropeLine.transform.Translate(Vector3.right * moveSpeed * Time.deltaTime);
+            ropeLine.transform.Translate(
+                Vector3.left * moveSpeed * Time.deltaTime
+            );
         }
         else
         {
@@ -81,11 +98,11 @@ public class TugOfWarManager : MonoBehaviour
         }
     }
 
-    void MoveRopeLineLeft()
+    void MoveRopeLineRight()
     {
         if (ropeLine != null)
         {
-            ropeLine.transform.Translate(Vector3.left * tapMoveSpeed);
+            ropeLine.transform.Translate(Vector3.right * tapMoveSpeed);
         }
         else
         {
@@ -102,7 +119,7 @@ public class TugOfWarManager : MonoBehaviour
         }
 
         // Wait for 3 seconds
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(2.0f);
 
         // Hide ReadyText
         if (readyText != null)
@@ -123,22 +140,24 @@ public class TugOfWarManager : MonoBehaviour
 
     public void TriggerWinState()
     {
-        Debug.Log("Win state triggered!");
-
         // Stop the game
         gameStarted = false;
         gameWon = true;
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log(
+                "TriggerWinState - Game Started: "
+                    + gameStarted
+                    + ", gameWon: "
+                    + gameWon
+            );
+        }
 
         // Hide TapText
         if (tapText != null)
         {
             tapText.SetActive(false);
-        }
-
-        // Show WinText
-        if (winText != null)
-        {
-            winText.SetActive(true);
         }
 
         // Play cheering sound
@@ -147,33 +166,37 @@ public class TugOfWarManager : MonoBehaviour
             cheeringSound.Play();
         }
 
+        // Increment the tug of war games won stat
+        PlayerData data = Data.GetPlayerData();
+        data.tugOfWarGamesWon++;
+        Data.SavePlayerDataToFile();
+
         // Freeze the RopeLine
         FreezeRopeLine();
 
-        // Show Play Again Popup after 2 seconds
-        StartCoroutine(ShowPlayAgainPopup());
-
-        Debug.Log("TriggerWinState - Game Started: " + gameStarted + ", gameWon: " + gameWon);
+        pauseOverlay.MinigameWin();
     }
 
     public void TriggerLoseState()
     {
-        Debug.Log("Lose state triggered!");
-
         // Stop the game
         gameStarted = false;
-        gameLost = true; // Set gameLost to true
+        gameLost = true;
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log(
+                "TriggerLoseState - Game Started: "
+                    + gameStarted
+                    + ", gameLost: "
+                    + gameLost
+            );
+        }
 
         // Hide TapText
         if (tapText != null)
         {
             tapText.SetActive(false);
-        }
-
-        // Show LosesText
-        if (losesText != null)
-        {
-            losesText.SetActive(true);
         }
 
         // Play booing sound
@@ -185,10 +208,7 @@ public class TugOfWarManager : MonoBehaviour
         // Freeze the RopeLine
         FreezeRopeLine();
 
-        // Show Play Again Popup after 2 seconds
-        StartCoroutine(ShowPlayAgainPopup());
-
-        Debug.Log("TriggerLoseState - Game Started: " + gameStarted + ", gameLost: " + gameLost);
+        pauseOverlay.MinigameLost();
     }
 
     void FreezeRopeLine()
@@ -205,80 +225,38 @@ public class TugOfWarManager : MonoBehaviour
 
     void CheckFlagGoalCollision()
     {
-        if (flag != null && goalLine != null)
+        if (flag != null && playerGoalLine != null && petGoalLine != null)
         {
-            if (flag.GetComponent<Collider2D>().IsTouching(goalLine.GetComponent<Collider2D>()))
+            if (
+                flag.GetComponent<Collider2D>()
+                    .IsTouching(playerGoalLine.GetComponent<Collider2D>())
+            )
             {
-                Debug.Log("Flag touched the goal line");
+                Debug.Log("Flag touched the player goal line");
                 TriggerWinState();
             }
-        }
-    }
-
-    void CheckPlayerGoalCollision()
-    {
-        if (player != null && goalLine != null)
-        {
-            if (player.GetComponent<Collider2D>().IsTouching(goalLine.GetComponent<Collider2D>()))
+            else if (
+                flag.GetComponent<Collider2D>()
+                    .IsTouching(petGoalLine.GetComponent<Collider2D>())
+            )
             {
-                Debug.Log("Player touched the goal line");
+                Debug.Log("Flag touched the pet goal line");
                 TriggerLoseState();
             }
         }
     }
 
-    IEnumerator ShowPlayAgainPopup()
+    public void FreezeGame()
     {
-        yield return new WaitForSeconds(2.0f);
-        if (playAgainPopup != null)
+        gameStarted = false;
+        if (gameRoutine != null)
         {
-            playAgainPopup.SetActive(true);
+            StopCoroutine(gameRoutine);
         }
-    }
-
-    void OnYesButtonClick()
-    {
-        if (buttonClickSound != null)
-        {
-            buttonClickSound.Play();
-        }
-        StartCoroutine(RestartGameAfterSound());
-    }
-
-    void OnNoButtonClick()
-    {
-        if (buttonClickSound != null)
-        {
-            buttonClickSound.Play();
-        }
-        SceneManager.LoadScene("_SelectorScene");
-    }
-
-    IEnumerator RestartGameAfterSound()
-    {
-        if (buttonClickSound != null)
-        {
-            yield return new WaitForSeconds(buttonClickSound.clip.length);
-        }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    IEnumerator GoToDifferentSceneAfterSound()
-    {
-        if (buttonClickSound != null)
-        {
-            yield return new WaitForSeconds(buttonClickSound.clip.length);
-        }
-        SceneManager.LoadScene("DifferentSceneName"); // Replace with the actual scene name
     }
 
     public bool IsGameStarted()
     {
         return gameStarted;
-    }
-
-    public void BackButtonOnClick()
-    {
-        SceneManager.LoadScene("_SelectorScene");
     }
 }

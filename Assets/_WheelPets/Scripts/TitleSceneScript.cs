@@ -3,23 +3,36 @@ using UnityEngine.SceneManagement;
 
 public class TitleSceneScript : MonoBehaviour
 {
+    private PlayerData playerData;
+
     public void ClickPlayButton()
     {
-        SceneManager.LoadScene("PlayScene");
+        SceneChange.LoadPlayMenu();
     }
 
     public void ClickOptionsButton()
     {
-        SceneManager.LoadScene("OptionsScene");
+        SceneChange.LoadOptions();
     }
 
     public void ClickLeaderboardButton()
     {
-        SceneManager.LoadScene("LeaderboardScene");
+        SceneChange.LoadLeaderboard();
     }
 
     public void ClickExitButton()
     {
-        Application.Quit();
+        SceneChange.LoadDrivingGame();
+    }
+
+    void Start()
+    {
+        playerData = Data.GetPlayerData();
+
+        // first time launch the game, must adopt the pet first
+        if (!playerData.hasAdoptPet)
+        {
+            SceneChange.LoadAdoption();
+        }
     }
 }

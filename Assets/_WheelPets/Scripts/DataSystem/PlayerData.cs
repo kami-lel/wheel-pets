@@ -1,5 +1,5 @@
 using System;
-using UnityEngine;
+using System.Collections.Generic;
 
 public class PlayerData
 {
@@ -36,6 +36,23 @@ public class PlayerData
     public int timesPetWashed = 0;
     public int timesHideNSeekWon = 0;
     public int cosmeticsUnlocked = 0;
+    public int timesPetWalked = 0;
+
+    // High score for the fetch minigame
+    public int fetchHighScore = 0;
+
+    // Best time for the bath minigame
+    public float bathMinigameBestTime = 60f;
+
+    // Audio settings
+    public float musicVolume = 1f;
+    public float sfxVolume = 1f;
+    public bool muteMusic = false;
+    public bool muteSfx = false;
+
+    // fixme combine fileds before and after this line
+    public float mainVolume = 0.75f; // 0~1
+    public float bgmVolume = 1f;
 
     // statistics of mini games
     public MinigameStatistics statBath = new();
@@ -48,10 +65,7 @@ public class PlayerData
     // pet's data
     public bool hasAdoptPet = false;
     public PetData petData = new();
-
-    public float mainVolume = 0.75f; // 0~1
-    public float sfxVolume = 1f;
-    public float bgmVolume = 1f;
+    public List<AccessoryType> purchasedAccessories = new();
 
     // Language preference
     public string language = "en";
@@ -64,6 +78,8 @@ public class PlayerData
         public int point;
     }
 
+    // todo add high score
+    // fixme makesure these are connected with the game
     [Serializable]
     public class MinigameStatistics
     {
@@ -72,11 +88,20 @@ public class PlayerData
     }
 
     [Serializable]
+    public enum AnimalType
+    {
+        Dog,
+        Cat,
+        Rabbit,
+    }
+
+    [Serializable]
     public class PetData
     {
         public string name = "Buddy";
-        public int animalType = 0;
+        public AnimalType animalType = AnimalType.Dog;
         public float dominantColorHue = 0f;
         public float secondaryColorHue = 0f;
+        public List<AccessoryType> currentAccessories = new();
     }
 }

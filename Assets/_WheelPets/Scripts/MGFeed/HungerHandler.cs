@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityEngine.UI;
 using TMPro;
 
@@ -10,20 +11,23 @@ public class HungerHandler : MonoBehaviour
     [SerializeField] private float HungerTimer = 10f;
     [SerializeField] private float acceleration = .1f;
     [SerializeField] private float acceleration2 = .05f;
-    [SerializeField] private Slider HungerSlider;
+    [SerializeField] private UnityEngine.UI.Slider HungerSlider;
     private FoodObject.FoodTypes FoodIWant;
     private float timer = 0f;
     private int score = 0;
     private FoodObject.FoodTypes[] foods = new FoodObject.FoodTypes[6];
     [SerializeField] private TMP_Text texty;
     [SerializeField] private TMP_Text textytoo;
-    [SerializeField] private AudioSource audo;
-    [SerializeField] private AudioSource audo2;
-    [SerializeField] private LocalizedGameText localizedGameText; // Reference to the LocalizedGameText script
+    [SerializeField] private AudioSource FeedEffect;
+    [SerializeField] private AudioSource BadFeedEffect;
+    [SerializeField] private AudioSource Music;
+    public PauseOverlay pauseOverlay;
 
+    // At some point, a singleton needs to be coordinated + implemented so that this can just search for it by name. For now, I will initialize an object for it.
     [SerializeField] GameObject Spawner;
     private void Start()
     {
+        Music.Play();
         HungerSlider.maxValue = Hunger;
         HungerSlider.minValue = 0f;
         HungerSlider.value = CurrentHunger;
@@ -35,20 +39,24 @@ public class HungerHandler : MonoBehaviour
         foods[5] = FoodObject.FoodTypes.Food6;
         int bleh = Random.Range(0, Spawner.GetComponent<SpawnHandler>().NumPrefabs);
         FoodIWant = foods[bleh];
-        localizedGameText.UpdateWantText(bleh); // Update the localized want text
-        localizedGameText.UpdateScoreText(); // Update the localized score text
+        texty.text = "I want... " + (bleh + 1).ToString() + "!";
+        textytoo.text = "Score: " + score.ToString();
     }
-
+    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > HungerTimer)
+        if(timer > HungerTimer)
         {
             CurrentHunger -= AmountChanged;
             HungerSlider.value = CurrentHunger;
             timer = 0f;
             AmountChanged += acceleration;
             acceleration += acceleration2;
+        }
+        if (CurrentHunger <= 0f)
+        {
+            pauseOverlay.MinigameLost();
         }
     }
 
@@ -58,24 +66,23 @@ public class HungerHandler : MonoBehaviour
         {
             CurrentHunger += FoodAmount;
             score += ScoreAmount;
-            localizedGameText.IncrementScore(ScoreAmount); // Update the localized score text
-            audo.Play();
+            FeedEffect.Play();
         }
         else
         {
             CurrentHunger -= FoodAmount;
             score -= ScoreAmount;
-            localizedGameText.IncrementScore(-ScoreAmount); // Update the localized score text
-            audo2.Play();
+            BadFeedEffect.Play();
         }
-        if ((CurrentHunger - Hunger) > .01f)
+        if((CurrentHunger - Hunger) > .01f)
         {
             CurrentHunger = Hunger;
         }
         HungerSlider.value = CurrentHunger;
         int bleh = Random.Range(0, Spawner.GetComponent<SpawnHandler>().NumPrefabs);
         FoodIWant = foods[bleh];
-        localizedGameText.UpdateWantText(bleh); // Update the localized want text
+        texty.text = "I want... " + (bleh + 1).ToString() + "!";
         Spawner.GetComponent<SpawnHandler>().ResetFoods();
+        textytoo.text = "Score: " + score.ToString();
     }
 }

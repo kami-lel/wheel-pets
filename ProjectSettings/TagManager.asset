@@ -52,5 +52,11 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Accessories
+    uniqueID: 1545983701
+    locked: 0
+  - name: CrossOut
+    uniqueID: 3726667989
+    locked: 0
   m_RenderingLayers:
   - Default

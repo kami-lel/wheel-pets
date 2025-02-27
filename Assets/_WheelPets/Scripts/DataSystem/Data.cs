@@ -51,6 +51,9 @@ public class Data
                 throw;
             }
         }
+
+        // create a accessory manager that is linked with playerData
+        accessoryManager = new AccessoryManager(_playerData);
     }
 
     public static void SavePlayerDataToFile()
@@ -94,16 +97,19 @@ public class Data
         }
     }
 
+    public static AccessoryManager accessoryManager;
     private static PlayerData _playerData = null;
     private static ParameterData _parameterData = null;
 
     private static string GenerateSaveFilePath()
     {
         string fileName = "playerData";
-        string filePath = Path.Combine(
-            Application.persistentDataPath,
-            fileName + ".json"
-        );
+        string fileExtension = ".json";
+        string folderPath = Debug.isDebugBuild
+            ? Directory.GetParent(Application.dataPath).FullName
+            : Application.persistentDataPath;
+
+        string filePath = Path.Combine(folderPath, fileName + fileExtension);
         return filePath;
     }
 }

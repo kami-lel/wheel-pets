@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class LeaderboardManager : MonoBehaviour
 {
@@ -16,8 +14,7 @@ public class LeaderboardManager : MonoBehaviour
     [SerializeField]
     private LeaderboardPlayer leaderboardPlayer;
 
-    private List<LeaderboardEntry> leaderboardEntries =
-        new List<LeaderboardEntry>();
+    private List<LeaderboardEntry> leaderboardEntries = new();
 
     private PlayerData playerData;
 
@@ -46,7 +43,7 @@ public class LeaderboardManager : MonoBehaviour
 
     public void ClickBackButton()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneChange.LoadTitle();
     }
 
     private void PopulateLeaderboardUI()
@@ -93,10 +90,5 @@ public class LeaderboardManager : MonoBehaviour
         }
 
         leaderboardPlayer.LoadPlayerData(userRank);
-    }
-
-    private void OnApplicationQuit()
-    {
-        Data.SavePlayerDataToFile();
     }
 }

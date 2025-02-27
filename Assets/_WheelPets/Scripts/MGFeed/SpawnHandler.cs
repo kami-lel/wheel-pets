@@ -9,6 +9,7 @@ public class SpawnHandler : MonoBehaviour
     [SerializeField] List<float> xList = new List<float>();
     [SerializeField] List<float> yList = new List<float>();
     [SerializeField] List<GameObject> gameObjects = new List<GameObject>();
+    [SerializeField] GameObject Canvas;
     private List<GameObject> Instans = new List<GameObject>();
     void Start()
     {
@@ -21,6 +22,7 @@ public class SpawnHandler : MonoBehaviour
         {
             int j = array[Random.Range(0, NumPrefabs-i)];
             Instans.Add(Instantiate(gameObjects[j], new Vector3(xList[i], yList[i], 0), Quaternion.identity));
+            Instans[i].transform.parent = Canvas.transform;
             array.Remove(j);
         }
     }
@@ -40,6 +42,7 @@ public class SpawnHandler : MonoBehaviour
         {
             int j = array[Random.Range(0, NumPrefabs - i)];
             Instans.Add(Instantiate(gameObjects[j], new Vector3(xList[i], yList[i], 0), Quaternion.identity));
+            Instans[i].transform.parent = Canvas.transform;
             array.Remove(j);
         }
     }

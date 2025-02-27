@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1574774619079606165}
   - component: {fileID: 33199911509740841}
   - component: {fileID: 346530191306243716}
-  m_Layer: 0
+  m_Layer: 1
   m_Name: Food1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -205,7 +205,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6745790202446536877}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -213,8 +213,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0044, y: 0.0013}
-  m_SizeDelta: {x: 0.4465, y: 0.8872}
+  m_AnchoredPosition: {x: 0.1404, y: -0.0193}
+  m_SizeDelta: {x: 0.702, y: 0.948}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &4562801026589588372
 MeshRenderer:

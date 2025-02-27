@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Localization.Components; // Add this line
 
 public class LeaderboardPlayer : MonoBehaviour
 {
@@ -9,9 +8,6 @@ public class LeaderboardPlayer : MonoBehaviour
 
     [SerializeField]
     private GameObject stats;
-
-    [SerializeField]
-    private LocalizedLeaderboardText localizedLeaderboardText; // Reference to the LocalizedLeaderboardText script
 
     public void LoadPlayerData(int userRank)
     {
@@ -29,11 +25,11 @@ public class LeaderboardPlayer : MonoBehaviour
             .transform.Find("Place")
             .GetComponent<Text>();
         Text nameText = userScore.transform.Find("Name").GetComponent<Text>();
-        LocalizeStringEvent pointsTextEvent = userScore
+        Text pointsText = userScore
             .transform.Find("Points")
-            .GetComponent<LocalizeStringEvent>();
+            .GetComponent<Text>();
 
-        if (placeText == null || nameText == null || pointsTextEvent == null)
+        if (placeText == null || nameText == null || pointsText == null)
         {
             Debug.LogError(
                 "One or more Text components are not assigned in userScore."
@@ -43,17 +39,17 @@ public class LeaderboardPlayer : MonoBehaviour
 
         placeText.text = "#" + userRank.ToString();
         nameText.text = data.playerName;
-        localizedLeaderboardText.UpdatePointsText(data.drivingPoint);
+        pointsText.text = data.drivingPoint.ToString() + " Points";
 
         // Update stats texts
-        LocalizeStringEvent drivingStatsTextEvent = stats
+        Text drivingStatsText = stats
             .transform.Find("Driving Stats")
-            .GetComponent<LocalizeStringEvent>();
-        LocalizeStringEvent minigameStatsTextEvent = stats
+            .GetComponent<Text>();
+        Text minigameStatsText = stats
             .transform.Find("Minigame Stats")
-            .GetComponent<LocalizeStringEvent>();
+            .GetComponent<Text>();
 
-        if (drivingStatsTextEvent == null || minigameStatsTextEvent == null)
+        if (drivingStatsText == null || minigameStatsText == null)
         {
             Debug.LogError(
                 "One or more Text components are not assigned in stats."
@@ -61,7 +57,19 @@ public class LeaderboardPlayer : MonoBehaviour
             return;
         }
 
-        localizedLeaderboardText.UpdateDrivingStatsText(data);
-        localizedLeaderboardText.UpdateMinigameStatsText(data);
+        drivingStatsText.text =
+            $"Left Turn Signals: {data.leftTurnSignals}\n"
+            + $"Right Turn Signals: {data.rightTurnSignals}\n"
+            + $"Times Parked Without Touching Lines: {data.timesParkedWithoutTouchingLines}\n"
+            + $"Stop Signs Stopped At: {data.stopSignsStoppedAt}";
+
+        minigameStatsText.text =
+            $"Tug Of War Games Won: {data.tugOfWarGamesWon}\n"
+            + $"Times Pet Washed: {data.timesPetWashed}\n"
+            + $"Times Hide-N-Seek Won: {data.timesHideNSeekWon}\n"
+            + $"Cosmetics Unlocked: {data.cosmeticsUnlocked}\n"
+            + $"Fetch High Score: {data.fetchHighScore}\n"
+            + $"Best Time for Bath Minigame: {data.bathMinigameBestTime:F2} seconds\n"
+            + $"Times Pet Walked: {data.timesPetWalked}";
     }
 }

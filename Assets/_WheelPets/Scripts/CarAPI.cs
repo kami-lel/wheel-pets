@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+// fixme CarApi is deprecated
 public class CarAPI
 {
     /// <summary>
