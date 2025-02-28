@@ -14,6 +14,7 @@ public class FetchScript : MonoBehaviour
     public GameObject playAgainButton;
     public FetchUpdateScore fetchUpdateScore; // Reference to the FetchUpdateScore script
     public FetchUpdateTime fetchUpdateTime; // Reference to the FetchUpdateTime script
+    public FetchUpdateHighScore fetchUpdateHighScore; // Reference to the FetchUpdateHighScore script
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
     public GameObject ballPrefab;
@@ -24,7 +25,6 @@ public class FetchScript : MonoBehaviour
     private float currentSpeed;
     private bool isMovingRight = true;
     private bool gameActive = false;
-    private int highScore = 0;
 
     private int timingBarLength = 100;
     public int lineLength = 10;
@@ -43,16 +43,13 @@ public class FetchScript : MonoBehaviour
         PositionCheckArea();
         StartCoroutine(StartGameRoutine());
 
-        // Fetch the high score from PlayerData
-        highScore = Data.GetPlayerData().fetchHighScore;
-
-        if (fetchUpdateScore == null || fetchUpdateTime == null)
+        if (fetchUpdateScore == null || fetchUpdateTime == null || fetchUpdateHighScore == null)
         {
-            Debug.LogError("FetchUpdateScore or FetchUpdateTime is not assigned in the Inspector.");
+            Debug.LogError("FetchUpdateScore, FetchUpdateTime, or FetchUpdateHighScore is not assigned in the Inspector.");
             return;
         }
 
-        fetchUpdateTime.Timer = 5.0f; // Initialize the timer to 5 seconds
+        fetchUpdateTime.ResetTimer(); // Initialize the timer to 5 seconds
     }
 
     void Update()
@@ -66,7 +63,7 @@ public class FetchScript : MonoBehaviour
             }
 
             // Update the timer
-            fetchUpdateTime.Timer -= Time.deltaTime;
+            fetchUpdateTime.ChangeTimer(-Time.deltaTime);
 
             if (fetchUpdateTime.Timer <= 0)
             {
@@ -76,13 +73,7 @@ public class FetchScript : MonoBehaviour
                 Debug.Log("Game Over! Timer reached 0.");
 
                 // Update the high score if the current score is higher
-                if (fetchUpdateScore.Score > highScore)
-                {
-                    highScore = fetchUpdateScore.Score;
-                    PlayerData data = Data.GetPlayerData();
-                    data.fetchHighScore = highScore;
-                    Data.SavePlayerDataToFile();
-                }
+                fetchUpdateHighScore.UpdateHighScore(fetchUpdateScore.Score);
             }
         }
     }
@@ -126,7 +117,7 @@ public class FetchScript : MonoBehaviour
             PositionCheckArea(); // Reposition the check area without resetting the line
 
             // Reset the timer to 5 seconds
-            fetchUpdateTime.Timer = 5.0f;
+            fetchUpdateTime.ResetTimer();
 
             // Launch a ball towards the dog
             LaunchBall();
@@ -139,13 +130,7 @@ public class FetchScript : MonoBehaviour
             Debug.Log("Game Over! Final Score: " + fetchUpdateScore.Score);
 
             // Update the high score if the current score is higher
-            if (fetchUpdateScore.Score > highScore)
-            {
-                highScore = fetchUpdateScore.Score;
-                PlayerData data = Data.GetPlayerData();
-                data.fetchHighScore = highScore;
-                Data.SavePlayerDataToFile();
-            }
+            fetchUpdateHighScore.UpdateHighScore(fetchUpdateScore.Score);
         }
     }
 

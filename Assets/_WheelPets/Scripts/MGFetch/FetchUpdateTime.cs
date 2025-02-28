@@ -9,12 +9,12 @@ public class FetchUpdateTime : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textMeshProComp;
     [SerializeField] private Text uiTextComp;
 
-    private float timer;
+    private float timer = 5.0f; // Initialize the timer to 5 seconds
 
     public float Timer
     {
         get => timer;
-        set
+        private set
         {
             timer = value;
             UpdateTimeText();
@@ -48,5 +48,20 @@ public class FetchUpdateTime : MonoBehaviour
     {
         timeText.Arguments[0] = Mathf.Ceil(timer);
         timeText.RefreshString();
+    }
+
+    public void ResetTimer()
+    {
+        Timer = 5.0f;
+    }
+
+    public void StopTimer()
+    {
+        Timer = 0.0f;
+    }
+
+    public void ChangeTimer(float seconds)
+    {
+        Timer += seconds;
     }
 }

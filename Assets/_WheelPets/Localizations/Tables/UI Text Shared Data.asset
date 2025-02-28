@@ -239,6 +239,10 @@ MonoBehaviour:
     m_Key: Fetch Time Text
     m_Metadata:
       m_Items: []
+  - m_Id: 4374024043692032
+    m_Key: Fetch High Score
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

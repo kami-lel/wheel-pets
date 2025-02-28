@@ -252,6 +252,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 1463304124142190688
+  - m_Id: 4374024043692032
+    m_Localized: "Puntuaci\xF3n m\xE1s alta: {0}"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
