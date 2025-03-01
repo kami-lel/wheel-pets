@@ -1982,9 +1982,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highScoreText:
     m_TableReference:
-      m_TableCollectionName: 
+      m_TableCollectionName: GUID:791866cbaf199d646968cfb7515ab202
     m_TableEntryReference:
-      m_KeyId: 0
+      m_KeyId: 4374024043692032
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

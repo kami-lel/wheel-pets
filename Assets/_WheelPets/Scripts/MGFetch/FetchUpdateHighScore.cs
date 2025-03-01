@@ -16,8 +16,16 @@ public class FetchUpdateHighScore : MonoBehaviour
     private void Start()
     {
         // Fetch the high score from PlayerData
-        highScore = Data.GetPlayerData().fetchHighScore;
-        UpdateHighScoreText();
+        PlayerData data = Data.GetPlayerData();
+        if (data != null)
+        {
+            highScore = data.fetchHighScore;
+            UpdateHighScoreText();
+        }
+        else
+        {
+            Debug.LogError("PlayerData is null");
+        }
     }
 
     private void OnEnable()
@@ -55,9 +63,16 @@ public class FetchUpdateHighScore : MonoBehaviour
         {
             highScore = score;
             PlayerData data = Data.GetPlayerData();
-            data.fetchHighScore = highScore;
-            Data.SavePlayerDataToFile();
-            UpdateHighScoreText();
+            if (data != null)
+            {
+                data.fetchHighScore = highScore;
+                Data.SavePlayerDataToFile();
+                UpdateHighScoreText();
+            }
+            else
+            {
+                Debug.LogError("PlayerData is null");
+            }
         }
     }
 }
