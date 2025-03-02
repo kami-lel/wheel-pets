@@ -316,6 +316,30 @@ MonoBehaviour:
     m_Localized: "\xBFTe gustar\xEDa intentarlo de nuevo?"
     m_Metadata:
       m_Items: []
+  - m_Id: 5423323955396608
+    m_Localized: "C\xF3mo Jugar a Buscar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5423554096857088
+    m_Localized: "<- \nHaz clic en cualquier parte cuando la barra blanca est\xE9
+      sobre la pelota de tenis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5423728839950336
+    m_Localized: "\xA1Si no haces clic en 5 -> \nsegundos, pierdes!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5423951427469312
+    m_Localized: "\xA1Intenta conseguir la puntuaci\xF3n m\xE1s alta! ->"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5425131494899712
+    m_Localized: "Arrastra el objeto con el n\xFAmero que coincide con el de debajo
+      de la mascota para evitar que tenga hambre. Cada comida correcta que se coma
+      ganar\xE1 un punto, mientras que cada comida incorrecta restar\xE1 un punto.
+      \xA1Mant\xE9n a la mascota alimentada el mayor tiempo posible!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

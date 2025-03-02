@@ -303,6 +303,26 @@ MonoBehaviour:
     m_Key: Try Again Text
     m_Metadata:
       m_Items: []
+  - m_Id: 5423323955396608
+    m_Key: Fetch Instruction Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5423554096857088
+    m_Key: Fetch Instruct 1 Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5423728839950336
+    m_Key: Fetch Instruct 2 Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5423951427469312
+    m_Key: Fetch Instruct 3 Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5425131494899712
+    m_Key: Feed Instruction Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

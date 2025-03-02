@@ -316,6 +316,30 @@ MonoBehaviour:
     m_Localized: "Voudrais-tu essayer \xE0 nouveau?"
     m_Metadata:
       m_Items: []
+  - m_Id: 5423323955396608
+    m_Localized: "Comment Jouer \xE0 Rapporter"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5423554096857088
+    m_Localized: "<- \nCliquez n'importe o\xF9 lorsque la barre blanche est au-dessus
+      de la balle de tennis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5423728839950336
+    m_Localized: "Si tu ne cliques pas pendant 5 -> \nsecondes, tu perds !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5423951427469312
+    m_Localized: Essaie d'obtenir le meilleur score ! ->
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5425131494899712
+    m_Localized: "Faites glisser l'objet avec le num\xE9ro correspondant \xE0 celui
+      sous l'animal pour \xE9viter qu'il ait faim ! Chaque nourriture correcte mang\xE9e
+      rapportera un point, tandis que chaque nourriture incorrecte en retirera un.
+      Gardez l'animal nourri le plus longtemps possible !"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
