@@ -1875,7 +1875,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1403116829
   m_SortingOrder: 0
@@ -4064,9 +4064,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1053642903}
     m_Modifications:
+    - target: {fileID: 139469153255260467, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3994813054359744121, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
       propertyPath: m_Name
       value: PauseOverlay
+      objectReference: {fileID: 0}
+    - target: {fileID: 4402249221885625195, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6410466699662558436, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
       propertyPath: m_LocalPosition.x
