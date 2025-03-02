@@ -48,7 +48,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5490232590336
-    m_Localized: "Cache-cache\nO\xF9 est ton animal?"
+    m_Localized: "Cache-cache\\nO\xF9 est ton animal?"
     m_Metadata:
       m_Items: []
   - m_Id: 8431786065920
@@ -306,6 +306,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 5418739811811328
     m_Localized: Retour Au Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5421300983857152
+    m_Localized: "Tu as trouv\xE9 ton animal!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5421540809965568
+    m_Localized: "Voudrais-tu essayer \xE0 nouveau?"
     m_Metadata:
       m_Items: []
   references:

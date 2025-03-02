@@ -295,6 +295,14 @@ MonoBehaviour:
     m_Key: Return Menu Text
     m_Metadata:
       m_Items: []
+  - m_Id: 5421300983857152
+    m_Key: Found Pet Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5421540809965568
+    m_Key: Try Again Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

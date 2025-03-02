@@ -48,9 +48,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5490232590336
-    m_Localized: 'Hide-n-Seek
-
-      Where''s your Pet?'
+    m_Localized: Hide-n-Seek\nWhere's your Pet?
     m_Metadata:
       m_Items: []
   - m_Id: 8431786065920
@@ -322,6 +320,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 5418739811811328
     m_Localized: Return To Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5421300983857152
+    m_Localized: You found your pet!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5421540809965568
+    m_Localized: Would you like to try again?
     m_Metadata:
       m_Items: []
   references:

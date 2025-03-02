@@ -48,7 +48,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 5490232590336
-    m_Localized: "Escondite\n\xBFD\xF3nde est\xE1 tu mascota?"
+    m_Localized: "Escondite\\n\xBFD\xF3nde est\xE1 tu mascota?"
     m_Metadata:
       m_Items: []
   - m_Id: 8431786065920
@@ -306,6 +306,14 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 5418739811811328
     m_Localized: "Volver Al Men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5421300983857152
+    m_Localized: "\xA1Encontraste a tu mascota!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5421540809965568
+    m_Localized: "\xBFTe gustar\xEDa intentarlo de nuevo?"
     m_Metadata:
       m_Items: []
   references:
