@@ -275,6 +275,26 @@ MonoBehaviour:
     m_Key: Mute Text
     m_Metadata:
       m_Items: []
+  - m_Id: 5414558233329664
+    m_Key: Instructions Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417068939509760
+    m_Key: Confirm Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417287806681088
+    m_Key: Restart Game Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417823415107584
+    m_Key: Start Game Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5418739811811328
+    m_Key: Return Menu Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

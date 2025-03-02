@@ -304,6 +304,26 @@ MonoBehaviour:
     m_Localized: Mute
     m_Metadata:
       m_Items: []
+  - m_Id: 5414558233329664
+    m_Localized: Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417068939509760
+    m_Localized: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417287806681088
+    m_Localized: Restart Game?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417823415107584
+    m_Localized: Start Game
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5418739811811328
+    m_Localized: Return To Menu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

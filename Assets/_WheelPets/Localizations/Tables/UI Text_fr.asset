@@ -288,6 +288,26 @@ MonoBehaviour:
     m_Localized: Muet
     m_Metadata:
       m_Items: []
+  - m_Id: 5414558233329664
+    m_Localized: Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417068939509760
+    m_Localized: Confirmer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417287806681088
+    m_Localized: "Red\xE9marrer le jeu?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417823415107584
+    m_Localized: "D\xE9marrer Le Jeu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5418739811811328
+    m_Localized: Retour Au Menu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

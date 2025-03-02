@@ -288,6 +288,26 @@ MonoBehaviour:
     m_Localized: Silenciar
     m_Metadata:
       m_Items: []
+  - m_Id: 5414558233329664
+    m_Localized: Instrucciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417068939509760
+    m_Localized: Confirmar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417287806681088
+    m_Localized: "\xBFReiniciar juego?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5417823415107584
+    m_Localized: Iniciar Juego
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5418739811811328
+    m_Localized: "Volver Al Men\xFA"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
