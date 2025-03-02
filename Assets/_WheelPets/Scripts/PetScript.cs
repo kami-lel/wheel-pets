@@ -26,6 +26,23 @@ public class PetScript : MonoBehaviour
     [SerializeField]
     private GameObject rabbitAccessoryGroup;
 
+    private PlayerData.PetData petData;
+    private GameObject activePet;
+
+    private void Start()
+    {
+        PlayerData data = Data.GetPlayerData();
+        if (data != null)
+        {
+            petData = data.petData;
+            UpdateLook();
+        }
+        else
+        {
+            Debug.LogError("PlayerData is null");
+        }
+    }
+
     /// <summary>
     /// Updates the appearance of the pet from petData
     /// </summary>
@@ -114,14 +131,5 @@ public class PetScript : MonoBehaviour
                 );
             }
         }
-    }
-
-    private PlayerData.PetData petData;
-    private GameObject activePet;
-
-    private void Start()
-    {
-        petData = Data.GetPlayerData().petData;
-        UpdateLook();
     }
 }

@@ -70,6 +70,9 @@ public class PlayerData
     public PetData petData = new();
     public List<AccessoryType> purchasedAccessories = new();
 
+    // Language preference
+    public string language = "en";
+
     // declare classes
     [Serializable]
     public class LeaderboardOtherPlayerData

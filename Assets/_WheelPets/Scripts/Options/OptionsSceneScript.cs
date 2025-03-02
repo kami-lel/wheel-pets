@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class OptionsSceneScript : MonoBehaviour
 {
@@ -24,20 +26,17 @@ public class OptionsSceneScript : MonoBehaviour
 
     public void OnClickEnglishButton()
     {
-        // todo connect with langauge manager
-        Debug.LogWarning("language->English, no effect yet");
+        SetLocale("en");
     }
 
     public void OnClickSpanishButton()
     {
-        // todo connect with langauge manager
-        Debug.LogWarning("language->Spanish, no effect yet");
+        SetLocale("es");
     }
 
     public void OnClickFrenchButton()
     {
-        // todo connect with langauge manager
-        Debug.LogWarning("language->French, no effect yet");
+        SetLocale("fr");
     }
 
     public void OnClickReAdoptButton()
@@ -48,5 +47,19 @@ public class OptionsSceneScript : MonoBehaviour
     public void OnClickFactorResetButton()
     {
         resetDataPopUp.SetActive(true);
+    }
+
+    private void SetLocale(string localeCode)
+    {
+        var selectedLocale = LocalizationSettings.AvailableLocales.Locales.Find(locale => locale.Identifier.Code == localeCode);
+        if (selectedLocale != null)
+        {
+            LocalizationSettings.SelectedLocale = selectedLocale;
+            Debug.Log($"Locale set to {localeCode}");
+        }
+        else
+        {
+            Debug.LogWarning($"Locale {localeCode} not found");
+        }
     }
 }
