@@ -284,6 +284,26 @@ MonoBehaviour:
     m_Localized: Unequip
     m_Metadata:
       m_Items: []
+  - m_Id: 5410776556568576
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5410884027219968
+    m_Localized: SFX Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411065384730624
+    m_Localized: Reset Data
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411149862207488
+    m_Localized: Re Adopt
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411943781040128
+    m_Localized: Mute
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

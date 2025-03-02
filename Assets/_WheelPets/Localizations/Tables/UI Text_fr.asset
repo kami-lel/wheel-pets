@@ -268,6 +268,26 @@ MonoBehaviour:
     m_Localized: "D\xE9s\xE9quiper"
     m_Metadata:
       m_Items: []
+  - m_Id: 5410776556568576
+    m_Localized: Volume de la musique
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5410884027219968
+    m_Localized: Volume SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411065384730624
+    m_Localized: "R\xE9initialiser"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411149862207488
+    m_Localized: "R\xE9adopter"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411943781040128
+    m_Localized: Muet
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

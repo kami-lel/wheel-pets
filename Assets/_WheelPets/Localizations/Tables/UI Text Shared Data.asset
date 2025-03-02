@@ -255,6 +255,26 @@ MonoBehaviour:
     m_Key: Unequip Text
     m_Metadata:
       m_Items: []
+  - m_Id: 5410776556568576
+    m_Key: Music Volume Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5410884027219968
+    m_Key: SFX Volume Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411065384730624
+    m_Key: Reset Data Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411149862207488
+    m_Key: Re Adopt Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411943781040128
+    m_Key: Mute Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
