@@ -256,6 +256,18 @@ MonoBehaviour:
     m_Localized: "Puntuaci\xF3n m\xE1s alta: {0}"
     m_Metadata:
       m_Items: []
+  - m_Id: 5407467821137920
+    m_Localized: Comprar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5407620435083264
+    m_Localized: Equipar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5407726521614336
+    m_Localized: Desequipar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

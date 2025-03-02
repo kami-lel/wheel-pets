@@ -272,6 +272,18 @@ MonoBehaviour:
     m_Localized: 'High Score: {0}'
     m_Metadata:
       m_Items: []
+  - m_Id: 5407467821137920
+    m_Localized: Purchase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5407620435083264
+    m_Localized: Equip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5407726521614336
+    m_Localized: Unequip
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:

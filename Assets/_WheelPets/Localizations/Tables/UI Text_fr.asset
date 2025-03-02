@@ -256,6 +256,18 @@ MonoBehaviour:
     m_Localized: 'Meilleur score: {0}'
     m_Metadata:
       m_Items: []
+  - m_Id: 5407467821137920
+    m_Localized: Acheter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5407620435083264
+    m_Localized: "\xC9quiper"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5407726521614336
+    m_Localized: "D\xE9s\xE9quiper"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
