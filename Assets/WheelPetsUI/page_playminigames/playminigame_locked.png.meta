@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      playminigame_locked_0: -6931959992772120228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

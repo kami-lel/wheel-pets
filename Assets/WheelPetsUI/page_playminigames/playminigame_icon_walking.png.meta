@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      playminigame_icon_walking_0: -8523624722056258043
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

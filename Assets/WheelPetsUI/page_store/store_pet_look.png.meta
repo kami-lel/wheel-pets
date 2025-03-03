@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      store_pet_look_0: 5917712842324962338
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

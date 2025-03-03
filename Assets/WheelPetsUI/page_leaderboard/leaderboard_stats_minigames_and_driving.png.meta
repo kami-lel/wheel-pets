@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      leaderboard_stats_minigames_and_driving_0: -283574438905024591
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

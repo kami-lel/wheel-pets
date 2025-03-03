@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 166f3feff53a74e9d8f6dba6ee658061
+guid: 01413cd17a91e4915843229c5953f2e2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8021717462502745567
-    second: pause_resume_and_settings_0
+      213: -8919923593395770956
+    second: title_uibox_leaderboard_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pause_resume_and_settings_0
+      name: title_uibox_leaderboard_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 68
-        height: 17
+        width: 28
+        height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd52601088dd25f60800000000000000
-      internalID: 8021717462502745567
+      spriteID: 4b9e40860c0163480800000000000000
+      internalID: -8919923593395770956
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      pause_resume_and_settings_0: 8021717462502745567
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

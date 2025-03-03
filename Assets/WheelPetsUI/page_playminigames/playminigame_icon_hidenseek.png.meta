@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      playminigame_icon_hidenseek_0: -5097297028055875163
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      playminigame_icon_bath_0: -7639674815027477348
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

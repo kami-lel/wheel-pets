@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      button_pause_outline_0: -5170209993023236551
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

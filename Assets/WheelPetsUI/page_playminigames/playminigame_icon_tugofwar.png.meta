@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      playminigame_icon_tugofwar_0: 5423857250254990409
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
