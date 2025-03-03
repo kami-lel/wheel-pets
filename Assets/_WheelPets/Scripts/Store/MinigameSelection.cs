@@ -1,3 +1,5 @@
+using UnityEngine;
+
 // TODO minigame unlock mechanism
 public class MinigameSelection : MonoBehaviour
 {
