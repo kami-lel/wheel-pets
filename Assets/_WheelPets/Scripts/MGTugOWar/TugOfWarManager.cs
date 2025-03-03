@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-// TODO missing script bug
-// todo add more instruction for how to play the game
-// todo add high score function
-// todo Feels too easy to spam tap, Maybe make a restriction on tapping?
-// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
+// BUG missing script bug report in console
+// TODO add more instruction for how to play the game
+// TODO add high score function
+// TODO Feels too easy to spam tap, Maybe make a restriction on tapping?
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;

@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// fixme CarApi is deprecated
+// FIXME CarApi is deprecated
 public class CarAPI
 {
     /// <summary>
@@ -39,7 +39,7 @@ public class CarAPI
     }
 
     public class CarEventArgs
-        : EventArgs { // todo
+        : EventArgs { // TODO
     }
 
     // static to ensure work across different instances

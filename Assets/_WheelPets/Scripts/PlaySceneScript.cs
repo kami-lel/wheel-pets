@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// fixme beautify the scene
+// FIXME beautify the scene
 public class PlaySceneScript : MonoBehaviour
 {
     public void ClickLeaveButton()

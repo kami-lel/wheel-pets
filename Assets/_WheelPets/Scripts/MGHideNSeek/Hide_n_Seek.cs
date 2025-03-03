@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// todo implement visual cue for find/not find dog (in addition to audio cue) for accessibility reason
-// todo add more instruction for how to play the game
-// todo add high score function
+// TODO implement visual cue for find/not find dog (in addition to audio cue) for accessibility reason
+// TODO add more instruction for how to play the game
+// TODO add high score function
 
 public class Hide_n_Seek : MonoBehaviour
 {
@@ -46,10 +46,14 @@ public class Hide_n_Seek : MonoBehaviour
 
     private int strikeCounter = 0; // Int to count # of strikes
 
-    [SerializeField] private Button restartButton; // Holds restart button
+    [SerializeField]
+    private Button restartButton; // Holds restart button
 
-    [SerializeField] private GameObject winText; // Stores win text display
-    [SerializeField] private GameObject loseText; // Stores lose text display
+    [SerializeField]
+    private GameObject winText; // Stores win text display
+
+    [SerializeField]
+    private GameObject loseText; // Stores lose text display
 
     public PauseOverlay pauseOverlay;
 
@@ -94,23 +98,25 @@ public class Hide_n_Seek : MonoBehaviour
             // Check if the pressed button is the correct one
             if (buttonIndex == correctButtonIndex)
             {
-            // Instantiate the pet prefab at the position of the correct button
-            Vector3 buttonPosition = buttons[buttonIndex].transform.position;
-            GameObject petInstance = Instantiate(
-                petPrefab,
-                buttonPosition,
-                Quaternion.identity
-            );
+                // Instantiate the pet prefab at the position of the correct button
+                Vector3 buttonPosition = buttons[buttonIndex]
+                    .transform
+                    .position;
+                GameObject petInstance = Instantiate(
+                    petPrefab,
+                    buttonPosition,
+                    Quaternion.identity
+                );
 
-            // Set the scale of the pet prefab
-            petInstance.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
+                // Set the scale of the pet prefab
+                petInstance.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
 
-            // Move the pet prefab to the front of the scene
-            petInstance.transform.position = new Vector3(
-                petInstance.transform.position.x,
-                petInstance.transform.position.y,
-                -1f
-            );
+                // Move the pet prefab to the front of the scene
+                petInstance.transform.position = new Vector3(
+                    petInstance.transform.position.x,
+                    petInstance.transform.position.y,
+                    -1f
+                );
 
                 // Play correct guess audio with delay
                 StartCoroutine(PlayGuessSound(correctGuessAudio));
@@ -122,14 +128,14 @@ public class Hide_n_Seek : MonoBehaviour
                 // Display win text
                 winText.gameObject.SetActive(true);
 
-            // Increment the times hide and seek won stat
-            PlayerData data = Data.GetPlayerData();
-            data.timesHideNSeekWon++;
-            Data.SavePlayerDataToFile();
-            pauseOverlay.MinigameWin();
-        }
+                // Increment the times hide and seek won stat
+                PlayerData data = Data.GetPlayerData();
+                data.timesHideNSeekWon++;
+                Data.SavePlayerDataToFile();
+                pauseOverlay.MinigameWin();
+            }
             else
-    {
+            {
                 // Hide & disable the button
                 buttons[buttonIndex].gameObject.SetActive(false);
 
@@ -139,12 +145,12 @@ public class Hide_n_Seek : MonoBehaviour
 
                 // Display strikes on screen with delay
                 StartCoroutine(DisplayStrikes());
-    }
+            }
 
             // Start button cooldown timer
             StartCoroutine(ResetButtonCooldown());
             buttonCooldown = true;
-    }
+        }
     }
 
     public void BackButtonOnClick()
@@ -168,11 +174,11 @@ public class Hide_n_Seek : MonoBehaviour
     }
 
     IEnumerator PlayGuessSound(AudioSource guessSound)
-        {
+    {
         // Delay guess audio by 3 seconds before playing it
         yield return new WaitForSeconds(delayGuess);
         guessSound.Play();
-        }
+    }
 
     IEnumerator ResetButtonCooldown()
     {
@@ -198,29 +204,26 @@ public class Hide_n_Seek : MonoBehaviour
             // Display lose text
             loseText.gameObject.SetActive(true);
         }
-        }
+    }
 
     void chooseRandomAudio()
-        {
+    {
         // Choose random search/footstep audio and assign it to randomAudio
         int chooseAudio = Random.Range(1, 4);
 
         if (chooseAudio == 1)
         {
             randomAudio = footstepAudio;
-    }
+        }
         else if (chooseAudio == 2)
-    {
+        {
             randomAudio = searching1Audio;
-    }
+        }
         else
         {
             randomAudio = searching2Audio;
-}
+        }
     }
 
-    void DisplayInstructions()
-    {
-
-    }
+    void DisplayInstructions() { }
 }

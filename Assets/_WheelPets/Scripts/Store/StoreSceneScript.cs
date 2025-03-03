@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// fixme beautify store
 public class StoreSceneScript : MonoBehaviour
 {
     public void ClosetButtonOnClick()

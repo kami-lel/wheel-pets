@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// todo add more instruction for how to play the game
-// todo add high score function
-// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
+// TODO add more instruction for how to play the game
+// TODO add high score function
 public class FetchSceneScript : MonoBehaviour
 {
     public void BackButtonOnClick()

@@ -2,9 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
-// todo add more instruction for how to play the game
-// todo add high score function
+// TODO add more instruction for how to play the game
+// TODO add high score function
 public class BathSceneScript : MonoBehaviour
 {
     public GameObject playAgainButton;

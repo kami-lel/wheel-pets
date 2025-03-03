@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// fixme need ui re-design
+// FIXME need ui re-design
 public class PauseContainer : MonoBehaviour
 {
     private PauseOverlay pauseOverlay;
@@ -19,7 +19,8 @@ public class PauseContainer : MonoBehaviour
         // creates event on pointer release when changing volume
         if (volumeSlider != null)
         {
-            EventTrigger trigger = volumeSlider.gameObject.GetComponent<EventTrigger>();
+            EventTrigger trigger =
+                volumeSlider.gameObject.GetComponent<EventTrigger>();
             if (trigger == null)
             {
                 trigger = volumeSlider.gameObject.AddComponent<EventTrigger>();
@@ -27,7 +28,7 @@ public class PauseContainer : MonoBehaviour
 
             EventTrigger.Entry entry = new EventTrigger.Entry
             {
-                eventID = EventTriggerType.PointerUp
+                eventID = EventTriggerType.PointerUp,
             };
             entry.callback.AddListener((data) => OnVolumeSliderReleased());
             trigger.triggers.Add(entry);
@@ -68,7 +69,7 @@ public class PauseContainer : MonoBehaviour
         {
             Debug.Log($"PauseOverlay\tmain volume changed to {value}");
         }
-        
+
         AudioListener.volume = value;
     }
 

@@ -4,7 +4,7 @@ public class DataSystemPrefabScript : MonoBehaviour
 {
     void Update()
     {
-        // todo timed auto-save
+        // TODO timed auto-save
     }
 
     void OnApplicationQuit()

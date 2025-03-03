@@ -23,7 +23,7 @@ public class PlayerData
         new LeaderboardOtherPlayerData { name = "Mia", point = 178 },
     };
 
-    // fixme better data structure
+    // FIXME better data structure
     // driving statistics
     public int leftTurnSignals = 0;
     public int rightTurnSignals = 0;
@@ -57,12 +57,12 @@ public class PlayerData
     public float bgmVolume = 1f;
 
     // statistics of mini games
-    public MinigameStatistics statBath = new(); // bug need correct init para
-    public MinigameStatistics statFeed = new(); // bug need correct init para
-    public MinigameStatistics statFetch = new(); // bug need correct init para
-    public MinigameStatistics statHideNSeek = new(); // bug need correct init para
-    public MinigameStatistics statTugOWar = new(); // bug need correct init para
-    public MinigameStatistics statWalkScene = new(); // bug need correct init para
+    public MinigameStatistics statBath = new(); // BUG need correct init para
+    public MinigameStatistics statFeed = new(); // BUG need correct init para
+    public MinigameStatistics statFetch = new(); // BUG need correct init para
+    public MinigameStatistics statHideNSeek = new(); // BUG need correct init para
+    public MinigameStatistics statTugOWar = new(); // BUG need correct init para
+    public MinigameStatistics statWalkScene = new(); // BUG need correct init para
 
     // pet's data
     public bool hasAdoptPet = false;

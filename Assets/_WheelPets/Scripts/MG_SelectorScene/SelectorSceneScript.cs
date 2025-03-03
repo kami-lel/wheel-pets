@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-// todo implement better ui design for selection screen, e.g. screen shots of minigames
 public class MGSelectorSceneScript : MonoBehaviour
 {
     [SerializeField]
@@ -14,7 +12,7 @@ public class MGSelectorSceneScript : MonoBehaviour
     private void Start()
     {
         playerData = Data.GetPlayerData();
-        // hack give player some point so mingame ares unlcoked
+        // HACK give player some point so mingame ares unlcoked
         playerData.drivingPoint = 1000;
 
         foreach (Transform child in MGButtons.transform)
@@ -23,7 +21,6 @@ public class MGSelectorSceneScript : MonoBehaviour
         }
 
         // sets the unlockable minigames to require 100 more points than the last
-        // fixme use ParameterData for setting requirements
         for (int i = 0; i < MGUnlocks.Count; i++)
         {
             MGUnlocks[i].SetReq(100 + i);

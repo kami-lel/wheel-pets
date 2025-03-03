@@ -2,8 +2,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// todo add more instruction for how to play the game
-// todo add high score function
+// TODO add more instruction for how to play the game
+// TODO add high score function
 
 // a single loose
 public class LoseHandler : MonoBehaviour

@@ -25,7 +25,7 @@ public class PauseOverlay : MonoBehaviour
         restartConfirmContainer.gameObject.SetActive(true);
     }
 
-    // hack backward compatiblity
+    // HACK backward compatiblity
     public void PauseButtonOnClick()
     {
         MinigamePause();
@@ -98,14 +98,14 @@ public class PauseOverlay : MonoBehaviour
     public void StopMinigameTimeAndAudio()
     {
         Time.timeScale = 0f;
-        // bug currently it doesn't stop sound & bgm
+        // BUG currently it doesn't stop sound & bgm
     }
 
     // used by containers
     public void ContinueMinigameTimeAndAudio()
     {
         Time.timeScale = 1f;
-        // bug currently it doesn't stop sound & bgm
+        // BUG currently it doesn't stop sound & bgm
     }
 
     // used by containers

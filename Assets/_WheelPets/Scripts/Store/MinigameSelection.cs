@@ -1,6 +1,4 @@
-using UnityEngine;
-
-// todo minigame unlock mechanism
+// TODO minigame unlock mechanism
 public class MinigameSelection : MonoBehaviour
 {
     private RectTransform thisRect;
