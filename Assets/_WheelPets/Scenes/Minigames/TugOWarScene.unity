@@ -867,6 +867,7 @@ GameObject:
   - component: {fileID: 316350148}
   - component: {fileID: 316350150}
   - component: {fileID: 316350149}
+  - component: {fileID: 316350151}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -994,6 +995,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316350147}
   m_CullTransparentMesh: 1
+--- !u!114 &316350151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316350147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:791866cbaf199d646968cfb7515ab202
+    m_TableEntryReference:
+      m_KeyId: 12971042209792
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &337624793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,6 +1512,7 @@ GameObject:
   - component: {fileID: 673477793}
   - component: {fileID: 673477795}
   - component: {fileID: 673477794}
+  - component: {fileID: 673477796}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1608,6 +1638,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 673477792}
   m_CullTransparentMesh: 1
+--- !u!114 &673477796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673477792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:791866cbaf199d646968cfb7515ab202
+    m_TableEntryReference:
+      m_KeyId: 12971042209792
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &681475219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2737,6 +2795,7 @@ GameObject:
   - component: {fileID: 949952700}
   - component: {fileID: 949952699}
   - component: {fileID: 949952698}
+  - component: {fileID: 949952701}
   m_Layer: 5
   m_Name: TapText
   m_TagString: Untagged
@@ -2862,6 +2921,34 @@ RectTransform:
   m_AnchoredPosition: {x: 14, y: -36}
   m_SizeDelta: {x: 340.0421, y: 119.26}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &949952701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949952697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:791866cbaf199d646968cfb7515ab202
+    m_TableEntryReference:
+      m_KeyId: 2229807153152
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &992202092
 GameObject:
   m_ObjectHideFlags: 0
@@ -3151,6 +3238,7 @@ GameObject:
   - component: {fileID: 1257053665}
   - component: {fileID: 1257053667}
   - component: {fileID: 1257053666}
+  - component: {fileID: 1257053668}
   m_Layer: 5
   m_Name: ReadyText
   m_TagString: Untagged
@@ -3276,6 +3364,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257053664}
   m_CullTransparentMesh: 1
+--- !u!114 &1257053668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1257053664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: GUID:791866cbaf199d646968cfb7515ab202
+    m_TableEntryReference:
+      m_KeyId: 14811987968
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &1308771196 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1149118955564041616, guid: c7371c675da4dee4cae7dad58311e72d, type: 3}
