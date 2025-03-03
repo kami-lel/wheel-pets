@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 4bb32ea5ca60d4e4893ab5cec53a1ba7
+guid: fedfa68b323ad474aa1d4ef937204fd3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4317865073922062182
-    second: wheelpets_closet_0
+      213: -5097297028055875163
+    second: playminigame_icon_hidenseek_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: wheelpets_closet_0
+      name: playminigame_icon_hidenseek_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 28
-        height: 28
+        width: 48
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 667b03f58632ceb30800000000000000
-      internalID: 4317865073922062182
+      spriteID: 5a143101c53c249b0800000000000000
+      internalID: -5097297028055875163
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      wheelpets_closet_0: 4317865073922062182
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
