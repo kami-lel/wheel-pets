@@ -7,7 +7,7 @@ public class TitleSceneScript : MonoBehaviour
 
     public void ClickPlayButton()
     {
-        SceneChange.LoadPlayMenu();
+        SceneChange.LoadSelector();
     }
 
     public void ClickOptionsButton()
@@ -23,6 +23,11 @@ public class TitleSceneScript : MonoBehaviour
     public void ClickExitButton()
     {
         SceneChange.LoadDrivingGame();
+    }
+
+    public void ClickStoreButton()
+    {
+        SceneChange.LoadStore();
     }
 
     void Start()

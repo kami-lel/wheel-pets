@@ -33,7 +33,7 @@ public class MGSelectorSceneScript : MonoBehaviour
 
     public void BackButtonOnClick()
     {
-        SceneChange.LoadPlayMenu();
+        SceneChange.LoadTitle();
     }
 
     public void DogWalkButtonOnClick()
