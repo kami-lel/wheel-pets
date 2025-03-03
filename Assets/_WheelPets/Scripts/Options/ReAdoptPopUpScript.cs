@@ -1,6 +1,7 @@
 using UnityEngine;
 
-// fixme merge 2 scenes together
+// FIXME merge 2 scenes together
+// TODO new scene change logic
 
 public class ReAdoptPopUpScript : MonoBehaviour
 {

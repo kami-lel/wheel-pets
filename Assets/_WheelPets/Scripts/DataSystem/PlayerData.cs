@@ -57,13 +57,12 @@ public class PlayerData
     public float bgmVolume = 1f;
 
     // statistics of mini games
-    // BUG fix
-    public MinigameStatistics statBath = new();
-    public MinigameStatistics statFeed = new();
-    public MinigameStatistics statFetch = new();
-    public MinigameStatistics statHideNSeek = new();
-    public MinigameStatistics statTugOWar = new();
-    public MinigameStatistics statWalkScene = new();
+    public MinigameStatistics statBath = new(); // bug need correct init para
+    public MinigameStatistics statFeed = new(); // bug need correct init para
+    public MinigameStatistics statFetch = new(); // bug need correct init para
+    public MinigameStatistics statHideNSeek = new(); // bug need correct init para
+    public MinigameStatistics statTugOWar = new(); // bug need correct init para
+    public MinigameStatistics statWalkScene = new(); // bug need correct init para
 
     // pet's data
     public bool hasAdoptPet = false;
