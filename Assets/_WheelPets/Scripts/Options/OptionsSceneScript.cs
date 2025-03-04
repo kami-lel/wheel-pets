@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
+using UnityEngine.SceneManagement;
 
 public class OptionsSceneScript : MonoBehaviour
 {
@@ -49,9 +49,16 @@ public class OptionsSceneScript : MonoBehaviour
         resetDataPopUp.SetActive(true);
     }
 
+    private void Start()
+    {
+        Data.GetPlayerData().hasAdoptPet = true;
+    }
+
     private void SetLocale(string localeCode)
     {
-        var selectedLocale = LocalizationSettings.AvailableLocales.Locales.Find(locale => locale.Identifier.Code == localeCode);
+        var selectedLocale = LocalizationSettings.AvailableLocales.Locales.Find(locale =>
+            locale.Identifier.Code == localeCode
+        );
         if (selectedLocale != null)
         {
             LocalizationSettings.SelectedLocale = selectedLocale;
