@@ -1,62 +1,74 @@
 using UnityEngine;
-using System.Collections;
 
 public class RockMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Speed of the rock's movement
-    public RectTransform panel; // Reference to the panel (UI element)
+    public float moveSpeed = 5f;            // Speed the rock moves left
+    public RectTransform background;        // Reference to the background image's RectTransform
 
-    private float xBoundLeft; // Left edge of the panel
-    private float xBoundRight; // Right edge of the panel
-    private bool canMove = false; // Flag to control movement
+    private float xBoundLeft;                // Left edge of the background (local space)
+    private float xBoundRight;               // Right edge of the background (local space)
+    private bool canMove = false;            // When true, rock starts moving
+
+    public float respawnOffset = 100f;       // Optional buffer to spawn slightly offscreen right
 
     void Start()
     {
-        if (panel == null)
+        if (background == null)
         {
-            Debug.LogError("Panel object is not assigned!");
+            Debug.LogError("Background object is not assigned!");
             return;
         }
 
-        // Calculate the bounds of the panel
-        Vector3[] corners = new Vector3[4];
-        panel.GetWorldCorners(corners);
-        xBoundLeft = corners[0].x; // Bottom-left corner
-        xBoundRight = corners[2].x; // Top-right corner
-
-        // Disable movement initially
-        canMove = false;
-        StartCoroutine(EnableMovementAfterDelay(2f)); // 2-second delay
+        UpdateBackgroundBounds();
+        StartCoroutine(EnableMovementAfterDelay(2f));  // Optional delay before rocks move
     }
 
     void Update()
     {
         if (canMove)
         {
+            UpdateBackgroundBounds();
             HandleRockMovement();
         }
     }
 
-    private IEnumerator EnableMovementAfterDelay(float delay)
+    private System.Collections.IEnumerator EnableMovementAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         canMove = true;
     }
 
+    private void UpdateBackgroundBounds()
+    {
+        // Background is UI so we use its rect
+        xBoundLeft = background.rect.xMin;
+        xBoundRight = background.rect.xMax;
+
+        // Optional debug log
+        // Debug.Log($"Background Bounds - Left: {xBoundLeft}, Right: {xBoundRight}");
+    }
+
     private void HandleRockMovement()
     {
-        // Move the rocks left
         float horizontalMovement = moveSpeed * Time.deltaTime;
 
-        // Apply movement
-        transform.position += new Vector3(horizontalMovement, 0, 0);
+        // Move the rock left (using localPosition if the rock is a UI element inside the same parent)
+        transform.localPosition += new Vector3(-horizontalMovement, 0, 0);
 
-        // If the rock moves past the left bound, reset it to the right
-        if (transform.position.x < xBoundLeft)
+        // Check if rock moves past the left side of the background
+        if (transform.localPosition.x < xBoundLeft - 50f)  // 50f buffer ensures it's fully offscreen
         {
-            Vector3 newPosition = transform.position;
-            newPosition.x = xBoundRight; // Respawn on the right side
-            transform.position = newPosition;
+            RespawnRock();
         }
+    }
+
+    private void RespawnRock()
+    {
+        Vector3 newPosition = transform.localPosition;
+        newPosition.x = xBoundRight + respawnOffset;  // Move just offscreen to the right
+        transform.localPosition = newPosition;
+
+        // Optional log
+        // Debug.Log($"Rock respawned at {newPosition.x}");
     }
 }

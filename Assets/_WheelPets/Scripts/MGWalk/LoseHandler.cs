@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 // a single loose
 public class LoseHandler : MonoBehaviour
 {
+    public GameObject uiPet;
     public AudioSource LoseSound; // Reference to the AudioSource (assign in Inspector)
     public string loseTag = "Rock"; // Tag for objects that trigger a loss
     public PauseOverlay pauseOverlay;
@@ -33,6 +34,13 @@ public class LoseHandler : MonoBehaviour
             if (dogJump != null)
             {
                 dogJump.DisableControls();
+            }
+
+            // Disable UIMovement scripts
+            var uiMovement = uiPet.GetComponent<UIMovement>();
+            if (uiMovement != null)
+            {
+                uiMovement.enabled = false;
             }
 
             // Disable RockMovement scripts
