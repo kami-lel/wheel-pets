@@ -26,6 +26,10 @@ public class Data
         {
             string jsonText = File.ReadAllText(saveFilePath);
             _playerData = JsonUtility.FromJson<PlayerData>(jsonText);
+            if (_playerData == null)
+            {
+                throw new InvalidOperationException("Failed to deserialize PlayerData from JSON.");
+            }
 
             if (Debug.isDebugBuild)
             {
@@ -34,7 +38,11 @@ public class Data
         }
         catch (Exception ex)
         {
-            if (ex is FileNotFoundException || ex is ArgumentException)
+            if (
+                ex is FileNotFoundException
+                || ex is ArgumentException
+                || ex is InvalidOperationException
+            )
             {
                 // create an default PlayerData instance
                 _playerData = new PlayerData();
@@ -80,9 +88,7 @@ public class Data
             )
                 if (Debug.isDebugBuild)
                 {
-                    Debug.LogError(
-                        $"Data\tPlayer Data fail to save to file: {saveFilePath}"
-                    );
+                    Debug.LogError($"Data\tPlayer Data fail to save to file: {saveFilePath}");
                 }
         }
     }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 
+[Serializable]
 public class PlayerData
 {
     // todo language seletion saved?
