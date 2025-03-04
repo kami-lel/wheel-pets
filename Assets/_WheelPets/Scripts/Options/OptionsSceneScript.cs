@@ -1,5 +1,7 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
 
 // todo beautify reset data pop up
 // todo beautify adopt a pet pop up
@@ -10,6 +12,18 @@ public class OptionsSceneScript : MonoBehaviour
 
     [SerializeField]
     private GameObject resetDataPopUp;
+
+    [SerializeField]
+    private PetScript petPrefabObject;
+
+    [SerializeField]
+    private Slider dominantColorSlider;
+
+    [SerializeField]
+    private Slider secondaryColorSlider;
+
+    [SerializeField]
+    private TMP_InputField petNameField;
 
     public void OnClickBackButon()
     {
@@ -36,9 +50,48 @@ public class OptionsSceneScript : MonoBehaviour
         resetDataPopUp.SetActive(true);
     }
 
+    /// <summary>
+    /// Handles the Puppy button click event. Sets the pet type to Dog
+    /// </summary>
+    public void OnClickPuppyButton()
+    {
+        petData.animalType = PlayerData.AnimalType.Dog;
+        petPrefabObject.UpdateLook();
+    }
+
+    /// <summary>
+    /// Handles the Kitten button click event. Sets the pet type to Cat
+    /// </summary>
+    public void OnClickKittenButton()
+    {
+        // todo need to implement cat
+        Debug.LogWarning("Cat asset not ready yet.");
+
+        // restore after implmenting cat
+        // petData.animalType = PlayerData.AnimalType.Cat;
+        // petPrefabObject.UpdateLook();
+    }
+
+    /// <summary>
+    /// Handles the Rabbit button click event. Sets the pet type to Rabbit
+    /// </summary>
+    public void OnClickRabbitButton()
+    {
+        // todo need to implement rabbit
+        Debug.LogWarning("Rabbit Avatar not ready yet.");
+
+        // restore after implmenting rabbit
+        // petData.animalType = PlayerData.AnimalType.Rabbit;
+        // petPrefabObject.UpdateLook();
+    }
+
+    private PlayerData playerData;
+    private PlayerData.PetData petData;
+
     private void Start()
     {
-        PlayerData playerData = Data.GetPlayerData();
+        playerData = Data.GetPlayerData();
+        petData = playerData.petData;
 
         // 1st time game is launched, adoption process
         if (playerData.hasAdoptPet)
@@ -50,6 +103,26 @@ public class OptionsSceneScript : MonoBehaviour
             playerData.hasAdoptPet = true;
             adoptAPetPopUp.SetActive(true);
         }
+
+        // set up sliders values
+        dominantColorSlider.value = petData.dominantColorHue;
+        secondaryColorSlider.value = petData.secondaryColorHue;
+
+        // set up sliders event listenr
+        dominantColorSlider.onValueChanged.AddListener(
+            (value) =>
+            {
+                petData.dominantColorHue = value;
+                petPrefabObject.UpdateLook();
+            }
+        );
+        secondaryColorSlider.onValueChanged.AddListener(
+            (value) =>
+            {
+                petData.secondaryColorHue = value;
+                petPrefabObject.UpdateLook();
+            }
+        );
     }
 
     private void SetLocale(string localeCode)
