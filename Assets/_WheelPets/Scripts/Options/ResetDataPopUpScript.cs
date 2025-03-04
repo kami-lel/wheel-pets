@@ -4,9 +4,10 @@ public class ResetDataPopUpScript : MonoBehaviour
 {
     public void OnClickConfirmButton()
     {
-        // BUG reset data function is broken
         Data.ResetPlayerData();
-        SceneChange.LoadOptions(); // re-launcch current scene
+        Data.GetPlayerData().hasAdoptPet = true;
+        // disable the pop up
+        gameObject.SetActive(false);
     }
 
     public void OnClickCancelButton()
