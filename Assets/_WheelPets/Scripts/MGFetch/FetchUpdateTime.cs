@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.Localization;
 using TMPro;
 using UnityEngine.UI;
 
 public class FetchUpdateTime : MonoBehaviour
 {
-    [SerializeField] private LocalizedString timeText;
     [SerializeField] private TextMeshProUGUI textMeshProComp;
     [SerializeField] private Text uiTextComp;
 
@@ -21,33 +19,17 @@ public class FetchUpdateTime : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void UpdateTimeText()
     {
-        timeText.Arguments = new object[] { Mathf.Ceil(timer) };
-        timeText.StringChanged += UpdateText;
-    }
-
-    private void OnDisable()
-    {
-        timeText.StringChanged -= UpdateText;
-    }
-
-    private void UpdateText(string value)
-    {
+        string timeText = $"Time: {Mathf.Ceil(timer)}";
         if (textMeshProComp != null)
         {
-            textMeshProComp.text = value;
+            textMeshProComp.text = timeText;
         }
         else if (uiTextComp != null)
         {
-            uiTextComp.text = value;
+            uiTextComp.text = timeText;
         }
-    }
-
-    private void UpdateTimeText()
-    {
-        timeText.Arguments[0] = Mathf.Ceil(timer);
-        timeText.RefreshString();
     }
 
     public void ResetTimer()

@@ -1,11 +1,9 @@
 using UnityEngine;
-using UnityEngine.Localization;
 using TMPro;
 using UnityEngine.UI;
 
 public class FetchUpdateHighScore : MonoBehaviour
 {
-    [SerializeField] private LocalizedString highScoreText;
     [SerializeField] private TextMeshProUGUI textMeshProComp;
     [SerializeField] private Text uiTextComp;
 
@@ -28,33 +26,17 @@ public class FetchUpdateHighScore : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void UpdateHighScoreText()
     {
-        highScoreText.Arguments = new object[] { highScore };
-        highScoreText.StringChanged += UpdateText;
-    }
-
-    private void OnDisable()
-    {
-        highScoreText.StringChanged -= UpdateText;
-    }
-
-    private void UpdateText(string value)
-    {
+        string highScoreText = $"High Score: {highScore}";
         if (textMeshProComp != null)
         {
-            textMeshProComp.text = value;
+            textMeshProComp.text = highScoreText;
         }
         else if (uiTextComp != null)
         {
-            uiTextComp.text = value;
+            uiTextComp.text = highScoreText;
         }
-    }
-
-    private void UpdateHighScoreText()
-    {
-        highScoreText.Arguments[0] = highScore;
-        highScoreText.RefreshString();
     }
 
     public void UpdateHighScore(int score)

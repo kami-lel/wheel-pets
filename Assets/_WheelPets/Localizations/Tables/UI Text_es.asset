@@ -228,7 +228,8 @@ MonoBehaviour:
   - m_Id: 369411346989056
     m_Localized: Quiero... {0}!
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190688
   - m_Id: 379813141217280
     m_Localized: "- {0} Juegos de tira y afloja ganados\n- {0} Veces al perro lavado\n-
       {0} Veces al escondite ganado\n- {0} Cosm\xE9ticos desbloqueados"
@@ -255,7 +256,8 @@ MonoBehaviour:
   - m_Id: 4374024043692032
     m_Localized: "Puntuaci\xF3n m\xE1s alta: {0}"
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190688
   references:
     version: 2
     RefIds:
@@ -270,3 +272,5 @@ MonoBehaviour:
         - id: 379813141217280
         - id: 382664559099904
         - id: 4352241185914880
+        - id: 369411346989056
+        - id: 4374024043692032

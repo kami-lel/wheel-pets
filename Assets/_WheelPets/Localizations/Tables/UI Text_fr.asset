@@ -228,7 +228,8 @@ MonoBehaviour:
   - m_Id: 369411346989056
     m_Localized: Je veux... {0}!
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190687
   - m_Id: 379813141217280
     m_Localized: "- {0} Jeux de tir \xE0 la corde gagn\xE9s\n- {0} Fois l'animal
       lav\xE9\n- {0} Fois cache-cache gagn\xE9\n- {0} Cosm\xE9tiques d\xE9bloqu\xE9s"
@@ -255,7 +256,8 @@ MonoBehaviour:
   - m_Id: 4374024043692032
     m_Localized: 'Meilleur score: {0}'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 1463304124142190687
   references:
     version: 2
     RefIds:
@@ -270,3 +272,5 @@ MonoBehaviour:
         - id: 382664559099904
         - id: 357932379996160
         - id: 4352241185914880
+        - id: 369411346989056
+        - id: 4374024043692032
