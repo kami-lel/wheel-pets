@@ -3,7 +3,7 @@ using UnityEngine;
 public class DataSystemPrefabScript : MonoBehaviour
 {
     [SerializeField]
-    private float autoSaveIntervalSec = 30f; // Auto-save interval in seconds
+    private float autoSaveIntervalSec = 15f; // Auto-save interval in seconds
 
     private float lastSaveTime = 0f; // Last save time tracker
 
