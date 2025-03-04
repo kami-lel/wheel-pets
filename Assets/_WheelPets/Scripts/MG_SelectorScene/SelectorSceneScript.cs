@@ -33,6 +33,11 @@ public class MGSelectorSceneScript : MonoBehaviour
         SceneChange.LoadTitle();
     }
 
+    public void OptionsButtonOnClick()
+    {
+        SceneChange.LoadOptions();
+    }
+
     public void DogWalkButtonOnClick()
     {
         SceneChange.LoadWalk();
