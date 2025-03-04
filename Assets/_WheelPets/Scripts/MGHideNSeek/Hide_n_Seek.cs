@@ -125,22 +125,15 @@ public class Hide_n_Seek : MonoBehaviour
                 correctGuessAudio.Play();
                 Debug.Log("You search the area... You found your pet!");
 
-                // Remove strikes from screen
+                // Remove strikes from screen and display win overlay
                 RemoveStrikes();
-
-                // Display restart button on win
-                //restartButton.gameObject.SetActive(true);
-
-                // Display win text
-                //winText.gameObject.SetActive(true);
+                pauseOverlay.MinigameWin();
 
                 // Increment the times hide and seek won stat
-                
                 PlayerData data = Data.GetPlayerData();
-                //data.timesHideNSeekWon++;
-                //Data.SavePlayerDataToFile();
+                data.timesHideNSeekWon++;
+                Data.SavePlayerDataToFile();
                 
-                pauseOverlay.MinigameWin();
             }
             else
             {
