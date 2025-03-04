@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/_WheelPets/Scenes/TitleScene.unity
     guid: 06c5b9f6ec9544b5ebd7b9f8e0205a7e
   - enabled: 1
-    path: Assets/_WheelPets/Scenes/StoreScene.unity
-    guid: f40488c735954044a958d20b6f744281
-  - enabled: 1
     path: Assets/_WheelPets/Scenes/OptionsScene.unity
     guid: 7c16f0b136b7847bba3a12e531bef30f
   - enabled: 1
