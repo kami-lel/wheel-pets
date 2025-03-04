@@ -1,6 +1,6 @@
 using System;
 
-// FIXME makesure these are connected with the game
+// fixme makesure these are connected with the game
 
 public class MinigameStatistics
 {
@@ -24,7 +24,10 @@ public class MinigameStatistics
     public string bestScoreUnit;
     private readonly bool isBestScoreReversed;
 
-    public MinigameStatistics(string bestScoreUnit = "Point", bool isBestScoreReversed = false)
+    public MinigameStatistics(
+        string bestScoreUnit = "Point",
+        bool isBestScoreReversed = false
+    )
     {
         this.bestScoreUnit = bestScoreUnit;
         this.isBestScoreReversed = isBestScoreReversed;

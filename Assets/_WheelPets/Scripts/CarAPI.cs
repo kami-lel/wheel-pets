@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-// FIXME CarApi is deprecated
+// fixme carapi is deprecated
 public class CarAPI
 {
     /// <summary>
@@ -38,9 +38,7 @@ public class CarAPI
         HitACyclist,
     }
 
-    public class CarEventArgs
-        : EventArgs { // TODO
-    }
+    public class CarEventArgs : EventArgs { }
 
     // static to ensure work across different instances
     private static readonly Dictionary<Event, Action<CarEventArgs>> eventDict =

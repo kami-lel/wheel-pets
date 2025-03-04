@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// FIXME make audio manager an prefab?
+// fixme make audio manager an prefab?
 public class AudioControls : MonoBehaviour
 {
     [SerializeField]

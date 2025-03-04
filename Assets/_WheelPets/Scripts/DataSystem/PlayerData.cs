@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public class PlayerData
 {
-    // TODO language seletion saved?
+    // todo language seletion saved?
     // initialize with <b>default value</b>, i.e. factory reset value
     public string playerName = "Pet Owner";
     public int drivingPoint = 0;
@@ -24,14 +24,14 @@ public class PlayerData
         new LeaderboardOtherPlayerData { name = "Mia", point = 178 },
     };
 
-    // FIXME better data structure
+    // fixme better data structure
     // driving statistics
     public int leftTurnSignals = 0;
     public int rightTurnSignals = 0;
     public int timesParkedWithoutTouchingLines = 0;
     public int stopSignsStoppedAt = 0;
 
-    // FIXME better data structure
+    // fixme better data structure
     //  minigame statistics
     public int tugOfWarGamesWon = 0;
     public int timesPetWashed = 0;
@@ -39,12 +39,12 @@ public class PlayerData
     public int cosmeticsUnlocked = 0;
     public int timesPetWalked = 0;
 
-    // FIXME
+    // fixme
     // High score for the fetch minigame
     public int fetchHighScore = 0;
 
-    // FIXME
-    // TODO Best time for the bath minigame
+    // fixme
+    // todo best time for the bath minigame
     public float bathMinigameBestTime = 60f;
 
     // Audio settings
@@ -58,12 +58,12 @@ public class PlayerData
     public float bgmVolume = 1f;
 
     // statistics of mini games
-    public MinigameStatistics statBath = new(); // BUG need correct init para
-    public MinigameStatistics statFeed = new(); // BUG need correct init para
-    public MinigameStatistics statFetch = new(); // BUG need correct init para
-    public MinigameStatistics statHideNSeek = new(); // BUG need correct init para
-    public MinigameStatistics statTugOWar = new(); // BUG need correct init para
-    public MinigameStatistics statWalkScene = new(); // BUG need correct init para
+    public MinigameStatistics statBath = new(); // bug need correct init para
+    public MinigameStatistics statFeed = new(); // bug need correct init para
+    public MinigameStatistics statFetch = new(); // bug need correct init para
+    public MinigameStatistics statHideNSeek = new(); // bug need correct init para
+    public MinigameStatistics statTugOWar = new(); // bug need correct init para
+    public MinigameStatistics statWalkScene = new(); // bug need correct init para
 
     // pet's data
     public bool hasAdoptPet = false;

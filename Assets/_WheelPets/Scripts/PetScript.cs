@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-// TODO show name of the pet above
-// TODO implement cat & rabbit
-// FIXME make sure all accessories are placed properly
-// FIXME make sure accessories render order is correct, chain should be above glasses, etc.
-// bug pet animation not working in some of the scene
+// todo show name of the pet above
+// todo implement cat & rabbit
+// fixme make sure all accessories are placed properly
+// fixme make sure accessories render order is correct, chain should be above glasses, etc.
+// BUG pet animation not working in some of the scene
 public class PetScript : MonoBehaviour
 {
     [SerializeField]

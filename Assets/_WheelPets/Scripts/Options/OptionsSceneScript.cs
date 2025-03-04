@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
-// TODO beautify reset data pop up
-// TODO beautify adopt a pet pop up
+// todo beautify reset data pop up
+// todo beautify adopt a pet pop up
 public class OptionsSceneScript : MonoBehaviour
 {
     [SerializeField]
