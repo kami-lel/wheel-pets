@@ -43,6 +43,6 @@ public class TitleSceneScript : MonoBehaviour
 
     public void ClickStoreButton()
     {
-        SceneChange.LoadStore();
+        SceneChange.LoadCloset();
     }
 }

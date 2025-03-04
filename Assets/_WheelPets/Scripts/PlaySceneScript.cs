@@ -10,7 +10,7 @@ public class PlaySceneScript : MonoBehaviour
 
     public void ClickStoreButton()
     {
-        SceneChange.LoadStore();
+        SceneChange.LoadCloset();
     }
 
     public void ClickClosetButton()
