@@ -34,12 +34,12 @@ public class Hide_n_Seek : MonoBehaviour
 
     [SerializeField]
     AudioSource searching2Audio; // Audio source for searching2 sfx
-    private int delayGuess = 3; // Int to delay guess sound
+    private int delayGuess = 2; // Int to delay guess sound
     private AudioSource randomAudio; // Stores random audio to be played on button press
 
     private bool buttonCooldown = false; // Bool to check if button is on cooldown
 
-    private int delayButtonPress = 4; // Int to delay button press
+    private int delayButtonPress = 3; // Int to delay button press
 
     [SerializeField]
     private Image[] strikeImages; // Array to hold strike images
@@ -90,10 +90,13 @@ public class Hide_n_Seek : MonoBehaviour
     {
         if (!buttonCooldown)
         {
-            // Choose random search audio and play it for 2 seconds
-            chooseRandomAudio();
-            randomAudio.Play();
-            randomAudio.SetScheduledEndTime(2 + AudioSettings.dspTime);
+            if (buttonIndex != correctButtonIndex)
+            {
+                // Choose random search audio and play it for 1 second
+                chooseRandomAudio();
+                randomAudio.Play();
+                randomAudio.SetScheduledEndTime(1 + AudioSettings.dspTime);
+            }
 
             // Check if the pressed button is the correct one
             if (buttonIndex == correctButtonIndex)
@@ -118,21 +121,19 @@ public class Hide_n_Seek : MonoBehaviour
                     -1f
                 );
 
-                // Play correct guess audio with delay
-                StartCoroutine(PlayGuessSound(correctGuessAudio));
+                // Play correct guess audio
+                correctGuessAudio.Play();
                 Debug.Log("You search the area... You found your pet!");
 
-                // Display restart button on win
-                restartButton.gameObject.SetActive(true);
-
-                // Display win text
-                winText.gameObject.SetActive(true);
+                // Remove strikes from screen and display win overlay
+                RemoveStrikes();
+                pauseOverlay.MinigameWin();
 
                 // Increment the times hide and seek won stat
                 PlayerData data = Data.GetPlayerData();
                 data.timesHideNSeekWon++;
                 Data.SavePlayerDataToFile();
-                pauseOverlay.MinigameWin();
+                
             }
             else
             {
@@ -175,14 +176,14 @@ public class Hide_n_Seek : MonoBehaviour
 
     IEnumerator PlayGuessSound(AudioSource guessSound)
     {
-        // Delay guess audio by 3 seconds before playing it
+        // Delay guess audio by 2 seconds before playing it
         yield return new WaitForSeconds(delayGuess);
         guessSound.Play();
     }
 
     IEnumerator ResetButtonCooldown()
     {
-        // Start button cooldown for 4 seconds
+        // Start button cooldown for 3 seconds
         yield return new WaitForSeconds(delayButtonPress);
         buttonCooldown = false;
     }
@@ -199,10 +200,16 @@ public class Hide_n_Seek : MonoBehaviour
         // If there are 3 strikes, display restart button
         if (strikeCounter == 3)
         {
-            restartButton.gameObject.SetActive(true);
+            RemoveStrikes();
+            pauseOverlay.MinigameLost();
+        }
+    }
 
-            // Display lose text
-            loseText.gameObject.SetActive(true);
+    void RemoveStrikes()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            strikeImages[i].gameObject.SetActive(false);
         }
     }
 
