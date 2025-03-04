@@ -12,25 +12,13 @@ FIXME cleanup not-used scripts & assets
 ___
 
 ### Art Placeholders
-1. [Rushy Racing](https://gamezpulse.web.id/game/rushy-racing)
-2. [Car Craft](https://car-craft.en.aptoide.com/app)
-3. [Asphalt Airborne](https://play.google.com/store/apps/details?id=com.car.racing.asphaltairborne&pli=1)
-4. [Triangle Flag](https://creazilla.com/media/clipart/7817762/triangle-flag)
-5. [Escape Ropes](https://www.yalecordage.com/product-category/escape-ropes/)
-6. [Pinterest Reference](https://www.pinterest.com/pin/70437485420879/)
-7. [Reddit GameDev Classifieds](https://www.reddit.com/r/gameDevClassifieds/comments/1ajw3bf/looking_to_hire_pixel_artist_for/)
-8. [Pixel Art Dog](https://www.vexels.com/png-svg/preview/320107/cute-dog-in-pixel-art-style)
-9. [Finish Button](https://pngtree.com/free-png-vectors/finish-button)
-10. [Harrijasotzea Game](https://play.google.com/store/apps/details?id=com.min.harrijasotzea)
-11. [Pixel Art Bathtub](https://www.vecteezy.com/vector-art/21847058-bathtub-in-pixel-art-style)
-12. [Water Drop Pixels](https://zh.pngtree.com/freepng/water-drop-pixels_8905892.html)
-13. [Bath Towel Pixel Art](https://www.shutterstock.com/image-vector/bath-towel-game-pixel-art-retro-2278507601)
-14. [Soap Foam Set](https://www.vecteezy.com/png/23265022-soap-foam-set-with-bubbles-carton-light-blue-suds-of-bath-water-shampoo-shaving-mousse)
-15. [Hairbrush Clip Art](https://www.creativefabrica.com/product/hairbrush-png-file-cute-clip-art/)
-16. [Nail Clipper Icon](https://www.flaticon.com/free-icon/nail-clipper_1581637)
-17. [Rending Scissors Slash](https://www.pixilart.com/art/rending-scissors-slash-51ea972a215c4f9)
-18. [Pixel Art Rabbit](https://www.vexels.com/png-svg/preview/320106/cute-rabbit-in-pixel-art-style)
-19. [Pixel Art Cat](https://www.vexels.com/png-svg/preview/320109/cute-cat-in-pixel-art-style)
+1. [Pixel Art Bathtub](https://www.vecteezy.com/vector-art/21847058-bathtub-in-pixel-art-style)
+2. [Hue] (https://giggster.com/guide/basics/hue-saturation-lightness)
+3. [Bathroom Background] (https://zh.freepik.com/%E7%85%A7%E7%89%87/%E5%83%8F%E7%B4%A0%E8%89%BA%E6%9C%AF)
+4. [Kitchen Background] (https://www.pinterest.com/pin/553590979210005938)
+5. [Park Background] (https://www.epfl.ch/schools/cdh/fr/lart-et-la-culture/thema/incertitude-et-jeu-video)
+6. [Hide-n-Seek Background] (https://www.reddit.com/r/PixelArt/comments/lzbq24/1930s_living_room/)
+
 
 
 ### Mood Board Inspirations
