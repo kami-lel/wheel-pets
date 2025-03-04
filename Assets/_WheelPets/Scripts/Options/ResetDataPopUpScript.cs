@@ -5,9 +5,9 @@ public class ResetDataPopUpScript : MonoBehaviour
     public void OnClickConfirmButton()
     {
         Data.ResetPlayerData();
-        Data.GetPlayerData().hasAdoptPet = true;
         // disable the pop up
         gameObject.SetActive(false);
+        SceneChange.LoadTitle();
     }
 
     public void OnClickCancelButton()
