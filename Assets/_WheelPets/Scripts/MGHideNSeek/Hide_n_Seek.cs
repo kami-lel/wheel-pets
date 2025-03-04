@@ -135,11 +135,11 @@ public class Hide_n_Seek : MonoBehaviour
                 //winText.gameObject.SetActive(true);
 
                 // Increment the times hide and seek won stat
-                /*
+                
                 PlayerData data = Data.GetPlayerData();
-                data.timesHideNSeekWon++;
-                Data.SavePlayerDataToFile();
-                */
+                //data.timesHideNSeekWon++;
+                //Data.SavePlayerDataToFile();
+                
                 pauseOverlay.MinigameWin();
             }
             else

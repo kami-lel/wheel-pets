@@ -30,7 +30,7 @@ public class PetScript : MonoBehaviour
     private GameObject activePet;
 
     private void Start()
-    { /*
+    { 
         PlayerData data = Data.GetPlayerData();
         if (data != null)
         {
@@ -41,7 +41,7 @@ public class PetScript : MonoBehaviour
         {
             Debug.LogError("PlayerData is null");
         }
-        */
+        
     }
 
     /// <summary>
