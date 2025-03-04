@@ -13,11 +13,12 @@ ___
 
 ### Art Placeholders
 1. [Pixel Art Bathtub](https://www.vecteezy.com/vector-art/21847058-bathtub-in-pixel-art-style)
-2. [Hue] (https://giggster.com/guide/basics/hue-saturation-lightness)
-3. [Bathroom Background] (https://zh.freepik.com/%E7%85%A7%E7%89%87/%E5%83%8F%E7%B4%A0%E8%89%BA%E6%9C%AF)
-4. [Kitchen Background] (https://www.pinterest.com/pin/553590979210005938)
-5. [Park Background] (https://www.epfl.ch/schools/cdh/fr/lart-et-la-culture/thema/incertitude-et-jeu-video)
-6. [Hide-n-Seek Background] (https://www.reddit.com/r/PixelArt/comments/lzbq24/1930s_living_room/)
+2. [Hue](https://giggster.com/guide/basics/hue-saturation-lightness)
+3. [Bathroom Background](https://zh.freepik.com/%E7%85%A7%E7%89%87/%E5%83%8F%E7%B4%A0%E8%89%BA%E6%9C%AF)
+4. [Kitchen Background](https://www.pinterest.com/pin/553590979210005938)
+5. [Park Background](https://www.epfl.ch/schools/cdh/fr/lart-et-la-culture/thema/incertitude-et-jeu-video)
+6. [Hide-n-Seek Background](https://www.reddit.com/r/PixelArt/comments/lzbq24/1930s_living_room/)
+7. [Brush](https://www.creativefabrica.com/product/comb-png-file-cute-clip-art/)
 
 
 
