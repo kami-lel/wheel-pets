@@ -1,6 +1,6 @@
 using UnityEngine;
 
-// FIXME beautify the scene
+// hack deprecation of play scene
 public class PlaySceneScript : MonoBehaviour
 {
     public void ClickLeaveButton()

@@ -1,7 +1,7 @@
 using UnityEngine;
 
-// FIXME need ui re-design
-// TODO linked with game stat
+// fixme need ui re-design
+// todo linked with game stat
 public class LoseContainer : MonoBehaviour
 {
     private PauseOverlay pauseOverlay;

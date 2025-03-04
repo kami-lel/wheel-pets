@@ -38,7 +38,7 @@ public class AccessoryManager
             }
             return 1;
         }
-        else if (playerData.gamePoint < -1) // TODO check if has enough point
+        else if (playerData.gamePoint < -1) // todo check if has enough point
         {
             if (Debug.isDebugBuild)
             {
@@ -51,7 +51,7 @@ public class AccessoryManager
             return 2;
         }
 
-        // TODO deduct money logic
+        // todo deduct money logic
 
         // add to inventory
         playerData.purchasedAccessories.Add(accessory);

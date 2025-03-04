@@ -5,11 +5,6 @@ using UnityEngine.SceneManagement;
 // FIXME josh test "back" button (e.g. in settings) actual go back
 public class SceneChange : MonoBehaviour
 {
-    public static void LoadAdoption()
-    {
-        SceneManager.LoadScene("AdoptionScene");
-    }
-
     public static void LoadCloset()
     {
         SceneManager.LoadScene("StoreScene");

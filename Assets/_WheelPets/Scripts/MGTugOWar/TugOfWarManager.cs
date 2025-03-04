@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 
 // BUG missing script bug report in console
-// TODO add more instruction for how to play the game
-// TODO add high score function
-// TODO Feels too easy to spam tap, Maybe make a restriction on tapping?
+// todo add more instruction for how to play the game
+// todo add high score function
+// todo feels too easy to spam tap, maybe make a restriction on tapping?
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;

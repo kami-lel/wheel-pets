@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-// FIXME need ui re-design
+// fixme need ui re-design
 public class PauseContainer : MonoBehaviour
 {
     private PauseOverlay pauseOverlay;
