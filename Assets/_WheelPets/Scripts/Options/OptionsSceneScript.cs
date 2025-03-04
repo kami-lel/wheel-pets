@@ -49,7 +49,7 @@ public class OptionsSceneScript : MonoBehaviour
 
     public void OnClickRandomNameButton()
     {
-        // TODO
+        // todo implement random new name
     }
 
     /// <summary>
