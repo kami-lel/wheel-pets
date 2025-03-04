@@ -19,6 +19,7 @@ ___
 5. [Park Background](https://www.epfl.ch/schools/cdh/fr/lart-et-la-culture/thema/incertitude-et-jeu-video)
 6. [Hide-n-Seek Background](https://www.reddit.com/r/PixelArt/comments/lzbq24/1930s_living_room/)
 7. [Brush](https://www.creativefabrica.com/product/comb-png-file-cute-clip-art/)
+8. [Bath](https://www.vecteezy.com/vector-art/22477547-toilet-in-pixel-art-style)
 
 
 
