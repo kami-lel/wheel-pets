@@ -1,8 +1,25 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TitleSceneScript : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject playButton;
+
+    [SerializeField]
+    private GameObject leaderboardButton;
+
+    [SerializeField]
+    private GameObject closetButton;
+
+    private void Start()
+    {
+        // disable some buttons in title screen if adoption hasnt happen
+        bool adopted = Data.GetPlayerData().hasAdoptPet;
+        playButton.SetActive(adopted);
+        leaderboardButton.SetActive(adopted);
+        closetButton.SetActive(adopted);
+    }
+
     public void ClickPlayButton()
     {
         SceneChange.LoadSelector();
