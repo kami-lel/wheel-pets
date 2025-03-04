@@ -213,8 +213,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3c40fc3483041b5828aa0ddca2e68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: -9
-  panel: {fileID: 0}
+  moveSpeed: 900
+  background: {fileID: 907288709}
+  respawnOffset: 10
 --- !u!1 &356257479
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,6 +640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PetPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 7151626241602800239, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8024345900797591538, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
       propertyPath: m_LocalScale.x
       value: 8.8
@@ -743,9 +748,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f71623ed03af471993f0c2419cc67c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiPet: {fileID: 1173772195}
   LoseSound: {fileID: 1578023731}
   loseTag: Rock
-  pauseOverlay: {fileID: 0}
+  pauseOverlay: {fileID: 1613202746}
 --- !u!114 &527695191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2493,7 +2499,7 @@ MonoBehaviour:
   jumpAmount: 0
   jumpSound: {fileID: 0}
   completionText: {fileID: 433645167}
-  pauseOverlay: {fileID: 0}
+  pauseOverlay: {fileID: 1613202746}
 --- !u!50 &1173772197
 Rigidbody2D:
   serializedVersion: 5
@@ -3819,8 +3825,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e3c40fc3483041b5828aa0ddca2e68f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: -9
-  panel: {fileID: 0}
+  moveSpeed: 900
+  background: {fileID: 907288709}
+  respawnOffset: 10
 --- !u!1 &2080586266
 GameObject:
   m_ObjectHideFlags: 0
