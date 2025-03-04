@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 // FIXME josh test "back" button (e.g. in settings) actual go back
 public class SceneChange : MonoBehaviour
 {
+    // FIXME deprecation
     public static void LoadAdoption()
     {
         SceneManager.LoadScene("AdoptionScene");

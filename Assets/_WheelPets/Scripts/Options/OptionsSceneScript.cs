@@ -1,27 +1,19 @@
 using UnityEngine;
-using UnityEngine.Localization;
 using UnityEngine.Localization.Settings;
-using UnityEngine.SceneManagement;
 
+// TODO beautify reset data pop up
+// TODO beautify adopt a pet pop up
 public class OptionsSceneScript : MonoBehaviour
 {
     [SerializeField]
-    private GameObject reAdoptPopUp;
+    private GameObject adoptAPetPopUp;
 
     [SerializeField]
     private GameObject resetDataPopUp;
 
-    // todo connect more buttons, etc. & combine w/ other code
-
     public void OnClickBackButon()
     {
         SceneChange.LoadTitle();
-    }
-
-    public void OnClickSaveButton()
-    {
-        // Fixme is saving button even neccessary?
-        Debug.LogWarning("save button pushed, no effect yet");
     }
 
     public void OnClickEnglishButton()
@@ -39,11 +31,6 @@ public class OptionsSceneScript : MonoBehaviour
         SetLocale("fr");
     }
 
-    public void OnClickReAdoptButton()
-    {
-        reAdoptPopUp.SetActive(true);
-    }
-
     public void OnClickFactorResetButton()
     {
         resetDataPopUp.SetActive(true);
@@ -51,14 +38,26 @@ public class OptionsSceneScript : MonoBehaviour
 
     private void Start()
     {
-        Data.GetPlayerData().hasAdoptPet = true;
+        PlayerData playerData = Data.GetPlayerData();
+
+        // 1st time game is launched, adoption process
+        if (playerData.hasAdoptPet)
+        {
+            adoptAPetPopUp.SetActive(false);
+        }
+        else
+        {
+            playerData.hasAdoptPet = true;
+            adoptAPetPopUp.SetActive(true);
+        }
     }
 
     private void SetLocale(string localeCode)
     {
-        var selectedLocale = LocalizationSettings.AvailableLocales.Locales.Find(locale =>
-            locale.Identifier.Code == localeCode
-        );
+        var selectedLocale =
+            LocalizationSettings.AvailableLocales.Locales.Find(locale =>
+                locale.Identifier.Code == localeCode
+            );
         if (selectedLocale != null)
         {
             LocalizationSettings.SelectedLocale = selectedLocale;

@@ -4,8 +4,9 @@ public class ResetDataPopUpScript : MonoBehaviour
 {
     public void OnClickConfirmButton()
     {
+        // BUG reset data function is broken
         Data.ResetPlayerData();
-        SceneChange.LoadAdoption();
+        SceneChange.LoadOptions(); // re-launcch current scene
     }
 
     public void OnClickCancelButton()
