@@ -1,9 +1,24 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class TitleSceneScript : MonoBehaviour
 {
-    private PlayerData playerData;
+    [SerializeField]
+    private GameObject playButton;
+
+    [SerializeField]
+    private GameObject leaderboardButton;
+
+    [SerializeField]
+    private GameObject closetButton;
+
+    private void Start()
+    {
+        // disable some buttons in title screen if adoption hasnt happen
+        bool adopted = Data.GetPlayerData().hasAdoptPet;
+        playButton.SetActive(adopted);
+        leaderboardButton.SetActive(adopted);
+        closetButton.SetActive(adopted);
+    }
 
     public void ClickPlayButton()
     {
@@ -28,16 +43,5 @@ public class TitleSceneScript : MonoBehaviour
     public void ClickStoreButton()
     {
         SceneChange.LoadStore();
-    }
-
-    void Start()
-    {
-        playerData = Data.GetPlayerData();
-
-        // first time launch the game, must adopt the pet first
-        if (!playerData.hasAdoptPet)
-        {
-            SceneChange.LoadAdoption();
-        }
     }
 }

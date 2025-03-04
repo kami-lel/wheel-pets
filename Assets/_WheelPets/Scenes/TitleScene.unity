@@ -277,6 +277,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4a63c66a9a82a14692bf3872010f8e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playButton: {fileID: 867198200}
+  leaderboardButton: {fileID: 844509364}
+  closetButton: {fileID: 1657206933}
 --- !u!4 &330996658
 Transform:
   m_ObjectHideFlags: 0
