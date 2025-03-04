@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class PlayerData
 {
+    // TODO language seletion saved?
     // initialize with <b>default value</b>, i.e. factory reset value
     public string playerName = "Pet Owner";
     public int drivingPoint = 0;
