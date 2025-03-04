@@ -1,3 +1,5 @@
+using UnityEngine;
+
 // TODO minigame unlock mechanism
 public class MinigameSelection : MonoBehaviour
 {
@@ -24,19 +26,12 @@ public class MinigameSelection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 localMousePosition = thisRect.InverseTransformPoint(
-            Input.mousePosition
-        );
-        if (
-            thisRect.rect.Contains(localMousePosition)
-            && Input.GetMouseButtonDown(0)
-        )
+        Vector2 localMousePosition = thisRect.InverseTransformPoint(Input.mousePosition);
+        if (thisRect.rect.Contains(localMousePosition) && Input.GetMouseButtonDown(0))
         {
             GameSelectScreen.SetActive(true);
             Minigames.SetActive(false);
-            GameSelectScreen
-                .transform.GetComponent<MiniGameScreenMenu>()
-                .Enable(Name, Description);
+            GameSelectScreen.transform.GetComponent<MiniGameScreenMenu>().Enable(Name, Description);
         }
     }
 }
