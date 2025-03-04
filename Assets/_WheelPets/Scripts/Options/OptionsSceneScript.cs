@@ -22,9 +22,6 @@ public class OptionsSceneScript : MonoBehaviour
     [SerializeField]
     private Slider secondaryColorSlider;
 
-    [SerializeField]
-    private TMP_InputField petNameField;
-
     public void OnClickBackButon()
     {
         SceneChange.LoadTitle();
@@ -48,6 +45,11 @@ public class OptionsSceneScript : MonoBehaviour
     public void OnClickFactorResetButton()
     {
         resetDataPopUp.SetActive(true);
+    }
+
+    public void OnClickRandomNameButton()
+    {
+        // TODO
     }
 
     /// <summary>
