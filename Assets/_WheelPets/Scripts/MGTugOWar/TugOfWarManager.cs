@@ -169,6 +169,7 @@ public class TugOfWarManager : MonoBehaviour
         // Increment the tug of war games won stat
         PlayerData data = Data.GetPlayerData();
         data.tugOfWarGamesWon++;
+        data.gamePoint++;
         Data.SavePlayerDataToFile();
 
         // Freeze the RopeLine
