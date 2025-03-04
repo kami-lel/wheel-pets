@@ -105,7 +105,7 @@ public class Data
     {
         string fileName = "playerData";
         string fileExtension = ".json";
-        string folderPath = Debug.isDebugBuild
+        string folderPath = Application.isEditor
             ? Directory.GetParent(Application.dataPath).FullName
             : Application.persistentDataPath;
 

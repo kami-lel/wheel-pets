@@ -1,13 +1,29 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+// TODO check if adoption logic is correct
 public class TitleSceneScript : MonoBehaviour
 {
-    private PlayerData playerData;
+    [SerializeField]
+    private GameObject playButton;
+
+    [SerializeField]
+    private GameObject leaderboardButton;
+
+    [SerializeField]
+    private GameObject closetButton;
+
+    private void Start()
+    {
+        // disable some buttons in title screen if adoption hasnt happen
+        bool adopted = Data.GetPlayerData().hasAdoptPet;
+        playButton.SetActive(adopted);
+        leaderboardButton.SetActive(adopted);
+        closetButton.SetActive(adopted);
+    }
 
     public void ClickPlayButton()
     {
-        SceneChange.LoadPlayMenu();
+        SceneChange.LoadSelector();
     }
 
     public void ClickOptionsButton()
@@ -25,14 +41,8 @@ public class TitleSceneScript : MonoBehaviour
         SceneChange.LoadDrivingGame();
     }
 
-    void Start()
+    public void ClickStoreButton()
     {
-        playerData = Data.GetPlayerData();
-
-        // first time launch the game, must adopt the pet first
-        if (!playerData.hasAdoptPet)
-        {
-            SceneChange.LoadAdoption();
-        }
+        SceneChange.LoadCloset();
     }
 }

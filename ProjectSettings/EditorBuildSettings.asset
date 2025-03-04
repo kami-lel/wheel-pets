@@ -12,9 +12,6 @@ EditorBuildSettings:
     path: Assets/_WheelPets/Scenes/TitleScene.unity
     guid: 06c5b9f6ec9544b5ebd7b9f8e0205a7e
   - enabled: 1
-    path: Assets/_WheelPets/Scenes/StoreScene.unity
-    guid: f40488c735954044a958d20b6f744281
-  - enabled: 1
     path: Assets/_WheelPets/Scenes/OptionsScene.unity
     guid: 7c16f0b136b7847bba3a12e531bef30f
   - enabled: 1
@@ -51,13 +48,12 @@ EditorBuildSettings:
     path: Assets/_WheelPets/Scenes/Minigames/WalkScene.unity
     guid: 11cddacdbb7604c4795027ee7121eaae
   - enabled: 1
-    path: Assets/_WheelPets/Scenes/AdoptionScene.unity
-    guid: 94601d029b69ee840aca4b3c92713787
-  - enabled: 1
     path: Assets/_WheelPets/Scenes/PlayScene.unity
     guid: 6409b4fb9b54249e49c15d4262187265
-  - enabled: 1
-    path: Assets/_WheelPets/Scenes/Minigames/FeedingInstructions.unity
-    guid: c4f8cb15801775f458af7686764d425c
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: e66823633a1f6104fa7199efd45db725, type: 2}
+    com.unity.localization.settings: {fileID: 11400000, guid: ee3220a8fffef84409da931932ebeb14, type: 2}
+    enabled: {fileID: 0}
+    guid: {fileID: 0}
+    path: {fileID: 0}
   m_UseUCBPForAssetBundles: 0

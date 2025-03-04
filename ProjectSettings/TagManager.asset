@@ -49,14 +49,23 @@ TagManager:
   - 
   - DebugConsole
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3887365613
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
   - name: Accessories
     uniqueID: 1545983701
     locked: 0
-  - name: CrossOut
+  - name: Foreground
+    uniqueID: 1582650429
+    locked: 0
+  - name: UI
     uniqueID: 3726667989
+    locked: 0
+  - name: Overlays
+    uniqueID: 2891850467
     locked: 0
   m_RenderingLayers:
   - Default

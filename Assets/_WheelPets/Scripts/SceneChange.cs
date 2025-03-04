@@ -2,19 +2,12 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// fixme josh test "back" button (e.g. in settings) actual go back
+// FIXME josh test "back" button (e.g. in settings) actual go back
 public class SceneChange : MonoBehaviour
 {
-    public static void LoadAdoption()
-    {
-        SceneManager.LoadScene("AdoptionScene");
-    }
-
     public static void LoadCloset()
     {
-        SceneManager.LoadScene("StoreScene");
-        // bug disable closet for this release
-        // SceneManager.LoadScene("ClosetScene");
+        SceneManager.LoadScene("ClosetScene");
     }
 
     public static void LoadDrivingGame()
@@ -40,11 +33,6 @@ public class SceneChange : MonoBehaviour
     public static void LoadSelector()
     {
         SceneManager.LoadScene("_SelectorScene");
-    }
-
-    public static void LoadStore()
-    {
-        SceneManager.LoadScene("StoreScene");
     }
 
     public static void LoadTitle()

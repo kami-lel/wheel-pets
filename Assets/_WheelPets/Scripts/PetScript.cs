@@ -5,7 +5,7 @@ using UnityEngine;
 // todo implement cat & rabbit
 // fixme make sure all accessories are placed properly
 // fixme make sure accessories render order is correct, chain should be above glasses, etc.
-// bug pet animation not working in some of the scene
+// BUG pet animation not working in some of the scene
 public class PetScript : MonoBehaviour
 {
     [SerializeField]
@@ -25,6 +25,24 @@ public class PetScript : MonoBehaviour
 
     [SerializeField]
     private GameObject rabbitAccessoryGroup;
+
+    private PlayerData.PetData petData;
+    private GameObject activePet;
+
+    private void Start()
+    { 
+        PlayerData data = Data.GetPlayerData();
+        if (data != null)
+        {
+            petData = data.petData;
+            UpdateLook();
+        }
+        else
+        {
+            Debug.LogError("PlayerData is null");
+        }
+        
+    }
 
     /// <summary>
     /// Updates the appearance of the pet from petData
@@ -114,14 +132,5 @@ public class PetScript : MonoBehaviour
                 );
             }
         }
-    }
-
-    private PlayerData.PetData petData;
-    private GameObject activePet;
-
-    private void Start()
-    {
-        petData = Data.GetPlayerData().petData;
-        UpdateLook();
     }
 }

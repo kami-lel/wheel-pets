@@ -5,7 +5,9 @@ public class ResetDataPopUpScript : MonoBehaviour
     public void OnClickConfirmButton()
     {
         Data.ResetPlayerData();
-        SceneChange.LoadAdoption();
+        // disable the pop up
+        gameObject.SetActive(false);
+        SceneChange.LoadTitle();
     }
 
     public void OnClickCancelButton()

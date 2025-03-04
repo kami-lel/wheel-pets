@@ -12,8 +12,9 @@ public class FetchScript : MonoBehaviour
     public GameObject goText;
     public GameObject gameOverText;
     public GameObject playAgainButton;
-    public Text scoreText;
-    public Text timerText;
+    public FetchUpdateScore fetchUpdateScore; // Reference to the FetchUpdateScore script
+    public FetchUpdateTime fetchUpdateTime; // Reference to the FetchUpdateTime script
+    public FetchUpdateHighScore fetchUpdateHighScore; // Reference to the FetchUpdateHighScore script
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
     public GameObject ballPrefab;
@@ -24,9 +25,6 @@ public class FetchScript : MonoBehaviour
     private float currentSpeed;
     private bool isMovingRight = true;
     private bool gameActive = false;
-    private int score = 0;
-    private int highScore = 0;
-    private float timer = 5.0f; // Initialize the timer to 5 seconds
 
     private int timingBarLength = 100;
     public int lineLength = 10;
@@ -45,10 +43,13 @@ public class FetchScript : MonoBehaviour
         PositionCheckArea();
         StartCoroutine(StartGameRoutine());
 
-        // Fetch the high score from PlayerData
-        highScore = Data.GetPlayerData().fetchHighScore;
-        UpdateScoreText();
-        UpdateTimerText(); // Update the timer text
+        if (fetchUpdateScore == null || fetchUpdateTime == null || fetchUpdateHighScore == null)
+        {
+            Debug.LogError("FetchUpdateScore, FetchUpdateTime, or FetchUpdateHighScore is not assigned in the Inspector.");
+            return;
+        }
+
+        fetchUpdateTime.ResetTimer(); // Initialize the timer to 5 seconds
     }
 
     void Update()
@@ -62,10 +63,9 @@ public class FetchScript : MonoBehaviour
             }
 
             // Update the timer
-            timer -= Time.deltaTime;
-            UpdateTimerText();
+            fetchUpdateTime.ChangeTimer(-Time.deltaTime);
 
-            if (timer <= 0)
+            if (fetchUpdateTime.Timer <= 0)
             {
                 // Game over
                 gameActive = false;
@@ -73,13 +73,7 @@ public class FetchScript : MonoBehaviour
                 Debug.Log("Game Over! Timer reached 0.");
 
                 // Update the high score if the current score is higher
-                if (score > highScore)
-                {
-                    highScore = score;
-                    PlayerData data = Data.GetPlayerData();
-                    data.fetchHighScore = highScore;
-                    Data.SavePlayerDataToFile();
-                }
+                fetchUpdateHighScore.UpdateHighScore(fetchUpdateScore.Score);
             }
         }
     }
@@ -118,14 +112,12 @@ public class FetchScript : MonoBehaviour
         if (lineEnd >= checkAreaStart && lineStart <= checkAreaEnd)
         {
             // Successful hit
-            score++;
+            fetchUpdateScore.IncreaseScore();
             currentSpeed += speedIncrement;
-            UpdateScoreText(); // Update the score text
             PositionCheckArea(); // Reposition the check area without resetting the line
 
             // Reset the timer to 5 seconds
-            timer = 5.0f;
-            UpdateTimerText();
+            fetchUpdateTime.ResetTimer();
 
             // Launch a ball towards the dog
             LaunchBall();
@@ -135,16 +127,10 @@ public class FetchScript : MonoBehaviour
             // Game over
             gameActive = false;
             pauseOverlay.MinigameLost();
-            Debug.Log("Game Over! Final Score: " + score);
+            Debug.Log("Game Over! Final Score: " + fetchUpdateScore.Score);
 
             // Update the high score if the current score is higher
-            if (score > highScore)
-            {
-                highScore = score;
-                PlayerData data = Data.GetPlayerData();
-                data.fetchHighScore = highScore;
-                Data.SavePlayerDataToFile();
-            }
+            fetchUpdateHighScore.UpdateHighScore(fetchUpdateScore.Score);
         }
     }
 
@@ -165,42 +151,22 @@ public class FetchScript : MonoBehaviour
 
     void UpdateVisuals()
     {
-        float timingBarWidth = timingBar
-            .GetComponent<RectTransform>()
-            .rect.width;
+        float timingBarWidth = timingBar.GetComponent<RectTransform>().rect.width;
         float unitWidth = timingBarWidth / timingBarLength;
 
         // Update the line's size and position
-        line.GetComponent<RectTransform>().sizeDelta = new Vector2(
-            lineLength * unitWidth,
-            line.GetComponent<RectTransform>().sizeDelta.y
-        );
-        line.GetComponent<RectTransform>().anchoredPosition = new Vector2(
-            linePosition * unitWidth - timingBarWidth / 2,
-            line.GetComponent<RectTransform>().anchoredPosition.y
-        );
+        line.GetComponent<RectTransform>().sizeDelta = new Vector2(lineLength * unitWidth, line.GetComponent<RectTransform>().sizeDelta.y);
+        line.GetComponent<RectTransform>().anchoredPosition = new Vector2(linePosition * unitWidth - timingBarWidth / 2, line.GetComponent<RectTransform>().anchoredPosition.y);
 
         // Update the check area's size and position
-        checkArea.GetComponent<RectTransform>().sizeDelta = new Vector2(
-            checkAreaLength * unitWidth,
-            checkArea.GetComponent<RectTransform>().sizeDelta.y
-        );
-        checkArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(
-            checkAreaPosition * unitWidth - timingBarWidth / 2,
-            checkArea.GetComponent<RectTransform>().anchoredPosition.y
-        );
+        checkArea.GetComponent<RectTransform>().sizeDelta = new Vector2(checkAreaLength * unitWidth, checkArea.GetComponent<RectTransform>().sizeDelta.y);
+        checkArea.GetComponent<RectTransform>().anchoredPosition = new Vector2(checkAreaPosition * unitWidth - timingBarWidth / 2, checkArea.GetComponent<RectTransform>().anchoredPosition.y);
 
         // Ensure the line is above the check area
         line.transform.SetAsLastSibling();
 
-        Debug.Log(
-            "Line position: "
-                + line.GetComponent<RectTransform>().anchoredPosition
-        );
-        Debug.Log(
-            "Check area position: "
-                + checkArea.GetComponent<RectTransform>().anchoredPosition
-        );
+        Debug.Log("Line position: " + line.GetComponent<RectTransform>().anchoredPosition);
+        Debug.Log("Check area position: " + checkArea.GetComponent<RectTransform>().anchoredPosition);
     }
 
     IEnumerator StartGameRoutine()
@@ -224,35 +190,11 @@ public class FetchScript : MonoBehaviour
         playAgainButton.SetActive(true); // Enable the play again button
     }
 
-    void UpdateScoreText()
-    {
-        if (scoreText != null)
-        {
-            scoreText.text = "High Score: " + highScore + "\nScore: " + score;
-        }
-    }
-
-    void UpdateTimerText()
-    {
-        if (timerText != null)
-        {
-            timerText.text = "Time: " + Mathf.Ceil(timer).ToString();
-        }
-    }
-
     void LaunchBall()
     {
-        if (
-            ballPrefab != null
-            && ballSpawnPoint != null
-            && dogTransform != null
-        )
+        if (ballPrefab != null && ballSpawnPoint != null && dogTransform != null)
         {
-            GameObject ball = Instantiate(
-                ballPrefab,
-                ballSpawnPoint.position,
-                Quaternion.identity
-            );
+            GameObject ball = Instantiate(ballPrefab, ballSpawnPoint.position, Quaternion.identity);
             activeBalls.Add(ball); // Add the ball to the list of active balls
             StartCoroutine(MoveBall(ball));
         }
@@ -269,11 +211,7 @@ public class FetchScript : MonoBehaviour
         {
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / duration;
-            ball.transform.position = Vector3.Lerp(
-                startPosition,
-                endPosition,
-                t
-            );
+            ball.transform.position = Vector3.Lerp(startPosition, endPosition, t);
             yield return null;
         }
 

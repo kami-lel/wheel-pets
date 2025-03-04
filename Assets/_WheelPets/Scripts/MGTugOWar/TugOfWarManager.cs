@@ -1,10 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+// BUG missing script bug report in console
 // todo add more instruction for how to play the game
 // todo add high score function
-// todo Feels too easy to spam tap, Maybe make a restriction on tapping?
-// fixme common buttons: back, pause, etc. should share an uniform design language / placement across scenes
+// todo feels too easy to spam tap, maybe make a restriction on tapping?
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;
@@ -169,6 +169,7 @@ public class TugOfWarManager : MonoBehaviour
         // Increment the tug of war games won stat
         PlayerData data = Data.GetPlayerData();
         data.tugOfWarGamesWon++;
+        data.gamePoint++;
         Data.SavePlayerDataToFile();
 
         // Freeze the RopeLine

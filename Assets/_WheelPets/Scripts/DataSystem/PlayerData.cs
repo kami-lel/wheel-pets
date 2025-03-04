@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class PlayerData
 {
+    // todo language seletion saved?
     // initialize with <b>default value</b>, i.e. factory reset value
     public string playerName = "Pet Owner";
     public int drivingPoint = 0;
@@ -38,10 +39,12 @@ public class PlayerData
     public int cosmeticsUnlocked = 0;
     public int timesPetWalked = 0;
 
+    // fixme
     // High score for the fetch minigame
     public int fetchHighScore = 0;
 
-    // Best time for the bath minigame
+    // fixme
+    // todo best time for the bath minigame
     public float bathMinigameBestTime = 60f;
 
     // Audio settings
@@ -55,17 +58,20 @@ public class PlayerData
     public float bgmVolume = 1f;
 
     // statistics of mini games
-    public MinigameStatistics statBath = new();
-    public MinigameStatistics statFeed = new();
-    public MinigameStatistics statFetch = new();
-    public MinigameStatistics statHideNSeek = new();
-    public MinigameStatistics statTugOWar = new();
-    public MinigameStatistics statWalkScene = new();
+    public MinigameStatistics statBath = new(); // bug need correct init para
+    public MinigameStatistics statFeed = new(); // bug need correct init para
+    public MinigameStatistics statFetch = new(); // bug need correct init para
+    public MinigameStatistics statHideNSeek = new(); // bug need correct init para
+    public MinigameStatistics statTugOWar = new(); // bug need correct init para
+    public MinigameStatistics statWalkScene = new(); // bug need correct init para
 
     // pet's data
     public bool hasAdoptPet = false;
     public PetData petData = new();
     public List<AccessoryType> purchasedAccessories = new();
+
+    // Language preference
+    public string language = "en";
 
     // declare classes
     [Serializable]
@@ -73,15 +79,6 @@ public class PlayerData
     {
         public string name;
         public int point;
-    }
-
-    // todo add high score
-    // fixme makesure these are connected with the game
-    [Serializable]
-    public class MinigameStatistics
-    {
-        public int playCount = 0;
-        public int winCount = 0;
     }
 
     [Serializable]

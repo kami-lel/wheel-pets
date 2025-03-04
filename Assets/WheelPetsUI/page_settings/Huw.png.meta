@@ -1,0 +1,1768 @@
+fileFormatVersion: 2
+guid: ce356ab0fb8ea41a5af399c98367f3eb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1054587145332927424
+    second: Huw_0
+  - first:
+      213: 2931677080407776120
+    second: Huw_1
+  - first:
+      213: 6069883241766035283
+    second: Huw_2
+  - first:
+      213: -5327444463309600361
+    second: Huw_3
+  - first:
+      213: -1506617060880027626
+    second: Huw_4
+  - first:
+      213: -8379886288368709796
+    second: Huw_5
+  - first:
+      213: 8129759203131125148
+    second: Huw_6
+  - first:
+      213: 9105281290393703089
+    second: Huw_7
+  - first:
+      213: -815507218983673515
+    second: Huw_8
+  - first:
+      213: -5978960427053853301
+    second: Huw_9
+  - first:
+      213: 7933942222990961605
+    second: Huw_10
+  - first:
+      213: -2280099673004476864
+    second: Huw_11
+  - first:
+      213: -3794710610029501859
+    second: Huw_12
+  - first:
+      213: 5065070133504385483
+    second: Huw_13
+  - first:
+      213: 6774194441857143288
+    second: Huw_14
+  - first:
+      213: 3031185404977373656
+    second: Huw_15
+  - first:
+      213: -5208015342456315369
+    second: Huw_16
+  - first:
+      213: 6383936424732957764
+    second: Huw_17
+  - first:
+      213: -8390235937843410493
+    second: Huw_18
+  - first:
+      213: 371847938030971455
+    second: Huw_19
+  - first:
+      213: 6701849273079968814
+    second: Huw_20
+  - first:
+      213: 4555655689223998353
+    second: Huw_21
+  - first:
+      213: -4654281833461978067
+    second: Huw_22
+  - first:
+      213: 1656426821619209955
+    second: Huw_23
+  - first:
+      213: 6560018178102396197
+    second: Huw_24
+  - first:
+      213: 3627353846100825535
+    second: Huw_25
+  - first:
+      213: 1281353535447289157
+    second: Huw_26
+  - first:
+      213: 1954664144295943357
+    second: Huw_27
+  - first:
+      213: 4867709406664220354
+    second: Huw_28
+  - first:
+      213: -8748168048526461596
+    second: Huw_29
+  - first:
+      213: 2561057695537483165
+    second: Huw_30
+  - first:
+      213: -5615556560916146273
+    second: Huw_31
+  - first:
+      213: 3565476444947371345
+    second: Huw_32
+  - first:
+      213: 9037056695072926747
+    second: Huw_33
+  - first:
+      213: 2133167272522900028
+    second: Huw_34
+  - first:
+      213: -8310105857219100416
+    second: Huw_35
+  - first:
+      213: 186804541281324314
+    second: Huw_36
+  - first:
+      213: 4827917095077368714
+    second: Huw_37
+  - first:
+      213: -7058529578591039277
+    second: Huw_38
+  - first:
+      213: -7480577293941879074
+    second: Huw_39
+  - first:
+      213: -8055989475012905313
+    second: Huw_40
+  - first:
+      213: -585663819190276873
+    second: Huw_41
+  - first:
+      213: 515866195406121067
+    second: Huw_42
+  - first:
+      213: 552009793383020286
+    second: Huw_43
+  - first:
+      213: -5423470725986540056
+    second: Huw_44
+  - first:
+      213: -4371035636977830371
+    second: Huw_45
+  - first:
+      213: -2100116824701844310
+    second: Huw_46
+  - first:
+      213: -3630839695559769349
+    second: Huw_47
+  - first:
+      213: 8759494704578734013
+    second: Huw_48
+  - first:
+      213: -2245422550174561707
+    second: Huw_49
+  - first:
+      213: 6697035849727093792
+    second: Huw_50
+  - first:
+      213: -7811016782587018707
+    second: Huw_51
+  - first:
+      213: 7739462608970489573
+    second: Huw_52
+  - first:
+      213: 5170385943378322873
+    second: Huw_53
+  - first:
+      213: 3240609889537890645
+    second: Huw_54
+  - first:
+      213: 1519064130353686781
+    second: Huw_55
+  - first:
+      213: 8463406513745524580
+    second: Huw_56
+  - first:
+      213: -6461225158271843759
+    second: Huw_57
+  - first:
+      213: 8189410357395500962
+    second: Huw_58
+  - first:
+      213: -7967263408982363235
+    second: Huw_59
+  - first:
+      213: 340165036457033601
+    second: Huw_60
+  - first:
+      213: 6484804621546009205
+    second: Huw_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Huw_0
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 511
+        width: 17
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 044dcb9249a5d51f0800000000000000
+      internalID: -1054587145332927424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_1
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 545
+        width: 16
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87b1cdd95c86fa820800000000000000
+      internalID: 2931677080407776120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_2
+      rect:
+        serializedVersion: 2
+        x: 428
+        y: 517
+        width: 18
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35f9f8516ae8c3450800000000000000
+      internalID: 6069883241766035283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_3
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 517
+        width: 21
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7994fc39c7d1116b0800000000000000
+      internalID: -5327444463309600361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_4
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 518
+        width: 15
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 610f3b9f3cb671be0800000000000000
+      internalID: -1506617060880027626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_5
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 511
+        width: 18
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5fcd9bb1d9a4bb80800000000000000
+      internalID: -8379886288368709796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_6
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 510
+        width: 15
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9de7140ce4b2d070800000000000000
+      internalID: 8129759203131125148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_7
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 511
+        width: 18
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b25ded77157c5e70800000000000000
+      internalID: 9105281290393703089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_8
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 545
+        width: 15
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55126bc418cbea4f0800000000000000
+      internalID: -815507218983673515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_9
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 430
+        width: 827
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8556536b27760da0800000000000000
+      internalID: -5978960427053853301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_10
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 313
+        width: 16
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cb69dd7a660b1e60800000000000000
+      internalID: 7933942222990961605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_11
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 336
+        width: 15
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 046751a8d657b50e0800000000000000
+      internalID: -2280099673004476864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_12
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 313
+        width: 16
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5229cf2eca765bc0800000000000000
+      internalID: -3794710610029501859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_13
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 314
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc128f5537eba4640800000000000000
+      internalID: 5065070133504385483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_14
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 325
+        width: 16
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f1125224f5c20e50800000000000000
+      internalID: 6774194441857143288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_15
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 326
+        width: 19
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d16600e01fe01a20800000000000000
+      internalID: 3031185404977373656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_16
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 327
+        width: 16
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7126b18a3a969b7b0800000000000000
+      internalID: -5208015342456315369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_17
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 325
+        width: 17
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44c92e0da5c489850800000000000000
+      internalID: 6383936424732957764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_18
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 325
+        width: 15
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c9802f2ed4ef8b80800000000000000
+      internalID: -8390235937843410493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_19
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 326
+        width: 18
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a2cc0cab1192500800000000000000
+      internalID: 371847938030971455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_20
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 327
+        width: 15
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e24342ce760c10d50800000000000000
+      internalID: 6701849273079968814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_21
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 326
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b0f2366b0f83f30800000000000000
+      internalID: 4555655689223998353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_22
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 325
+        width: 18
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ce1f7f45ba86fb0800000000000000
+      internalID: -4654281833461978067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_23
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 326
+        width: 23
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6da0b0b6fccf610800000000000000
+      internalID: 1656426821619209955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_24
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 313
+        width: 17
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52506e9c6cdd90b50800000000000000
+      internalID: 6560018178102396197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_25
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 313
+        width: 16
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb59c7fba13f65230800000000000000
+      internalID: 3627353846100825535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_26
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 313
+        width: 16
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54dc608604848c110800000000000000
+      internalID: 1281353535447289157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_27
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 336
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbcd3f7deac502b10800000000000000
+      internalID: 1954664144295943357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_28
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 313
+        width: 15
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce5c064ae39d8340800000000000000
+      internalID: 4867709406664220354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_29
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 314
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46578287283489680800000000000000
+      internalID: -8748168048526461596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_30
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 231
+        width: 827
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9dcacfa764ba8320800000000000000
+      internalID: 2561057695537483165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_31
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 114
+        width: 16
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f979a727f098112b0800000000000000
+      internalID: -5615556560916146273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_32
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 138
+        width: 15
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1555c1c9fed1b7130800000000000000
+      internalID: 3565476444947371345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_33
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 115
+        width: 16
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c23ec0f231a6d70800000000000000
+      internalID: 9037056695072926747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_34
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 116
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c32673515588a9d10800000000000000
+      internalID: 2133167272522900028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_35
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 127
+        width: 12
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001009e60c29cac80800000000000000
+      internalID: -8310105857219100416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_36
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 128
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1dc0859db9a79200800000000000000
+      internalID: 186804541281324314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_37
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 128
+        width: 19
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a835f11c405300340800000000000000
+      internalID: 4827917095077368714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_38
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 127
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d05e77feb01b0e90800000000000000
+      internalID: -7058529578591039277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_39
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 128
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: edecdbfb596af2890800000000000000
+      internalID: -7480577293941879074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_40
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 128
+        width: 23
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f96f1934140633090800000000000000
+      internalID: -8055989475012905313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_41
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 127
+        width: 13
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc6d530cdd4fd7f0800000000000000
+      internalID: -585663819190276873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_42
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 127
+        width: 13
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6860d05299b82700800000000000000
+      internalID: 515866195406121067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_43
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 127
+        width: 12
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6b12f7bf129a700800000000000000
+      internalID: 552009793383020286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_44
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 128
+        width: 16
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e5a7d70c16fbb4b0800000000000000
+      internalID: -5423470725986540056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_45
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 128
+        width: 16
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d16fc553f36f653c0800000000000000
+      internalID: -4371035636977830371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_46
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 127
+        width: 15
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa443d4ffd2ead2e0800000000000000
+      internalID: -2100116824701844310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_47
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 128
+        width: 15
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf2c5cda88aac9dc0800000000000000
+      internalID: -3630839695559769349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_48
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 128
+        width: 19
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7a456260aff8970800000000000000
+      internalID: 8759494704578734013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_49
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 127
+        width: 15
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55a813e5618a6d0e0800000000000000
+      internalID: -2245422550174561707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_50
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 128
+        width: 16
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02c2a077f96a0fc50800000000000000
+      internalID: 6697035849727093792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_51
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 128
+        width: 23
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d22494bee91b99390800000000000000
+      internalID: -7811016782587018707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_52
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 127
+        width: 12
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ee9a18cc38186b60800000000000000
+      internalID: 7739462608970489573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_53
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 127
+        width: 12
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5ecb22f96e0c740800000000000000
+      internalID: 5170385943378322873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_54
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 127
+        width: 12
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55916896685f8fc20800000000000000
+      internalID: 3240609889537890645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_55
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 115
+        width: 17
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df8e4c837ccc41510800000000000000
+      internalID: 1519064130353686781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_56
+      rect:
+        serializedVersion: 2
+        x: 806
+        y: 114
+        width: 17
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4677789126f047570800000000000000
+      internalID: 8463406513745524580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_57
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 114
+        width: 16
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152c36b93fd1556a0800000000000000
+      internalID: -6461225158271843759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_58
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 138
+        width: 14
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2afa678a451a6a170800000000000000
+      internalID: 8189410357395500962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_59
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 115
+        width: 15
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9373a354289e6190800000000000000
+      internalID: -7967263408982363235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_60
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 116
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18f77036c4288b400800000000000000
+      internalID: 340165036457033601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Huw_61
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 33
+        width: 827
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 572bf010277aef950800000000000000
+      internalID: 6484804621546009205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Huw_0: -1054587145332927424
+      Huw_1: 2931677080407776120
+      Huw_10: 7933942222990961605
+      Huw_11: -2280099673004476864
+      Huw_12: -3794710610029501859
+      Huw_13: 5065070133504385483
+      Huw_14: 6774194441857143288
+      Huw_15: 3031185404977373656
+      Huw_16: -5208015342456315369
+      Huw_17: 6383936424732957764
+      Huw_18: -8390235937843410493
+      Huw_19: 371847938030971455
+      Huw_2: 6069883241766035283
+      Huw_20: 6701849273079968814
+      Huw_21: 4555655689223998353
+      Huw_22: -4654281833461978067
+      Huw_23: 1656426821619209955
+      Huw_24: 6560018178102396197
+      Huw_25: 3627353846100825535
+      Huw_26: 1281353535447289157
+      Huw_27: 1954664144295943357
+      Huw_28: 4867709406664220354
+      Huw_29: -8748168048526461596
+      Huw_3: -5327444463309600361
+      Huw_30: 2561057695537483165
+      Huw_31: -5615556560916146273
+      Huw_32: 3565476444947371345
+      Huw_33: 9037056695072926747
+      Huw_34: 2133167272522900028
+      Huw_35: -8310105857219100416
+      Huw_36: 186804541281324314
+      Huw_37: 4827917095077368714
+      Huw_38: -7058529578591039277
+      Huw_39: -7480577293941879074
+      Huw_4: -1506617060880027626
+      Huw_40: -8055989475012905313
+      Huw_41: -585663819190276873
+      Huw_42: 515866195406121067
+      Huw_43: 552009793383020286
+      Huw_44: -5423470725986540056
+      Huw_45: -4371035636977830371
+      Huw_46: -2100116824701844310
+      Huw_47: -3630839695559769349
+      Huw_48: 8759494704578734013
+      Huw_49: -2245422550174561707
+      Huw_5: -8379886288368709796
+      Huw_50: 6697035849727093792
+      Huw_51: -7811016782587018707
+      Huw_52: 7739462608970489573
+      Huw_53: 5170385943378322873
+      Huw_54: 3240609889537890645
+      Huw_55: 1519064130353686781
+      Huw_56: 8463406513745524580
+      Huw_57: -6461225158271843759
+      Huw_58: 8189410357395500962
+      Huw_59: -7967263408982363235
+      Huw_6: 8129759203131125148
+      Huw_60: 340165036457033601
+      Huw_61: 6484804621546009205
+      Huw_7: 9105281290393703089
+      Huw_8: -815507218983673515
+      Huw_9: -5978960427053853301
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
