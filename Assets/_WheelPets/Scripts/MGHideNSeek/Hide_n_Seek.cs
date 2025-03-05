@@ -127,13 +127,9 @@ public class Hide_n_Seek : MonoBehaviour
 
                 // Remove strikes from screen and display win overlay
                 RemoveStrikes();
-                pauseOverlay.MinigameWin();
 
-                // Increment the times hide and seek won stat
-                PlayerData data = Data.GetPlayerData();
-                data.timesHideNSeekWon++;
-                Data.SavePlayerDataToFile();
-                
+                Data.GetPlayerData().statHide.RecordWin(0f);
+                pauseOverlay.MinigameWin();
             }
             else
             {
