@@ -75,9 +75,16 @@ public class MinigameStatistics
 
     private bool UpdateBestScore(float currentScore)
     {
-        // BUG not init
+        // no best score ever set
+        if (PlayCount() == 0)
+        {
+            bestScore = currentScore;
+            return true;
+        }
+
         if (isBestScoreReversed)
         {
+            // lower value, score is better
             if (currentScore < bestScore)
             {
                 bestScore = currentScore;
@@ -86,12 +93,15 @@ public class MinigameStatistics
         }
         else
         {
+            // higher value, score is better
             if (currentScore > bestScore)
             {
                 bestScore = currentScore;
                 return true;
             }
         }
+
+        // does not update the best score
         return false;
     }
 }
