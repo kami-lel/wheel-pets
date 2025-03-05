@@ -1,10 +1,9 @@
-using System;
-
 public class MinigameStatistics
 {
     /// <summary>
-    /// Records a win for the minigame and updates the best score if the current score is better.
-    /// This function can be called in the actual minigame logic to register a win.
+    /// Records a win for the minigame and updates the best score if the
+    /// current score is better. This function can be called in the actual
+    /// minigame logic to register a win.
     /// </summary>
     /// <param name="currentScore">The score achieved in this win.</param>
     /// <returns>Whether a new best score has been set.</returns>
@@ -16,8 +15,9 @@ public class MinigameStatistics
     }
 
     /// <summary>
-    /// Records a loss for the minigame and updates the best score if the current score is better.
-    /// This function can be called in the actual minigame logic to register a loss.
+    /// Records a loss for the minigame and updates the best score if the
+    /// current score is better. This function can be called in the actual
+    /// minigame logic to register a loss.
     /// </summary>
     /// <param name="currentScore">The score achieved in this loss.</param>
     /// <returns>Whether a new best score has been set.</returns>
@@ -47,6 +47,9 @@ public class MinigameStatistics
     /// </summary>
     public int loseCount = 0;
 
+    /// <summary>
+    /// The best score ever achieved in this minigame.
+    /// </summary>
     public float bestScore = 0f;
 
     private readonly bool isBestScoreReversed;
@@ -57,12 +60,14 @@ public class MinigameStatistics
     ///
     /// <para>
     /// If <paramref name="isBestScoreReversed"/> is set to <c>false</c>,
-    /// a higher score is considered better (e.g., high score in traditional games).
-    /// If set to <c>true</c>, a lower score indicates better performance
-    /// (e.g., best time in time-based challenges).
+    /// a higher score is considered better (e.g., high score in traditional
+    /// games). If set to <c>true</c>, a lower score indicates better
+    /// performance (e.g., best time in time-based challenges).
     /// </para>
     /// </summary>
-    /// <param name="isBestScoreReversed">Determines the comparison method for scores.</param>
+    /// <param name="isBestScoreReversed">
+    /// Determines the comparison method for scores.
+    /// </param>
     public MinigameStatistics(bool isBestScoreReversed = false)
     {
         this.isBestScoreReversed = isBestScoreReversed;
