@@ -16,6 +16,7 @@ public class MinigameStatistics
     {
         bool updateResult = UpdateBestScore(currentScore);
         winCount++;
+        coinsAccumulated += Data.pointCoinManager.WinMinigame();
         DebugPrintRecord(true, currentScore, updateResult);
         return updateResult;
     }
@@ -32,6 +33,7 @@ public class MinigameStatistics
     {
         bool updateResult = UpdateBestScore(currentScore);
         loseCount++;
+        coinsAccumulated += Data.pointCoinManager.LoseMinigame();
         DebugPrintRecord(false, currentScore, updateResult);
         return updateResult;
     }
@@ -59,6 +61,11 @@ public class MinigameStatistics
     /// The best score ever achieved in this minigame.
     /// </summary>
     public float bestScore = 0f;
+
+    /// <summary>
+    /// The total amount of coins collected from this minigame.
+    /// </summary>
+    public int coinsAccumulated = 0;
 
     private readonly string minigameName;
     private readonly bool isBestScoreReversed;

@@ -10,7 +10,7 @@ public class PlayerData
     // initialize with <b>default value</b>, i.e. factory reset value
     public string playerName = "Pet Owner";
     public int drivingPoint = 0;
-    public int gamePoint = 0;
+    public int minigameCoin = 0;
     public float drivingMiles = 0;
 
     public LeaderboardOtherPlayerData[] leaderBoardOtherPlayerData = new[]
@@ -55,7 +55,7 @@ public class PlayerData
 
     // statistics of minigames
     // BUG link them with the minigames
-    public MinigameStatistics statBath = new("bath", true);
+    public MinigameStatistics statBath = new("bath");
     public MinigameStatistics statFeed = new("feed");
     public MinigameStatistics statFetch = new("fetch");
     public MinigameStatistics statHide = new("hide");

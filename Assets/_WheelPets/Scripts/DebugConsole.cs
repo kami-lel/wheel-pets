@@ -95,7 +95,7 @@ public class DebugConsole : MonoBehaviour
 
             // update data
             drivingPoint.text = $"Driving Point:{playerData.drivingPoint}";
-            gamePoint.text = $"Game Point:{playerData.gamePoint}";
+            gamePoint.text = $"Game Point:{playerData.minigameCoin}";
             drivingMiles.text = $"Driving Miles:{playerData.drivingMiles}";
         }
     }
