@@ -1,6 +1,6 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
 
 public class UIMovement : MonoBehaviour
 {
@@ -22,7 +22,8 @@ public class UIMovement : MonoBehaviour
     private bool jumpRequested = false; // Input buffer for jump
 
     // Completion Fields
-    [SerializeField] private TextMeshProUGUI completionText; // The TextMeshProUGUI to display the message
+    [SerializeField]
+    private TextMeshProUGUI completionText; // The TextMeshProUGUI to display the message
     public PauseOverlay pauseOverlay; // PauseOverlay object to trigger win screen
 
     void Start()
@@ -42,12 +43,18 @@ public class UIMovement : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Grass object is not assigned for Arrow Key Movement!");
+            Debug.LogError(
+                "Grass object is not assigned for Arrow Key Movement!"
+            );
         }
 
         // Setup for Jump Functionality
-        if (body == null) Debug.LogError("Rigidbody2D (body) is null! Assign it in the Inspector.");
-        if (jumpSound == null) Debug.LogWarning("Jump sound is not assigned!");
+        if (body == null)
+            Debug.LogError(
+                "Rigidbody2D (body) is null! Assign it in the Inspector."
+            );
+        if (jumpSound == null)
+            Debug.LogWarning("Jump sound is not assigned!");
 
         // Disable controls initially
         controlsEnabled = false;
@@ -56,7 +63,8 @@ public class UIMovement : MonoBehaviour
 
     void Update()
     {
-        if (!controlsEnabled) return;
+        if (!controlsEnabled)
+            return;
 
         HandleAutoMovement();
         HandleJumpInput();
@@ -69,7 +77,8 @@ public class UIMovement : MonoBehaviour
 
     private void HandleAutoMovement()
     {
-        if (grass == null) return;
+        if (grass == null)
+            return;
 
         // Automatically move the UI dog to the left
         float horizontalMovement = -moveSpeed * Time.deltaTime;
@@ -89,7 +98,8 @@ public class UIMovement : MonoBehaviour
 
     private void HandleJumpInput()
     {
-        if (body == null) return;
+        if (body == null)
+            return;
 
         if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
         {
@@ -100,12 +110,14 @@ public class UIMovement : MonoBehaviour
 
     private void ProcessJump()
     {
-        if (!jumpRequested || body == null) return;
+        if (!jumpRequested || body == null)
+            return;
 
         body.linearVelocity = new Vector2(body.linearVelocity.x, jumpAmount);
         Debug.Log("Player jumped!");
 
-        if (jumpSound != null) jumpSound.Play();
+        if (jumpSound != null)
+            jumpSound.Play();
 
         jumpRequested = false;
     }
@@ -121,16 +133,16 @@ public class UIMovement : MonoBehaviour
             }
             else
             {
-                Debug.LogError("CompletionText is not assigned in the Inspector.");
+                Debug.LogError(
+                    "CompletionText is not assigned in the Inspector."
+                );
             }
-
-            // Increment the timesPetWalked stat
-            PlayerData data = Data.GetPlayerData();
-            data.timesPetWalked++;
-            Data.SavePlayerDataToFile();
 
             // Disable all controls
             controlsEnabled = false;
+
+            Data.GetPlayerData().statWalk.RecordWin(0f);
+
             pauseOverlay.MinigameWin();
         }
     }

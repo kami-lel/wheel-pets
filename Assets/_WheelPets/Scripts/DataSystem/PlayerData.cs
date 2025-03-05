@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEngine;
 
 [Serializable]
 public class PlayerData
@@ -8,8 +10,7 @@ public class PlayerData
     // initialize with <b>default value</b>, i.e. factory reset value
     public string playerName = "Pet Owner";
     public int drivingPoint = 0;
-    public int gamePoint = 0;
-    public float drivingMiles = 0;
+    public int minigameCoin = 0;
 
     public LeaderboardOtherPlayerData[] leaderBoardOtherPlayerData = new[]
     {
@@ -32,20 +33,13 @@ public class PlayerData
     public int timesParkedWithoutTouchingLines = 0;
     public int stopSignsStoppedAt = 0;
 
-    // fixme better data structure
-    //  minigame statistics
+    // BUG these data fields are deprecated
     public int tugOfWarGamesWon = 0;
     public int timesPetWashed = 0;
     public int timesHideNSeekWon = 0;
     public int cosmeticsUnlocked = 0;
     public int timesPetWalked = 0;
-
-    // fixme
-    // High score for the fetch minigame
     public int fetchHighScore = 0;
-
-    // fixme
-    // todo best time for the bath minigame
     public float bathMinigameBestTime = 60f;
 
     // Audio settings
@@ -58,13 +52,35 @@ public class PlayerData
     public float mainVolume = 0.75f; // 0~1
     public float bgmVolume = 1f;
 
-    // statistics of mini games
-    public MinigameStatistics statBath = new(); // bug need correct init para
-    public MinigameStatistics statFeed = new(); // bug need correct init para
-    public MinigameStatistics statFetch = new(); // bug need correct init para
-    public MinigameStatistics statHideNSeek = new(); // bug need correct init para
-    public MinigameStatistics statTugOWar = new(); // bug need correct init para
-    public MinigameStatistics statWalkScene = new(); // bug need correct init para
+    // statistics of minigames
+    public MinigameStatistics statBath = new("bath");
+    public MinigameStatistics statFeed = new("feed");
+    public MinigameStatistics statFetch = new("fetch");
+    public MinigameStatistics statHide = new("hide");
+    public MinigameStatistics statTug = new("tug");
+    public MinigameStatistics statWalk = new("walk");
+
+    /// <summary>
+    /// Retrieve all minigame statistics as a dictionary.
+    /// This function provides access to all stat objects for the purpose
+    /// of iteration and data manipulation.
+    /// </summary>
+    /// <returns>A dictionary containing the minigame statistics.</returns>
+    public Dictionary<string, MinigameStatistics> GetAllStats()
+    {
+        // Create a dictionary to hold the statistics of minigames
+        var statsDictionary = new Dictionary<string, MinigameStatistics>
+        {
+            { "bath", statBath },
+            { "feed", statFeed },
+            { "fetch", statFetch },
+            { "hide", statHide },
+            { "tug", statTug },
+            { "walk", statWalk },
+        };
+
+        return statsDictionary; // Return the populated dictionary
+    }
 
     // pet's data
     public bool hasAdoptPet = false;

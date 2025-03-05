@@ -166,15 +166,10 @@ public class TugOfWarManager : MonoBehaviour
             cheeringSound.Play();
         }
 
-        // Increment the tug of war games won stat
-        PlayerData data = Data.GetPlayerData();
-        data.tugOfWarGamesWon++;
-        data.gamePoint++;
-        Data.SavePlayerDataToFile();
-
         // Freeze the RopeLine
         FreezeRopeLine();
 
+        Data.GetPlayerData().statTug.RecordWin(0f);
         pauseOverlay.MinigameWin();
     }
 
@@ -209,6 +204,7 @@ public class TugOfWarManager : MonoBehaviour
         // Freeze the RopeLine
         FreezeRopeLine();
 
+        Data.GetPlayerData().statTug.RecordLose(0f);
         pauseOverlay.MinigameLost();
     }
 

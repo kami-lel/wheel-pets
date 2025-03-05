@@ -13,7 +13,10 @@ public class LocalizedLeaderboardText : MonoBehaviour
     {
         if (pointsTextEvent != null)
         {
-            pointsTextEvent.StringReference.Arguments = new object[] { points };
+            pointsTextEvent.StringReference.Arguments = new object[]
+            {
+                points,
+            };
             pointsTextEvent.RefreshString();
         }
     }
@@ -27,7 +30,7 @@ public class LocalizedLeaderboardText : MonoBehaviour
                 data.leftTurnSignals,
                 data.rightTurnSignals,
                 data.timesParkedWithoutTouchingLines,
-                data.stopSignsStoppedAt
+                data.stopSignsStoppedAt,
             };
             drivingStatsTextEvent.RefreshString();
         }
@@ -39,10 +42,11 @@ public class LocalizedLeaderboardText : MonoBehaviour
         {
             minigameStatsTextEvent.StringReference.Arguments = new object[]
             {
+                // BUG these data fields are deprecated
                 data.tugOfWarGamesWon,
                 data.timesPetWashed,
                 data.timesHideNSeekWon,
-                data.cosmeticsUnlocked
+                data.cosmeticsUnlocked,
             };
             minigameStatsTextEvent.RefreshString();
         }
