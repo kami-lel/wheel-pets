@@ -88,6 +88,9 @@ public class CarScript : MonoBehaviour
     {
         brakes = false;
         accel = false;
+        
+
+
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             brakes = true;
