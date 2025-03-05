@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 [Serializable]
 public class MinigameStatistics
@@ -14,7 +15,9 @@ public class MinigameStatistics
     public bool RecordWin(float currentScore)
     {
         winCount++;
-        return UpdateBestScore(currentScore);
+        bool updateResult = UpdateBestScore(currentScore);
+        DebugPrintRecord(true, currentScore, updateResult);
+        return updateResult;
     }
 
     /// <summary>
@@ -28,7 +31,9 @@ public class MinigameStatistics
     public bool RecordLose(float currentScore)
     {
         loseCount++;
-        return UpdateBestScore(currentScore);
+        bool updateResult = UpdateBestScore(currentScore);
+        DebugPrintRecord(false, currentScore, updateResult);
+        return updateResult;
     }
 
     /// <summary>
@@ -55,6 +60,7 @@ public class MinigameStatistics
     /// </summary>
     public float bestScore = -1f;
 
+    private readonly string minigameName;
     private readonly bool isBestScoreReversed;
 
     /// <summary>
@@ -68,11 +74,20 @@ public class MinigameStatistics
     /// performance (e.g., best time in time-based challenges).
     /// </para>
     /// </summary>
+    /// <param name="minigameName">
+    /// The name of the minigame, utilized in debug print statements
+    /// for tracking and displaying statistics related to this specific
+    /// game session.
+    /// </param>
     /// <param name="isBestScoreReversed">
     /// Determines the comparison method for scores.
     /// </param>
-    public MinigameStatistics(bool isBestScoreReversed = false)
+    public MinigameStatistics(
+        string minigameName,
+        bool isBestScoreReversed = false
+    )
     {
+        this.minigameName = minigameName;
         this.isBestScoreReversed = isBestScoreReversed;
     }
 
@@ -106,5 +121,26 @@ public class MinigameStatistics
 
         // does not update the best score
         return false;
+    }
+
+    private void DebugPrintRecord(
+        bool isWin,
+        float currentScore,
+        bool updateResult
+    )
+    {
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log(
+                $"Stat\t{minigameName}\t"
+                    + "Record "
+                    + (isWin ? "Win" : "Loss")
+                    + " "
+                    + $"win={winCount} loss={loseCount} "
+                    + $"best score: {currentScore}"
+                    + (updateResult ? "->" : "-!>")
+                    + $"{bestScore}"
+            );
+        }
     }
 }

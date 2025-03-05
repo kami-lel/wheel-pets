@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
+using UnityEngine;
 
 [Serializable]
 public class PlayerData
@@ -59,18 +61,34 @@ public class PlayerData
 
     // statistics of minigames
     // BUG link them with the minigames
-    private Dictionary<string, MinigameStatistics> stats = new Dictionary<
-        string,
-        MinigameStatistics
-    >
+    public MinigameStatistics statBath = new("bath", true);
+    public MinigameStatistics statFeed = new("feed", false);
+    public MinigameStatistics statFetch = new("fetch", false);
+    public MinigameStatistics statHide = new("hide", false);
+    public MinigameStatistics statTug = new("tug", false);
+    public MinigameStatistics statWalk = new("walk", false);
+
+    /// <summary>
+    /// Retrieve all minigame statistics as a dictionary.
+    /// This function provides access to all stat objects for the purpose
+    /// of iteration and data manipulation.
+    /// </summary>
+    /// <returns>A dictionary containing the minigame statistics.</returns>
+    public Dictionary<string, MinigameStatistics> GetAllStats()
     {
-        { "bath", new MinigameStatistics(true) },
-        { "feed", new MinigameStatistics() },
-        { "fetch", new MinigameStatistics() },
-        { "hide", new MinigameStatistics() },
-        { "tug", new MinigameStatistics() },
-        { "walk", new MinigameStatistics() },
-    };
+        // Create a dictionary to hold the statistics of minigames
+        var statsDictionary = new Dictionary<string, MinigameStatistics>
+        {
+            { "bath", statBath },
+            { "feed", statFeed },
+            { "fetch", statFetch },
+            { "hide", statHide },
+            { "tug", statTug },
+            { "walk", statWalk },
+        };
+
+        return statsDictionary; // Return the populated dictionary
+    }
 
     // pet's data
     public bool hasAdoptPet = false;
