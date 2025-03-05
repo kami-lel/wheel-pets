@@ -53,7 +53,7 @@ public class MinigameStatistics
     /// <summary>
     /// The best score ever achieved in this minigame.
     /// </summary>
-    public float bestScore = 0f;
+    public float bestScore = -1f;
 
     private readonly bool isBestScoreReversed;
 
