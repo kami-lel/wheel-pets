@@ -19,16 +19,42 @@ public class AccessoryManager
             { AccessoryType.WingGlasses, 145 },
         };
 
-    private PlayerData playerData;
-
-    public AccessoryManager(PlayerData playerData)
-    {
-        this.playerData = playerData;
-    }
-
+    /// <summary>
+    /// Checks whether the player has purchased a specific accessory.
+    /// </summary>
+    /// <param name="accessory">The accessory type to check for purchase status.</param>
+    /// <returns>
+    /// Returns true if the accessory has been purchased, false otherwise.
+    /// This allows for verifying whether the item is already owned by the player.
+    /// </returns>
     public bool HasPurchased(AccessoryType accessory)
     {
         return playerData.purchasedAccessories.Contains(accessory);
+    }
+
+    /// <summary>
+    /// Determines whether an accessory can be purchased for the player.
+    /// The accessory is purchasable if it has not been purchased yet
+    /// and the player has enough coins to make the purchase.
+    /// </summary>
+    /// <param name="accessory">The accessory type to check for purchase status.</param>
+    /// <returns>
+    /// 0 if the accessory is purchasable,
+    /// 1 if the accessory has already been purchased,
+    /// 2 if there are not enough coins to make the purchase.
+    /// </returns>
+    public byte IsPurchasable(AccessoryType accessory)
+    {
+        if (HasPurchased(accessory))
+        {
+            return 1;
+        }
+        else if (playerData.minigameCoin < ACCESSORY_PRICES[accessory])
+        {
+            return 2;
+        }
+
+        return 0;
     }
 
     /// <summary>
@@ -42,48 +68,53 @@ public class AccessoryManager
     /// </returns>
     public byte Purchase(AccessoryType accessory)
     {
-        int price = ACCESSORY_PRICES[accessory];
-        if (HasPurchased(accessory))
-        {
-            if (Debug.isDebugBuild)
-            {
-                Debug.Log(
-                    "AccessoryManager\t"
-                        + accessory.ToString()
-                        + "\tFail to Purchase: already bought"
-                );
-            }
-            return 1;
-        }
-        else if (playerData.minigameCoin < price)
-        {
-            // doesn't have enough money
-            if (Debug.isDebugBuild)
-            {
-                Debug.Log(
-                    "AccessoryManager\t"
-                        + accessory.ToString()
-                        + "\tFail to Purchase: not enough money"
-                );
-            }
-            return 2;
-        }
+        byte isPurchasable = IsPurchasable(accessory);
 
-        // deduct money / coin
-        playerData.minigameCoin -= price;
+        if (isPurchasable == 0)
+        {
+            // Success: accessory is purchasable
+            // deduct money / coin
+            int price = ACCESSORY_PRICES[accessory];
+            playerData.minigameCoin -= price;
 
-        // add to inventory
-        playerData.purchasedAccessories.Add(accessory);
+            // add to inventory
+            playerData.purchasedAccessories.Add(accessory);
+        }
 
         if (Debug.isDebugBuild)
         {
-            Debug.Log(
-                "AccessoryManager\t"
-                    + accessory.ToString()
-                    + $"\tPurchased for {price} coins"
-            );
+            switch (isPurchasable)
+            {
+                case 0:
+                    Debug.Log(
+                        "AccessoryManager\t"
+                            + accessory.ToString()
+                            + "\tPurchased for "
+                            + $"{ACCESSORY_PRICES[accessory]} coins"
+                    );
+                    break; // Proceed with purchase or further actions
+                case 1:
+                    Debug.Log(
+                        "AccessoryManager\t"
+                            + accessory.ToString()
+                            + "\tCannot Purchase: Already Bought"
+                    );
+                    // Handle already purchased logic here
+                    break;
+                case 2:
+                    Debug.Log(
+                        "AccessoryManager\t"
+                            + accessory.ToString()
+                            + "\tCannot Purchase: Not Enough Coins"
+                    );
+                    // Handle insufficient coins logic here
+                    break;
+                default:
+                    break;
+            }
         }
-        return 0;
+
+        return isPurchasable;
     }
 
     public bool IsWearing(AccessoryType accessory)
@@ -186,5 +217,12 @@ public class AccessoryManager
             );
         }
         return 0; // Successfully unequipped
+    }
+
+    private PlayerData playerData;
+
+    public AccessoryManager(PlayerData playerData)
+    {
+        this.playerData = playerData;
     }
 }
