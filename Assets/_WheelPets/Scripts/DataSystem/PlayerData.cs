@@ -11,7 +11,6 @@ public class PlayerData
     public string playerName = "Pet Owner";
     public int drivingPoint = 0;
     public int minigameCoin = 0;
-    public float drivingMiles = 0;
 
     public LeaderboardOtherPlayerData[] leaderBoardOtherPlayerData = new[]
     {
