@@ -14,8 +14,25 @@ public class MinigameStatistics
         return UpdateBestScore(currentScore);
     }
 
-    public int loseCount = 0;
+    /// <summary>
+    /// Returns the total play count by summing win and lose counts.
+    /// </summary>
+    /// <returns>The total number of games played.</returns>
+    public int PlayCount()
+    {
+        return winCount + loseCount;
+    }
+
+    /// <summary>
+    /// The count of games won.
+    /// </summary>
     public int winCount = 0;
+
+    /// <summary>
+    /// The count of games lost.
+    /// </summary>
+    public int loseCount = 0;
+
     public float bestScore = 0f;
 
     private readonly bool isBestScoreReversed;
@@ -39,6 +56,7 @@ public class MinigameStatistics
 
     private bool UpdateBestScore(float currentScore)
     {
+        // BUG not init
         if (isBestScoreReversed)
         {
             if (currentScore < bestScore)
