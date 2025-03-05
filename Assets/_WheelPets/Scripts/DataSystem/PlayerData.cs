@@ -34,19 +34,13 @@ public class PlayerData
     public int timesParkedWithoutTouchingLines = 0;
     public int stopSignsStoppedAt = 0;
 
-    // FIXME better data structure
-    //  minigame statistics
+    // BUG these data fields are deprecated
     public int tugOfWarGamesWon = 0;
     public int timesPetWashed = 0;
     public int timesHideNSeekWon = 0;
     public int cosmeticsUnlocked = 0;
     public int timesPetWalked = 0;
-
-    // FIXME
-    // High score for the fetch minigame
     public int fetchHighScore = 0;
-
-    // TODO best time for the bath minigame
     public float bathMinigameBestTime = 60f;
 
     // Audio settings
