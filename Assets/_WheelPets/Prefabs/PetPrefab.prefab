@@ -187,7 +187,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3908627410338878175}
-  - component: {fileID: 8654212891267795430}
+  - component: {fileID: 1681308848200655356}
   m_Layer: 0
   m_Name: Dog
   m_TagString: Untagged
@@ -214,28 +214,24 @@ Transform:
   - {fileID: 6260383993757121128}
   m_Father: {fileID: 8024345900797591538}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8654212891267795430
-Animator:
-  serializedVersion: 7
+--- !u!111 &1681308848200655356
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3191048591017607901}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4c664f46e3af72a488f236b6e636f6d3, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
+  serializedVersion: 4
+  m_Animation: {fileID: 7400000, guid: eeab86349821afb4286286a05d044802, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: eeab86349821afb4286286a05d044802, type: 2}
+  - {fileID: 7400000, guid: b0f1456e1f65d3d49b1de2f979f0eca0, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_UpdateMode: 0
+  m_CullingType: 0
 --- !u!1 &4426250395428167631
 GameObject:
   m_ObjectHideFlags: 0
@@ -549,6 +545,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38c916cddec9d7429dc48d62c3ef4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animationName: idle
+  showPetName: 1
   dog: {fileID: 3191048591017607901}
   dogAccessoryGroup: {fileID: 2175837310223012307}
   cat: {fileID: 2869976314571978408}

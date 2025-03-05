@@ -1,13 +1,16 @@
 using System;
 using UnityEngine;
 
-// todo show name of the pet above
-// todo implement cat & rabbit
-// fixme make sure all accessories are placed properly
-// fixme make sure accessories render order is correct, chain should be above glasses, etc.
-// BUG pet animation not working in some of the scene
+// TODO implement cat & rabbit
 public class PetScript : MonoBehaviour
 {
+    [SerializeField]
+    private string animationName = "idle";
+
+    // TODO show name of the pet above
+    [SerializeField]
+    private bool showPetName = true;
+
     [SerializeField]
     private GameObject dog;
 
@@ -26,22 +29,20 @@ public class PetScript : MonoBehaviour
     [SerializeField]
     private GameObject rabbitAccessoryGroup;
 
-    private PlayerData.PetData petData;
-    private GameObject activePet;
-
-    private void Start()
-    { 
-        PlayerData data = Data.GetPlayerData();
-        if (data != null)
-        {
-            petData = data.petData;
-            UpdateLook();
-        }
-        else
-        {
-            Debug.LogError("PlayerData is null");
-        }
-        
+    /// <summary>
+    /// Plays the specified animation for the active pet.
+    ///
+    /// This method allows changing the pet's animation across all animal types,
+    /// ensuring that the provided animation name is valid before playback.
+    /// If the animation name is not valid, it defaults to "idle".
+    ///
+    /// :param animationName: The name of the animation to play (e.g., "idle",
+    ///                       "walk", "attack").
+    /// </summary>
+    public void PlayAnimation(string animationName)
+    {
+        this.animationName = animationName;
+        activeAnimation.Play(animationName);
     }
 
     /// <summary>
@@ -64,6 +65,9 @@ public class PetScript : MonoBehaviour
         activePet.SetActive(true);
         Debug.Log("PetPrefab\tSelect: " + activePet);
 
+        activeAnimation = activePet.GetComponent<Animation>();
+        activeAnimation.Play(animationName);
+
         UpdateLookColor();
         UpdateLookAccessory();
 
@@ -71,6 +75,26 @@ public class PetScript : MonoBehaviour
         {
             Debug.Log("PetPrefab\tLook Updated");
         }
+    }
+
+    private PlayerData.PetData petData;
+    private GameObject activePet;
+    private Animation activeAnimation;
+
+    private void Start()
+    {
+        PlayerData data = Data.GetPlayerData();
+        if (data != null)
+        {
+            petData = data.petData;
+            UpdateLook();
+        }
+        else
+        {
+            Debug.LogError("PlayerData is null");
+        }
+
+        UpdateLook();
     }
 
     private void UpdateLookColor()
