@@ -60,7 +60,7 @@ public class PlayerData
     public MinigameStatistics statFetch = new("fetch");
     public MinigameStatistics statHide = new("hide");
     public MinigameStatistics statTug = new("tug");
-    public MinigameStatistics statWalk = new("walk", false);
+    public MinigameStatistics statWalk = new("walk");
 
     /// <summary>
     /// Retrieve all minigame statistics as a dictionary.
