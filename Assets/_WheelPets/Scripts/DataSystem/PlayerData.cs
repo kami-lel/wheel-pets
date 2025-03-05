@@ -32,7 +32,7 @@ public class PlayerData
     public int timesParkedWithoutTouchingLines = 0;
     public int stopSignsStoppedAt = 0;
 
-    // fixme better data structure
+    // FIXME better data structure
     //  minigame statistics
     public int tugOfWarGamesWon = 0;
     public int timesPetWashed = 0;
@@ -40,12 +40,11 @@ public class PlayerData
     public int cosmeticsUnlocked = 0;
     public int timesPetWalked = 0;
 
-    // fixme
+    // FIXME
     // High score for the fetch minigame
     public int fetchHighScore = 0;
 
-    // fixme
-    // todo best time for the bath minigame
+    // TODO best time for the bath minigame
     public float bathMinigameBestTime = 60f;
 
     // Audio settings
@@ -58,13 +57,20 @@ public class PlayerData
     public float mainVolume = 0.75f; // 0~1
     public float bgmVolume = 1f;
 
-    // statistics of mini games
-    public MinigameStatistics statBath = new(); // bug need correct init para
-    public MinigameStatistics statFeed = new(); // bug need correct init para
-    public MinigameStatistics statFetch = new(); // bug need correct init para
-    public MinigameStatistics statHideNSeek = new(); // bug need correct init para
-    public MinigameStatistics statTugOWar = new(); // bug need correct init para
-    public MinigameStatistics statWalkScene = new(); // bug need correct init para
+    // statistics of minigames
+    // BUG link them with the minigames
+    private Dictionary<string, MinigameStatistics> stats = new Dictionary<
+        string,
+        MinigameStatistics
+    >
+    {
+        { "bath", new MinigameStatistics(true) },
+        { "feed", new MinigameStatistics() },
+        { "fetch", new MinigameStatistics() },
+        { "hide", new MinigameStatistics() },
+        { "tug", new MinigameStatistics() },
+        { "walk", new MinigameStatistics() },
+    };
 
     // pet's data
     public bool hasAdoptPet = false;
