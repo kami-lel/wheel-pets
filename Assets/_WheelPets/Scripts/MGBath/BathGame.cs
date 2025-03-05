@@ -23,18 +23,32 @@ public class BathGame : SceneSwapping
 
     // Order booleans
     private bool isBrushUsed = false;
-    [SerializeField] private AudioSource BrushSound;
+
+    [SerializeField]
+    private AudioSource BrushSound;
     private bool isClippersUsed = false;
-    [SerializeField] private AudioSource ClipperSound;
+
+    [SerializeField]
+    private AudioSource ClipperSound;
     private bool isSoapUsed = false;
-    [SerializeField] private AudioSource SoapSound;
+
+    [SerializeField]
+    private AudioSource SoapSound;
     private bool isWaterUsed = false;
-    [SerializeField] private AudioSource WaterSound;
+
+    [SerializeField]
+    private AudioSource WaterSound;
     private bool isTowelUsed = false;
-    [SerializeField] private AudioSource TowelSound;
+
+    [SerializeField]
+    private AudioSource TowelSound;
     private bool isScissorsUsed = false;
-    [SerializeField] private AudioSource ScissorSound;
-    [SerializeField] private AudioSource MistakeSound;
+
+    [SerializeField]
+    private AudioSource ScissorSound;
+
+    [SerializeField]
+    private AudioSource MistakeSound;
 
     [SerializeField]
     AudioSource backgroundMusic; // Audio source for background music
@@ -95,6 +109,7 @@ public class BathGame : SceneSwapping
         {
             gameActive = false;
             pauseOverlay.MinigameLost();
+            Data.GetPlayerData().statBath.RecordLose(timer);
             if (sceneScript != null)
             {
                 sceneScript.ShowPlayAgainButton();
@@ -204,7 +219,7 @@ public class BathGame : SceneSwapping
                     ScissorSound.Play();
                     pauseOverlay.MinigameWin();
                     gameActive = false; // Stop the timer
-                    SaveHighScore(); // Save the high score if the player completes the dog washing
+                    Data.GetPlayerData().statBath.RecordWin(timer);
                     if (sceneScript != null)
                     {
                         sceneScript.ShowPlayAgainButton();
@@ -278,7 +293,8 @@ public class BathGame : SceneSwapping
             item.transform.position = itemPos;
 
             // Set the original position for each draggable item
-            BathDraggables draggableScript = item.GetComponent<BathDraggables>();
+            BathDraggables draggableScript =
+                item.GetComponent<BathDraggables>();
             if (draggableScript != null)
             {
                 draggableScript.SetOriginalPosition(itemPos);
@@ -303,29 +319,15 @@ public class BathGame : SceneSwapping
 
     private void UpdateTimerText()
     {
-        PlayerData playerData = Data.GetPlayerData();
+        float bestTime = Data.GetPlayerData().statBath.bestScore;
         if (timerText != null)
         {
             timerText.text =
                 "Lowest Time: "
-                + playerData.bathMinigameBestTime.ToString("F2")
+                + bestTime.ToString("F2")
                 + "s\nTime: "
                 + timer.ToString("F2")
                 + "s";
         }
-    }
-
-    private void SaveHighScore()
-    {
-        PlayerData playerData = Data.GetPlayerData();
-        playerData.timesPetWashed++; // Increment the times pet washed stat
-        if (
-            timer < playerData.bathMinigameBestTime
-            || playerData.bathMinigameBestTime == 60f
-        )
-        {
-            playerData.bathMinigameBestTime = timer;
-        }
-        Data.SavePlayerDataToFile(); // Save the updated player data
     }
 }
