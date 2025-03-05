@@ -2,12 +2,26 @@ using System;
 
 public class MinigameStatistics
 {
+    /// <summary>
+    /// Records a win for the minigame and updates the best score if the current score is better.
+    /// This function can be called in the actual minigame logic to register a win.
+    /// </summary>
+    /// <param name="currentScore">The score achieved in this win.</param>
+    /// <returns>Whether a new best score has been set.</returns>
+    /// <returns><c>true</c> if a new best score is set, otherwise <c>false</c>.</returns>
     public bool RecordWin(float currentScore)
     {
         winCount++;
         return UpdateBestScore(currentScore);
     }
 
+    /// <summary>
+    /// Records a loss for the minigame and updates the best score if the current score is better.
+    /// This function can be called in the actual minigame logic to register a loss.
+    /// </summary>
+    /// <param name="currentScore">The score achieved in this loss.</param>
+    /// <returns>Whether a new best score has been set.</returns>
+    /// <returns><c>true</c> if a new best score is set, otherwise <c>false</c>.</returns>
     public bool RecordLose(float currentScore)
     {
         loseCount++;
