@@ -1,8 +1,24 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AccessoryManager
 {
+    private static Dictionary<AccessoryType, int> ACCESSORY_PRICES =
+        new Dictionary<AccessoryType, int>
+        {
+            { AccessoryType.Bowtie, 50 },
+            { AccessoryType.Tie, 75 },
+            { AccessoryType.Chain, 100 },
+            { AccessoryType.CapHat, 125 },
+            { AccessoryType.CowboyHat, 150 },
+            { AccessoryType.TopHat, 175 },
+            { AccessoryType.AngularChevronGlasses, 60 },
+            { AccessoryType.RectangularGlasses, 85 },
+            { AccessoryType.SpikedEdgeGlasses, 110 },
+            { AccessoryType.WingGlasses, 145 },
+        };
+
     private PlayerData playerData;
 
     public AccessoryManager(PlayerData playerData)
@@ -26,6 +42,7 @@ public class AccessoryManager
     /// </returns>
     public byte Purchase(AccessoryType accessory)
     {
+        int price = ACCESSORY_PRICES[accessory];
         if (HasPurchased(accessory))
         {
             if (Debug.isDebugBuild)
@@ -38,8 +55,9 @@ public class AccessoryManager
             }
             return 1;
         }
-        else if (playerData.minigameCoin < -1) // todo check if has enough point
+        else if (playerData.minigameCoin < price)
         {
+            // doesn't have enough money
             if (Debug.isDebugBuild)
             {
                 Debug.Log(
@@ -51,7 +69,8 @@ public class AccessoryManager
             return 2;
         }
 
-        // todo deduct money logic
+        // deduct money / coin
+        playerData.minigameCoin -= price;
 
         // add to inventory
         playerData.purchasedAccessories.Add(accessory);
@@ -59,7 +78,9 @@ public class AccessoryManager
         if (Debug.isDebugBuild)
         {
             Debug.Log(
-                "AccessoryManager\t" + accessory.ToString() + "\tPurchased"
+                "AccessoryManager\t"
+                    + accessory.ToString()
+                    + $"\tPurchased for {price} coins"
             );
         }
         return 0;
