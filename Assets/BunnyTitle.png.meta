@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BunnyTitle_0: -1058021316035179029
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
