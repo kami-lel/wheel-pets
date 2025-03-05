@@ -14,8 +14,8 @@ public class MinigameStatistics
     /// <returns><c>true</c> if a new best score is set, otherwise <c>false</c>.</returns>
     public bool RecordWin(float currentScore)
     {
-        winCount++;
         bool updateResult = UpdateBestScore(currentScore);
+        winCount++;
         DebugPrintRecord(true, currentScore, updateResult);
         return updateResult;
     }
@@ -30,8 +30,8 @@ public class MinigameStatistics
     /// <returns><c>true</c> if a new best score is set, otherwise <c>false</c>.</returns>
     public bool RecordLose(float currentScore)
     {
-        loseCount++;
         bool updateResult = UpdateBestScore(currentScore);
+        loseCount++;
         DebugPrintRecord(false, currentScore, updateResult);
         return updateResult;
     }
@@ -58,7 +58,7 @@ public class MinigameStatistics
     /// <summary>
     /// The best score ever achieved in this minigame.
     /// </summary>
-    public float bestScore = -1f;
+    public float bestScore = 0f;
 
     private readonly string minigameName;
     private readonly bool isBestScoreReversed;
@@ -137,9 +137,11 @@ public class MinigameStatistics
                     + (isWin ? "Win" : "Loss")
                     + " "
                     + $"win={winCount} loss={loseCount} "
-                    + $"best score: {currentScore}"
-                    + (updateResult ? "->" : "-!>")
-                    + $"{bestScore}"
+                    + (
+                        updateResult
+                            ? $"New Best Score:{bestScore}"
+                            : $"current score={currentScore} best={bestScore}"
+                    )
             );
         }
     }
