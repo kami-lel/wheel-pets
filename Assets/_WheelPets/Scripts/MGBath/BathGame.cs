@@ -63,6 +63,7 @@ public class BathGame : SceneSwapping
     private bool gameActive = false;
 
     private BathSceneScript sceneScript;
+    private bool lossNotRecorded = true;
 
     void Start()
     {
@@ -89,6 +90,7 @@ public class BathGame : SceneSwapping
 
         // Get reference to the BathSceneScript
         sceneScript = FindFirstObjectByType<BathSceneScript>();
+        lossNotRecorded = true;
     }
 
     public void BackButtonOnClick()
@@ -107,9 +109,13 @@ public class BathGame : SceneSwapping
         // Check if mistakes reached "XXX" and switch to PetGame Scene
         if (mistakeText.text == "XXX")
         {
+            if (lossNotRecorded)
+            {
+                lossNotRecorded = false;
+                Data.GetPlayerData().statBath.RecordLose(timer);
+            }
             gameActive = false;
             pauseOverlay.MinigameLost();
-            Data.GetPlayerData().statBath.RecordLose(timer);
             if (sceneScript != null)
             {
                 sceneScript.ShowPlayAgainButton();
