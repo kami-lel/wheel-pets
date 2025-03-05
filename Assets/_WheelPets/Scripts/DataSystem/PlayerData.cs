@@ -53,7 +53,6 @@ public class PlayerData
     public float bgmVolume = 1f;
 
     // statistics of minigames
-    // BUG link them with the minigames
     public MinigameStatistics statBath = new("bath");
     public MinigameStatistics statFeed = new("feed");
     public MinigameStatistics statFetch = new("fetch");

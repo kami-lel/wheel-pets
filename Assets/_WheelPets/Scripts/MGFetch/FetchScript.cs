@@ -75,7 +75,7 @@ public class FetchScript : MonoBehaviour
 
                 // Update the high score if the current score is higher
                 Data.GetPlayerData()
-                    .statFetch.RecordLose(fetchUpdateScore.Score);
+                    .statFetch.RecordWin(fetchUpdateScore.Score);
             }
         }
     }
@@ -131,7 +131,7 @@ public class FetchScript : MonoBehaviour
             pauseOverlay.MinigameLost();
             Debug.Log("Game Over! Final Score: " + fetchUpdateScore.Score);
 
-            Data.GetPlayerData().statFetch.RecordLose(fetchUpdateScore.Score);
+            Data.GetPlayerData().statFetch.RecordWin(fetchUpdateScore.Score);
         }
     }
 

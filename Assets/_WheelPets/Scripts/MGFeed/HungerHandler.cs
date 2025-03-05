@@ -89,7 +89,7 @@ public class HungerHandler : MonoBehaviour
         )
         {
             pauseOverlay.MinigameLost();
-            Data.GetPlayerData().statFeed.RecordLose((float)score);
+            Data.GetPlayerData().statFeed.RecordWin((float)score);
         }
     }
 
