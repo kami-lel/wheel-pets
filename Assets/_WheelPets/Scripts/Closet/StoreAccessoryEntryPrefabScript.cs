@@ -71,10 +71,13 @@ public class StoreAccessoryEntry : MonoBehaviour
     /// </summary>
     private void UpdateButtonInteractable()
     {
+        bool isPurchasable = (
+            Data.accessoryManager.IsPurchasable(accessoryType) == 0
+        );
         bool purchased = Data.accessoryManager.HasPurchased(accessoryType);
         bool wearing = Data.accessoryManager.IsWearing(accessoryType);
 
-        purchaseButton.interactable = !purchased;
+        purchaseButton.interactable = isPurchasable;
         equipButton.interactable = purchased && !wearing;
         unequipButton.interactable = wearing;
     }
