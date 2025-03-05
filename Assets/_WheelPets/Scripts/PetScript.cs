@@ -67,6 +67,10 @@ public class PetScript : MonoBehaviour
 
         activeAnimation = activePet.GetComponent<Animation>();
         activeAnimation.Play(animationName);
+        Debug.LogWarning(activeAnimation); // HACK
+        Debug.LogWarning(activeAnimation.GetClipCount()); // HACK
+        Debug.LogWarning(activeAnimation.clip); // HACK
+        Debug.LogWarning(activeAnimation.isPlaying); // HACK
 
         UpdateLookColor();
         UpdateLookAccessory();
