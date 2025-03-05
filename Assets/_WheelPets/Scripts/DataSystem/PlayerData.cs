@@ -56,7 +56,7 @@ public class PlayerData
     // statistics of minigames
     // BUG link them with the minigames
     public MinigameStatistics statBath = new("bath", true);
-    public MinigameStatistics statFeed = new("feed", false);
+    public MinigameStatistics statFeed = new("feed");
     public MinigameStatistics statFetch = new("fetch", false);
     public MinigameStatistics statHide = new("hide", false);
     public MinigameStatistics statTug = new("tug", false);
