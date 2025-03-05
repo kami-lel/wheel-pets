@@ -84,16 +84,7 @@ public class PetScript : MonoBehaviour
     private void Start()
     {
         PlayerData data = Data.GetPlayerData();
-        if (data != null)
-        {
-            petData = data.petData;
-            UpdateLook();
-        }
-        else
-        {
-            Debug.LogError("PlayerData is null");
-        }
-
+        petData = data.petData;
         UpdateLook();
     }
 
