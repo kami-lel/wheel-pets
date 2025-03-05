@@ -28,7 +28,9 @@ public class Data
             _playerData = JsonUtility.FromJson<PlayerData>(jsonText);
             if (_playerData == null)
             {
-                throw new InvalidOperationException("Failed to deserialize PlayerData from JSON.");
+                throw new InvalidOperationException(
+                    "Failed to deserialize PlayerData from JSON."
+                );
             }
 
             if (Debug.isDebugBuild)
@@ -62,6 +64,7 @@ public class Data
 
         // create a accessory manager that is linked with playerData
         accessoryManager = new AccessoryManager(_playerData);
+        pointCoinManager = new PointCoinManager(_playerData);
     }
 
     public static void SavePlayerDataToFile()
@@ -88,7 +91,9 @@ public class Data
             )
                 if (Debug.isDebugBuild)
                 {
-                    Debug.LogError($"Data\tPlayer Data fail to save to file: {saveFilePath}");
+                    Debug.LogError(
+                        $"Data\tPlayer Data fail to save to file: {saveFilePath}"
+                    );
                 }
         }
     }
@@ -104,6 +109,7 @@ public class Data
     }
 
     public static AccessoryManager accessoryManager;
+    public static PointCoinManager pointCoinManager;
     private static PlayerData _playerData = null;
     private static ParameterData _parameterData = null;
 

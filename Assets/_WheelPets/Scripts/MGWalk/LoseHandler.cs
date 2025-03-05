@@ -72,6 +72,8 @@ public class LoseHandler : MonoBehaviour
         Debug.Log("Playing LoseSound...");
         yield return new WaitForSeconds(LoseSound.clip.length); // Wait for the sound to finish
         Debug.Log("Sound finished. Opening Gameover screen...");
+
+        Data.GetPlayerData().statWalk.RecordLose(0f);
         pauseOverlay.MinigameLost();
     }
 }
