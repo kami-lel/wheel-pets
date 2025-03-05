@@ -59,7 +59,7 @@ public class PlayerData
     public MinigameStatistics statFeed = new("feed");
     public MinigameStatistics statFetch = new("fetch");
     public MinigameStatistics statHide = new("hide");
-    public MinigameStatistics statTug = new("tug", false);
+    public MinigameStatistics statTug = new("tug");
     public MinigameStatistics statWalk = new("walk", false);
 
     /// <summary>
