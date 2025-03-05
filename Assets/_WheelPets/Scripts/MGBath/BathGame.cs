@@ -60,10 +60,8 @@ public class BathGame : SceneSwapping
     private float circleRadius = 200f; // Radius of the circle around the dog
 
     private float timer = 0f;
-    private bool gameActive = false;
 
     private BathSceneScript sceneScript;
-    private bool lossNotRecorded = true;
 
     void Start()
     {
@@ -85,12 +83,8 @@ public class BathGame : SceneSwapping
         // Spawn draggable items in a circle around the dog
         SpawnDraggableItems();
 
-        // Start the timer
-        gameActive = true;
-
         // Get reference to the BathSceneScript
         sceneScript = FindFirstObjectByType<BathSceneScript>();
-        lossNotRecorded = true;
     }
 
     public void BackButtonOnClick()
@@ -100,25 +94,20 @@ public class BathGame : SceneSwapping
 
     void Update()
     {
-        if (gameActive)
+        if (pauseOverlay.status == PauseOverlay.Status.Running)
         {
             timer += Time.deltaTime;
             UpdateTimerText();
-        }
 
-        // Check if mistakes reached "XXX" and switch to PetGame Scene
-        if (mistakeText.text == "XXX")
-        {
-            if (lossNotRecorded)
+            // Check if mistakes reached "XXX" and switch to PetGame Scene
+            if (mistakeText.text == "XXX")
             {
-                lossNotRecorded = false;
                 Data.GetPlayerData().statBath.RecordLose(timer);
-            }
-            gameActive = false;
-            pauseOverlay.MinigameLost();
-            if (sceneScript != null)
-            {
-                sceneScript.ShowPlayAgainButton();
+                pauseOverlay.MinigameLost();
+                if (sceneScript != null)
+                {
+                    sceneScript.ShowPlayAgainButton();
+                }
             }
         }
     }
@@ -224,7 +213,6 @@ public class BathGame : SceneSwapping
                     RemoveItem(draggedItem);
                     ScissorSound.Play();
                     pauseOverlay.MinigameWin();
-                    gameActive = false; // Stop the timer
                     Data.GetPlayerData().statBath.RecordWin(timer);
                     if (sceneScript != null)
                     {
