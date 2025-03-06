@@ -4,6 +4,7 @@ using UnityEngine;
 // TODO implement cat & rabbit
 public class PetScript : MonoBehaviour
 {
+    // TODO alternative animation not implemented
     [SerializeField]
     private string animationName = "idle";
 
@@ -41,8 +42,10 @@ public class PetScript : MonoBehaviour
     /// </summary>
     public void PlayAnimation(string animationName)
     {
-        this.animationName = animationName;
-        activeAnimation.Play(animationName);
+        Debug.LogError("alternative animation not implemented yet");
+        return; // TODO allow for alternative animation
+        // this.animationName = animationName;
+        // activeAnimation.Play(animationName);
     }
 
     /// <summary>
@@ -65,12 +68,9 @@ public class PetScript : MonoBehaviour
         activePet.SetActive(true);
         Debug.Log("PetPrefab\tSelect: " + activePet);
 
-        activeAnimation = activePet.GetComponent<Animation>();
-        activeAnimation.Play(animationName);
-        Debug.LogWarning(activeAnimation); // HACK
-        Debug.LogWarning(activeAnimation.GetClipCount()); // HACK
-        Debug.LogWarning(activeAnimation.clip); // HACK
-        Debug.LogWarning(activeAnimation.isPlaying); // HACK
+        // TODO
+        // activeAnimation = activePet.GetComponent<Animation>();
+        // activeAnimation.Play(animationName);
 
         UpdateLookColor();
         UpdateLookAccessory();
@@ -83,7 +83,7 @@ public class PetScript : MonoBehaviour
 
     private PlayerData.PetData petData;
     private GameObject activePet;
-    private Animation activeAnimation;
+    private Animation activeAnimation; // TODO not implemented yet
 
     private void Start()
     {
