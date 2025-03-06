@@ -5,12 +5,12 @@ using UnityEngine;
 public class PetScript : MonoBehaviour
 {
     // TODO alternative animation not implemented
-    [SerializeField]
-    private string animationName = "idle";
+    // [SerializeField]
+    // private string animationName = "idle";
 
     // TODO show name of the pet above
-    [SerializeField]
-    private bool showPetName = true;
+    // [SerializeField]
+    // private bool showPetName = true;
 
     [SerializeField]
     private GameObject dog;
