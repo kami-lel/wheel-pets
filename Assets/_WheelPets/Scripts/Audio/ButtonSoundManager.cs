@@ -5,8 +5,7 @@ public class ButtonSoundManager : MonoBehaviour
 {
     private static ButtonSoundManager instance;
 
-    [SerializeField] private AudioClip buttonClickSound;
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource buttonClickAudioSource;
 
     void Awake()
     {
@@ -14,7 +13,6 @@ public class ButtonSoundManager : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
-            audioSource = gameObject.AddComponent<AudioSource>();
             gameObject.AddComponent<ButtonSoundHandler>(); // Add ButtonSoundHandler to the same GameObject
         }
         else
@@ -25,9 +23,9 @@ public class ButtonSoundManager : MonoBehaviour
 
     public static void PlayButtonClickSound()
     {
-        if (instance != null && instance.buttonClickSound != null)
+        if (instance != null && instance.buttonClickAudioSource != null)
         {
-            instance.audioSource.PlayOneShot(instance.buttonClickSound);
+            instance.buttonClickAudioSource.Play();
         }
     }
 }
