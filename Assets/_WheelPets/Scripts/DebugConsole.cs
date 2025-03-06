@@ -115,7 +115,7 @@ public class DebugConsole : MonoBehaviour
         switch (args[0])
         {
             case "car":
-                success = ExecuteCommandCar(args);
+                success = true;
                 break;
 
             case "scene":
@@ -136,21 +136,6 @@ public class DebugConsole : MonoBehaviour
         // clean up
         commandField.text = string.Empty;
         container.SetActive(false);
-    }
-
-    private bool ExecuteCommandCar(string[] args)
-    {
-        string enumName = args[1];
-
-        if (Enum.TryParse(enumName, out CarAPI.Event eve))
-        {
-            CarAPI.Emit(eve);
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 
     private bool ExecuteCommandScene(string[] args)
