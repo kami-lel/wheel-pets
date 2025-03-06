@@ -766,6 +766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlsEnabled: 1
   grass: {fileID: 863000251}
+  fallGravity: 50
   yVariation: 0.1
   body: {fileID: 527695192}
   jumpAmount: 50
@@ -2252,7 +2253,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -960.00006, y: -540}
+  m_AnchoredPosition: {x: -959.99994, y: -540}
   m_SizeDelta: {x: -1920.0001, y: -1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1102274907
