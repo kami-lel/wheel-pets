@@ -16,8 +16,8 @@ public class KeyHole : MonoBehaviour
     {
         stick = transform.parent.Find("carshift_0").GetComponent<ParkStick>();
         sr = transform.gameObject.GetComponent<SpriteRenderer>();
-        lturn = transform.parent.Find("carturn_0").GetComponent<TurnSignal>();
-        rturn = transform.parent.Find("carturn_1").GetComponent<TurnSignal>();
+        rturn = transform.parent.Find("carturn_0").GetComponent<TurnSignal>();
+        lturn = transform.parent.Find("carturn_1").GetComponent<TurnSignal>();
         enginesound = transform.GetComponent<AudioSource>();
 
     }
@@ -25,7 +25,27 @@ public class KeyHole : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (keyTurn)
+        {
+            if (Input.GetKey(KeyCode.Q))
+            {
+                lturn.turning = true;
+                if (rturn.turning == true)
+                {
+                    rturn.turning = false;
+                }
+            }
+            else if (Input.GetKey(KeyCode.E))
+            {
+                rturn.turning = true;
+                if (lturn.turning == true)
+                {
+                    lturn.turning = false;
+                }
+            }
+        }
+
+
         if (currentTurn > 0)
         {
 
@@ -36,6 +56,9 @@ public class KeyHole : MonoBehaviour
 
     private void OnMouseDown()
     {
+
+
+
         if (stick.carState == 0)
         {
             keyTurn = !keyTurn;
