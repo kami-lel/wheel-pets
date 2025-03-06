@@ -46,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -125,12 +125,12 @@ TextureImporter:
       name: bunny_idle_secondary_0
       rect:
         serializedVersion: 2
-        x: 11
-        y: 6
-        width: 14
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 40
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -147,12 +147,12 @@ TextureImporter:
       name: bunny_idle_secondary_1
       rect:
         serializedVersion: 2
-        x: 51
-        y: 6
-        width: 12
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 40
+        y: 0
+        width: 40
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -169,12 +169,12 @@ TextureImporter:
       name: bunny_idle_secondary_2
       rect:
         serializedVersion: 2
-        x: 91
-        y: 6
-        width: 12
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 80
+        y: 0
+        width: 40
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -191,12 +191,12 @@ TextureImporter:
       name: bunny_idle_secondary_3
       rect:
         serializedVersion: 2
-        x: 131
-        y: 6
-        width: 12
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 120
+        y: 0
+        width: 40
+        height: 40
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -213,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 89871e81a79a1e743bb0c1f5e9534c7d
     internalID: 0
     vertices: []
     indices: 
@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bunny_idle_secondary_0: 8545380970772884865
+      bunny_idle_secondary_1: -3499297975801333317
+      bunny_idle_secondary_2: -6517530987206566348
+      bunny_idle_secondary_3: 2607346294979374162
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
