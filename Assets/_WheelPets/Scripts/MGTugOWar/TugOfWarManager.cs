@@ -1,8 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-// BUG missing script bug report in console
-// FIXME button not connected
+// fixme button not connected
 // fixme improve instruction, can't turn off instruction
 public class TugOfWarManager : MonoBehaviour
 {
