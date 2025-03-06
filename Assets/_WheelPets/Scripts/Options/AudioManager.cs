@@ -33,34 +33,37 @@ public class AudioManager : MonoBehaviour
 
         audioMixer.SetFloat(
             MusicVolumeParam,
-            Mathf.Log10(data.musicVolume) * 20
-        );
-        audioMixer.SetFloat(SFXVolumeParam, Mathf.Log10(data.sfxVolume) * 20);
-        audioMixer.SetFloat(
-            MusicVolumeParam,
-            data.muteMusic ? -80 : Mathf.Log10(data.musicVolume) * 20
+            data.musicVolume > 0 ? Mathf.Log10(data.musicVolume) * 20 : -80
         );
         audioMixer.SetFloat(
             SFXVolumeParam,
-            data.muteSfx ? -80 : Mathf.Log10(data.sfxVolume) * 20
+            data.sfxVolume > 0 ? Mathf.Log10(data.sfxVolume) * 20 : -80
+        );
+        audioMixer.SetFloat(
+            MusicVolumeParam,
+            data.muteMusic ? -80 : (data.musicVolume > 0 ? Mathf.Log10(data.musicVolume) * 20 : -80)
+        );
+        audioMixer.SetFloat(
+            SFXVolumeParam,
+            data.muteSfx ? -80 : (data.sfxVolume > 0 ? Mathf.Log10(data.sfxVolume) * 20 : -80)
         );
     }
 
     public void UpdateMusicVolume(float volume)
     {
-        audioMixer.SetFloat(MusicVolumeParam, Mathf.Log10(volume) * 20);
+        audioMixer.SetFloat(MusicVolumeParam, volume > 0 ? Mathf.Log10(volume) * 20 : -80);
     }
 
     public void UpdateSFXVolume(float volume)
     {
-        audioMixer.SetFloat(SFXVolumeParam, Mathf.Log10(volume) * 20);
+        audioMixer.SetFloat(SFXVolumeParam, volume > 0 ? Mathf.Log10(volume) * 20 : -80);
     }
 
     public void MuteMusic(bool mute)
     {
         audioMixer.SetFloat(
             MusicVolumeParam,
-            mute ? -80 : Mathf.Log10(Data.GetPlayerData().musicVolume) * 20
+            mute ? -80 : (Data.GetPlayerData().musicVolume > 0 ? Mathf.Log10(Data.GetPlayerData().musicVolume) * 20 : -80)
         );
     }
 
@@ -68,7 +71,7 @@ public class AudioManager : MonoBehaviour
     {
         audioMixer.SetFloat(
             SFXVolumeParam,
-            mute ? -80 : Mathf.Log10(Data.GetPlayerData().sfxVolume) * 20
+            mute ? -80 : (Data.GetPlayerData().sfxVolume > 0 ? Mathf.Log10(Data.GetPlayerData().sfxVolume) * 20 : -80)
         );
     }
 }
