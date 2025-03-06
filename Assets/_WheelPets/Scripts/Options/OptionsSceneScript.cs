@@ -53,38 +53,44 @@ public class OptionsSceneScript : MonoBehaviour
     }
 
     /// <summary>
-    /// Handles the Puppy button click event. Sets the pet type to Dog
-    /// </summary>
+    /// Handles the Puppy button click event. Sets the pet type to Dog.
+    /// /// </summary>
     public void OnClickPuppyButton()
     {
         petData.animalType = PlayerData.AnimalType.Dog;
         petPrefabObject.UpdateLook();
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("OptionsScene\tChange Animal to Dog");
+        }
     }
 
     /// <summary>
-    /// Handles the Kitten button click event. Sets the pet type to Cat
+    /// Handles the Kitten button click event. Sets the pet type to Cat.
     /// </summary>
     public void OnClickKittenButton()
     {
-        // todo need to implement cat
-        Debug.LogWarning("Cat asset not ready yet.");
+        petData.animalType = PlayerData.AnimalType.Cat;
+        petPrefabObject.UpdateLook();
 
-        // restore after implmenting cat
-        // petData.animalType = PlayerData.AnimalType.Cat;
-        // petPrefabObject.UpdateLook();
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("OptionsScene\tChange Animal to Cat");
+        }
     }
 
     /// <summary>
-    /// Handles the Rabbit button click event. Sets the pet type to Rabbit
+    /// Handles the Rabbit button click event. Sets the pet type to Rabbit.
     /// </summary>
     public void OnClickRabbitButton()
     {
-        // todo need to implement rabbit
-        Debug.LogWarning("Rabbit Avatar not ready yet.");
+        petData.animalType = PlayerData.AnimalType.Rabbit;
+        petPrefabObject.UpdateLook();
 
-        // restore after implmenting rabbit
-        // petData.animalType = PlayerData.AnimalType.Rabbit;
-        // petPrefabObject.UpdateLook();
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log("OptionsScene\tChange Animal to Rabbit");
+        }
     }
 
     private PlayerData playerData;
