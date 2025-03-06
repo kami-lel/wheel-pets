@@ -94,25 +94,167 @@ public class PetScript : MonoBehaviour
 
     private void UpdateLookColor()
     {
-        // update dominant color
+        Color dominantColor,
+            secondaryColor;
+
+        // map hue value to actual color
+        switch (petData.animalType)
+        {
+            case PlayerData.AnimalType.Dog:
+            default:
+                dominantColor = CreateColorDom(
+                    -0.2f,
+                    0.35f,
+                    0.8f,
+                    0.8f,
+                    0.7f,
+                    0.9f
+                );
+                secondaryColor = CreateColorSec(
+                    0f,
+                    1f,
+                    0.2f,
+                    0.35f,
+                    1.0f,
+                    1.0f
+                );
+                break;
+
+            case PlayerData.AnimalType.Cat:
+                dominantColor = Color.HSVToRGB(
+                    petData.dominantColorHue,
+                    0.5f,
+                    0.5f
+                );
+                secondaryColor = Color.HSVToRGB(
+                    petData.secondaryColorHue,
+                    0.5f,
+                    0.5f
+                );
+                break;
+
+            case PlayerData.AnimalType.Rabbit:
+                dominantColor = Color.HSVToRGB(
+                    petData.dominantColorHue,
+                    0.5f,
+                    0.5f
+                );
+                secondaryColor = Color.HSVToRGB(
+                    petData.secondaryColorHue,
+                    0.5f,
+                    0.5f
+                );
+                break;
+        }
+
+        // update primary color
         SpriteRenderer dominantRenderer = activePet
             .transform.Find("Dominant")
             .gameObject.GetComponent<SpriteRenderer>();
-        dominantRenderer.color = Color.HSVToRGB(
-            petData.dominantColorHue,
-            0.8f,
-            0.2f
-        );
+        dominantRenderer.color = dominantColor;
+        ;
 
         // update secondary color
         SpriteRenderer secondaryRenderer = activePet
             .transform.Find("Secondary")
             .gameObject.GetComponent<SpriteRenderer>();
-        secondaryRenderer.color = Color.HSVToRGB(
-            petData.secondaryColorHue,
-            0.1f,
-            1f
+        secondaryRenderer.color = secondaryColor;
+    }
+
+    private Color CreateColorDom(
+        float hBegin,
+        float hEnd,
+        float sBegin,
+        float sEnd,
+        float vBegin,
+        float vEnd
+    )
+    {
+        float value = petData.dominantColorHue;
+        return CreateColorFromRange(
+            value,
+            hBegin,
+            hEnd,
+            sBegin,
+            sEnd,
+            vBegin,
+            vEnd,
+            true
         );
+    }
+
+    private Color CreateColorSec(
+        float hBegin,
+        float hEnd,
+        float sBegin,
+        float sEnd,
+        float vBegin,
+        float vEnd
+    )
+    {
+        float value = petData.secondaryColorHue;
+        return CreateColorFromRange(
+            value,
+            hBegin,
+            hEnd,
+            sBegin,
+            sEnd,
+            vBegin,
+            vEnd,
+            false
+        );
+    }
+
+    private Color CreateColorFromRange(
+        float hueValue,
+        float hBegin,
+        float hEnd,
+        float sBegin,
+        float sEnd,
+        float vBegin,
+        float vEnd,
+        bool isDom
+    )
+    {
+        float h = Lerp(hueValue, hBegin, hEnd);
+        float s = Lerp(hueValue, sBegin, sEnd);
+        float v = Lerp(hueValue, vBegin, vEnd);
+
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log(
+                "Pet\t"
+                    + (isDom ? "Dominant" : "Secondary")
+                    + $"Color\th:{h} s:{s} v:{v}"
+            );
+        }
+
+        return Color.HSVToRGB(h, s, v);
+    }
+
+    private float Lerp(float value, float opt_begin, float opt_end)
+    {
+        // optimization
+        if (opt_begin == opt_end)
+        {
+            return opt_begin;
+        }
+        else if (opt_begin == 0f && opt_end == 1f)
+        {
+            return value;
+        }
+
+        float output = opt_begin + value * (opt_end - opt_begin);
+        // Adjust output based on value conditions
+        if (value < 0)
+        {
+            output += 1f; // Add 1 if value is less than 0
+        }
+        else if (value > 1)
+        {
+            output -= 1f; // Subtract 1 if value is greater than 1
+        }
+        return output;
     }
 
     private void UpdateLookAccessory()
