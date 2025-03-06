@@ -49,7 +49,7 @@ public class AccessoryManager
         {
             return 1;
         }
-        else if (playerData.minigameCoin < ACCESSORY_PRICES[accessory])
+        else if (playerData.minigameCoin < GetPrice(accessory))
         {
             return 2;
         }
@@ -74,8 +74,7 @@ public class AccessoryManager
         {
             // Success: accessory is purchasable
             // deduct money / coin
-            int price = ACCESSORY_PRICES[accessory];
-            playerData.minigameCoin -= price;
+            playerData.minigameCoin -= GetPrice(accessory);
 
             // add to inventory
             playerData.purchasedAccessories.Add(accessory);
@@ -90,7 +89,7 @@ public class AccessoryManager
                         "AccessoryManager\t"
                             + accessory.ToString()
                             + "\tPurchased for "
-                            + $"{ACCESSORY_PRICES[accessory]} coins"
+                            + $"{GetPrice(accessory)} coins"
                     );
                     break; // Proceed with purchase or further actions
                 case 1:
@@ -219,7 +218,19 @@ public class AccessoryManager
         return 0; // Successfully unequipped
     }
 
-    private PlayerData playerData;
+    /// <summary>
+    /// Retrieves the price of a specific accessory.
+    /// </summary>
+    /// <param name="accessory">The accessory type for which to get the price.</param>
+    /// <returns>
+    /// The price of the specified accessory in coins.
+    /// </returns>
+    public int GetPrice(AccessoryType accessory)
+    {
+        return ACCESSORY_PRICES[accessory];
+    }
+
+    private readonly PlayerData playerData;
 
     public AccessoryManager(PlayerData playerData)
     {
