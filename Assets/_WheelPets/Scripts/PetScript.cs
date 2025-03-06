@@ -103,18 +103,18 @@ public class PetScript : MonoBehaviour
             case PlayerData.AnimalType.Dog:
             default:
                 dominantColor = CreateColorDom(
-                    -0.2f,
-                    0.35f,
+                    -0.06f,
+                    0.15f,
                     0.8f,
-                    0.8f,
+                    0.65f,
                     0.7f,
                     0.9f
                 );
                 secondaryColor = CreateColorSec(
                     0f,
                     1f,
+                    0.1f,
                     0.2f,
-                    0.35f,
                     1.0f,
                     1.0f
                 );
