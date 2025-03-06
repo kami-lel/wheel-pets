@@ -32,7 +32,7 @@ public class PlayerData
     public int timesParkedWithoutTouchingLines = 0;
     public int stopSignsStoppedAt = 0;
 
-    // BUG these data fields are deprecated
+    // bug these data fields are deprecated
     public int tugOfWarGamesWon = 0;
     public int timesPetWashed = 0;
     public int timesHideNSeekWon = 0;
