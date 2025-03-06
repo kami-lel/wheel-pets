@@ -24,14 +24,23 @@ public class ButtonSoundHandler : MonoBehaviour
     private void AttachButtonSoundHandlers()
     {
         // Find all buttons in the scene and add the OnClick listener
-        Button[] buttons = FindObjectsOfType<Button>();
+        Button[] buttons = FindObjectsByType<Button>(0);
+
         foreach (Button button in buttons)
         {
-            AddEventTrigger(button.gameObject, EventTriggerType.PointerClick, OnButtonClick);
+            AddEventTrigger(
+                button.gameObject,
+                EventTriggerType.PointerClick,
+                OnButtonClick
+            );
         }
     }
 
-    private void AddEventTrigger(GameObject obj, EventTriggerType type, System.Action<BaseEventData> action)
+    private void AddEventTrigger(
+        GameObject obj,
+        EventTriggerType type,
+        System.Action<BaseEventData> action
+    )
     {
         EventTrigger trigger = obj.GetComponent<EventTrigger>();
         if (trigger == null)
