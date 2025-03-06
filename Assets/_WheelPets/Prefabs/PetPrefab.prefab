@@ -226,7 +226,6 @@ Animation:
   m_Animation: {fileID: 7400000, guid: eeab86349821afb4286286a05d044802, type: 2}
   m_Animations:
   - {fileID: 7400000, guid: eeab86349821afb4286286a05d044802, type: 2}
-  - {fileID: 7400000, guid: b0f1456e1f65d3d49b1de2f979f0eca0, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -545,8 +544,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38c916cddec9d7429dc48d62c3ef4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationName: idle
-  showPetName: 1
   dog: {fileID: 3191048591017607901}
   dogAccessoryGroup: {fileID: 2175837310223012307}
   cat: {fileID: 2869976314571978408}
@@ -1469,7 +1466,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5744369215754537144, guid: 26edba78a353b0148a027fa3b28047fa, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6249789188503280566, guid: 26edba78a353b0148a027fa3b28047fa, type: 3}
       propertyPath: m_Name
