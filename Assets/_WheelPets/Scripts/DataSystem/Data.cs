@@ -26,6 +26,12 @@ public class Data
         {
             string jsonText = File.ReadAllText(saveFilePath);
             _playerData = JsonUtility.FromJson<PlayerData>(jsonText);
+            if (_playerData == null)
+            {
+                throw new InvalidOperationException(
+                    "Failed to deserialize PlayerData from JSON."
+                );
+            }
 
             if (Debug.isDebugBuild)
             {
@@ -34,7 +40,11 @@ public class Data
         }
         catch (Exception ex)
         {
-            if (ex is FileNotFoundException || ex is ArgumentException)
+            if (
+                ex is FileNotFoundException
+                || ex is ArgumentException
+                || ex is InvalidOperationException
+            )
             {
                 // create an default PlayerData instance
                 _playerData = new PlayerData();
@@ -54,6 +64,7 @@ public class Data
 
         // create a accessory manager that is linked with playerData
         accessoryManager = new AccessoryManager(_playerData);
+        pointCoinManager = new PointCoinManager(_playerData);
     }
 
     public static void SavePlayerDataToFile()
@@ -98,6 +109,7 @@ public class Data
     }
 
     public static AccessoryManager accessoryManager;
+    public static PointCoinManager pointCoinManager;
     private static PlayerData _playerData = null;
     private static ParameterData _parameterData = null;
 

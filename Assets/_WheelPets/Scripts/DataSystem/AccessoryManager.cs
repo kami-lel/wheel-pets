@@ -1,18 +1,60 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AccessoryManager
 {
-    private PlayerData playerData;
+    private static Dictionary<AccessoryType, int> ACCESSORY_PRICES =
+        new Dictionary<AccessoryType, int>
+        {
+            { AccessoryType.Bowtie, 50 },
+            { AccessoryType.Tie, 75 },
+            { AccessoryType.Chain, 100 },
+            { AccessoryType.CapHat, 125 },
+            { AccessoryType.CowboyHat, 150 },
+            { AccessoryType.TopHat, 175 },
+            { AccessoryType.AngularChevronGlasses, 60 },
+            { AccessoryType.RectangularGlasses, 85 },
+            { AccessoryType.SpikedEdgeGlasses, 110 },
+            { AccessoryType.WingGlasses, 145 },
+        };
 
-    public AccessoryManager(PlayerData playerData)
-    {
-        this.playerData = playerData;
-    }
-
+    /// <summary>
+    /// Checks whether the player has purchased a specific accessory.
+    /// </summary>
+    /// <param name="accessory">The accessory type to check for purchase status.</param>
+    /// <returns>
+    /// Returns true if the accessory has been purchased, false otherwise.
+    /// This allows for verifying whether the item is already owned by the player.
+    /// </returns>
     public bool HasPurchased(AccessoryType accessory)
     {
         return playerData.purchasedAccessories.Contains(accessory);
+    }
+
+    /// <summary>
+    /// Determines whether an accessory can be purchased for the player.
+    /// The accessory is purchasable if it has not been purchased yet
+    /// and the player has enough coins to make the purchase.
+    /// </summary>
+    /// <param name="accessory">The accessory type to check for purchase status.</param>
+    /// <returns>
+    /// 0 if the accessory is purchasable,
+    /// 1 if the accessory has already been purchased,
+    /// 2 if there are not enough coins to make the purchase.
+    /// </returns>
+    public byte IsPurchasable(AccessoryType accessory)
+    {
+        if (HasPurchased(accessory))
+        {
+            return 1;
+        }
+        else if (playerData.minigameCoin < GetPrice(accessory))
+        {
+            return 2;
+        }
+
+        return 0;
     }
 
     /// <summary>
@@ -26,43 +68,52 @@ public class AccessoryManager
     /// </returns>
     public byte Purchase(AccessoryType accessory)
     {
-        if (HasPurchased(accessory))
-        {
-            if (Debug.isDebugBuild)
-            {
-                Debug.Log(
-                    "AccessoryManager\t"
-                        + accessory.ToString()
-                        + "\tFail to Purchase: already bought"
-                );
-            }
-            return 1;
-        }
-        else if (playerData.gamePoint < -1) // todo check if has enough point
-        {
-            if (Debug.isDebugBuild)
-            {
-                Debug.Log(
-                    "AccessoryManager\t"
-                        + accessory.ToString()
-                        + "\tFail to Purchase: not enough money"
-                );
-            }
-            return 2;
-        }
+        byte isPurchasable = IsPurchasable(accessory);
 
-        // todo deduct money logic
+        if (isPurchasable == 0)
+        {
+            // Success: accessory is purchasable
+            // deduct money / coin
+            playerData.minigameCoin -= GetPrice(accessory);
 
-        // add to inventory
-        playerData.purchasedAccessories.Add(accessory);
+            // add to inventory
+            playerData.purchasedAccessories.Add(accessory);
+        }
 
         if (Debug.isDebugBuild)
         {
-            Debug.Log(
-                "AccessoryManager\t" + accessory.ToString() + "\tPurchased"
-            );
+            switch (isPurchasable)
+            {
+                case 0:
+                    Debug.Log(
+                        "AccessoryManager\t"
+                            + accessory.ToString()
+                            + "\tPurchased for "
+                            + $"{GetPrice(accessory)} coins"
+                    );
+                    break; // Proceed with purchase or further actions
+                case 1:
+                    Debug.Log(
+                        "AccessoryManager\t"
+                            + accessory.ToString()
+                            + "\tCannot Purchase: Already Bought"
+                    );
+                    // Handle already purchased logic here
+                    break;
+                case 2:
+                    Debug.Log(
+                        "AccessoryManager\t"
+                            + accessory.ToString()
+                            + "\tCannot Purchase: Not Enough Coins"
+                    );
+                    // Handle insufficient coins logic here
+                    break;
+                default:
+                    break;
+            }
         }
-        return 0;
+
+        return isPurchasable;
     }
 
     public bool IsWearing(AccessoryType accessory)
@@ -165,5 +216,24 @@ public class AccessoryManager
             );
         }
         return 0; // Successfully unequipped
+    }
+
+    /// <summary>
+    /// Retrieves the price of a specific accessory.
+    /// </summary>
+    /// <param name="accessory">The accessory type for which to get the price.</param>
+    /// <returns>
+    /// The price of the specified accessory in coins.
+    /// </returns>
+    public int GetPrice(AccessoryType accessory)
+    {
+        return ACCESSORY_PRICES[accessory];
+    }
+
+    private readonly PlayerData playerData;
+
+    public AccessoryManager(PlayerData playerData)
+    {
+        this.playerData = playerData;
     }
 }

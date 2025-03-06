@@ -7,6 +7,7 @@ public class DogJump : MonoBehaviour
     // Common Fields
     public bool controlsEnabled = true; // Enable/disable functionality globally
     [SerializeField] private RectTransform grass; // Reference to the grass (UI element)
+    [SerializeField] private float fallGravity; // Gravity affecting fall speed (customizable)
 
     // Jump Fields
     public float yVariation = 2f; // Vertical randomization range
@@ -54,6 +55,7 @@ public class DogJump : MonoBehaviour
 
     void FixedUpdate()
     {
+        ApplyGravity();
         ProcessJump();
     }
 
@@ -109,4 +111,21 @@ public class DogJump : MonoBehaviour
         yield return new WaitForSeconds(delay);
         controlsEnabled = true;
     }
+
+
+private void ApplyGravity()
+{
+    if (!isGrounded && body != null)
+    {
+        body.linearVelocity += new Vector2(0, -fallGravity * Time.fixedDeltaTime);
+
+        // Optional: Limit max fall speed for more control
+        float maxFallSpeed = -5f;  // Adjust for floatiness
+        if (body.linearVelocity.y < maxFallSpeed)
+        {
+            body.linearVelocity = new Vector2(body.linearVelocity.x, maxFallSpeed);
+        }
+    }
+}
+
 }

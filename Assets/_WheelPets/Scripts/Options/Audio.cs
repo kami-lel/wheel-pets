@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// fixme make audio manager an prefab?
 public class AudioControls : MonoBehaviour
 {
     [SerializeField]
@@ -9,12 +8,6 @@ public class AudioControls : MonoBehaviour
 
     [SerializeField]
     private Slider sfxVolumeSlider;
-
-    [SerializeField]
-    private Toggle muteMusicToggle;
-
-    [SerializeField]
-    private Toggle muteSfxToggle;
 
     private PlayerData data;
 
@@ -33,8 +26,6 @@ public class AudioControls : MonoBehaviour
         // Initialize the sliders and toggles
         musicVolumeSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxVolumeSlider.onValueChanged.AddListener(SetSFXVolume);
-        muteMusicToggle.onValueChanged.AddListener(SetMuteMusic);
-        muteSfxToggle.onValueChanged.AddListener(SetMuteSFX);
 
         // Set initial values
         UpdateUI();
@@ -44,16 +35,13 @@ public class AudioControls : MonoBehaviour
     {
         musicVolumeSlider.value = data.musicVolume;
         sfxVolumeSlider.value = data.sfxVolume;
-        muteMusicToggle.isOn = data.muteMusic;
-        muteSfxToggle.isOn = data.muteSfx;
     }
 
     private void SaveSettings()
     {
         data.musicVolume = musicVolumeSlider.value;
         data.sfxVolume = sfxVolumeSlider.value;
-        data.muteMusic = muteMusicToggle.isOn;
-        data.muteSfx = muteSfxToggle.isOn;
+        Data.SavePlayerDataToFile();
     }
 
     private void UpdateUI()
@@ -67,16 +55,6 @@ public class AudioControls : MonoBehaviour
         if (sfxVolumeSlider != null)
         {
             sfxVolumeSlider.value = data.sfxVolume;
-        }
-
-        if (muteMusicToggle != null)
-        {
-            muteMusicToggle.isOn = data.muteMusic;
-        }
-
-        if (muteSfxToggle != null)
-        {
-            muteSfxToggle.isOn = data.muteSfx;
         }
     }
 

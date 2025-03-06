@@ -23,19 +23,16 @@ public class CarScript : MonoBehaviour
     ShakyScript shill;
     ShakyScript sland;
 
-
-
     public int score = 0; // When the car is in park, you can see your score.
     public int maxscore = 0; // This is the maximum amount of points you could have earned during this scene. Each perfect encounter is +3, each flawed is +1.
     public int turns = 0; // The number of turns (from turn sign) where you turned on your turn signal before turning.
     public int stops = 0; // The number of stop signs where you stopped before passing the sign.
     public int parks = 0; // The number of times you put the car in park after making sure it was stopped.
 
-
     private float signprog = 0; // From 0 to 100, fades from 0-20, and you have until 80 (80 to 100 fades out) to respond.
     private int signtype = 0; // 0 is cooldown, 1 is stop, 2 is turn right, 3 is turn left.
     private int currentpoints = 0; // this is added to score each event, but by being more than zero, you know the event has concluded.
-    
+
     private bool lturn = false;
     private bool rturn = false;
     private float spin = 0;
@@ -57,7 +54,7 @@ public class CarScript : MonoBehaviour
     void Start()
     {
         wheel = GameObject.Find("carwheel_0");
-        
+
         keyhole = transform.Find("carkey_0");
         stick = transform.Find("carshift_0").GetComponent<ParkStick>();
         turnl = transform.Find("carturn_1");
@@ -88,6 +85,9 @@ public class CarScript : MonoBehaviour
     {
         brakes = false;
         accel = false;
+        
+
+
         if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
         {
             brakes = true;
@@ -96,8 +96,6 @@ public class CarScript : MonoBehaviour
         {
             accel = true;
         }
-
-        
 
         if (stick.carState == 3) // We're Driving!!!
         {
@@ -124,13 +122,11 @@ public class CarScript : MonoBehaviour
             }
             else
             {
-                
-                
                 if (speed <= basespeed - 1)
                 {
                     speed++;
                 }
-                else if(speed >= basespeed + 1)
+                else if (speed >= basespeed + 1)
                 {
                     speed--;
                 }
@@ -139,16 +135,11 @@ public class CarScript : MonoBehaviour
                     speed = basespeed;
                 }
             }
-            
-
-
         }
         else
         {
             speed = 0;
         }
-
-
 
         lturn = false;
         rturn = false;
@@ -164,12 +155,10 @@ public class CarScript : MonoBehaviour
         if (lturn && !rturn)
         {
             spin++;
-            
         }
         else if (rturn && !lturn)
         {
             spin--;
-            
         }
         else if (!(lturn || rturn))
         {
@@ -179,11 +168,6 @@ public class CarScript : MonoBehaviour
                 spin = 0;
             }
         }
-
-
-
-
-
 
         //Debug.Log(speed);
         //Visual effects for speed and stuff
@@ -196,7 +180,6 @@ public class CarScript : MonoBehaviour
         {
             if (signprog == 0 && Random.Range(1, 150) == 49)
             {
-                
                 signprog += Time.deltaTime * 80 * (speed / maxspeed);
                 signtype = Random.Range(1, 4);
 
@@ -215,24 +198,82 @@ public class CarScript : MonoBehaviour
                     signturn.GetComponent<SpriteRenderer>().flipX = true;
                 }
 
-                currentsign.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1,((float) signprog ) / 20f);
-                currentsign.position = currentsign.GetComponent<SignScript>().startpos + (currentsign.GetComponent<SignScript>().endpoint.position - currentsign.GetComponent<SignScript>().startpos) / 100;
-                currentsign.localScale = currentsign.GetComponent<SignScript>().startscale + (currentsign.GetComponent<SignScript>().endpoint.localScale - currentsign.GetComponent<SignScript>().startscale) / 100;
-
+                currentsign.GetComponent<SpriteRenderer>().color = new Color(
+                    1,
+                    1,
+                    1,
+                    ((float)signprog) / 20f
+                );
+                currentsign.position =
+                    currentsign.GetComponent<SignScript>().startpos
+                    + (
+                        currentsign
+                            .GetComponent<SignScript>()
+                            .endpoint.position
+                        - currentsign.GetComponent<SignScript>().startpos
+                    ) / 100;
+                currentsign.localScale =
+                    currentsign.GetComponent<SignScript>().startscale
+                    + (
+                        currentsign
+                            .GetComponent<SignScript>()
+                            .endpoint.localScale
+                        - currentsign.GetComponent<SignScript>().startscale
+                    ) / 100;
             }
-            else if (signprog > 0 && signprog < 20 )
+            else if (signprog > 0 && signprog < 20)
             {
                 signprog += Time.deltaTime * 80 * (speed / maxspeed);
-                currentsign.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, ((float)signprog) / 20f);
-                currentsign.position = currentsign.GetComponent<SignScript>().startpos + (currentsign.GetComponent<SignScript>().endpoint.position - currentsign.GetComponent<SignScript>().startpos) * signprog / 100;
-                currentsign.localScale = currentsign.GetComponent<SignScript>().startscale + (currentsign.GetComponent<SignScript>().endpoint.localScale - currentsign.GetComponent<SignScript>().startscale) * signprog / 100;
-
+                currentsign.GetComponent<SpriteRenderer>().color = new Color(
+                    1,
+                    1,
+                    1,
+                    ((float)signprog) / 20f
+                );
+                currentsign.position =
+                    currentsign.GetComponent<SignScript>().startpos
+                    + (
+                        currentsign
+                            .GetComponent<SignScript>()
+                            .endpoint.position
+                        - currentsign.GetComponent<SignScript>().startpos
+                    )
+                        * signprog
+                        / 100;
+                currentsign.localScale =
+                    currentsign.GetComponent<SignScript>().startscale
+                    + (
+                        currentsign
+                            .GetComponent<SignScript>()
+                            .endpoint.localScale
+                        - currentsign.GetComponent<SignScript>().startscale
+                    )
+                        * signprog
+                        / 100;
             }
             else if (signprog > 0 && signprog < 80)
             {
                 signprog += Time.deltaTime * 80 * (speed / maxspeed);
-                currentsign.position = currentsign.GetComponent<SignScript>().startpos + (currentsign.GetComponent<SignScript>().endpoint.position - currentsign.GetComponent<SignScript>().startpos) * signprog / 100;
-                currentsign.localScale = currentsign.GetComponent<SignScript>().startscale + (currentsign.GetComponent<SignScript>().endpoint.localScale - currentsign.GetComponent<SignScript>().startscale) * signprog / 100;
+                currentsign.position =
+                    currentsign.GetComponent<SignScript>().startpos
+                    + (
+                        currentsign
+                            .GetComponent<SignScript>()
+                            .endpoint.position
+                        - currentsign.GetComponent<SignScript>().startpos
+                    )
+                        * signprog
+                        / 100;
+                currentsign.localScale =
+                    currentsign.GetComponent<SignScript>().startscale
+                    + (
+                        currentsign
+                            .GetComponent<SignScript>()
+                            .endpoint.localScale
+                        - currentsign.GetComponent<SignScript>().startscale
+                    )
+                        * signprog
+                        / 100;
 
                 if (currentpoints == 0)
                 {
@@ -241,8 +282,11 @@ public class CarScript : MonoBehaviour
                         maxscore += 10;
                         currentpoints += 10;
                         score += 10;
-                        playerData.drivingPoint+=10;
-                        signstop.GetComponent<SignScript>().endpoint.GetComponent<AudioSource>().Play();
+                        playerData.drivingPoint += 10;
+                        signstop
+                            .GetComponent<SignScript>()
+                            .endpoint.GetComponent<AudioSource>()
+                            .Play();
                         stops++;
                     }
                     else if (signtype == 2 && spin < 0 && rturn)
@@ -253,7 +297,10 @@ public class CarScript : MonoBehaviour
                             currentpoints += 10;
                             score += 10;
                             playerData.drivingPoint += 10;
-                            signstop.GetComponent<SignScript>().endpoint.GetComponent<AudioSource>().Play();
+                            signstop
+                                .GetComponent<SignScript>()
+                                .endpoint.GetComponent<AudioSource>()
+                                .Play();
                             turns++;
                         }
                         else
@@ -269,7 +316,10 @@ public class CarScript : MonoBehaviour
                             currentpoints += 10;
                             score += 10;
                             playerData.drivingPoint += 10;
-                            signstop.GetComponent<SignScript>().endpoint.GetComponent<AudioSource>().Play();
+                            signstop
+                                .GetComponent<SignScript>()
+                                .endpoint.GetComponent<AudioSource>()
+                                .Play();
                             turns++;
                         }
                         else
@@ -282,13 +332,32 @@ public class CarScript : MonoBehaviour
             else if (signprog > 0 && signprog < 100)
             {
                 signprog += Time.deltaTime * 80 * (speed / maxspeed);
-                currentsign.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1f - (((float)signprog - 80f) / 20f));
-                currentsign.position = currentsign.GetComponent<SignScript>().startpos + (currentsign.GetComponent<SignScript>().endpoint.position - currentsign.GetComponent<SignScript>().startpos) * signprog / 100;
-                currentsign.localScale = currentsign.GetComponent<SignScript>().startscale + (currentsign.GetComponent<SignScript>().endpoint.localScale - currentsign.GetComponent<SignScript>().startscale) * signprog / 100;
-
-
-
-                
+                currentsign.GetComponent<SpriteRenderer>().color = new Color(
+                    1,
+                    1,
+                    1,
+                    1f - (((float)signprog - 80f) / 20f)
+                );
+                currentsign.position =
+                    currentsign.GetComponent<SignScript>().startpos
+                    + (
+                        currentsign
+                            .GetComponent<SignScript>()
+                            .endpoint.position
+                        - currentsign.GetComponent<SignScript>().startpos
+                    )
+                        * signprog
+                        / 100;
+                currentsign.localScale =
+                    currentsign.GetComponent<SignScript>().startscale
+                    + (
+                        currentsign
+                            .GetComponent<SignScript>()
+                            .endpoint.localScale
+                        - currentsign.GetComponent<SignScript>().startscale
+                    )
+                        * signprog
+                        / 100;
             }
 
             if (signprog >= 100)
@@ -300,24 +369,18 @@ public class CarScript : MonoBehaviour
                     maxscore += 10;
                 }
                 currentpoints = 0;
-
-
             }
 
-            playerData.drivingMiles += 0.0001f;
             if (!drivesound.isPlaying)
             {
-                
                 //score++;
                 //maxscore++;
                 //drivesound.Play();
             }
-        else
+            else
             {
                 drivesound.Pause();
             }
         }
     }
-
-    
 }

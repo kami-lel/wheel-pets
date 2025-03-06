@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,6 +39,11 @@ public class StoreAccessoryEntry : MonoBehaviour
         }
         accessoryType = accessory_temp;
 
+        // give button its price value
+        purchaseButton
+            .transform.GetChild(0)
+            .GetComponent<TMP_Text>()
+            .SetText(Data.accessoryManager.GetPrice(accessoryType).ToString());
         UpdateButtonInteractable();
     }
 
@@ -74,8 +80,30 @@ public class StoreAccessoryEntry : MonoBehaviour
         bool purchased = Data.accessoryManager.HasPurchased(accessoryType);
         bool wearing = Data.accessoryManager.IsWearing(accessoryType);
 
-        purchaseButton.interactable = !purchased;
-        equipButton.interactable = purchased && !wearing;
-        unequipButton.interactable = wearing;
+        if (purchased)
+        {
+            purchaseButton.gameObject.SetActive(false);
+            if (wearing)
+            {
+                equipButton.gameObject.SetActive(false);
+                unequipButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                equipButton.gameObject.SetActive(true);
+                unequipButton.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            purchaseButton.gameObject.SetActive(true);
+
+            bool isPurchasable =
+                Data.accessoryManager.IsPurchasable(accessoryType) == 0;
+            purchaseButton.interactable = isPurchasable;
+
+            equipButton.gameObject.SetActive(false);
+            unequipButton.gameObject.SetActive(false);
+        }
     }
 }
