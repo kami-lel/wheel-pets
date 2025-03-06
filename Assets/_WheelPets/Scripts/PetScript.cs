@@ -98,6 +98,7 @@ public class PetScript : MonoBehaviour
             secondaryColor;
 
         // map hue value to actual color
+        // FIXME parameter can be better
         switch (petData.animalType)
         {
             case PlayerData.AnimalType.Dog:
@@ -121,28 +122,40 @@ public class PetScript : MonoBehaviour
                 break;
 
             case PlayerData.AnimalType.Cat:
-                dominantColor = Color.HSVToRGB(
-                    petData.dominantColorHue,
-                    0.5f,
-                    0.5f
+                dominantColor = CreateColorSec(
+                    -0.06f,
+                    0.15f,
+                    0.8f,
+                    0.65f,
+                    0.7f,
+                    0.9f
                 );
-                secondaryColor = Color.HSVToRGB(
-                    petData.secondaryColorHue,
-                    0.5f,
-                    0.5f
+                secondaryColor = CreateColorDom(
+                    0f,
+                    1f,
+                    0.1f,
+                    0.2f,
+                    1.0f,
+                    1.0f
                 );
                 break;
 
             case PlayerData.AnimalType.Rabbit:
-                dominantColor = Color.HSVToRGB(
-                    petData.dominantColorHue,
-                    0.5f,
-                    0.5f
+                dominantColor = CreateColorDom(
+                    -0.06f,
+                    0.15f,
+                    0.8f,
+                    0.65f,
+                    0.7f,
+                    0.9f
                 );
-                secondaryColor = Color.HSVToRGB(
-                    petData.secondaryColorHue,
-                    0.5f,
-                    0.5f
+                secondaryColor = CreateColorSec(
+                    0f,
+                    1f,
+                    0.1f,
+                    0.2f,
+                    1.0f,
+                    1.0f
                 );
                 break;
         }
