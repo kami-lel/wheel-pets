@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 // todo beautify reset data pop up
 // todo beautify adopt a pet pop up
+// bug add button click sounds
+// bug music / sfx slide is broken
 public class OptionsSceneScript : MonoBehaviour
 {
     [SerializeField]

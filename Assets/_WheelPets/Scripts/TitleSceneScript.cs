@@ -1,6 +1,5 @@
 using UnityEngine;
 
-// TODO check if adoption logic is correct
 public class TitleSceneScript : MonoBehaviour
 {
     [SerializeField]
