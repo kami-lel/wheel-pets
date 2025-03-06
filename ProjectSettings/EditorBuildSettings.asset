@@ -35,10 +35,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_WheelPets/Scenes/Minigames/HideNSeekScene.unity
     guid: 4b8da04e8faa046bc9a8cf5521066994
-  - enabled: 1
+  - enabled: 0
     path: Assets/_WheelPets/Scenes/Minigames/SimonSaysScene.unity
     guid: 00217d35faf7841e1a64eb0883ef2035
-  - enabled: 1
+  - enabled: 0
     path: Assets/_WheelPets/Scenes/Minigames/TreatFindingScene.unity
     guid: 4f9335f7aa4d047ddbad21e8dfb46608
   - enabled: 1
@@ -47,7 +47,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_WheelPets/Scenes/Minigames/WalkScene.unity
     guid: 11cddacdbb7604c4795027ee7121eaae
-  - enabled: 1
+  - enabled: 0
     path: Assets/_WheelPets/Scenes/PlayScene.unity
     guid: 6409b4fb9b54249e49c15d4262187265
   m_configObjects:
