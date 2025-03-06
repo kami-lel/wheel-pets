@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-// fixme make audio manager an prefab?
 public class AudioControls : MonoBehaviour
 {
     [SerializeField]
@@ -54,6 +53,7 @@ public class AudioControls : MonoBehaviour
         data.sfxVolume = sfxVolumeSlider.value;
         data.muteMusic = muteMusicToggle.isOn;
         data.muteSfx = muteSfxToggle.isOn;
+        Data.SavePlayerDataToFile();
     }
 
     private void UpdateUI()
