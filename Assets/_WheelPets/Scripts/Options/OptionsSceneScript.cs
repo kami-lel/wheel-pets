@@ -61,6 +61,7 @@ public class OptionsSceneScript : MonoBehaviour
     {
         playerData.ChangeAnimalType(PlayerData.AnimalType.Dog);
         petPrefabObject.UpdateLook();
+        UpdateSliderVisual();
         if (Debug.isDebugBuild)
         {
             Debug.Log("OptionsScene\tChange Animal to Dog");
@@ -74,6 +75,7 @@ public class OptionsSceneScript : MonoBehaviour
     {
         playerData.ChangeAnimalType(PlayerData.AnimalType.Cat);
         petPrefabObject.UpdateLook();
+        UpdateSliderVisual();
 
         if (Debug.isDebugBuild)
         {
@@ -88,6 +90,7 @@ public class OptionsSceneScript : MonoBehaviour
     {
         playerData.ChangeAnimalType(PlayerData.AnimalType.Rabbit);
         petPrefabObject.UpdateLook();
+        UpdateSliderVisual();
 
         if (Debug.isDebugBuild)
         {
@@ -123,8 +126,11 @@ public class OptionsSceneScript : MonoBehaviour
             playerData.hasAdoptPet = true;
             adoptAPetPopUp.SetActive(true);
         }
+        UpdateSliderVisual();
+    }
 
-        // set up sliders values
+    private void UpdateSliderVisual()
+    {
         dominantColorSlider.value = playerData.petData.dominantColorHue;
         secondaryColorSlider.value = playerData.petData.secondaryColorHue;
     }
