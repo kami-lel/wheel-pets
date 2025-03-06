@@ -59,7 +59,7 @@ public class OptionsSceneScript : MonoBehaviour
     /// /// </summary>
     public void OnClickPuppyButton()
     {
-        petData.animalType = PlayerData.AnimalType.Dog;
+        playerData.ChangeAnimalType(PlayerData.AnimalType.Dog);
         petPrefabObject.UpdateLook();
         if (Debug.isDebugBuild)
         {
@@ -72,7 +72,7 @@ public class OptionsSceneScript : MonoBehaviour
     /// </summary>
     public void OnClickKittenButton()
     {
-        petData.animalType = PlayerData.AnimalType.Cat;
+        playerData.ChangeAnimalType(PlayerData.AnimalType.Cat);
         petPrefabObject.UpdateLook();
 
         if (Debug.isDebugBuild)
@@ -86,7 +86,7 @@ public class OptionsSceneScript : MonoBehaviour
     /// </summary>
     public void OnClickRabbitButton()
     {
-        petData.animalType = PlayerData.AnimalType.Rabbit;
+        playerData.ChangeAnimalType(PlayerData.AnimalType.Rabbit);
         petPrefabObject.UpdateLook();
 
         if (Debug.isDebugBuild)

@@ -49,12 +49,12 @@ public class PetScript : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates the appearance of the pet from petData
+    /// Updates the appearance of the pet from data.petData
     /// </summary>
     public void UpdateLook()
     {
         // decide type of the animal
-        activePet = petData.animalType switch
+        activePet = data.petData.animalType switch
         {
             PlayerData.AnimalType.Dog => dog,
             PlayerData.AnimalType.Cat => cat,
@@ -81,14 +81,13 @@ public class PetScript : MonoBehaviour
         }
     }
 
-    private PlayerData.PetData petData;
     private GameObject activePet;
+    private PlayerData data;
     private Animation activeAnimation; // todo not implemented yet
 
     private void Start()
     {
-        PlayerData data = Data.GetPlayerData();
-        petData = data.petData;
+        data = Data.GetPlayerData();
         UpdateLook();
     }
 
@@ -99,7 +98,7 @@ public class PetScript : MonoBehaviour
 
         // map hue value to actual color
         // fixme parameter can be better
-        switch (petData.animalType)
+        switch (data.petData.animalType)
         {
             case PlayerData.AnimalType.Dog:
             default:
@@ -183,7 +182,7 @@ public class PetScript : MonoBehaviour
         float vEnd
     )
     {
-        float value = petData.dominantColorHue;
+        float value = data.petData.dominantColorHue;
         return CreateColorFromRange(
             value,
             hBegin,
@@ -205,7 +204,7 @@ public class PetScript : MonoBehaviour
         float vEnd
     )
     {
-        float value = petData.secondaryColorHue;
+        float value = data.petData.secondaryColorHue;
         return CreateColorFromRange(
             value,
             hBegin,
@@ -273,7 +272,7 @@ public class PetScript : MonoBehaviour
     private void UpdateLookAccessory()
     {
         // decide type of the animal
-        GameObject activePetAccessoryGroup = petData.animalType switch
+        GameObject activePetAccessoryGroup = data.petData.animalType switch
         {
             PlayerData.AnimalType.Dog => dogAccessoryGroup,
             PlayerData.AnimalType.Cat => catAccessoryGroup,
@@ -293,7 +292,7 @@ public class PetScript : MonoBehaviour
             if (accessoryTransform != null)
             {
                 // set active condition
-                bool isWearing = petData.currentAccessories.Contains(
+                bool isWearing = data.petData.currentAccessories.Contains(
                     accessory
                 );
                 accessoryTransform.gameObject.SetActive(isWearing);

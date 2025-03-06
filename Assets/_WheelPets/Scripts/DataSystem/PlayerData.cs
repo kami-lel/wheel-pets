@@ -87,6 +87,15 @@ public class PlayerData
     public PetData petData = new();
     public List<AccessoryType> purchasedAccessories = new();
 
+    public void ChangeAnimalType(AnimalType animalType)
+    {
+        // reset pet data
+        petData = new();
+
+        petData.animalType = animalType;
+        // todo get a random name for pet
+    }
+
     // Language preference
     public string language = "en";
 
