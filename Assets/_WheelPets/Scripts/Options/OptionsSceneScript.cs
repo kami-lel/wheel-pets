@@ -61,7 +61,7 @@ public class OptionsSceneScript : MonoBehaviour
     {
         playerData.ChangeAnimalType(PlayerData.AnimalType.Dog);
         petPrefabObject.UpdateLook();
-        UpdateSliderVisual();
+        ZeroSliderVisual();
         if (Debug.isDebugBuild)
         {
             Debug.Log("OptionsScene\tChange Animal to Dog");
@@ -75,7 +75,7 @@ public class OptionsSceneScript : MonoBehaviour
     {
         playerData.ChangeAnimalType(PlayerData.AnimalType.Cat);
         petPrefabObject.UpdateLook();
-        UpdateSliderVisual();
+        ZeroSliderVisual();
 
         if (Debug.isDebugBuild)
         {
@@ -90,7 +90,7 @@ public class OptionsSceneScript : MonoBehaviour
     {
         playerData.ChangeAnimalType(PlayerData.AnimalType.Rabbit);
         petPrefabObject.UpdateLook();
-        UpdateSliderVisual();
+        ZeroSliderVisual();
 
         if (Debug.isDebugBuild)
         {
@@ -126,13 +126,15 @@ public class OptionsSceneScript : MonoBehaviour
             playerData.hasAdoptPet = true;
             adoptAPetPopUp.SetActive(true);
         }
-        UpdateSliderVisual();
-    }
 
-    private void UpdateSliderVisual()
-    {
         dominantColorSlider.value = playerData.petData.dominantColorHue;
         secondaryColorSlider.value = playerData.petData.secondaryColorHue;
+    }
+
+    private void ZeroSliderVisual()
+    {
+        dominantColorSlider.value = 0f;
+        secondaryColorSlider.value = 0f;
     }
 
     private void SetLocale(string localeCode)
