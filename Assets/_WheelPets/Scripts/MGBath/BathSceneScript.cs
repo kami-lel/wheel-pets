@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // todo add more instruction for how to play the game
-// todo add high score function
 public class BathSceneScript : MonoBehaviour
 {
     public GameObject playAgainButton;

@@ -1,10 +1,8 @@
 using System.Collections;
 using UnityEngine;
 
-// BUG missing script bug report in console
-// todo add more instruction for how to play the game
-// todo add high score function
-// todo feels too easy to spam tap, maybe make a restriction on tapping?
+// fixme button not connected
+// fixme improve instruction, can't turn off instruction
 public class TugOfWarManager : MonoBehaviour
 {
     public GameObject ropeLine;

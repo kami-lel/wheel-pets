@@ -63,7 +63,7 @@ public class LeaderboardPlayer : MonoBehaviour
             + $"Times Parked Without Touching Lines: {data.timesParkedWithoutTouchingLines}\n"
             + $"Stop Signs Stopped At: {data.stopSignsStoppedAt}";
 
-        // BUG these data fields are deprecated
+        // bug these data fields are deprecated, use the new stat system
         minigameStatsText.text =
             $"Tug Of War Games Won: {data.tugOfWarGamesWon}\n"
             + $"Times Pet Washed: {data.timesPetWashed}\n"

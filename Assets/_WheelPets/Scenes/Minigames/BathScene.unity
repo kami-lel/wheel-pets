@@ -352,7 +352,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2089323337}
         m_TargetAssemblyTypeName: PauseOverlay, Assembly-CSharp
-        m_MethodName: PauseButtonOnClick
+        m_MethodName: MinigamePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1892,7 +1892,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2089323337}
         m_TargetAssemblyTypeName: PauseOverlay, Assembly-CSharp
-        m_MethodName: PauseButtonOnClick
+        m_MethodName: MinigamePause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2541,7 +2541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4cfa0b17de69495ea8d34dd01300f51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonClickSound: {fileID: 0}
   targetCollider: {fileID: 1184928739}
   mistakeText: {fileID: 583667824}
   messageText: {fileID: 404339}

@@ -1,12 +1,9 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-// todo implement visual cue for find/not find dog (in addition to audio cue) for accessibility reason
 // todo add more instruction for how to play the game
-// todo add high score function
+// todo add best score system: fastest time to find the pet
 
 public class Hide_n_Seek : MonoBehaviour
 {

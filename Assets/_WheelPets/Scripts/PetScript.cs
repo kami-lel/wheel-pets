@@ -53,6 +53,7 @@ public class PetScript : MonoBehaviour
     /// </summary>
     public void UpdateLook()
     {
+        data = Data.GetPlayerData();
         // decide type of the animal
         activePet = data.petData.animalType switch
         {
@@ -68,7 +69,7 @@ public class PetScript : MonoBehaviour
         activePet.SetActive(true);
         Debug.Log("PetPrefab\tSelect: " + activePet);
 
-        // todo
+        // todo implement different animation
         // activeAnimation = activePet.GetComponent<Animation>();
         // activeAnimation.Play(animationName);
 
@@ -83,11 +84,10 @@ public class PetScript : MonoBehaviour
 
     private GameObject activePet;
     private PlayerData data;
-    private Animation activeAnimation; // todo not implemented yet
+    private Animation activeAnimation; // todo implement different animation
 
     private void Start()
     {
-        data = Data.GetPlayerData();
         UpdateLook();
     }
 

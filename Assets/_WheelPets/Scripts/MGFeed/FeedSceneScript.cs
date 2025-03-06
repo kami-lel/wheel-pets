@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 // fixme Confusion on how to play because there were no numbers
 // todo add more instruction for how to play the game
-// todo add high score function
+// bug instruction button not working
 public class FeedSceneScript : MonoBehaviour
 {
     public void BackButtonOnClick()

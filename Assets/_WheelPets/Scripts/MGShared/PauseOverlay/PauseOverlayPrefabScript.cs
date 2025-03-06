@@ -25,12 +25,6 @@ public class PauseOverlay : MonoBehaviour
         restartConfirmContainer.gameObject.SetActive(true);
     }
 
-    // HACK backward compatiblity
-    public void PauseButtonOnClick()
-    {
-        MinigamePause();
-    }
-
     /// <summary>
     /// This function should be called when the minigame ends
     /// with a victory.

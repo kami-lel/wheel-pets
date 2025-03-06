@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 // todo add more instruction for how to play the game
 // todo add high score function
+// bug button not connected
 
 // a single loose
 public class LoseHandler : MonoBehaviour

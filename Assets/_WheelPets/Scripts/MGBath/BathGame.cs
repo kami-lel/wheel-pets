@@ -1,23 +1,19 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 
-public class BathGame : SceneSwapping
+public class BathGame : MonoBehaviour
 {
-    [SerializeField]
     public BoxCollider2D targetCollider; // The collider to check for collisions with
 
     [SerializeField]
-    public TextMeshProUGUI mistakeText; // Text to display mistakes
+    private TextMeshProUGUI mistakeText; // Text to display mistakes
 
     [SerializeField]
-    public TextMeshProUGUI messageText; // Text to display messages
+    private TextMeshProUGUI messageText; // Text to display messages
 
     [SerializeField]
-    public TextMeshProUGUI timerText; // Text to display the timer
+    private TextMeshProUGUI timerText; // Text to display the timer
 
     public PauseOverlay pauseOverlay;
 
@@ -260,11 +256,6 @@ public class BathGame : SceneSwapping
     void PlayBackgroundMusic()
     {
         backgroundMusic.Play();
-    }
-
-    void PauseBackgroundMusic()
-    {
-        backgroundMusic.Pause();
     }
 
     private void SpawnDraggableItems()
