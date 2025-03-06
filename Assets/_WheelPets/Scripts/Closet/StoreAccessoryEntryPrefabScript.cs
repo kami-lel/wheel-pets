@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -39,6 +38,8 @@ public class StoreAccessoryEntry : MonoBehaviour
             );
         }
         accessoryType = accessory_temp;
+
+        // give button its price value
         purchaseButton
             .transform.GetChild(0)
             .GetComponent<TMP_Text>()
