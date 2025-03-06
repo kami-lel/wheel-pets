@@ -12,6 +12,10 @@ public class ClosetSceneScript : MonoBehaviour
     {
         SceneChange.LoadTitle();
     }
+    public void OptionsButtonOnClick()
+    {
+        SceneChange.LoadOptions();
+    }
 
     private void Start()
     {

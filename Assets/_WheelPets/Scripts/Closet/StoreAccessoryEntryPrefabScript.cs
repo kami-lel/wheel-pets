@@ -46,6 +46,7 @@ public class StoreAccessoryEntry : MonoBehaviour
         Data.accessoryManager.Purchase(accessoryType);
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
+        purchaseButton.gameObject.SetActive(false);
     }
 
     public void OnClickEquipButton()
@@ -53,6 +54,8 @@ public class StoreAccessoryEntry : MonoBehaviour
         Data.accessoryManager.Equip(accessoryType);
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
+        unequipButton.gameObject.SetActive(true);
+        equipButton.gameObject.SetActive(false);
     }
 
     public void OnClickUnequipButton()
@@ -60,6 +63,8 @@ public class StoreAccessoryEntry : MonoBehaviour
         Data.accessoryManager.Unequip(accessoryType);
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
+        equipButton.gameObject.SetActive(true);
+        unequipButton.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -77,8 +82,9 @@ public class StoreAccessoryEntry : MonoBehaviour
         bool purchased = Data.accessoryManager.HasPurchased(accessoryType);
         bool wearing = Data.accessoryManager.IsWearing(accessoryType);
 
+        purchaseButton.gameObject.SetActive(!purchased);
         purchaseButton.interactable = isPurchasable;
-        equipButton.interactable = purchased && !wearing;
-        unequipButton.interactable = wearing;
+        equipButton.gameObject.SetActive(purchased && !wearing);
+        unequipButton.gameObject.SetActive(wearing);
     }
 }
