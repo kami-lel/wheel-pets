@@ -1,4 +1,4 @@
-using TMPro;
+using System;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
@@ -95,13 +95,23 @@ public class OptionsSceneScript : MonoBehaviour
         }
     }
 
+    public void OnValueChangedDominantColorSlider(Single value)
+    {
+        playerData.petData.dominantColorHue = value;
+        petPrefabObject.UpdateLook();
+    }
+
+    public void OnValueChangedSecondaryjColorSlider(Single value)
+    {
+        playerData.petData.secondaryColorHue = value;
+        petPrefabObject.UpdateLook();
+    }
+
     private PlayerData playerData;
-    private PlayerData.PetData petData;
 
     private void Start()
     {
         playerData = Data.GetPlayerData();
-        petData = playerData.petData;
 
         // 1st time game is launched, adoption process
         if (playerData.hasAdoptPet)
@@ -115,24 +125,8 @@ public class OptionsSceneScript : MonoBehaviour
         }
 
         // set up sliders values
-        dominantColorSlider.value = petData.dominantColorHue;
-        secondaryColorSlider.value = petData.secondaryColorHue;
-
-        // set up sliders event listenr
-        dominantColorSlider.onValueChanged.AddListener(
-            (value) =>
-            {
-                petData.dominantColorHue = value;
-                petPrefabObject.UpdateLook();
-            }
-        );
-        secondaryColorSlider.onValueChanged.AddListener(
-            (value) =>
-            {
-                petData.secondaryColorHue = value;
-                petPrefabObject.UpdateLook();
-            }
-        );
+        dominantColorSlider.value = playerData.petData.dominantColorHue;
+        secondaryColorSlider.value = playerData.petData.secondaryColorHue;
     }
 
     private void SetLocale(string localeCode)

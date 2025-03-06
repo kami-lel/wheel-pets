@@ -183,6 +183,8 @@ public class PetScript : MonoBehaviour
     )
     {
         float value = data.petData.dominantColorHue;
+        // HACK
+        Debug.LogWarning(data.petData.dominantColorHue.ToString());
         return CreateColorFromRange(
             value,
             hBegin,
