@@ -17,22 +17,6 @@ public class StoreAccessoryEntry : MonoBehaviour
 
     private PetScript petPrefab;
     private AccessoryType accessoryType;
-    private Dictionary<String, int> ACCESSORY_PRICES = new Dictionary<
-        String,
-        int
-    >
-    {
-        { "Bowtie", 50 },
-        { "Tie", 75 },
-        { "Chain", 100 },
-        { "CapHat", 125 },
-        { "CowboyHat", 150 },
-        { "TopHat", 175 },
-        { " AngularChevronGlasses", 60 },
-        { " RectangularGlasses", 85 },
-        { " SpikedEdgeGlasses", 110 },
-        { " WingGlasses", 145 },
-    };
 
     private void Start()
     {
@@ -58,7 +42,7 @@ public class StoreAccessoryEntry : MonoBehaviour
         purchaseButton
             .transform.GetChild(0)
             .GetComponent<TMP_Text>()
-            .SetText(ACCESSORY_PRICES[this.name].ToString());
+            .SetText(Data.accessoryManager.GetPrice(accessoryType).ToString());
         UpdateButtonInteractable();
     }
 
@@ -67,7 +51,6 @@ public class StoreAccessoryEntry : MonoBehaviour
         Data.accessoryManager.Purchase(accessoryType);
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
-        purchaseButton.gameObject.SetActive(false);
     }
 
     public void OnClickEquipButton()
@@ -75,8 +58,6 @@ public class StoreAccessoryEntry : MonoBehaviour
         Data.accessoryManager.Equip(accessoryType);
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
-        unequipButton.gameObject.SetActive(true);
-        equipButton.gameObject.SetActive(false);
     }
 
     public void OnClickUnequipButton()
@@ -84,8 +65,6 @@ public class StoreAccessoryEntry : MonoBehaviour
         Data.accessoryManager.Unequip(accessoryType);
         UpdateButtonInteractable();
         petPrefab.UpdateLook();
-        equipButton.gameObject.SetActive(true);
-        unequipButton.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -97,15 +76,33 @@ public class StoreAccessoryEntry : MonoBehaviour
     /// </summary>
     private void UpdateButtonInteractable()
     {
-        bool isPurchasable = (
-            Data.accessoryManager.IsPurchasable(accessoryType) == 0
-        );
         bool purchased = Data.accessoryManager.HasPurchased(accessoryType);
         bool wearing = Data.accessoryManager.IsWearing(accessoryType);
 
-        purchaseButton.gameObject.SetActive(!purchased);
-        purchaseButton.interactable = isPurchasable;
-        equipButton.gameObject.SetActive(purchased && !wearing);
-        unequipButton.gameObject.SetActive(wearing);
+        if (purchased)
+        {
+            purchaseButton.gameObject.SetActive(false);
+            if (wearing)
+            {
+                equipButton.gameObject.SetActive(false);
+                unequipButton.gameObject.SetActive(true);
+            }
+            else
+            {
+                equipButton.gameObject.SetActive(true);
+                unequipButton.gameObject.SetActive(false);
+            }
+        }
+        else
+        {
+            purchaseButton.gameObject.SetActive(true);
+
+            bool isPurchasable =
+                Data.accessoryManager.IsPurchasable(accessoryType) == 0;
+            purchaseButton.interactable = isPurchasable;
+
+            equipButton.gameObject.SetActive(false);
+            unequipButton.gameObject.SetActive(false);
+        }
     }
 }
