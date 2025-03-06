@@ -53,6 +53,7 @@ public class PetScript : MonoBehaviour
     /// </summary>
     public void UpdateLook()
     {
+        data = Data.GetPlayerData();
         // decide type of the animal
         activePet = data.petData.animalType switch
         {
@@ -87,7 +88,6 @@ public class PetScript : MonoBehaviour
 
     private void Start()
     {
-        data = Data.GetPlayerData();
         UpdateLook();
     }
 
