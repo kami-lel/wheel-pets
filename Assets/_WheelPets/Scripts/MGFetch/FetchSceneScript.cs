@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // todo add more instruction for how to play the game
-// todo hight score not updated from data system
+// bug button not connected
 public class FetchSceneScript : MonoBehaviour
 {
     public void BackButtonOnClick()

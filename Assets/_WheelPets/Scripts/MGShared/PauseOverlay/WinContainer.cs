@@ -1,7 +1,6 @@
 using UnityEngine;
 
 // fixme need ui re-design
-// todo linked with game stat
 public class WinContainer : MonoBehaviour
 {
     private PauseOverlay pauseOverlay;

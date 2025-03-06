@@ -42,7 +42,7 @@ public class LocalizedLeaderboardText : MonoBehaviour
         {
             minigameStatsTextEvent.StringReference.Arguments = new object[]
             {
-                // BUG these data fields are deprecated
+                // bug these data fields are deprecated, use the new stat system
                 data.tugOfWarGamesWon,
                 data.timesPetWashed,
                 data.timesHideNSeekWon,
