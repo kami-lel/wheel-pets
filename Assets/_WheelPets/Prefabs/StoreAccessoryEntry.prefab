@@ -654,9 +654,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3687517944789626202}
-  - {fileID: 5175685935322521892}
   - {fileID: 6305535178804148079}
+  - {fileID: 5175685935322521892}
+  - {fileID: 3687517944789626202}
   - {fileID: 457151517152923427}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -680,7 +680,6 @@ MonoBehaviour:
   purchaseButton: {fileID: 7109647762363891649}
   equipButton: {fileID: 9021930101956502772}
   unequipButton: {fileID: 2637037404807489860}
-  accessorySprite: {fileID: 4024320346124498796}
 --- !u!1 &7369888533456106357
 GameObject:
   m_ObjectHideFlags: 0

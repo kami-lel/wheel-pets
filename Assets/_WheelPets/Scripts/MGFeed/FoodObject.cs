@@ -8,11 +8,16 @@ public class FoodObject : MonoBehaviour
     [SerializeField] int ScoreAmount = 1;
     [SerializeField] FoodTypes FoodType = FoodTypes.Food1;
     private bool WasMouseDown = false;
+    [SerializeField] private GameObject Pauseverlay;
 
     // Update is called once per frame
+    private void Start()
+    {
+        Pauseverlay = GameObject.Find("PauseOverlay");
+    }
     void Update() //to-do: figure out if touchscreen counts as mouse position.
     {
-        if (WasMouseDown) // 
+        if (WasMouseDown && (Pauseverlay.GetComponent<PauseOverlay>().status == PauseOverlay.Status.Running)) // 
         {
             Vector3 mousePos = Input.mousePosition;
             mousePos.z = 10f;
