@@ -644,6 +644,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7329160227167309070, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
+      propertyPath: animationName
+      value: walk
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329160227167309070, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
+      propertyPath: initialiAnimationName
+      value: walk
+      objectReference: {fileID: 0}
     - target: {fileID: 8024345900797591538, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
       propertyPath: m_LocalScale.x
       value: 8.8
