@@ -246,11 +246,11 @@ public class PetScript : MonoBehaviour
 
         float output = opt_begin + value * (opt_end - opt_begin);
         // Adjust output based on value conditions
-        if (value < 0)
+        if (output < 0)
         {
             output += 1f; // Add 1 if value is less than 0
         }
-        else if (value > 1)
+        else if (output > 1)
         {
             output -= 1f; // Subtract 1 if value is greater than 1
         }
