@@ -6,7 +6,6 @@ using UnityEngine;
 [Serializable]
 public class PlayerData
 {
-    // todo language seletion saved?
     // initialize with <b>default value</b>, i.e. factory reset value
     public string playerName = "Pet Owner";
     public int drivingPoint = 0;
