@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
@@ -23,6 +24,9 @@ public class OptionsSceneScript : MonoBehaviour
 
     [SerializeField]
     private Slider secondaryColorSlider;
+
+    [SerializeField]
+    private TextMeshProUGUI petNameTextField;
 
     public void OnClickBackButon()
     {
@@ -49,9 +53,10 @@ public class OptionsSceneScript : MonoBehaviour
         resetDataPopUp.SetActive(true);
     }
 
-    public void OnClickRandomNameButton()
+    public void OnEndEditPetNameTextField(string value)
     {
-        // todo implement random new name
+        Debug.LogWarning("name" + value);
+        // TODO
     }
 
     /// <summary>
