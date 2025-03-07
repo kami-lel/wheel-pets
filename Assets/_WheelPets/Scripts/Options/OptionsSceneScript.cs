@@ -55,8 +55,11 @@ public class OptionsSceneScript : MonoBehaviour
 
     public void OnEndEditPetNameTextField(string value)
     {
-        Debug.LogWarning("name" + value);
-        // TODO
+        playerData.petData.name = value;
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log($"OptionsScene\tChange Pet Name:{value}");
+        }
     }
 
     /// <summary>
