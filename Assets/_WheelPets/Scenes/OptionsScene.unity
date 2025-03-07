@@ -616,7 +616,7 @@ MonoBehaviour:
   petPrefabObject: {fileID: 1988351630}
   dominantColorSlider: {fileID: 251848445}
   secondaryColorSlider: {fileID: 998964779}
-  petNameTextField: {fileID: 0}
+  petNameTextFieldPlaceholder: {fileID: 1513572957}
 --- !u!4 &172834718
 Transform:
   m_ObjectHideFlags: 0

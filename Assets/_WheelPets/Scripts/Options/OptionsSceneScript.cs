@@ -26,7 +26,7 @@ public class OptionsSceneScript : MonoBehaviour
     private Slider secondaryColorSlider;
 
     [SerializeField]
-    private TextMeshProUGUI petNameTextField;
+    private TextMeshProUGUI petNameTextFieldPlaceholder;
 
     public void OnClickBackButon()
     {
