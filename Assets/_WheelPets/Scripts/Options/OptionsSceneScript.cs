@@ -132,8 +132,10 @@ public class OptionsSceneScript : MonoBehaviour
             adoptAPetPopUp.SetActive(true);
         }
 
+        // set up ui component initial values
         dominantColorSlider.value = playerData.petData.dominantColorHue;
         secondaryColorSlider.value = playerData.petData.secondaryColorHue;
+        petNameTextFieldPlaceholder.text = playerData.petData.name;
     }
 
     private void ZeroSliderVisual()
