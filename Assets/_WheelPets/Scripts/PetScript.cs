@@ -1,16 +1,15 @@
 using System;
 using UnityEngine;
 
+// FIXME enable/disable pet name option in all scenes
 public class PetScript : MonoBehaviour
 {
     // todo alternative animation not implemented
     // [SerializeField]
     // private string animationName = "idle";
 
-    // todo show name of the pet above
-    // todo select a random name
-    // [SerializeField]
-    // private bool showPetName = true;
+    [SerializeField]
+    private bool showPetName = true;
 
     [SerializeField]
     private GameObject dog;
