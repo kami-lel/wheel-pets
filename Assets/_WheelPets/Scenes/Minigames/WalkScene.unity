@@ -776,11 +776,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controlsEnabled: 1
   grass: {fileID: 863000251}
-  fallGravity: 50
+  fallGravity: 60
+  fallMultiplier: 1
   yVariation: 0.1
   body: {fileID: 527695192}
   jumpAmount: 50
   jumpSound: {fileID: 799469167}
+  maxJumpHoldTime: 0.001
+  initialJumpForce: 70
+  holdJumpForce: 1
 --- !u!50 &527695192
 Rigidbody2D:
   serializedVersion: 5
@@ -1552,6 +1556,7 @@ GameObject:
   - component: {fileID: 785171838}
   - component: {fileID: 785171837}
   - component: {fileID: 785171836}
+  - component: {fileID: 785171839}
   m_Layer: 5
   m_Name: Instructions
   m_TagString: Untagged
@@ -1621,7 +1626,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 785171837}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 785171839}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &785171837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1660,6 +1677,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 785171834}
   m_CullTransparentMesh: 1
+--- !u!114 &785171839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785171834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e91198ef4d0e94e3ebecb1562c683335, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &787969380
 GameObject:
   m_ObjectHideFlags: 0
