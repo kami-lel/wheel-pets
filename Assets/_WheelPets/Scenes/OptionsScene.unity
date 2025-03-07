@@ -616,6 +616,7 @@ MonoBehaviour:
   petPrefabObject: {fileID: 1988351630}
   dominantColorSlider: {fileID: 251848445}
   secondaryColorSlider: {fileID: 998964779}
+  petNameTextField: {fileID: 0}
 --- !u!4 &172834718
 Transform:
   m_ObjectHideFlags: 0
@@ -1041,7 +1042,7 @@ GameObject:
   - component: {fileID: 248827078}
   - component: {fileID: 248827077}
   m_Layer: 0
-  m_Name: NameTextField
+  m_Name: PetNameTextField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1128,7 +1129,19 @@ MonoBehaviour:
   m_CharacterLimit: 32
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 172834717}
+        m_TargetAssemblyTypeName: OptionsSceneScript, Assembly-CSharp
+        m_MethodName: OnEndEditPetNameTextField
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnSubmit:
     m_PersistentCalls:
       m_Calls: []
