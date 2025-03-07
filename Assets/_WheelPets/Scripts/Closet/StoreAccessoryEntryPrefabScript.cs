@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +18,8 @@ public class StoreAccessoryEntry : MonoBehaviour
 
     private PetScript petPrefab;
     private AccessoryType accessoryType;
+
+    private List<StoreAccessoryEntry> entries;
 
     private void Start()
     {
@@ -44,27 +48,28 @@ public class StoreAccessoryEntry : MonoBehaviour
             .transform.GetChild(0)
             .GetComponent<TMP_Text>()
             .SetText(Data.accessoryManager.GetPrice(accessoryType).ToString());
-        UpdateButtonInteractable();
+        SetupEntries();
+        UpdateAllButtons();
     }
 
     public void OnClickPurchaseButton()
     {
         Data.accessoryManager.Purchase(accessoryType);
-        UpdateButtonInteractable();
+        UpdateAllButtons();
         petPrefab.UpdateLook();
     }
 
     public void OnClickEquipButton()
     {
         Data.accessoryManager.Equip(accessoryType);
-        UpdateButtonInteractable();
+        UpdateAllButtons();
         petPrefab.UpdateLook();
     }
 
     public void OnClickUnequipButton()
     {
         Data.accessoryManager.Unequip(accessoryType);
-        UpdateButtonInteractable();
+        UpdateAllButtons();
         petPrefab.UpdateLook();
     }
 
@@ -75,7 +80,7 @@ public class StoreAccessoryEntry : MonoBehaviour
     /// player's data, such as whether they can afford an accessory or if
     /// they are currently equipped with it.
     /// </summary>
-    private void UpdateButtonInteractable()
+    public void UpdateButtonInteractable()
     {
         bool purchased = Data.accessoryManager.HasPurchased(accessoryType);
         bool wearing = Data.accessoryManager.IsWearing(accessoryType);
@@ -104,6 +109,26 @@ public class StoreAccessoryEntry : MonoBehaviour
 
             equipButton.gameObject.SetActive(false);
             unequipButton.gameObject.SetActive(false);
+        }
+    }
+
+    private void SetupEntries()
+    {
+        entries = new List<StoreAccessoryEntry>();
+        if (transform.parent != null)
+        {
+            foreach (Transform entryTransform in transform.parent)
+            {
+                entries.Add(entryTransform.gameObject.GetComponent<StoreAccessoryEntry>());
+            }
+        }
+    }
+
+    private void UpdateAllButtons()
+    {
+        foreach(StoreAccessoryEntry entry in entries)
+        {
+            entry.UpdateButtonInteractable();
         }
     }
 }
