@@ -3771,7 +3771,6 @@ MonoBehaviour:
   loseText: {fileID: 1048701277}
   pauseOverlay: {fileID: 8398259692036737289}
   searchCompletion: {fileID: 1075365708}
-  searchAmount: 100
   searchBar: {fileID: 1064470440}
   displaySearchBar: 0
   searchProgress: 0
@@ -4116,6 +4115,7 @@ GameObject:
   - component: {fileID: 1862584833}
   - component: {fileID: 1862584832}
   - component: {fileID: 1862584831}
+  - component: {fileID: 1862584834}
   m_Layer: 5
   m_Name: Couch
   m_TagString: Untagged
@@ -4224,6 +4224,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1862584829}
   m_CullTransparentMesh: 1
+--- !u!95 &1862584834
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862584829}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c795589029be2f449cebf65fac1e834, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1873859647
 PrefabInstance:
   m_ObjectHideFlags: 0
