@@ -53,14 +53,13 @@ public class Hide_n_Seek : MonoBehaviour
 
     public PauseOverlay pauseOverlay;
 
-    public Image searchCompletion;
-    public float searchAmount = 100f;
+    public Image searchCompletion; // Used to display and track completion of search bar
 
-    public GameObject searchBar;
+    public GameObject searchBar; // Game object that holds search bar object
 
-    public bool displaySearchBar = false;
+    public bool displaySearchBar = false; // Hold state of search bar display
 
-    public float searchProgress = 0.0f;
+    public float searchProgress = 0.0f; // Used to increment search bar completion
 
     void Start()
     {
@@ -87,6 +86,7 @@ public class Hide_n_Seek : MonoBehaviour
 
     void Update()
     {
+        // Fill up the search bar in 1 second (increment of 10% per 0.1 sec)
         if (displaySearchBar == true)
         {
             if (searchProgress > 0.1)
@@ -97,6 +97,7 @@ public class Hide_n_Seek : MonoBehaviour
 
             searchProgress += UnityEngine.Time.deltaTime;
 
+            // Hide search bar if its completed
             if (searchCompletion.fillAmount == 1)
             {
                 StartCoroutine(HideSearchBar());
@@ -111,13 +112,16 @@ public class Hide_n_Seek : MonoBehaviour
 
     void OnButtonPressed(int buttonIndex)
     {
+        // Allow button interaction if cooldown is not active
         if (!buttonCooldown)
         {
+            // Move the search bar's position to the position of the button that's pressed
             searchBar.transform.position = new Vector3(
             buttons[buttonIndex].transform.position.x, 
             buttons[buttonIndex].transform.position.y, 
             buttons[buttonIndex].transform.position.z);
 
+            // Display search bar and begin animation in Update()
             searchBar.gameObject.SetActive(true);
             displaySearchBar = true;
 
@@ -207,6 +211,7 @@ public class Hide_n_Seek : MonoBehaviour
 
     IEnumerator HideSearchBar()
     {
+        //Hide search bar 0.2 seconds after completion and reset its state
         yield return new WaitForSeconds(0.2f);
         searchBar.gameObject.SetActive(false); 
         searchCompletion.fillAmount = 0;
