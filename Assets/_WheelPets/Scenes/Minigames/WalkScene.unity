@@ -722,6 +722,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0.4
       objectReference: {fileID: 0}
+    - target: {fileID: 8761072924015968106, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -782,6 +786,7 @@ MonoBehaviour:
   body: {fileID: 527695192}
   jumpAmount: 50
   jumpSound: {fileID: 799469167}
+  maxJumpHeight: 60
   maxJumpHoldTime: 0.001
   initialJumpForce: 70
   holdJumpForce: 1
@@ -2909,6 +2914,22 @@ PrefabInstance:
     - target: {fileID: 8677033887326786293, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761072924015968106, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
+      propertyPath: m_Size.x
+      value: 2.2485847
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761072924015968106, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
+      propertyPath: m_Size.y
+      value: 8.559349
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761072924015968106, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
+      propertyPath: m_Offset.x
+      value: 10.855621
+      objectReference: {fileID: 0}
+    - target: {fileID: 8761072924015968106, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.27532578
       objectReference: {fileID: 0}
     - target: {fileID: 8787829729602011981, guid: 2528bce897771174eaa7b2d6cb01727e, type: 3}
       propertyPath: m_SortingLayer
