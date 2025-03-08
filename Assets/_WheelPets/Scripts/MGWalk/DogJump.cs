@@ -19,6 +19,7 @@ public class DogJump : MonoBehaviour
     public float jumpAmount = 5f; // Base jump force
     public AudioSource jumpSound; // Sound effect for jumping
     private bool isGrounded = true; // Tracks if the player is on the ground
+    public float maxJumpHeight = 7f;
 
     // Variable Jump Height System
     private bool isJumping = false; // Tracks if the player is currently jumping
@@ -108,6 +109,11 @@ public class DogJump : MonoBehaviour
         {
             jumpTimer += Time.fixedDeltaTime;
             body.linearVelocity += new Vector2(0, holdJumpForce * Time.fixedDeltaTime);
+        
+            if (body.linearVelocity.y > maxJumpHeight)
+            {
+                body.linearVelocity = new Vector2(body.linearVelocity.x, maxJumpHeight);
+            }
         }
     }
 
