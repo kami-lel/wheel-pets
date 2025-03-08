@@ -55,4 +55,9 @@ ___
 6. [Hide 'n Seek Correct Guess SFX](https://pixabay.com/sound-effects/quiz-game-show-pack-190031/)
 7. [Bath Background Music](https://pixabay.com/music/cartoons-funy-adventure-257186/)
 8. [Game Background Music](https://assetstore.unity.com/packages/audio/music/free-casual-relaxing-game-music-pack-262740#asset_quality)
+9. [Soap Sound](https://pixabay.com/sound-effects/soap-bubbles-pop-96873/)
+10. [Towel Sound/Brush Sound]()
+11. [Water Sound](https://pixabay.com/sound-effects/fill-water-192164/)
+12. [Clippers Sound](https://pixabay.com/sound-effects/some-clicks-46243/)
+13. [Scissors Sound](https://pixabay.com/sound-effects/scissors-43438/)
 
