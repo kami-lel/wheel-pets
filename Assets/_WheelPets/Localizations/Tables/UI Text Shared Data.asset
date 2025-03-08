@@ -243,6 +243,10 @@ MonoBehaviour:
     m_Key: Fetch High Score
     m_Metadata:
       m_Items: []
+  - m_Id: 7596480799330304
+    m_Key: Instruction Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
