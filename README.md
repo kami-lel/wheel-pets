@@ -54,4 +54,5 @@ ___
 5. [Hide 'n Seek Incorrect Guess SFX](https://pixabay.com/sound-effects/wrong-47985/)
 6. [Hide 'n Seek Correct Guess SFX](https://pixabay.com/sound-effects/quiz-game-show-pack-190031/)
 7. [Bath Background Music](https://pixabay.com/music/cartoons-funy-adventure-257186/)
+8. [Game Background Music](https://assetstore.unity.com/packages/audio/music/free-casual-relaxing-game-music-pack-262740#asset_quality)
 
