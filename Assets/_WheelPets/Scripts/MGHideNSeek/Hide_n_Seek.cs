@@ -2,7 +2,6 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-// todo add more instruction for how to play the game
 // todo add best score system: fastest time to find the pet
 
 public class Hide_n_Seek : MonoBehaviour
@@ -98,35 +97,7 @@ public class Hide_n_Seek : MonoBehaviour
             // Check if the pressed button is the correct one
             if (buttonIndex == correctButtonIndex)
             {
-                // Instantiate the pet prefab at the position of the correct button
-                Vector3 buttonPosition = buttons[buttonIndex]
-                    .transform
-                    .position;
-                GameObject petInstance = Instantiate(
-                    petPrefab,
-                    buttonPosition,
-                    Quaternion.identity
-                );
-
-                // Set the scale of the pet prefab
-                petInstance.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
-
-                // Move the pet prefab to the front of the scene
-                petInstance.transform.position = new Vector3(
-                    petInstance.transform.position.x,
-                    petInstance.transform.position.y,
-                    -1f
-                );
-
-                // Play correct guess audio
-                correctGuessAudio.Play();
-                Debug.Log("You search the area... You found your pet!");
-
-                // Remove strikes from screen and display win overlay
-                RemoveStrikes();
-
-                Data.GetPlayerData().statHide.RecordWin(0f);
-                pauseOverlay.MinigameWin();
+                StartCoroutine(PlayCorrectGuessWithDelay());        
             }
             else
             {
@@ -225,5 +196,37 @@ public class Hide_n_Seek : MonoBehaviour
         }
     }
 
-    void DisplayInstructions() { }
+IEnumerator PlayCorrectGuessWithDelay()
+{
+    // Choose random search audio and play it for 1 second
+    chooseRandomAudio(); 
+    randomAudio.Play();
+    randomAudio.SetScheduledEndTime(AudioSettings.dspTime + 1); 
+
+    yield return new WaitForSeconds(1); // Wait for search sound to play 
+
+    correctGuessAudio.Play(); // Play the correct guess sound after search sound finishes
+    Debug.Log("You search the area... You found your pet!");
+
+    // Instantiate the pet prefab at the position of the correct button
+    Vector3 buttonPosition = buttons[correctButtonIndex].transform.position;
+    GameObject petInstance = Instantiate(petPrefab, buttonPosition, Quaternion.identity);
+
+    // Set the scale of the pet prefab
+    petInstance.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
+
+    // Move the pet prefab to the front of the scene
+    petInstance.transform.position = new Vector3(
+        petInstance.transform.position.x,
+        petInstance.transform.position.y,
+        -1f
+    );
+
+    // Remove strikes from screen and display win overlay
+    RemoveStrikes();
+
+    Data.GetPlayerData().statHide.RecordWin(0f);
+    pauseOverlay.MinigameWin();
+}
+
 }
