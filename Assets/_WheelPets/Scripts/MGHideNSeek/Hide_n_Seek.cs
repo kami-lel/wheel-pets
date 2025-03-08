@@ -53,6 +53,14 @@ public class Hide_n_Seek : MonoBehaviour
 
     public PauseOverlay pauseOverlay;
 
+    public Image searchCompletion; // Used to display and track completion of search bar
+
+    public GameObject searchBar; // Game object that holds search bar object
+
+    public bool displaySearchBar = false; // Hold state of search bar display
+
+    public float searchProgress = 0.0f; // Used to increment search bar completion
+
     void Start()
     {
         // Ensure there are 4 buttons assigned
@@ -76,6 +84,26 @@ public class Hide_n_Seek : MonoBehaviour
         PlayBackgroundMusic();
     }
 
+    void Update()
+    {
+        // Fill up the search bar in 1 second (increment of 10% per 0.1 sec)
+        if (displaySearchBar == true)
+        {
+            if (searchProgress > 0.1)
+            {
+                searchCompletion.fillAmount += 0.1f;
+                searchProgress = 0;
+            }
+
+            searchProgress += UnityEngine.Time.deltaTime;
+
+            // Hide search bar if its completed
+            if (searchCompletion.fillAmount == 1)
+            {
+                StartCoroutine(HideSearchBar());
+            }
+        }
+    }
     void AssignCorrectButton()
     {
         // Randomly choose the correct button index
@@ -84,8 +112,19 @@ public class Hide_n_Seek : MonoBehaviour
 
     void OnButtonPressed(int buttonIndex)
     {
+        // Allow button interaction if cooldown is not active
         if (!buttonCooldown)
         {
+            // Move the search bar's position to the position of the button that's pressed
+            searchBar.transform.position = new Vector3(
+            buttons[buttonIndex].transform.position.x, 
+            buttons[buttonIndex].transform.position.y, 
+            buttons[buttonIndex].transform.position.z);
+
+            // Display search bar and begin animation in Update()
+            searchBar.gameObject.SetActive(true);
+            displaySearchBar = true;
+
             if (buttonIndex != correctButtonIndex)
             {
                 // Choose random search audio and play it for 1 second
@@ -97,6 +136,7 @@ public class Hide_n_Seek : MonoBehaviour
             // Check if the pressed button is the correct one
             if (buttonIndex == correctButtonIndex)
             {
+                buttons[buttonIndex].gameObject.SetActive(false);
                 StartCoroutine(PlayCorrectGuessWithDelay());        
             }
             else
@@ -169,6 +209,15 @@ public class Hide_n_Seek : MonoBehaviour
         }
     }
 
+    IEnumerator HideSearchBar()
+    {
+        //Hide search bar 0.2 seconds after completion and reset its state
+        yield return new WaitForSeconds(0.2f);
+        searchBar.gameObject.SetActive(false); 
+        searchCompletion.fillAmount = 0;
+        displaySearchBar = false;
+    }
+
     void RemoveStrikes()
     {
         for (int i = 0; i < 3; i++)
@@ -203,7 +252,7 @@ IEnumerator PlayCorrectGuessWithDelay()
     randomAudio.Play();
     randomAudio.SetScheduledEndTime(AudioSettings.dspTime + 1); 
 
-    yield return new WaitForSeconds(1); // Wait for search sound to play 
+    yield return new WaitForSeconds(2); // Wait for search sound to play 
 
     correctGuessAudio.Play(); // Play the correct guess sound after search sound finishes
     Debug.Log("You search the area... You found your pet!");
