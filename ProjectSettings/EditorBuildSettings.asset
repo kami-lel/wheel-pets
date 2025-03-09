@@ -51,7 +51,7 @@ EditorBuildSettings:
     path: Assets/_WheelPets/Scenes/PlayScene.unity
     guid: 6409b4fb9b54249e49c15d4262187265
   m_configObjects:
-    com.unity.addressableassets: {fileID: 11400000, guid: ee98531fc63125a4a9b98ab0ce29fa23, type: 2}
+    com.unity.addressableassets: {fileID: 11400000, guid: be2ed7469ac72b344895a1053a36f2cf, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 13d5957b55d397243be84c94426e9a80, type: 2}
     enabled: {fileID: 0}
     guid: {fileID: 0}
