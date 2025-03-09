@@ -43,6 +43,38 @@ MonoBehaviour:
     m_Key: Equip Text
     m_Metadata:
       m_Items: []
+  - m_Id: 14868914438144
+    m_Key: Exit Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15044659970048
+    m_Key: Restart Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15231088394240
+    m_Key: You Win Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16195715399680
+    m_Key: You Lose Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16567284596736
+    m_Key: Resume Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16930028978176
+    m_Key: Confirm Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17116465790976
+    m_Key: Restart Game Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17529051086848
+    m_Key: Start Game Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

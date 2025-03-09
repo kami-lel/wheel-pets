@@ -46,6 +46,38 @@ MonoBehaviour:
     m_Localized: Equipar
     m_Metadata:
       m_Items: []
+  - m_Id: 14868914438144
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15044659970048
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15231088394240
+    m_Localized: "\xA1Ganaste!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16195715399680
+    m_Localized: "\xA1Perdiste!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16567284596736
+    m_Localized: Reanudar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16930028978176
+    m_Localized: Confirmar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17116465790976
+    m_Localized: "\xBFReiniciar juego?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17529051086848
+    m_Localized: Iniciar juego
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
