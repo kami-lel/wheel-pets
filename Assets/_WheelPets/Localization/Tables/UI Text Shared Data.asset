@@ -31,6 +31,18 @@ MonoBehaviour:
     m_Key: Music Text
     m_Metadata:
       m_Items: []
+  - m_Id: 7204486578176
+    m_Key: Unequip Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7458837561344
+    m_Key: Purchase Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7616929267712
+    m_Key: Equip Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

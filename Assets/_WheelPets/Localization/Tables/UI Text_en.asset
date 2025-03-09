@@ -34,6 +34,18 @@ MonoBehaviour:
     m_Localized: Music
     m_Metadata:
       m_Items: []
+  - m_Id: 7204486578176
+    m_Localized: Unequip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7458837561344
+    m_Localized: Purchase
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7616929267712
+    m_Localized: Equip
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
