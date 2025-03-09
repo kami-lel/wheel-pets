@@ -75,6 +75,22 @@ MonoBehaviour:
     m_Key: Start Game Text
     m_Metadata:
       m_Items: []
+  - m_Id: 21698537390080
+    m_Key: Tap Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22131741884416
+    m_Key: Back Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22366539022336
+    m_Key: How To Tug Text 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22554938769408
+    m_Key: How To Tug Text 2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

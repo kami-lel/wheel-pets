@@ -78,6 +78,23 @@ MonoBehaviour:
     m_Localized: Start Game
     m_Metadata:
       m_Items: []
+  - m_Id: 21698537390080
+    m_Localized: Tap!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22131741884416
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22366539022336
+    m_Localized: How To Play Tug Of War
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22554938769408
+    m_Localized: Tap as fast as you can Anywhere when the word "Tap!" appears at
+      the top of the screen!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
