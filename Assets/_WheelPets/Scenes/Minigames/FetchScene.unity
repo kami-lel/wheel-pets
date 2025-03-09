@@ -193,8 +193,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -407601683
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 3891329582522622275, guid: 321fb4eb4adb647a2bd20efdd10d1375, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1258,9 +1258,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: GUID:791866cbaf199d646968cfb7515ab202
+      m_TableCollectionName: GUID:9b0222fd7eb24704884f6850a8f542be
     m_TableEntryReference:
-      m_KeyId: 14811987968
+      m_KeyId: 747670142976
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1797,8 +1797,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 63523581}
   - {fileID: 937450805}
+  - {fileID: 63523581}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2900,9 +2900,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_StringReference:
     m_TableReference:
-      m_TableCollectionName: GUID:791866cbaf199d646968cfb7515ab202
+      m_TableCollectionName: GUID:9b0222fd7eb24704884f6850a8f542be
     m_TableEntryReference:
-      m_KeyId: 7596480799330304
+      m_KeyId: 11657871360
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
