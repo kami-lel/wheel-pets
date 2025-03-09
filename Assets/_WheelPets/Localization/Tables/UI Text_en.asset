@@ -26,6 +26,14 @@ MonoBehaviour:
     m_Localized: Ready?
     m_Metadata:
       m_Items: []
+  - m_Id: 3915573428224
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4232025276416
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

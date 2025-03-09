@@ -23,6 +23,14 @@ MonoBehaviour:
     m_Key: Ready Text
     m_Metadata:
       m_Items: []
+  - m_Id: 3915573428224
+    m_Key: SFX Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4232025276416
+    m_Key: Music Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
