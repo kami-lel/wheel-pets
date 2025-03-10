@@ -1,13 +1,14 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.EventSystems;
 using System.Collections;
 
 public class DogJump : MonoBehaviour
 {
-    // Common Fields
+    // General Controls
     public bool controlsEnabled = true; // Enable/disable functionality globally
-    [SerializeField] private RectTransform grass; // Reference to the grass (UI element)
-    [SerializeField] private float fallGravity; // Gravity affecting fall speed (customizable)
+    [SerializeField] private RectTransform grass; // Reference to the ground (UI element)
+    [SerializeField] private float fallGravity = 1f; // Base gravity strength
+    [SerializeField] private float fallMultiplier = 2.5f; // Gravity multiplier for falling speed
 
     // Jump Fields
     public float yVariation = 2f; // Vertical randomization range
@@ -15,10 +16,17 @@ public class DogJump : MonoBehaviour
     private float xBoundLeft; // Left edge of the grass
     private float xBoundRight; // Right edge of the grass
     public Rigidbody2D body; // Rigidbody2D component for the player (assign in Inspector)
-    public float jumpAmount = 5f; // Adjust jump strength as needed
+    public float jumpAmount = 5f; // Base jump force
     public AudioSource jumpSound; // Sound effect for jumping
-    private bool jumpRequested = false; // Input buffer for jump
     private bool isGrounded = true; // Tracks if the player is on the ground
+    public float maxJumpHeight = 7f;
+
+    // Variable Jump Height System
+    private bool isJumping = false; // Tracks if the player is currently jumping
+    private float jumpTimer = 0f; // Timer to measure jump hold duration
+    public float maxJumpHoldTime = 0.2f; // Max time jump can be held
+    public float initialJumpForce = 5f; // Initial jump force
+    public float holdJumpForce = 2f; // Extra force applied while holding
 
     void Start()
     {
@@ -39,65 +47,107 @@ public class DogJump : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Grass object is not assigned for Arrow Key Movement!");
+            Debug.LogError("Grass object is not assigned for movement calculations!");
         }
 
-        // Disable controls initially
+        // Disable controls initially (e.g., intro animation)
         controlsEnabled = false;
-        StartCoroutine(EnableControlsAfterDelay(2f)); // 2-second delay
+        StartCoroutine(EnableControlsAfterDelay(2f)); // Enable controls after 2 seconds
     }
 
     void Update()
     {
         if (!controlsEnabled) return;
         HandleJumpInput();
+        HandleJumpRelease();
+    }
+
+    private void HandleJumpInput()
+    {
+        if (body == null || !isGrounded) return;
+
+        if (Input.GetKeyDown(KeyCode.Space)) // 🛑 Mouse Click Removed, Spacebar Only
+        {
+            StartJump();
+        }
+    }
+
+    private void HandleJumpRelease()
+    {
+        if (isJumping && Input.GetKeyUp(KeyCode.Space))
+        {
+            EndJumpEarly();
+        }
+    }
+
+    private void StartJump()
+    {
+        isJumping = true;
+        jumpTimer = 0f;
+        ApplyInitialJump();
+        if (jumpSound != null) jumpSound.Play();
+    }
+
+    private void ApplyInitialJump()
+    {
+        if (body != null)
+        {
+            body.linearVelocity = new Vector2(body.linearVelocity.x, initialJumpForce);
+            isGrounded = false;
+        }
     }
 
     void FixedUpdate()
     {
         ApplyGravity();
-        ProcessJump();
+        ProcessJumpHold();
     }
 
-    private void HandleJumpInput()
+    private void ProcessJumpHold()
     {
-        if (body == null) return;
-
-        if ((Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space)) && isGrounded)
+        if (isJumping && jumpTimer < maxJumpHoldTime)
         {
-            jumpRequested = true;
-            Debug.Log("Jump input buffered.");
+            jumpTimer += Time.fixedDeltaTime;
+            body.linearVelocity += new Vector2(0, holdJumpForce * Time.fixedDeltaTime);
+        
+            if (body.linearVelocity.y > maxJumpHeight)
+            {
+                body.linearVelocity = new Vector2(body.linearVelocity.x, maxJumpHeight);
+            }
         }
     }
 
-    private void ProcessJump()
+    private void EndJumpEarly()
     {
-        if (!jumpRequested || body == null) return;
+        isJumping = false;
 
-        body.linearVelocity = new Vector2(body.linearVelocity.x, jumpAmount);
-        Debug.Log("Player jumped!");
+        if (body != null && body.linearVelocity.y > 0)
+        {
+            body.linearVelocity = new Vector2(body.linearVelocity.x, body.linearVelocity.y * 0.5f);
+        }
+    }
 
-        if (jumpSound != null) jumpSound.Play();
+    private void ApplyGravity()
+    {
+        if (!isGrounded && body != null)
+        {
+            float gravityToApply = fallGravity * fallMultiplier;
+            body.linearVelocity += new Vector2(0, -gravityToApply * Time.fixedDeltaTime);
 
-        jumpRequested = false;
-        isGrounded = false; // Player is no longer on the ground
+            float maxFallSpeed = -10f;
+            if (body.linearVelocity.y < maxFallSpeed)
+            {
+                body.linearVelocity = new Vector2(body.linearVelocity.x, maxFallSpeed);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        // Check if the player has landed on the ground
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            Debug.Log("Player landed.");
-        }
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("target"))
-        {
-            controlsEnabled = false;
+            isJumping = false;
         }
     }
 
@@ -111,21 +161,4 @@ public class DogJump : MonoBehaviour
         yield return new WaitForSeconds(delay);
         controlsEnabled = true;
     }
-
-
-private void ApplyGravity()
-{
-    if (!isGrounded && body != null)
-    {
-        body.linearVelocity += new Vector2(0, -fallGravity * Time.fixedDeltaTime);
-
-        // Optional: Limit max fall speed for more control
-        float maxFallSpeed = -5f;  // Adjust for floatiness
-        if (body.linearVelocity.y < maxFallSpeed)
-        {
-            body.linearVelocity = new Vector2(body.linearVelocity.x, maxFallSpeed);
-        }
-    }
-}
-
 }

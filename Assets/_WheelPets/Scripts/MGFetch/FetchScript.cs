@@ -14,6 +14,7 @@ public class FetchScript : MonoBehaviour
     public GameObject playAgainButton;
     public FetchUpdateScore fetchUpdateScore; // Reference to the FetchUpdateScore script
     public FetchUpdateTime fetchUpdateTime; // Reference to the FetchUpdateTime script
+    public FetchUpdateHighScoreText fetchUpdateHighScoreText; // Reference to the FetchUpdateHighScoreText script
     public float initialSpeed = 2.0f;
     public float speedIncrement = 0.5f;
     public GameObject ballPrefab;
@@ -42,10 +43,10 @@ public class FetchScript : MonoBehaviour
         PositionCheckArea();
         StartCoroutine(StartGameRoutine());
 
-        if (fetchUpdateScore == null || fetchUpdateTime == null)
+        if (fetchUpdateScore == null || fetchUpdateTime == null || fetchUpdateHighScoreText == null)
         {
             Debug.LogError(
-                "FetchUpdateScore, FetchUpdateTime is not assigned in the Inspector."
+                "FetchUpdateScore, FetchUpdateTime, or FetchUpdateHighScoreText is not assigned in the Inspector."
             );
             return;
         }
@@ -74,8 +75,13 @@ public class FetchScript : MonoBehaviour
                 Debug.Log("Game Over! Timer reached 0.");
 
                 // Update the high score if the current score is higher
-                Data.GetPlayerData()
-                    .statFetch.RecordWin(fetchUpdateScore.Score);
+                if (fetchUpdateScore.Score > Data.GetPlayerData().fetchHighScore)
+                {
+                    Data.GetPlayerData().fetchHighScore = fetchUpdateScore.Score;
+                    fetchUpdateHighScoreText.UpdateHighScoreText();
+                }
+
+                Data.GetPlayerData().statFetch.RecordWin(fetchUpdateScore.Score);
             }
         }
     }
@@ -130,6 +136,13 @@ public class FetchScript : MonoBehaviour
             gameActive = false;
             pauseOverlay.MinigameLost();
             Debug.Log("Game Over! Final Score: " + fetchUpdateScore.Score);
+
+            // Update the high score if the current score is higher
+            if (fetchUpdateScore.Score > Data.GetPlayerData().fetchHighScore)
+            {
+                Data.GetPlayerData().fetchHighScore = fetchUpdateScore.Score;
+                fetchUpdateHighScoreText.UpdateHighScoreText();
+            }
 
             Data.GetPlayerData().statFetch.RecordWin(fetchUpdateScore.Score);
         }

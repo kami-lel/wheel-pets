@@ -123,12 +123,14 @@ public class BathGame : MonoBehaviour
                     DisplayMessage("The dog is brushed and looking tidy.");
                     RemoveItem(draggedItem);
                     BrushSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
             }
             else if (itemTag == "clippers")
@@ -139,12 +141,14 @@ public class BathGame : MonoBehaviour
                     DisplayMessage("The dog has been clipped.");
                     RemoveItem(draggedItem);
                     ClipperSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
             }
             else if (itemTag == "soap")
@@ -155,12 +159,14 @@ public class BathGame : MonoBehaviour
                     DisplayMessage("The dog is lathered.");
                     RemoveItem(draggedItem);
                     SoapSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
             }
             else if (itemTag == "water")
@@ -176,12 +182,14 @@ public class BathGame : MonoBehaviour
                     DisplayMessage("The dog is rinsed.");
                     RemoveItem(draggedItem);
                     WaterSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
             }
             else if (itemTag == "towel")
@@ -192,12 +200,14 @@ public class BathGame : MonoBehaviour
                     DisplayMessage("The dog is dried off.");
                     RemoveItem(draggedItem);
                     TowelSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
                 else
                 {
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
             }
             else if (itemTag == "scissors")
@@ -208,6 +218,7 @@ public class BathGame : MonoBehaviour
                     DisplayMessage("All done");
                     RemoveItem(draggedItem);
                     ScissorSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                     pauseOverlay.MinigameWin();
                     Data.GetPlayerData().statBath.RecordWin(timer);
                     if (sceneScript != null)
@@ -220,6 +231,7 @@ public class BathGame : MonoBehaviour
                     DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
+                    Invoke(nameof(StopAllSounds), 1f);
                 }
             }
 
@@ -315,4 +327,15 @@ public class BathGame : MonoBehaviour
                 + "s";
         }
     }
+
+private void StopAllSounds()
+{
+    BrushSound.Stop();
+    ClipperSound.Stop();
+    SoapSound.Stop();
+    WaterSound.Stop();
+    TowelSound.Stop();
+    ScissorSound.Stop();
+    MistakeSound.Stop();
+}
 }

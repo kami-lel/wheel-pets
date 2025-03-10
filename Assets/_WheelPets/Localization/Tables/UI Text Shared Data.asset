@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Text Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI Text
+  m_TableCollectionNameGuidString: 9b0222fd7eb24704884f6850a8f542be
+  m_Entries:
+  - m_Id: 11657871360
+    m_Key: Instructions Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 747670142976
+    m_Key: Ready Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3915573428224
+    m_Key: SFX Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4232025276416
+    m_Key: Music Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7204486578176
+    m_Key: Unequip Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7458837561344
+    m_Key: Purchase Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7616929267712
+    m_Key: Equip Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14868914438144
+    m_Key: Exit Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15044659970048
+    m_Key: Restart Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 15231088394240
+    m_Key: You Win Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16195715399680
+    m_Key: You Lose Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16567284596736
+    m_Key: Resume Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16930028978176
+    m_Key: Confirm Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17116465790976
+    m_Key: Restart Game Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 17529051086848
+    m_Key: Start Game Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21698537390080
+    m_Key: Tap Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22131741884416
+    m_Key: Back Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22366539022336
+    m_Key: How To Tug Text 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 22554938769408
+    m_Key: How To Tug Text 2
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 5430706956192711001
+  references:
+    version: 2
+    RefIds:
+    - rid: 5430706956192711001
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1741558057136

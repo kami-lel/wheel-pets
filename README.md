@@ -43,3 +43,21 @@ ___
 19. [Cat Game Assets](https://itch.io/game-assets/tag-cat)
 20. [Pixel Art Pinterest Reference](https://www.pinterest.com/pin/438186238751271511/)
 21. [Monthly Cat Walk Animation](https://www.newgrounds.com/art/view/miroko/monthly-cat-walk-animation)
+
+
+
+### Audio Assets
+1. [Hide 'n Seek Background Music](https://pixabay.com/music/comedy-funny-comedy-music-humor-fool-joke-smile-background-intro-theme-261165/)
+2. [Hide 'n Seek Searching SFX 1](https://pixabay.com/sound-effects/rustle-through-chord-box-105970/)
+3. [Hide 'n Seek Searching SFX 2](https://pixabay.com/sound-effects/searching-through-desk-drawer-88854/)
+4. [Hide 'n Seek Footsteps SFX](https://pixabay.com/sound-effects/footsteps-stairs-fast-90220/)
+5. [Hide 'n Seek Incorrect Guess SFX](https://pixabay.com/sound-effects/wrong-47985/)
+6. [Hide 'n Seek Correct Guess SFX](https://pixabay.com/sound-effects/quiz-game-show-pack-190031/)
+7. [Bath Background Music](https://pixabay.com/music/cartoons-funy-adventure-257186/)
+8. [Game Background Music](https://assetstore.unity.com/packages/audio/music/free-casual-relaxing-game-music-pack-262740#asset_quality)
+9. [Soap Sound](https://pixabay.com/sound-effects/soap-bubbles-pop-96873/)
+10. [Towel Sound/Brush Sound](https://pixabay.com/sound-effects/rubbing-the-hair-75796/)
+11. [Water Sound](https://pixabay.com/sound-effects/fill-water-192164/)
+12. [Clippers Sound](https://pixabay.com/sound-effects/some-clicks-46243/)
+13. [Scissors Sound](https://pixabay.com/sound-effects/scissors-43438/)
+
