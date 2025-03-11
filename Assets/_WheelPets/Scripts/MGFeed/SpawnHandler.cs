@@ -8,7 +8,7 @@ public class SpawnHandler : MonoBehaviour
     [SerializeField] public int NumPrefabs = 4;
     [SerializeField] List<float> xList = new List<float>();
     [SerializeField] List<float> yList = new List<float>();
-    [SerializeField] List<GameObject> gameObjects = new List<GameObject>();
+    [SerializeField] public List<GameObject> gameObjects = new List<GameObject>();
     [SerializeField] GameObject Canvas;
     private List<GameObject> Instans = new List<GameObject>();
     void Start()
