@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using System.Collections.Generic;
 
 public class HungerHandler : MonoBehaviour
 {
@@ -9,25 +10,19 @@ public class HungerHandler : MonoBehaviour
     float Hunger = 100f;
 
     [SerializeField]
-    private float CurrentHunger = 100f;
+    private float CurrentHunger = 40f;
 
     [SerializeField]
-    private float AmountChanged = 3f;
+    private float AmountChanged = 1f;
 
     [SerializeField]
-    private float HungerTimer = 10f;
-
-    [SerializeField]
-    private float acceleration = .1f;
-
-    [SerializeField]
-    private float acceleration2 = .05f;
+    private float HungerTimer = 1f;
 
     [SerializeField]
     private UnityEngine.UI.Slider HungerSlider;
     private FoodObject.FoodTypes FoodIWant;
     private float timer = 0f;
-    private int score = 0;
+    private int score = 20;
     private FoodObject.FoodTypes[] foods = new FoodObject.FoodTypes[6];
 
     [SerializeField]
@@ -50,6 +45,8 @@ public class HungerHandler : MonoBehaviour
     [SerializeField]
     GameObject Spawner;
 
+    private GameObject displayFood;
+
     private void Start()
     {
         Music.Play();
@@ -67,8 +64,10 @@ public class HungerHandler : MonoBehaviour
             Spawner.GetComponent<SpawnHandler>().NumPrefabs
         );
         FoodIWant = foods[bleh];
-        texty.text = "I want... " + (bleh + 1).ToString() + "!";
-        textytoo.text = "Score: " + score.ToString();
+        texty.text = "I want...      !";
+        displayFood = Instantiate(Spawner.GetComponent<SpawnHandler>().gameObjects[bleh], new Vector3(.62f, -4.54f, -1.5f), Quaternion.identity);
+        displayFood.GetComponent<BoxCollider2D>().enabled = false;
+        textytoo.text = "Foods Left: " + score.ToString();
     }
 
     // Update is called once per frame
@@ -80,8 +79,6 @@ public class HungerHandler : MonoBehaviour
             CurrentHunger -= AmountChanged;
             HungerSlider.value = CurrentHunger;
             timer = 0f;
-            AmountChanged += acceleration;
-            acceleration += acceleration2;
         }
         if (
             CurrentHunger <= 0f
@@ -90,6 +87,11 @@ public class HungerHandler : MonoBehaviour
         {
             pauseOverlay.MinigameLost();
             Data.GetPlayerData().statFeed.RecordWin((float)score);
+        }
+        if (score <= 0 && pauseOverlay.status == PauseOverlay.Status.Running)
+        {
+            pauseOverlay.MinigameWin();
+            Data.GetPlayerData().statFeed.RecordWin((float)CurrentHunger);
         }
     }
 
@@ -101,14 +103,11 @@ public class HungerHandler : MonoBehaviour
     {
         if (FoodIWant == foodType)
         {
-            CurrentHunger += FoodAmount;
-            score += ScoreAmount;
+            score -= ScoreAmount;
             FeedEffect.Play();
         }
         else
         {
-            CurrentHunger -= FoodAmount;
-            score -= ScoreAmount;
             BadFeedEffect.Play();
         }
         if ((CurrentHunger - Hunger) > .01f)
@@ -121,8 +120,11 @@ public class HungerHandler : MonoBehaviour
             Spawner.GetComponent<SpawnHandler>().NumPrefabs
         );
         FoodIWant = foods[bleh];
-        texty.text = "I want... " + (bleh + 1).ToString() + "!";
+        texty.text = "I want...      !";
+        Destroy(displayFood);
+        displayFood = Instantiate(Spawner.GetComponent<SpawnHandler>().gameObjects[bleh], new Vector3(.62f, -4.54f, -1.5f), Quaternion.identity);
+        displayFood.GetComponent<BoxCollider2D>().enabled = false;
         Spawner.GetComponent<SpawnHandler>().ResetFoods();
-        textytoo.text = "Score: " + score.ToString();
+        textytoo.text = "Foods Left: " + score.ToString();
     }
 }
