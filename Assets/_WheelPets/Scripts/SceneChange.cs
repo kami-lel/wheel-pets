@@ -74,6 +74,11 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("FeedingInstructions");
     }
 
+    public static void LoadCredits()
+    {
+        SceneManager.LoadScene("CreditsScene");
+    }
+
     /// <summary>
     /// Manages the logic for exiting the adoption scene intelligently based on pet adoption status.
     /// </summary>

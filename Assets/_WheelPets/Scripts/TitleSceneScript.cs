@@ -44,4 +44,9 @@ public class TitleSceneScript : MonoBehaviour
     {
         SceneChange.LoadCloset();
     }
+
+    public void ClickCreditsButton()
+    {
+        SceneChange.LoadCredits();
+    }
 }
