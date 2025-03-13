@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bath_clippers_0: -6486961939812407875
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

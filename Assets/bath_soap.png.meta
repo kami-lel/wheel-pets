@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bath_soap_0: -7339560866053275938
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

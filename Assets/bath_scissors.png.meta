@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      bath_scissors_0: 8297362170242889556
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
