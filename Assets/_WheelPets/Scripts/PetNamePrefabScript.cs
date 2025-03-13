@@ -1,16 +1,10 @@
-using UnityEngine;
+using TMPro;
 
-public class PetNamePrefabScript : MonoBehaviour
+public class PetNamePrefabScript : TextMeshProUGUI
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    protected override void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.Start(); // Calling the parent class's Start method
+        text = Data.GetPlayerData().petData.name;
     }
 }
