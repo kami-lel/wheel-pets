@@ -203,7 +203,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.9
+  m_fontSize: 55.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3103,6 +3103,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2083417757599487018, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 188.9229
+      objectReference: {fileID: 0}
+    - target: {fileID: 2083417757599487018, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -59.222412
+      objectReference: {fileID: 0}
     - target: {fileID: 2988865204681900632, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3143,13 +3151,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3786235805398835804, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_fontSize
+      value: 49.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786235805398835804, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
+    - target: {fileID: 3786235805398835804, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2508588780884510004, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
+    - target: {fileID: 3786235805398835804, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3786235805398835804, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474102004933325821, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_fontSize
+      value: 33.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474102004933325821, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
+    - target: {fileID: 4474102004933325821, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2508588780884510004, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
+    - target: {fileID: 4474102004933325821, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474102004933325821, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4659189522775286300, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
       propertyPath: m_Name
       value: BathInstruction
       objectReference: {fileID: 0}
     - target: {fileID: 4659189522775286300, guid: 6977a44a09f1247aea2678e005f37a2e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5232,7 +5280,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47
+  m_fontSize: 50.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
