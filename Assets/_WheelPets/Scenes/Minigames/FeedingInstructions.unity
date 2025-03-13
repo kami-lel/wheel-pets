@@ -577,8 +577,8 @@ MonoBehaviour:
     it to keep it from going hungry! Each correct food eaten will earn a point, while
     each incorrect food will deduct a point. Keep the pet fed for as long as possible!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
+  m_sharedMaterial: {fileID: 2508588780884510004, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -713,8 +713,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
+  m_sharedMaterial: {fileID: 2508588780884510004, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
