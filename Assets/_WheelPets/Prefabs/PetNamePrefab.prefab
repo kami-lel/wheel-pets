@@ -65,7 +65,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hey
+  m_text: Fluffykins Cuddlewhiskers the Adorable Snugglebug with a Heart of Gold
+    and Sparkling Eyes of Joy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
   m_sharedMaterial: {fileID: 2508588780884510004, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
@@ -92,7 +93,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 45
+  m_fontSize: 12.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
