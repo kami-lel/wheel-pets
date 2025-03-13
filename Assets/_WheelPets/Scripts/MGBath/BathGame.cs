@@ -1,19 +1,17 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class BathGame : MonoBehaviour
 {
     public BoxCollider2D targetCollider; // The collider to check for collisions with
 
-    [SerializeField]
-    private TextMeshProUGUI mistakeText; // Text to display mistakes
-
-    [SerializeField]
-    private TextMeshProUGUI messageText; // Text to display messages
-
-    [SerializeField]
-    private TextMeshProUGUI timerText; // Text to display the timer
+    [SerializeField] private TextMeshProUGUI mistakeText; // Text to display mistakes
+    [SerializeField] private TextMeshProUGUI messageText; // Text to display messages
+    [SerializeField] private TextMeshProUGUI timerText; // Text to display the timer
+    [SerializeField] private BathBar bathBar; 
 
     public PauseOverlay pauseOverlay;
 
@@ -57,6 +55,15 @@ public class BathGame : MonoBehaviour
 
     private float timer = 0f;
 
+
+    //Bath Bar 
+    [SerializeField] private Image patienceBarFill;
+    [SerializeField] private float maxPatience = 15f; // Total time before patience depletes
+    [SerializeField] private float wrongItemPenalty = 3f; // Time deducted for wrong item
+    private float patienceRemaining;
+    private bool isRunning = false;
+
+
     private BathSceneScript sceneScript;
 
     void Start()
@@ -72,6 +79,11 @@ public class BathGame : MonoBehaviour
                 "TextMeshProUGUI components not assigned in the Inspector!"
             );
         }
+        // Bath Bar Set up
+        bathBar.StartBathBar(); // Start the patience bar countdown
+        patienceRemaining = maxPatience;
+        isRunning = true;
+        UpdatePatienceUI();
 
         // Play BG music on start
         PlayBackgroundMusic();
@@ -94,16 +106,16 @@ public class BathGame : MonoBehaviour
         {
             timer += Time.deltaTime;
             UpdateTimerText();
+        }
+        if (isRunning) // Add this check to update the patience bar
+        {
+            patienceRemaining -= Time.deltaTime;
+            UpdatePatienceUI();
 
-            // Check if mistakes reached "XXX" and switch to PetGame Scene
-            if (mistakeText.text == "XXX")
+            if (patienceRemaining <= 0)
             {
-                Data.GetPlayerData().statBath.RecordLose(timer);
-                pauseOverlay.MinigameLost();
-                if (sceneScript != null)
-                {
-                    sceneScript.ShowPlayAgainButton();
-                }
+                isRunning = false;
+                MinigameLost();
             }
         }
     }
@@ -127,10 +139,10 @@ public class BathGame : MonoBehaviour
                 }
                 else
                 {
-                    DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
+                    ReducePatience();
                 }
             }
             else if (itemTag == "clippers")
@@ -142,13 +154,14 @@ public class BathGame : MonoBehaviour
                     RemoveItem(draggedItem);
                     ClipperSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
+                    
                 }
                 else
                 {
-                    DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
+                    ReducePatience();
                 }
             }
             else if (itemTag == "soap")
@@ -163,10 +176,11 @@ public class BathGame : MonoBehaviour
                 }
                 else
                 {
-                    DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
+                    ReducePatience();
+
                 }
             }
             else if (itemTag == "water")
@@ -186,10 +200,10 @@ public class BathGame : MonoBehaviour
                 }
                 else
                 {
-                    DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
+                    ReducePatience();
                 }
             }
             else if (itemTag == "towel")
@@ -204,10 +218,10 @@ public class BathGame : MonoBehaviour
                 }
                 else
                 {
-                    DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
+                    ReducePatience();
                 }
             }
             else if (itemTag == "scissors")
@@ -228,10 +242,10 @@ public class BathGame : MonoBehaviour
                 }
                 else
                 {
-                    DisplayMistake("X");
                     DisplayMessage("You can't use that yet.");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
+                    ReducePatience();
                 }
             }
 
@@ -249,13 +263,7 @@ public class BathGame : MonoBehaviour
         }
     }
 
-    private void DisplayMistake(string mistake)
-    {
-        if (mistakeText != null)
-        {
-            mistakeText.text += mistake; // Append mistake
-        }
-    }
+    
 
     private void DisplayMessage(string message)
     {
@@ -338,4 +346,48 @@ private void StopAllSounds()
     ScissorSound.Stop();
     MistakeSound.Stop();
 }
+
+// Makes the bar decrease over a 15-second period
+public void StartBathBar()
+{
+    patienceRemaining = maxPatience;
+    isRunning = true;
+    UpdatePatienceUI();
+}
+
+// Makes the bar decrease by a set amount when called
+private void ReducePatience()
+{
+    patienceRemaining -= wrongItemPenalty;
+    if (patienceRemaining < 0) patienceRemaining = 0;
+    UpdatePatienceUI();
+
+    if (patienceRemaining <= 0)
+    {
+        MinigameLost();
+    }
+}
+
+private void UpdatePatienceUI()
+{
+    if (patienceBarFill != null)
+    {
+        patienceBarFill.fillAmount = patienceRemaining / maxPatience;
+    }
+}
+public void HandlePatienceDepleted()
+{
+    MinigameLost();
+}
+private void MinigameLost()
+{
+    pauseOverlay.MinigameLost();
+
+
+}
+private void MinigameWin()
+{
+    pauseOverlay.MinigameWin();
+}
+
 }
