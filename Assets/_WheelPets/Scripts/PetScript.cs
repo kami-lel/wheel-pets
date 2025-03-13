@@ -1,7 +1,5 @@
 using System;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 // FIXME enable/disable pet name option in all scenes
 public class PetScript : MonoBehaviour
@@ -9,9 +7,6 @@ public class PetScript : MonoBehaviour
     // todo alternative animation not implemented
     // [SerializeField]
     // private string animationName = "idle";
-
-    [SerializeField]
-    private bool showPetName = true;
 
     [SerializeField]
     private GameObject dog;
@@ -30,9 +25,6 @@ public class PetScript : MonoBehaviour
 
     [SerializeField]
     private GameObject rabbitAccessoryGroup;
-
-    [SerializeField]
-    private TextMeshProUGUI petNameTextField;
 
     /// <summary>
     /// Plays the specified animation for the active pet.
@@ -79,7 +71,6 @@ public class PetScript : MonoBehaviour
 
         UpdateLookColor();
         UpdateLookAccessory();
-        UpdatePetName();
 
         if (Debug.isDebugBuild)
         {
@@ -107,60 +98,18 @@ public class PetScript : MonoBehaviour
         {
             case PlayerData.AnimalType.Dog:
             default:
-                dominantColor = CreateColorDom(
-                    -0.06f,
-                    0.15f,
-                    0.8f,
-                    0.65f,
-                    0.7f,
-                    0.9f
-                );
-                secondaryColor = CreateColorSec(
-                    0f,
-                    1f,
-                    0.1f,
-                    0.2f,
-                    1.0f,
-                    1.0f
-                );
+                dominantColor = CreateColorDom(-0.06f, 0.15f, 0.8f, 0.65f, 0.7f, 0.9f);
+                secondaryColor = CreateColorSec(0f, 1f, 0.1f, 0.2f, 1.0f, 1.0f);
                 break;
 
             case PlayerData.AnimalType.Cat:
-                dominantColor = CreateColorSec(
-                    -0.06f,
-                    0.15f,
-                    0.8f,
-                    0.65f,
-                    0.7f,
-                    0.9f
-                );
-                secondaryColor = CreateColorDom(
-                    0f,
-                    1f,
-                    0.1f,
-                    0.2f,
-                    1.0f,
-                    1.0f
-                );
+                dominantColor = CreateColorSec(-0.06f, 0.15f, 0.8f, 0.65f, 0.7f, 0.9f);
+                secondaryColor = CreateColorDom(0f, 1f, 0.1f, 0.2f, 1.0f, 1.0f);
                 break;
 
             case PlayerData.AnimalType.Rabbit:
-                dominantColor = CreateColorDom(
-                    -0.06f,
-                    0.15f,
-                    0.8f,
-                    0.65f,
-                    0.7f,
-                    0.9f
-                );
-                secondaryColor = CreateColorSec(
-                    0f,
-                    1f,
-                    0.1f,
-                    0.2f,
-                    1.0f,
-                    1.0f
-                );
+                dominantColor = CreateColorDom(-0.06f, 0.15f, 0.8f, 0.65f, 0.7f, 0.9f);
+                secondaryColor = CreateColorSec(0f, 1f, 0.1f, 0.2f, 1.0f, 1.0f);
                 break;
         }
 
@@ -188,16 +137,7 @@ public class PetScript : MonoBehaviour
     )
     {
         float value = data.petData.dominantColorHue;
-        return CreateColorFromRange(
-            value,
-            hBegin,
-            hEnd,
-            sBegin,
-            sEnd,
-            vBegin,
-            vEnd,
-            true
-        );
+        return CreateColorFromRange(value, hBegin, hEnd, sBegin, sEnd, vBegin, vEnd, true);
     }
 
     private Color CreateColorSec(
@@ -210,16 +150,7 @@ public class PetScript : MonoBehaviour
     )
     {
         float value = data.petData.secondaryColorHue;
-        return CreateColorFromRange(
-            value,
-            hBegin,
-            hEnd,
-            sBegin,
-            sEnd,
-            vBegin,
-            vEnd,
-            false
-        );
+        return CreateColorFromRange(value, hBegin, hEnd, sBegin, sEnd, vBegin, vEnd, false);
     }
 
     private Color CreateColorFromRange(
@@ -239,11 +170,7 @@ public class PetScript : MonoBehaviour
 
         if (Debug.isDebugBuild)
         {
-            Debug.Log(
-                "Pet\t"
-                    + (isDom ? "Dominant" : "Secondary")
-                    + $"Color\th:{h} s:{s} v:{v}"
-            );
+            Debug.Log("Pet\t" + (isDom ? "Dominant" : "Secondary") + $"Color\th:{h} s:{s} v:{v}");
         }
 
         return Color.HSVToRGB(h, s, v);
@@ -286,43 +213,35 @@ public class PetScript : MonoBehaviour
         };
 
         // loop via all possible accessories in enum AccessoryType
-        foreach (
-            AccessoryType accessory in Enum.GetValues(typeof(AccessoryType))
-        )
+        foreach (AccessoryType accessory in Enum.GetValues(typeof(AccessoryType)))
         {
             // find accessory as game object
             string accessoryName = accessory.ToString();
-            Transform accessoryTransform =
-                activePetAccessoryGroup.transform.Find(accessoryName);
+            Transform accessoryTransform = activePetAccessoryGroup.transform.Find(accessoryName);
             if (accessoryTransform != null)
             {
                 // set active condition
-                bool isWearing = data.petData.currentAccessories.Contains(
-                    accessory
-                );
+                bool isWearing = data.petData.currentAccessories.Contains(accessory);
                 accessoryTransform.gameObject.SetActive(isWearing);
             }
             else if (Debug.isDebugBuild)
             {
-                Debug.LogWarning(
-                    "PetPrefab\tcan't find accessory as game object:"
-                        + accessoryName
-                );
+                Debug.LogWarning("PetPrefab\tcan't find accessory as game object:" + accessoryName);
             }
         }
     }
 
     // BUG not showing up
-    private void UpdatePetName()
-    {
-        if (showPetName)
-        {
-            petNameTextField.gameObject.SetActive(true);
-            petNameTextField.text = data.petData.name;
-        }
-        else
-        {
-            petNameTextField.gameObject.SetActive(false);
-        }
-    }
+    // private void UpdatePetName()
+    // {
+    //     if (showPetName)
+    //     {
+    //         petNameTextField.gameObject.SetActive(true);
+    //         petNameTextField.text = data.petData.name;
+    //     }
+    //     else
+    //     {
+    //         petNameTextField.gameObject.SetActive(false);
+    //     }
+    // }
 }
