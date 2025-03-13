@@ -1,7 +1,5 @@
 using System;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 // FIXME enable/disable pet name option in all scenes
 public class PetScript : MonoBehaviour
@@ -9,9 +7,6 @@ public class PetScript : MonoBehaviour
     // todo alternative animation not implemented
     // [SerializeField]
     // private string animationName = "idle";
-
-    [SerializeField]
-    private bool showPetName = true;
 
     [SerializeField]
     private GameObject dog;
@@ -30,9 +25,6 @@ public class PetScript : MonoBehaviour
 
     [SerializeField]
     private GameObject rabbitAccessoryGroup;
-
-    [SerializeField]
-    private TextMeshProUGUI petNameTextField;
 
     /// <summary>
     /// Plays the specified animation for the active pet.
@@ -79,7 +71,6 @@ public class PetScript : MonoBehaviour
 
         UpdateLookColor();
         UpdateLookAccessory();
-        UpdatePetName();
 
         if (Debug.isDebugBuild)
         {
@@ -241,16 +232,16 @@ public class PetScript : MonoBehaviour
     }
 
     // BUG not showing up
-    private void UpdatePetName()
-    {
-        if (showPetName)
-        {
-            petNameTextField.gameObject.SetActive(true);
-            petNameTextField.text = data.petData.name;
-        }
-        else
-        {
-            petNameTextField.gameObject.SetActive(false);
-        }
-    }
+    // private void UpdatePetName()
+    // {
+    //     if (showPetName)
+    //     {
+    //         petNameTextField.gameObject.SetActive(true);
+    //         petNameTextField.text = data.petData.name;
+    //     }
+    //     else
+    //     {
+    //         petNameTextField.gameObject.SetActive(false);
+    //     }
+    // }
 }
