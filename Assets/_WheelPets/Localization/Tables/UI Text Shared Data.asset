@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: Ready
     m_Metadata:
       m_Items: []
+  - m_Id: 27109983510528
+    m_Key: Credits
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: "Pr\xEAt ?"
     m_Metadata:
       m_Items: []
+  - m_Id: 27109983510528
+    m_Localized: "Cr\xE9ditos"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
