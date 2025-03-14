@@ -58,6 +58,31 @@ MonoBehaviour:
     m_Localized: Reiniciar
     m_Metadata:
       m_Items: []
+  - m_Id: 121713026129920
+    m_Localized: Instrucciones para caminar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122098608496640
+    m_Localized: "Presiona la barra espaciadora para saltar sobre las rocas.\nToca
+      para reducir el tiempo en el aire.\nMant\xE9n presionada para aumentar el tiempo
+      en el aire."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123666569355264
+    m_Localized: 'Arrastra los objetos hacia la mascota en el orden correcto antes
+      de que pierda la paciencia.
+
+      Pista: el orden es BCSWTS'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124065124704256
+    m_Localized: "Instrucciones de ba\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124634442752000
+    m_Localized: "Tiempo m\xE1s bajo: 0\nTiempo: 0"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

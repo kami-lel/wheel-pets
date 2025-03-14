@@ -58,6 +58,36 @@ MonoBehaviour:
     m_Localized: Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 121713026129920
+    m_Localized: Walk Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122098608496640
+    m_Localized: 'Press Spacebar to Jump over the Rocks.
+
+      Tap for less airtime
+
+      Hold
+      for more airtime.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123666569355264
+    m_Localized: 'Drag the items to the pet in the correct order before he loses
+      patience.
+
+      Hint: the order is BCSWTS'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124065124704256
+    m_Localized: Bath Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124634442752000
+    m_Localized: 'Lowest Time:
+
+      Time: 0'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

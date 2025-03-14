@@ -58,6 +58,33 @@ MonoBehaviour:
     m_Localized: Recommencer
     m_Metadata:
       m_Items: []
+  - m_Id: 121713026129920
+    m_Localized: Instructions de marche
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122098608496640
+    m_Localized: "Appuyez sur la barre d'espace pour sauter par-dessus les rochers.\nAppuyez
+      pour r\xE9duire le temps d'antenne.\nMaintenez enfonc\xE9 pour augmenter le
+      temps d'antenne."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123666569355264
+    m_Localized: 'Faites glisser les objets vers l''animal dans le bon ordre avant
+      qu''il ne perde patience.
+
+      Indice : l''ordre est BCSWTS'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124065124704256
+    m_Localized: Instructions pour le bain
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124634442752000
+    m_Localized: 'Temps le plus bas: 0
+
+      Temps: 0'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

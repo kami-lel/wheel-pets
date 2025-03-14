@@ -55,6 +55,26 @@ MonoBehaviour:
     m_Key: Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 121713026129920
+    m_Key: WalkInstructionsTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122098608496640
+    m_Key: WalkInstructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123666569355264
+    m_Key: BathInstruction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124065124704256
+    m_Key: BathInstructionTitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124634442752000
+    m_Key: BathTime
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
