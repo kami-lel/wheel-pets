@@ -23,7 +23,39 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 27109983510528
-    m_Localized: "Cr\xE9ditos"
+    m_Localized: "Cr\xE9dits"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32277131157504
+    m_Localized: Commencer le Jeu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33262759043072
+    m_Localized: "Red\xE9marrer le jeu ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33381604646912
+    m_Localized: Reprendre
+    m_Metadata:
+      m_Items: []
+  - m_Id: 33633413881856
+    m_Localized: Confirmer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35130142875648
+    m_Localized: Quitter
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35957297373184
+    m_Localized: Victoire !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36095772319744
+    m_Localized: "D\xE9faite !"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36915645505536
+    m_Localized: Recommencer
     m_Metadata:
       m_Items: []
   references:
