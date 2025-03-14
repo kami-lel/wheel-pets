@@ -22,6 +22,12 @@ MonoBehaviour:
     - Locale-fr
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c3c9b60777e744fe08a8d06e5b26cc4e
+    m_Address: Bath Game_fr
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-fr
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 5ad6ea660f415d04bb4774c0dc0782e6, type: 2}
   m_SchemaSet:

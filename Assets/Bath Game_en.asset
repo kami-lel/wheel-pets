@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Bath Game_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: f696acd08b9ae4c4fb6638b24b55c811, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 8316248064
+    m_Localized: You can't use that yet.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 16637747200
+    m_Localized: 'The pet is brushed and looking tidy.
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 296532041728
+    m_Localized: The pet has been clipped.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 299119927296
+    m_Localized: The pet is lathered.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 303662358528
+    m_Localized: "The pet is rinsed.\t"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 307231711232
+    m_Localized: The pet is dried off.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309047844864
+    m_Localized: All done.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 310515851264
+    m_Localized: 'Lowest Time: {0}s'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 311283408896
+    m_Localized: 'Time: {0}s'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

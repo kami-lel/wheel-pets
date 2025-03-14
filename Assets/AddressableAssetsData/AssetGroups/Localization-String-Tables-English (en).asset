@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_GUID: 646f3159b394b4e439fa025cce388ed6
   m_SerializeEntries:
+  - m_GUID: 2ab09c972111241298cac244732582ed
+    m_Address: Bath Game_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f716691d01f0a7f4292ccfe138899dad
     m_Address: UI Text_en
     m_ReadOnly: 1
