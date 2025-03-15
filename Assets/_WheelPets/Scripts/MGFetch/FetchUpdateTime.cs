@@ -8,6 +8,7 @@ public class FetchUpdateTime : MonoBehaviour
     [SerializeField] private Text uiTextComp;
 
     private float timer = 5.0f; // Initialize the timer to 5 seconds
+    private string _currentLanguage;
 
     public float Timer
     {
@@ -15,6 +16,22 @@ public class FetchUpdateTime : MonoBehaviour
         private set
         {
             timer = value;
+            UpdateTimeText();
+        }
+    }
+
+    private void Start()
+    {
+        _currentLanguage = Data.GetPlayerData().language;
+        UpdateTimeText();
+    }
+
+    private void Update()
+    {
+        // Check if the language has changed
+        if (_currentLanguage != Data.GetPlayerData().language)
+        {
+            _currentLanguage = Data.GetPlayerData().language;
             UpdateTimeText();
         }
     }

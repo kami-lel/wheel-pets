@@ -8,8 +8,25 @@ public class FetchUpdateScore : MonoBehaviour
     [SerializeField] private Text uiTextComp;
 
     private int score;
+    private string _currentLanguage;
 
     public int Score => score;
+
+    private void Start()
+    {
+        _currentLanguage = Data.GetPlayerData().language;
+        UpdateScoreText();
+    }
+
+    private void Update()
+    {
+        // Check if the language has changed
+        if (_currentLanguage != Data.GetPlayerData().language)
+        {
+            _currentLanguage = Data.GetPlayerData().language;
+            UpdateScoreText();
+        }
+    }
 
     private void UpdateScoreText()
     {

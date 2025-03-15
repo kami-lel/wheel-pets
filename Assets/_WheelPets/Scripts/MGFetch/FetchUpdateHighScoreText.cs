@@ -7,9 +7,22 @@ public class FetchUpdateHighScoreText : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textMeshProComp;
     [SerializeField] private Text uiTextComp;
 
+    private string _currentLanguage;
+
     private void Start()
     {
+        _currentLanguage = Data.GetPlayerData().language;
         UpdateHighScoreText();
+    }
+
+    private void Update()
+    {
+        // Check if the language has changed
+        if (_currentLanguage != Data.GetPlayerData().language)
+        {
+            _currentLanguage = Data.GetPlayerData().language;
+            UpdateHighScoreText();
+        }
     }
 
     public void UpdateHighScoreText()
