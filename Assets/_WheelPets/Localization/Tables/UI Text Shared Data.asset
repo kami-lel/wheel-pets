@@ -139,6 +139,30 @@ MonoBehaviour:
     m_Key: Old Pet Text
     m_Metadata:
       m_Items: []
+  - m_Id: 694581401665536
+    m_Key: Credits Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694790919733248
+    m_Key: Project Manager Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694989935263744
+    m_Key: Code Lead Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695267812098048
+    m_Key: Art / Code Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695428776902656
+    m_Key: Code Team Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695707345797120
+    m_Key: Artist Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

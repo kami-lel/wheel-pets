@@ -151,6 +151,30 @@ MonoBehaviour:
     m_Localized: Ancien nom de l'animal
     m_Metadata:
       m_Items: []
+  - m_Id: 694581401665536
+    m_Localized: "R\xE9alis\xE9 gr\xE2ce aux contributions de :"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694790919733248
+    m_Localized: Chef de projet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694989935263744
+    m_Localized: Responsable du code
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695267812098048
+    m_Localized: "Responsable artistique / \xC9quipe de code"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695428776902656
+    m_Localized: "\xC9quipe de code"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695707345797120
+    m_Localized: Artiste
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

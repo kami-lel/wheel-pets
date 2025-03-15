@@ -149,6 +149,30 @@ MonoBehaviour:
     m_Localized: Nombre anterior de la mascota
     m_Metadata:
       m_Items: []
+  - m_Id: 694581401665536
+    m_Localized: 'Hecho posible con las contribuciones de:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694790919733248
+    m_Localized: Gerente de proyecto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694989935263744
+    m_Localized: "L\xEDder de c\xF3digo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695267812098048
+    m_Localized: "L\xEDder de arte / Equipo de c\xF3digo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695428776902656
+    m_Localized: "Equipo de c\xF3digo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695707345797120
+    m_Localized: Artista
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
