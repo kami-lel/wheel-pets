@@ -85,6 +85,35 @@ MonoBehaviour:
       Temps: 0'
     m_Metadata:
       m_Items: []
+  - m_Id: 440969870098432
+    m_Localized: Allez !
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441688945770496
+    m_Localized: Revenir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441897809526784
+    m_Localized: Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442347808014336
+    m_Localized: "Comment jouer \xE0 r\xE9cup\xE9rer"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442547414941696
+    m_Localized: "<-\nCliquez n'importe o\xF9 lorsque la barre blanche est au-dessus
+      de la balle de tennis"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 448820596359168
+    m_Localized: "Si tu ne cliques pas pendant 5 -> \nsecondes, tu perds "
+    m_Metadata:
+      m_Items: []
+  - m_Id: 449022556291072
+    m_Localized: Essaie d'obtenir le meilleur score ! ->
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -8,6 +8,7 @@ public class FetchUpdateTime : MonoBehaviour
     [SerializeField] private Text uiTextComp;
 
     private float timer = 5.0f; // Initialize the timer to 5 seconds
+    private string _currentLanguage;
 
     public float Timer
     {
@@ -19,9 +20,25 @@ public class FetchUpdateTime : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        _currentLanguage = Data.GetPlayerData().language;
+        UpdateTimeText();
+    }
+
+    private void Update()
+    {
+        // Check if the language has changed
+        if (_currentLanguage != Data.GetPlayerData().language)
+        {
+            _currentLanguage = Data.GetPlayerData().language;
+            UpdateTimeText();
+        }
+    }
+
     private void UpdateTimeText()
     {
-        string timeText = $"Time: {Mathf.Ceil(timer)}";
+        string timeText = GetLocalizedTimeText(Mathf.Ceil(timer));
         if (textMeshProComp != null)
         {
             textMeshProComp.text = timeText;
@@ -29,6 +46,21 @@ public class FetchUpdateTime : MonoBehaviour
         else if (uiTextComp != null)
         {
             uiTextComp.text = timeText;
+        }
+    }
+
+    private string GetLocalizedTimeText(float time)
+    {
+        string language = Data.GetPlayerData().language;
+        Debug.Log("Current Language: " + language); // Debug log to verify the language
+        switch (language)
+        {
+            case "fr":
+                return $"Temps: {time}";
+            case "es":
+                return $"Tiempo: {time}";
+            default:
+                return $"Time: {time}";
         }
     }
 

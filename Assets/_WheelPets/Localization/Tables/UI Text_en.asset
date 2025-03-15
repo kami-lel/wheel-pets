@@ -88,6 +88,37 @@ MonoBehaviour:
       Time: 0'
     m_Metadata:
       m_Items: []
+  - m_Id: 440969870098432
+    m_Localized: Go!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441688945770496
+    m_Localized: Back
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441897809526784
+    m_Localized: Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442347808014336
+    m_Localized: How To Play Fetch
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442547414941696
+    m_Localized: '<-
+
+      Click anywhere when the white bar is over the tennis
+      ball'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 448820596359168
+    m_Localized: "If you Don't Click for 5 ->\n seconds you Lose!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 449022556291072
+    m_Localized: Try to get the High Score! ->
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

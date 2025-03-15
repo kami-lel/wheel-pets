@@ -45,9 +45,9 @@ public class FetchScript : MonoBehaviour
 
         if (fetchUpdateScore == null || fetchUpdateTime == null || fetchUpdateHighScoreText == null)
         {
-            Debug.LogError(
-                "FetchUpdateScore, FetchUpdateTime, or FetchUpdateHighScoreText is not assigned in the Inspector."
-            );
+            // Debug.LogError(
+            //     "FetchUpdateScore, FetchUpdateTime, or FetchUpdateHighScoreText is not assigned in the Inspector."
+            // );
             return;
         }
 
@@ -72,7 +72,7 @@ public class FetchScript : MonoBehaviour
                 // Game over
                 gameActive = false;
                 pauseOverlay.MinigameLost();
-                Debug.Log("Game Over! Timer reached 0.");
+                // Debug.Log("Game Over! Timer reached 0.");
 
                 // Update the high score if the current score is higher
                 if (fetchUpdateScore.Score > Data.GetPlayerData().fetchHighScore)
@@ -135,7 +135,7 @@ public class FetchScript : MonoBehaviour
             // Game over
             gameActive = false;
             pauseOverlay.MinigameLost();
-            Debug.Log("Game Over! Final Score: " + fetchUpdateScore.Score);
+            // Debug.Log("Game Over! Final Score: " + fetchUpdateScore.Score);
 
             // Update the high score if the current score is higher
             if (fetchUpdateScore.Score > Data.GetPlayerData().fetchHighScore)
@@ -152,14 +152,14 @@ public class FetchScript : MonoBehaviour
     {
         linePosition = 0;
         isMovingRight = true;
-        Debug.Log("Line reset to position: " + linePosition);
+        // Debug.Log("Line reset to position: " + linePosition);
         UpdateVisuals();
     }
 
     void PositionCheckArea()
     {
         checkAreaPosition = Random.Range(0, timingBarLength - checkAreaLength);
-        Debug.Log("Check area positioned at: " + checkAreaPosition);
+        // Debug.Log("Check area positioned at: " + checkAreaPosition);
         UpdateVisuals();
     }
 
@@ -193,14 +193,14 @@ public class FetchScript : MonoBehaviour
         // Ensure the line is above the check area
         line.transform.SetAsLastSibling();
 
-        Debug.Log(
-            "Line position: "
-                + line.GetComponent<RectTransform>().anchoredPosition
-        );
-        Debug.Log(
-            "Check area position: "
-                + checkArea.GetComponent<RectTransform>().anchoredPosition
-        );
+        // Debug.Log(
+        //     "Line position: "
+        //         + line.GetComponent<RectTransform>().anchoredPosition
+        // );
+        // Debug.Log(
+        //     "Check area position: "
+        //         + checkArea.GetComponent<RectTransform>().anchoredPosition
+        // );
     }
 
     IEnumerator StartGameRoutine()
