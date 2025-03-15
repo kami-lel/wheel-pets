@@ -112,6 +112,19 @@ MonoBehaviour:
     m_Localized: "\xA1Intenta conseguir la puntuaci\xF3n m\xE1s alta! ->"
     m_Metadata:
       m_Items: []
+  - m_Id: 685581977174016
+    m_Localized: "\xA1Toca!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 685939952631808
+    m_Localized: "C\xF3mo Jugar Tira y Afloja"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 686179376087040
+    m_Localized: "\xA1Toca tan r\xE1pido como puedas en cualquier parte cuando la
+      palabra '\xA1Toca!' aparezca en la parte superior de la pantalla!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

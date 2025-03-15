@@ -103,6 +103,18 @@ MonoBehaviour:
     m_Key: Fetch Instruct 4
     m_Metadata:
       m_Items: []
+  - m_Id: 685581977174016
+    m_Key: Tap Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 685939952631808
+    m_Key: Tug Instruct 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 686179376087040
+    m_Key: Tug Instruct 2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
