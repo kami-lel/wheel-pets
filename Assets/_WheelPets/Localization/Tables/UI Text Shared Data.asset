@@ -163,6 +163,18 @@ MonoBehaviour:
     m_Key: Artist Text
     m_Metadata:
       m_Items: []
+  - m_Id: 699371800150016
+    m_Key: Unequip Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699539350011904
+    m_Key: Equip Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699913024749568
+    m_Key: Purchase Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

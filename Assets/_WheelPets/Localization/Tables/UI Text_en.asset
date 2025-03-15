@@ -180,6 +180,18 @@ MonoBehaviour:
     m_Localized: Artist
     m_Metadata:
       m_Items: []
+  - m_Id: 699371800150016
+    m_Localized: Unequip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699539350011904
+    m_Localized: Equip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699913024749568
+    m_Localized: Purchase
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

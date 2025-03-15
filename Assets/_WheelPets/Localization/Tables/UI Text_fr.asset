@@ -175,6 +175,18 @@ MonoBehaviour:
     m_Localized: Artiste
     m_Metadata:
       m_Items: []
+  - m_Id: 699371800150016
+    m_Localized: "D\xE9s\xE9quiper"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699539350011904
+    m_Localized: "\xC9quiper"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699913024749568
+    m_Localized: Acheter
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

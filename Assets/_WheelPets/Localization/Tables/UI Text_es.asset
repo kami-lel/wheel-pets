@@ -173,6 +173,18 @@ MonoBehaviour:
     m_Localized: Artista
     m_Metadata:
       m_Items: []
+  - m_Id: 699371800150016
+    m_Localized: Desequipar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699539350011904
+    m_Localized: Equipar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699913024749568
+    m_Localized: Comprar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
