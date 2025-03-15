@@ -2,6 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// todo back function
 public class SceneChange : MonoBehaviour
 {
     public static void LoadCloset()
@@ -79,6 +80,7 @@ public class SceneChange : MonoBehaviour
         SceneManager.LoadScene("CreditsScene");
     }
 
+    // fixme deprecation
     /// <summary>
     /// Manages the logic for exiting the adoption scene intelligently based on pet adoption status.
     /// </summary>
