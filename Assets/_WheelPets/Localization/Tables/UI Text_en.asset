@@ -119,6 +119,32 @@ MonoBehaviour:
     m_Localized: Try to get the High Score! ->
     m_Metadata:
       m_Items: []
+  - m_Id: 496083891953664
+    m_Localized: Code Team
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496122890592256
+    m_Localized: Artist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496154779885568
+    m_Localized: Art Lead / Code Team
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496187893915648
+    m_Localized: Code Lead
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496205245751296
+    m_Localized: Project Manager
+    m_Metadata:
+      m_Items: []
+  - m_Id: 502044459311104
+    m_Localized: Drag the object with the picture matching the one underneath the
+      pet to it to feed it! Each correct food eaten will decrease the counter of
+      required foods. Feed the pet before the time runs out!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
