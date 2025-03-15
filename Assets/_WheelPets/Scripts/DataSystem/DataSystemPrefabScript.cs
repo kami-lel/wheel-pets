@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 
 public class DataSystemPrefabScript : MonoBehaviour
 {
@@ -7,7 +8,27 @@ public class DataSystemPrefabScript : MonoBehaviour
 
     private float lastSaveTime = 0f; // Last save time tracker
 
-    void Update()
+    private void Start()
+    {
+        // set language when game start
+        string localeCode = Data.GetPlayerData().language;
+
+        var selectedLocale =
+            LocalizationSettings.AvailableLocales.Locales.Find(locale =>
+                locale.Identifier.Code == localeCode
+            );
+        if (selectedLocale != null)
+        {
+            LocalizationSettings.SelectedLocale = selectedLocale;
+            Debug.Log($"Locale set to {localeCode}");
+        }
+        else
+        {
+            Debug.LogWarning($"Locale {localeCode} not found");
+        }
+    }
+
+    private void Update()
     {
         // Check if the difference between the current time and the last save time
         // is greater than or equal to the auto-save interval
