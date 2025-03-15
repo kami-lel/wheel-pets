@@ -36,16 +36,19 @@ public class OptionsSceneScript : MonoBehaviour
     public void OnClickEnglishButton()
     {
         SetLocale("en");
+        playerData.language = "en";
     }
 
     public void OnClickSpanishButton()
     {
         SetLocale("es");
+        playerData.language = "es";
     }
 
     public void OnClickFrenchButton()
     {
         SetLocale("fr");
+        playerData.language = "fr";
     }
 
     public void OnClickFactorResetButton()
