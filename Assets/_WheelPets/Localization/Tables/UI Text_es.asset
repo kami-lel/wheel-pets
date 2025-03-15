@@ -83,6 +83,35 @@ MonoBehaviour:
     m_Localized: "Tiempo m\xE1s bajo: 0\nTiempo: 0"
     m_Metadata:
       m_Items: []
+  - m_Id: 440969870098432
+    m_Localized: "\xA1Vamos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441688945770496
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441897809526784
+    m_Localized: Instrucciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442347808014336
+    m_Localized: "C\xF3mo jugar a buscar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442547414941696
+    m_Localized: "<-\r\nHaga clic en cualquier lugar cuando la barra blanca est\xE9
+      sobre la pelota de tenis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 448820596359168
+    m_Localized: "\xA1Si no haces clic en 5 -> \nsegundos, pierdes!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 449022556291072
+    m_Localized: "\xA1Intenta conseguir la puntuaci\xF3n m\xE1s alta! ->"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

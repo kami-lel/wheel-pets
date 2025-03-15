@@ -75,6 +75,34 @@ MonoBehaviour:
     m_Key: BathTime
     m_Metadata:
       m_Items: []
+  - m_Id: 440969870098432
+    m_Key: Go Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441688945770496
+    m_Key: Back Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441897809526784
+    m_Key: Instruction Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442347808014336
+    m_Key: Fetch Instruct 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442547414941696
+    m_Key: Fetch Instruct 2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 448820596359168
+    m_Key: Fetch Instruct 3\
+    m_Metadata:
+      m_Items: []
+  - m_Id: 449022556291072
+    m_Key: Fetch Instruct 4
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
