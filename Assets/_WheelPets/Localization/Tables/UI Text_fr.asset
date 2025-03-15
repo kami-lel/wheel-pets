@@ -185,6 +185,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 699913024749568
     m_Localized: Acheter
+  - m_Id: 496083891953664
+    m_Localized: "\xC9quipe de code"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496154779885568
+    m_Localized: "Responsable artistique / \xC9quipe de code"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496122890592256
+    m_Localized: Artiste
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496187893915648
+    m_Localized: Responsable des codes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 496205245751296
+    m_Localized: Chef de projet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 502044459311104
+    m_Localized: "Faites glisser l'objet dont l'image correspond \xE0 celle sous
+      l'animal pour le nourrir\_! Chaque aliment correct consomm\xE9 diminue le nombre
+      d'aliments requis. Nourrissez l'animal avant la fin du temps imparti!"
     m_Metadata:
       m_Items: []
   references:

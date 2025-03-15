@@ -1636,8 +1636,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 63.68, y: 477.84}
-  m_SizeDelta: {x: 1199.82, y: 45.79}
+  m_AnchoredPosition: {x: -231, y: 469}
+  m_SizeDelta: {x: 221.52, y: 44.34}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630551108
 MonoBehaviour:
@@ -1659,7 +1659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Made possible with the contributions of:'
+  m_text: Credits
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
   m_sharedMaterial: {fileID: 2508588780884510004, guid: a07dc903787264b788db3a8e35e3573f, type: 2}
@@ -1724,7 +1724,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -2.0509949, y: 0, z: 1.2992859, w: 0}
+  m_margin: {x: -2.0509949, y: 0, z: -1.5908508, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2033,14 +2033,13 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 411721650}
+  m_Children: []
   m_Father: {fileID: 14587041}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -865, y: 485.74}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -862.47, y: 477.84}
+  m_SizeDelta: {x: 151.75, y: 98.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1358594157
 MonoBehaviour:
@@ -2118,8 +2117,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: -9007981542807625382, guid: a6b75f6c9c7e24c14a893cbd1a455869, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3389,3 +3388,4 @@ SceneRoots:
   - {fileID: 1766254760}
   - {fileID: 14587041}
   - {fileID: 1465648266}
+  - {fileID: 685438193}
