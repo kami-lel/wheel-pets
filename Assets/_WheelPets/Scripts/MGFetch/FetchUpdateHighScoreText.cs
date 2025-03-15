@@ -12,10 +12,10 @@ public class FetchUpdateHighScoreText : MonoBehaviour
         UpdateHighScoreText();
     }
 
-    public void UpdateHighScoreText() // Changed from private to public
+    public void UpdateHighScoreText()
     {
         int highScore = Data.GetPlayerData().fetchHighScore;
-        string highScoreText = $"High Score: {highScore}";
+        string highScoreText = GetLocalizedHighScoreText(highScore);
 
         if (textMeshProComp != null)
         {
@@ -24,6 +24,21 @@ public class FetchUpdateHighScoreText : MonoBehaviour
         else if (uiTextComp != null)
         {
             uiTextComp.text = highScoreText;
+        }
+    }
+
+    private string GetLocalizedHighScoreText(int highScore)
+    {
+        string language = Data.GetPlayerData().language;
+        Debug.Log("Current Language: " + language); // Debug log to verify the language
+        switch (language)
+        {
+            case "fr":
+                return $"Meilleur Score: {highScore}";
+            case "es":
+                return $"Puntuación Más Alta: {highScore}";
+            default:
+                return $"High Score: {highScore}";
         }
     }
 }

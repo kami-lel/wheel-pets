@@ -21,7 +21,7 @@ public class FetchUpdateTime : MonoBehaviour
 
     private void UpdateTimeText()
     {
-        string timeText = $"Time: {Mathf.Ceil(timer)}";
+        string timeText = GetLocalizedTimeText(Mathf.Ceil(timer));
         if (textMeshProComp != null)
         {
             textMeshProComp.text = timeText;
@@ -29,6 +29,21 @@ public class FetchUpdateTime : MonoBehaviour
         else if (uiTextComp != null)
         {
             uiTextComp.text = timeText;
+        }
+    }
+
+    private string GetLocalizedTimeText(float time)
+    {
+        string language = Data.GetPlayerData().language;
+        Debug.Log("Current Language: " + language); // Debug log to verify the language
+        switch (language)
+        {
+            case "fr":
+                return $"Temps: {time}";
+            case "es":
+                return $"Tiempo: {time}";
+            default:
+                return $"Time: {time}";
         }
     }
 
