@@ -115,6 +115,30 @@ MonoBehaviour:
     m_Key: Tug Instruct 2
     m_Metadata:
       m_Items: []
+  - m_Id: 687483922071552
+    m_Key: Adopt Pet Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688022420373504
+    m_Key: Reset Data Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688307905675264
+    m_Key: Cancel Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688698068221952
+    m_Key: SFX Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688865735524352
+    m_Key: Music Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 689140898643968
+    m_Key: Old Pet Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

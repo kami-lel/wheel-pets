@@ -125,6 +125,30 @@ MonoBehaviour:
       palabra '\xA1Toca!' aparezca en la parte superior de la pantalla!"
     m_Metadata:
       m_Items: []
+  - m_Id: 687483922071552
+    m_Localized: "\xA1Adopta una mascota!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688022420373504
+    m_Localized: "\xBFRestablecer todos los datos?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688307905675264
+    m_Localized: Cancelar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688698068221952
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688865735524352
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 689140898643968
+    m_Localized: Nombre anterior de la mascota
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -132,6 +132,30 @@ MonoBehaviour:
       the top of the screen!
     m_Metadata:
       m_Items: []
+  - m_Id: 687483922071552
+    m_Localized: Adopt A Pet!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688022420373504
+    m_Localized: Reset All Data?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688307905675264
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688698068221952
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688865735524352
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 689140898643968
+    m_Localized: Old Pet Name
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
