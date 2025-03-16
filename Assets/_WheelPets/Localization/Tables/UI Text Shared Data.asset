@@ -173,6 +173,8 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 699913024749568
     m_Key: Purchase Text
+    m_Metadata:
+      m_Items: []
   - m_Id: 496083891953664
     m_Key: Code Team
     m_Metadata:
@@ -195,6 +197,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 502044459311104
     m_Key: Feeding Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000001
+    m_Key: Leaderboard Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000002
+    m_Key: Leaderboard Rank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000003
+    m_Key: Leaderboard Points
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000004
+    m_Key: Leaderboard Driving
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000005
+    m_Key: Leaderboard Minigames
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000006
+    m_Key: Leaderboard Back
     m_Metadata:
       m_Items: []
   m_Metadata:

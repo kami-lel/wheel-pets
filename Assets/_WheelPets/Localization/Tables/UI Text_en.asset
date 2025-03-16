@@ -190,30 +190,30 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 699913024749568
     m_Localized: Purchase
-  - m_Id: 496083891953664
-    m_Localized: Code Team
     m_Metadata:
       m_Items: []
-  - m_Id: 496122890592256
-    m_Localized: Artist
+  - m_Id: 800000000000001
+    m_Localized: Leaderboard
     m_Metadata:
       m_Items: []
-  - m_Id: 496154779885568
-    m_Localized: Art Lead / Code Team
+  - m_Id: 800000000000002
+    m_Localized: "#{0}"
     m_Metadata:
       m_Items: []
-  - m_Id: 496187893915648
-    m_Localized: Code Lead
+  - m_Id: 800000000000003
+    m_Localized: "{0} Points"
     m_Metadata:
       m_Items: []
-  - m_Id: 496205245751296
-    m_Localized: Project Manager
+  - m_Id: 800000000000004
+    m_Localized: Driving
     m_Metadata:
       m_Items: []
-  - m_Id: 502044459311104
-    m_Localized: Drag the object with the picture matching the one underneath the
-      pet to it to feed it! Each correct food eaten will decrease the counter of
-      required foods. Feed the pet before the time runs out!
+  - m_Id: 800000000000005
+    m_Localized: Minigames
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000006
+    m_Localized: Back
     m_Metadata:
       m_Items: []
   references:

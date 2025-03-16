@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 
 public class LeaderboardPlayer : MonoBehaviour
 {
@@ -15,6 +17,21 @@ public class LeaderboardPlayer : MonoBehaviour
     [SerializeField]
     private GameObject petPrefab; // Prefab for the pet model
 
+    [SerializeField]
+    private LocalizeStringEvent rankText;
+
+    [SerializeField]
+    private TextMeshProUGUI nameText;
+
+    [SerializeField]
+    private LocalizeStringEvent pointsText;
+
+    [SerializeField]
+    private LocalizeStringEvent drivingText;
+
+    [SerializeField]
+    private LocalizeStringEvent minigamesText;
+
     private GameObject currentPet; // Reference to the instantiated pet
 
     public void LoadPlayerData(int userRank)
@@ -28,62 +45,40 @@ public class LeaderboardPlayer : MonoBehaviour
             return;
         }
 
-        // Update userScore texts
-        Text placeText = userScore
-            .transform.Find("Place")
-            .GetComponent<Text>();
-        Text nameText = userScore.transform.Find("Name").GetComponent<Text>();
-        Text pointsText = userScore
-            .transform.Find("Points")
-            .GetComponent<Text>();
-
-        if (placeText == null || nameText == null || pointsText == null)
+        // Update rank text
+        if (rankText != null)
         {
-            Debug.LogError(
-                "One or more Text components are not assigned in userScore."
-            );
-            return;
+            rankText.StringReference.Arguments = new object[] { userRank };
+            rankText.RefreshString();
         }
 
-        placeText.text = "#" + userRank.ToString();
-        nameText.text = data.playerName;
-        
-        // Calculate total points (driving + minigame points)
-        int totalPoints = data.drivingPoint + data.minigamePoints;
-        pointsText.text = totalPoints.ToString() + " Points";
-
-        // Update stats texts
-        Text drivingStatsText = stats
-            .transform.Find("Driving Stats")
-            .GetComponent<Text>();
-        Text minigameStatsText = stats
-            .transform.Find("Minigame Stats")
-            .GetComponent<Text>();
-
-        if (drivingStatsText == null || minigameStatsText == null)
+        // Update name text
+        if (nameText != null)
         {
-            Debug.LogError(
-                "One or more Text components are not assigned in stats."
-            );
-            return;
+            nameText.text = data.playerName;
         }
 
-        // Update driving stats with the new "parked without braking" stat
-        drivingStatsText.text =
-            $"Left Turn Signals: {data.leftTurnSignals}\n"
-            + $"Right Turn Signals: {data.rightTurnSignals}\n"
-            + $"Times Parked Without Braking: {data.timesParkedWithoutBraking}\n"
-            + $"Stop Signs Stopped At: {data.stopSignsStoppedAt}";
+        // Update points text
+        if (pointsText != null)
+        {
+            int totalPoints = data.drivingPoint + data.minigamePoints;
+            pointsText.StringReference.Arguments = new object[] { totalPoints };
+            pointsText.RefreshString();
+        }
 
-        // Update minigame stats with the new stat system
-        minigameStatsText.text =
-            $"Minigames Completed: {data.minigamesCompleted}\n"
-            + $"Total Minigame Wins: {data.totalMinigameWins}\n"
-            + $"Best Scores:\n"
-            + $"  Fetch: {data.fetchHighScore}\n"
-            + $"  Bath Time: {data.bathMinigameBestTime:F2}s\n"
-            + $"  Hide-N-Seek: {data.hideNSeekBestTime:F2}s\n"
-            + $"  Tug of War: {data.tugOfWarBestScore}";
+        // Update driving stats text
+        if (drivingText != null)
+        {
+            drivingText.StringReference.Arguments = new object[] { data.drivingPoint };
+            drivingText.RefreshString();
+        }
+
+        // Update minigame stats text
+        if (minigamesText != null)
+        {
+            minigamesText.StringReference.Arguments = new object[] { data.minigamePoints };
+            minigamesText.RefreshString();
+        }
 
         // Load and display the pet
         LoadPet(data);
