@@ -72,7 +72,7 @@ MonoBehaviour:
     m_Localized: 'Faites glisser les objets vers l''animal dans le bon ordre avant
       qu''il ne perde patience.
 
-      Indice : l''ordre est BCSWTS'
+      Indice : l''ordre est BTSESC'
     m_Metadata:
       m_Items: []
   - m_Id: 124065124704256
@@ -185,6 +185,8 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 699913024749568
     m_Localized: Acheter
+    m_Metadata:
+      m_Items: []
   - m_Id: 496083891953664
     m_Localized: "\xC9quipe de code"
     m_Metadata:
@@ -209,6 +211,10 @@ MonoBehaviour:
     m_Localized: "Faites glisser l'objet dont l'image correspond \xE0 celle sous
       l'animal pour le nourrir\_! Chaque aliment correct consomm\xE9 diminue le nombre
       d'aliments requis. Nourrissez l'animal avant la fin du temps imparti!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 799324768108544
+    m_Localized: Tu ne peux pas encore l'utiliser
     m_Metadata:
       m_Items: []
   references:

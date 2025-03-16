@@ -11,7 +11,7 @@ public class BathGame : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mistakeText; // Text to display mistakes
     [SerializeField] private TextMeshProUGUI messageText; // Text to display messages
     [SerializeField] private TextMeshProUGUI timerText; // Text to display the timer
-    [SerializeField] private BathBar bathBar; 
+    [SerializeField] private BathBar bathBar;
 
     public PauseOverlay pauseOverlay;
 
@@ -132,14 +132,14 @@ public class BathGame : MonoBehaviour
                 if (!isBrushUsed)
                 {
                     isBrushUsed = true;
-                    DisplayMessage("The dog is brushed and looking tidy.");
+                    DisplayMessage("brush_message");
                     RemoveItem(draggedItem);
                     BrushSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                 }
                 else
                 {
-                    DisplayMessage("You can't use that yet.");
+                    DisplayMessage("mistake_message");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                     ReducePatience();
@@ -150,15 +150,15 @@ public class BathGame : MonoBehaviour
                 if (isBrushUsed && !isClippersUsed)
                 {
                     isClippersUsed = true;
-                    DisplayMessage("The dog has been clipped.");
+                    DisplayMessage("mclippers_message");
                     RemoveItem(draggedItem);
                     ClipperSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
-                    
+
                 }
                 else
                 {
-                    DisplayMessage("You can't use that yet.");
+                    DisplayMessage("mistake_message");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                     ReducePatience();
@@ -169,14 +169,14 @@ public class BathGame : MonoBehaviour
                 if (isBrushUsed && isClippersUsed && !isSoapUsed)
                 {
                     isSoapUsed = true;
-                    DisplayMessage("The dog is lathered.");
+                    DisplayMessage("soap_message");
                     RemoveItem(draggedItem);
                     SoapSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                 }
                 else
                 {
-                    DisplayMessage("You can't use that yet.");
+                    DisplayMessage("mistake_message");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                     ReducePatience();
@@ -193,14 +193,14 @@ public class BathGame : MonoBehaviour
                 )
                 {
                     isWaterUsed = true;
-                    DisplayMessage("The dog is rinsed.");
+                    DisplayMessage("water_message");
                     RemoveItem(draggedItem);
                     WaterSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                 }
                 else
                 {
-                    DisplayMessage("You can't use that yet.");
+                    DisplayMessage("mistake_message");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                     ReducePatience();
@@ -211,14 +211,14 @@ public class BathGame : MonoBehaviour
                 if (isWaterUsed && !isTowelUsed)
                 {
                     isTowelUsed = true;
-                    DisplayMessage("The dog is dried off.");
+                    DisplayMessage("towel_message");
                     RemoveItem(draggedItem);
                     TowelSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                 }
                 else
                 {
-                    DisplayMessage("You can't use that yet.");
+                    DisplayMessage("mistake_message");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                     ReducePatience();
@@ -229,7 +229,7 @@ public class BathGame : MonoBehaviour
                 if (isTowelUsed && !isScissorsUsed)
                 {
                     isScissorsUsed = true;
-                    DisplayMessage("All done");
+                    DisplayMessage("scissors_message");
                     RemoveItem(draggedItem);
                     ScissorSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
@@ -242,7 +242,7 @@ public class BathGame : MonoBehaviour
                 }
                 else
                 {
-                    DisplayMessage("You can't use that yet.");
+                    DisplayMessage("mistake_message");
                     MistakeSound.Play();
                     Invoke(nameof(StopAllSounds), 1f);
                     ReducePatience();
@@ -263,13 +263,13 @@ public class BathGame : MonoBehaviour
         }
     }
 
-    
 
-    private void DisplayMessage(string message)
+
+    private void DisplayMessage(string key)
     {
         if (messageText != null)
         {
-            messageText.text = message;
+            messageText.text = LocalizationManager.Instance.GetTranslation(key);
         }
     }
 
@@ -327,67 +327,64 @@ public class BathGame : MonoBehaviour
         float bestTime = Data.GetPlayerData().statBath.bestScore;
         if (timerText != null)
         {
-            timerText.text =
-                "Lowest Time: "
-                + bestTime.ToString("F2")
-                + "s\nTime: "
-                + timer.ToString("F2")
-                + "s";
+            string timerTextFormat = LocalizationManager.Instance.GetTranslation("timer_text");
+            timerText.text = string.Format(timerTextFormat, bestTime.ToString("F2"), timer.ToString("F2"));
+        }
+
+    }
+
+    private void StopAllSounds()
+    {
+        BrushSound.Stop();
+        ClipperSound.Stop();
+        SoapSound.Stop();
+        WaterSound.Stop();
+        TowelSound.Stop();
+        ScissorSound.Stop();
+        MistakeSound.Stop();
+    }
+
+    // Makes the bar decrease over a 15-second period
+    public void StartBathBar()
+    {
+        patienceRemaining = maxPatience;
+        isRunning = true;
+        UpdatePatienceUI();
+    }
+
+    // Makes the bar decrease by a set amount when called
+    private void ReducePatience()
+    {
+        patienceRemaining -= wrongItemPenalty;
+        if (patienceRemaining < 0) patienceRemaining = 0;
+        UpdatePatienceUI();
+
+        if (patienceRemaining <= 0)
+        {
+            MinigameLost();
         }
     }
 
-private void StopAllSounds()
-{
-    BrushSound.Stop();
-    ClipperSound.Stop();
-    SoapSound.Stop();
-    WaterSound.Stop();
-    TowelSound.Stop();
-    ScissorSound.Stop();
-    MistakeSound.Stop();
-}
-
-// Makes the bar decrease over a 15-second period
-public void StartBathBar()
-{
-    patienceRemaining = maxPatience;
-    isRunning = true;
-    UpdatePatienceUI();
-}
-
-// Makes the bar decrease by a set amount when called
-private void ReducePatience()
-{
-    patienceRemaining -= wrongItemPenalty;
-    if (patienceRemaining < 0) patienceRemaining = 0;
-    UpdatePatienceUI();
-
-    if (patienceRemaining <= 0)
+    private void UpdatePatienceUI()
+    {
+        if (patienceBarFill != null)
+        {
+            patienceBarFill.fillAmount = patienceRemaining / maxPatience;
+        }
+    }
+    public void HandlePatienceDepleted()
     {
         MinigameLost();
     }
-}
-
-private void UpdatePatienceUI()
-{
-    if (patienceBarFill != null)
+    private void MinigameLost()
     {
-        patienceBarFill.fillAmount = patienceRemaining / maxPatience;
+        pauseOverlay.MinigameLost();
+
+
     }
-}
-public void HandlePatienceDepleted()
-{
-    MinigameLost();
-}
-private void MinigameLost()
-{
-    pauseOverlay.MinigameLost();
-
-
-}
-private void MinigameWin()
-{
-    pauseOverlay.MinigameWin();
-}
+    private void MinigameWin()
+    {
+        pauseOverlay.MinigameWin();
+    }
 
 }

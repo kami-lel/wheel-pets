@@ -223,6 +223,10 @@ MonoBehaviour:
     m_Key: Leaderboard Back
     m_Metadata:
       m_Items: []
+  - m_Id: 799324768108544
+    m_Key: Cant Use Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
