@@ -10,9 +10,8 @@ A game and prototype for CMPM 171, UCSC
 ___
 
 ### Art Placeholders
-1. 
+1. [Hide-n-Seek Background](https://www.reddit.com/r/PixelArt/comments/lzbq24/1930s_living_room/)
 2. [Hue](https://giggster.com/guide/basics/hue-saturation-lightness)
-3. [Hide-n-Seek Background](https://www.reddit.com/r/PixelArt/comments/lzbq24/1930s_living_room/)
 
 
 
