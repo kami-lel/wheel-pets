@@ -54,4 +54,11 @@ ___
 11. [Water Sound](https://pixabay.com/sound-effects/fill-water-192164/)
 12. [Clippers Sound](https://pixabay.com/sound-effects/some-clicks-46243/)
 13. [Scissors Sound](https://pixabay.com/sound-effects/scissors-43438/)
+14. [Walk Background Music](https://pixabay.com/music/happy-childrens-tunes-quirky-kids-music-254537/)
+15. [Walk Jump SFX](https://pixabay.com/sound-effects/bloop-2-186531/)
+16. [Walk Boulder SFX](https://pixabay.com/sound-effects/rolling-24b-100544/)
+17. [Tug of War Backgrouind Music](https://pixabay.com/music/comedy-awkward-comedy-229249/)
+18. [Feed Background Music](https://pixabay.com/music/comedy-quirky-fun-comedy-250869/)
+19. [Feed Incorrect/Hungry SFX](https://pixabay.com/sound-effects/grumbles-38430/)
+20. [Feed Correct/Eat SFX](https://pixabay.com/sound-effects/eatingsfxwav-14588/)
 
