@@ -208,9 +208,10 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 502044459311104
-    m_Localized: "Faites glisser l'objet dont l'image correspond \xE0 celle sous
-      l'animal pour le nourrir\_! Chaque aliment correct consomm\xE9 diminue le nombre
-      d'aliments requis. Nourrissez l'animal avant la fin du temps imparti!"
+    m_Localized: "Faites glisser l'objet avec l'image correspondant \xE0 celle sous
+      l'animal pour le nourrir ! Chaque nourriture correcte mang\xE9e diminuera le
+      compteur des aliments requis. Nourrissez l'animal avant que le temps ne soit
+      \xE9coul\xE9 !\n\n"
     m_Metadata:
       m_Items: []
   - m_Id: 799324768108544

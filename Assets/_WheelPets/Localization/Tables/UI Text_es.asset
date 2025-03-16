@@ -231,6 +231,13 @@ MonoBehaviour:
     m_Localized: Cuidado de Mascotas
     m_Metadata:
       m_Items: []
+  - m_Id: 502044459311104
+    m_Localized: "\xA1Arrastra el objeto con la imagen que coincide con la que est\xE1
+      debajo de la mascota para alimentarla! Cada comida correcta que se coma disminuir\xE1
+      el contador de alimentos requeridos. \xA1Alimenta a la mascota antes de que
+      se acabe el tiempo!"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

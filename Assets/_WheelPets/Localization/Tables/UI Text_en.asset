@@ -241,6 +241,12 @@ MonoBehaviour:
     m_Localized: Pet Care
     m_Metadata:
       m_Items: []
+  - m_Id: 502044459311104
+    m_Localized: Drag the object with the picture matching the one underneath the
+      pet to it to feed it! Each correct food eaten will decrease the counter of
+      required foods. Feed the pet before the time runs out!
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
