@@ -237,6 +237,10 @@ MonoBehaviour:
       a game of luck. Are you lucky?'
     m_Metadata:
       m_Items: []
+  - m_Id: 803934656331776
+    m_Localized: Pet Care
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
