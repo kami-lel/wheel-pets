@@ -173,6 +173,8 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 699913024749568
     m_Key: Purchase Text
+    m_Metadata:
+      m_Items: []
   - m_Id: 496083891953664
     m_Key: Code Team
     m_Metadata:
