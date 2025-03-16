@@ -10,6 +10,8 @@ public class FoodObject : MonoBehaviour
     private bool WasMouseDown = false;
     [SerializeField] private GameObject Pauseverlay;
 
+    [SerializeField] AudioSource pickupSFX;
+
     // Update is called once per frame
     private void Start()
     {
