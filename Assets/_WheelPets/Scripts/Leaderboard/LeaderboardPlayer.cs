@@ -11,29 +11,6 @@ public class LeaderboardPlayer : MonoBehaviour
     [SerializeField]
     private GameObject stats;
 
-    [SerializeField]
-    private GameObject petContainer; // Container for the pet visualization
-
-    [SerializeField]
-    private GameObject petPrefab; // Prefab for the pet model
-
-    [SerializeField]
-    private LocalizeStringEvent rankText;
-
-    [SerializeField]
-    private TextMeshProUGUI nameText;
-
-    [SerializeField]
-    private LocalizeStringEvent pointsText;
-
-    [SerializeField]
-    private LocalizeStringEvent drivingText;
-
-    [SerializeField]
-    private LocalizeStringEvent minigamesText;
-
-    private GameObject currentPet; // Reference to the instantiated pet
-
     public void LoadPlayerData(int userRank)
     {
         PlayerData data = Data.GetPlayerData();
@@ -45,68 +22,57 @@ public class LeaderboardPlayer : MonoBehaviour
             return;
         }
 
-        // Update rank text
-        if (rankText != null)
-        {
-            rankText.StringReference.Arguments = new object[] { userRank };
-            rankText.RefreshString();
-        }
+        // Update userScore texts
+        Text placeText = userScore
+            .transform.Find("Place")
+            .GetComponent<Text>();
+        Text nameText = userScore.transform.Find("Name").GetComponent<Text>();
+        Text pointsText = userScore
+            .transform.Find("Points")
+            .GetComponent<Text>();
 
-        // Update name text
-        if (nameText != null)
+        if (placeText == null || nameText == null || pointsText == null)
         {
-            nameText.text = data.playerName;
-        }
-
-        // Update points text
-        if (pointsText != null)
-        {
-            int totalPoints = data.drivingPoint + data.minigamePoints;
-            pointsText.StringReference.Arguments = new object[] { totalPoints };
-            pointsText.RefreshString();
-        }
-
-        // Update driving stats text
-        if (drivingText != null)
-        {
-            drivingText.StringReference.Arguments = new object[] { data.drivingPoint };
-            drivingText.RefreshString();
-        }
-
-        // Update minigame stats text
-        if (minigamesText != null)
-        {
-            minigamesText.StringReference.Arguments = new object[] { data.minigamePoints };
-            minigamesText.RefreshString();
-        }
-
-        // Load and display the pet
-        LoadPet(data);
-    }
-
-    private void LoadPet(PlayerData data)
-    {
-        // Clean up any existing pet
-        if (currentPet != null)
-        {
-            Destroy(currentPet);
-        }
-
-        // Check if we have the necessary components
-        if (petContainer == null || petPrefab == null)
-        {
-            Debug.LogError("Pet container or prefab is not assigned.");
+            Debug.LogError(
+                "One or more Text components are not assigned in userScore."
+            );
             return;
         }
 
-        // Instantiate the pet prefab
-        currentPet = Instantiate(petPrefab, petContainer.transform);
-        
-        // Apply pet customizations from player data
-        PetCustomization petCustomization = currentPet.GetComponent<PetCustomization>();
-        if (petCustomization != null)
+        placeText.text = "#" + userRank.ToString();
+        nameText.text = data.playerName;
+        pointsText.text = data.drivingPoint.ToString() + " Points";
+
+        // Update stats texts
+        Text drivingStatsText = stats
+            .transform.Find("Driving Stats")
+            .GetComponent<Text>();
+        Text minigameStatsText = stats
+            .transform.Find("Minigame Stats")
+            .GetComponent<Text>();
+
+        if (drivingStatsText == null || minigameStatsText == null)
         {
-            petCustomization.ApplyCustomization(data.petCustomization);
+            Debug.LogError(
+                "One or more Text components are not assigned in stats."
+            );
+            return;
         }
+
+        drivingStatsText.text =
+            $"Left Turn Signals: {data.leftTurnSignals}\n"
+            + $"Right Turn Signals: {data.rightTurnSignals}\n"
+            + $"Times Parked Without Touching Lines: {data.timesParkedWithoutTouchingLines}\n"
+            + $"Stop Signs Stopped At: {data.stopSignsStoppedAt}";
+
+        // bug these data fields are deprecated, use the new stat system
+        minigameStatsText.text =
+            $"Tug Of War Games Won: {data.tugOfWarGamesWon}\n"
+            + $"Times Pet Washed: {data.timesPetWashed}\n"
+            + $"Times Hide-N-Seek Won: {data.timesHideNSeekWon}\n"
+            + $"Cosmetics Unlocked: {data.cosmeticsUnlocked}\n"
+            + $"Fetch High Score: {data.fetchHighScore}\n"
+            + $"Best Time for Bath Minigame: {data.bathMinigameBestTime:F2} seconds\n"
+            + $"Times Pet Walked: {data.timesPetWalked}";
     }
 }
