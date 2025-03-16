@@ -227,6 +227,18 @@ MonoBehaviour:
     m_Key: Cant Use Text
     m_Metadata:
       m_Items: []
+  - m_Id: 801172891697152
+    m_Key: Hide N Seek Title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801692851175424
+    m_Key: Hide Instruct 1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801937563648000
+    m_Key: hIDE iNSTRUCT 2
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

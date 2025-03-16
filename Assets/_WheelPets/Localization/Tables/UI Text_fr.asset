@@ -217,6 +217,21 @@ MonoBehaviour:
     m_Localized: Tu ne peux pas encore l'utiliser
     m_Metadata:
       m_Items: []
+  - m_Id: 801172891697152
+    m_Localized: "Cache-cache\nO\xF9 est ton animal ?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801692851175424
+    m_Localized: Cache-cache Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801937563648000
+    m_Localized: 'Clique sur la loupe pour chercher ton animal.
+
+      C''est un
+      jeu de chance. As-tu de la chance ?'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

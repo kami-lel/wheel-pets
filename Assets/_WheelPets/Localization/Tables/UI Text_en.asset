@@ -220,6 +220,23 @@ MonoBehaviour:
     m_Localized: You can't use that yet
     m_Metadata:
       m_Items: []
+  - m_Id: 801172891697152
+    m_Localized: 'Hide-n-Seek
+
+      Where''s your pet?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801692851175424
+    m_Localized: Hide-n-Seek Instructions
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801937563648000
+    m_Localized: 'Click on the magnifying glass to search for your pet.
+
+      It''s
+      a game of luck. Are you lucky?'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

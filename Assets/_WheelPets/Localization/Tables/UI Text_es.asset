@@ -214,6 +214,19 @@ MonoBehaviour:
     m_Localized: "No puedes usar eso a\xFAn"
     m_Metadata:
       m_Items: []
+  - m_Id: 801172891697152
+    m_Localized: "Hide-n-Seek\nD\xF3nde est\xE1 tu mascota?\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801692851175424
+    m_Localized: Hide-n-Seek Instrucciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801937563648000
+    m_Localized: "Click en la lupa para buscar a tu mascota.\nEs un juego de suerte.
+      \xBFTienes suerte?"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
