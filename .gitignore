@@ -146,4 +146,4 @@ playerData.json.meta
 
 
 # Ignore all Addressable Assets Data files
-Assets/AddressableAssetsData/*
+# Assets/AddressableAssetsData/*

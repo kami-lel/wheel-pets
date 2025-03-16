@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
@@ -24,6 +25,9 @@ public class OptionsSceneScript : MonoBehaviour
     [SerializeField]
     private Slider secondaryColorSlider;
 
+    [SerializeField]
+    private TextMeshProUGUI petNameTextFieldPlaceholder;
+
     public void OnClickBackButon()
     {
         SceneChange.LoadTitle();
@@ -32,16 +36,19 @@ public class OptionsSceneScript : MonoBehaviour
     public void OnClickEnglishButton()
     {
         SetLocale("en");
+        playerData.language = "en";
     }
 
     public void OnClickSpanishButton()
     {
         SetLocale("es");
+        playerData.language = "es";
     }
 
     public void OnClickFrenchButton()
     {
         SetLocale("fr");
+        playerData.language = "fr";
     }
 
     public void OnClickFactorResetButton()
@@ -49,9 +56,13 @@ public class OptionsSceneScript : MonoBehaviour
         resetDataPopUp.SetActive(true);
     }
 
-    public void OnClickRandomNameButton()
+    public void OnEndEditPetNameTextField(string value)
     {
-        // todo implement random new name
+        playerData.petData.name = value;
+        if (Debug.isDebugBuild)
+        {
+            Debug.Log($"OptionsScene\tChange Pet Name:{value}");
+        }
     }
 
     /// <summary>
@@ -127,8 +138,10 @@ public class OptionsSceneScript : MonoBehaviour
             adoptAPetPopUp.SetActive(true);
         }
 
+        // set up ui component initial values
         dominantColorSlider.value = playerData.petData.dominantColorHue;
         secondaryColorSlider.value = playerData.petData.secondaryColorHue;
+        petNameTextFieldPlaceholder.text = playerData.petData.name;
     }
 
     private void ZeroSliderVisual()

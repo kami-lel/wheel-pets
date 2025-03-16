@@ -483,12 +483,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38c916cddec9d7429dc48d62c3ef4c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showPetName: 1
   dog: {fileID: 3191048591017607901}
   dogAccessoryGroup: {fileID: 2175837310223012307}
   cat: {fileID: 2869976314571978408}
   catAccessoryGroup: {fileID: 7444943024160469123}
   rabbit: {fileID: 6716035960111037721}
   rabbitAccessoryGroup: {fileID: 5827597483271415762}
+  petNameTextField: {fileID: 0}
 --- !u!61 &8761072924015968106
 BoxCollider2D:
   m_ObjectHideFlags: 0

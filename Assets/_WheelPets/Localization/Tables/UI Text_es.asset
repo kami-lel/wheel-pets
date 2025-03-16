@@ -18,81 +18,224 @@ MonoBehaviour:
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 11657871360
-    m_Localized: Instrucciones
-    m_Metadata:
-      m_Items: []
-  - m_Id: 747670142976
+  - m_Id: 76167954432
     m_Localized: "\xBFListo?"
     m_Metadata:
       m_Items: []
-  - m_Id: 3915573428224
-    m_Localized: SFX
+  - m_Id: 27109983510528
+    m_Localized: "Cr\xE9ditos"
     m_Metadata:
       m_Items: []
-  - m_Id: 4232025276416
-    m_Localized: "M\xFAsica"
+  - m_Id: 32277131157504
+    m_Localized: Iniciar Juego
     m_Metadata:
       m_Items: []
-  - m_Id: 7204486578176
-    m_Localized: Desequipar
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7458837561344
-    m_Localized: Comprar
-    m_Metadata:
-      m_Items: []
-  - m_Id: 7616929267712
-    m_Localized: Equipar
-    m_Metadata:
-      m_Items: []
-  - m_Id: 14868914438144
-    m_Localized: Salir
-    m_Metadata:
-      m_Items: []
-  - m_Id: 15044659970048
-    m_Localized: Reiniciar
-    m_Metadata:
-      m_Items: []
-  - m_Id: 15231088394240
-    m_Localized: "\xA1Ganaste!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16195715399680
-    m_Localized: "\xA1Perdiste!"
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16567284596736
-    m_Localized: Reanudar
-    m_Metadata:
-      m_Items: []
-  - m_Id: 16930028978176
-    m_Localized: Confirmar
-    m_Metadata:
-      m_Items: []
-  - m_Id: 17116465790976
+  - m_Id: 33262759043072
     m_Localized: "\xBFReiniciar juego?"
     m_Metadata:
       m_Items: []
-  - m_Id: 17529051086848
-    m_Localized: Iniciar juego
+  - m_Id: 33381604646912
+    m_Localized: Reanudar
     m_Metadata:
       m_Items: []
-  - m_Id: 21698537390080
-    m_Localized: "\xA1Toca!"
+  - m_Id: 33633413881856
+    m_Localized: Confirmar
     m_Metadata:
       m_Items: []
-  - m_Id: 22131741884416
+  - m_Id: 35130142875648
+    m_Localized: Salir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 35957297373184
+    m_Localized: "\xA1Victoria!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36095772319744
+    m_Localized: "\xA1Derrota!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 36915645505536
+    m_Localized: Reiniciar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 121713026129920
+    m_Localized: Instrucciones para caminar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 122098608496640
+    m_Localized: "Presiona la barra espaciadora para saltar sobre las rocas.\nToca
+      para reducir el tiempo en el aire.\nMant\xE9n presionada para aumentar el tiempo
+      en el aire."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123666569355264
+    m_Localized: 'Arrastra los objetos hacia la mascota en el orden correcto antes
+      de que pierda la paciencia. Pista: el orden es CCTATJ
+
+      Pista: el orden
+      es BCSWTS'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124065124704256
+    m_Localized: "Instrucciones de ba\xF1o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 124634442752000
+    m_Localized: "Tiempo m\xE1s bajo: 0\nTiempo: 0"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 440969870098432
+    m_Localized: "\xA1Vamos!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441688945770496
     m_Localized: Volver
     m_Metadata:
       m_Items: []
-  - m_Id: 22366539022336
-    m_Localized: "Comment Jouer au Tire \xE0 la Corde"
+  - m_Id: 441897809526784
+    m_Localized: Instrucciones
     m_Metadata:
       m_Items: []
-  - m_Id: 22554938769408
-    m_Localized: "Tape aussi vite que possible n'importe o\xF9 lorsque le mot 'Tapez!'
-      appara\xEEt en haut de l'\xE9cran !"
+  - m_Id: 442347808014336
+    m_Localized: "C\xF3mo jugar a buscar"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 442547414941696
+    m_Localized: "<-\r\nHaga clic en cualquier lugar cuando la barra blanca est\xE9
+      sobre la pelota de tenis."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 448820596359168
+    m_Localized: "\xA1Si no haces clic en 5 -> \nsegundos, pierdes!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 449022556291072
+    m_Localized: "\xA1Intenta conseguir la puntuaci\xF3n m\xE1s alta! ->"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 685581977174016
+    m_Localized: "\xA1Toca!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 685939952631808
+    m_Localized: "C\xF3mo Jugar Tira y Afloja"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 686179376087040
+    m_Localized: "\xA1Toca tan r\xE1pido como puedas en cualquier parte cuando la
+      palabra '\xA1Toca!' aparezca en la parte superior de la pantalla!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 687483922071552
+    m_Localized: "\xA1Adopta una mascota!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688022420373504
+    m_Localized: "\xBFRestablecer todos los datos?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688307905675264
+    m_Localized: Cancelar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688698068221952
+    m_Localized: SFX
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688865735524352
+    m_Localized: "M\xFAsica"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 689140898643968
+    m_Localized: Nombre anterior de la mascota
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694581401665536
+    m_Localized: 'Hecho posible con las contribuciones de:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694790919733248
+    m_Localized: Gerente de proyecto
+    m_Metadata:
+      m_Items: []
+  - m_Id: 694989935263744
+    m_Localized: "L\xEDder de c\xF3digo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695267812098048
+    m_Localized: "L\xEDder de arte / Equipo de c\xF3digo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695428776902656
+    m_Localized: "Equipo de c\xF3digo"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 695707345797120
+    m_Localized: Artista
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699371800150016
+    m_Localized: Desequipar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699539350011904
+    m_Localized: Equipar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 699913024749568
+    m_Localized: Comprar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000001
+    m_Localized: "Tabla de Clasificaci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000002
+    m_Localized: '#{0}'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000003
+    m_Localized: '{0} Puntos'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000004
+    m_Localized: "Conducci\xF3n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000005
+    m_Localized: Minijuegos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 800000000000006
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 799324768108544
+    m_Localized: "No puedes usar eso a\xFAn"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801172891697152
+    m_Localized: "Hide-n-Seek\nD\xF3nde est\xE1 tu mascota?\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801692851175424
+    m_Localized: Hide-n-Seek Instrucciones
+    m_Metadata:
+      m_Items: []
+  - m_Id: 801937563648000
+    m_Localized: "Click en la lupa para buscar a tu mascota.\nEs un juego de suerte.
+      \xBFTienes suerte?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 803934656331776
+    m_Localized: Cuidado de Mascotas
+    m_Metadata:
+      m_Items: []
+  - m_Id: 502044459311104
+    m_Localized: "\xA1Arrastra el objeto con la imagen que coincide con la que est\xE1
+      debajo de la mascota para alimentarla! Cada comida correcta que se coma disminuir\xE1
+      el contador de alimentos requeridos. \xA1Alimenta a la mascota antes de que
+      se acabe el tiempo!"
     m_Metadata:
       m_Items: []
   references:

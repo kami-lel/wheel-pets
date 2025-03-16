@@ -10,14 +10,8 @@ A game and prototype for CMPM 171, UCSC
 ___
 
 ### Art Placeholders
-1. [Pixel Art Bathtub](https://www.vecteezy.com/vector-art/21847058-bathtub-in-pixel-art-style)
+1. [Hide-n-Seek Background](https://www.reddit.com/r/PixelArt/comments/lzbq24/1930s_living_room/)
 2. [Hue](https://giggster.com/guide/basics/hue-saturation-lightness)
-3. [Bathroom Background](https://zh.freepik.com/%E7%85%A7%E7%89%87/%E5%83%8F%E7%B4%A0%E8%89%BA%E6%9C%AF)
-4. [Kitchen Background](https://www.pinterest.com/pin/553590979210005938)
-5. [Park Background](https://www.epfl.ch/schools/cdh/fr/lart-et-la-culture/thema/incertitude-et-jeu-video)
-6. [Hide-n-Seek Background](https://www.reddit.com/r/PixelArt/comments/lzbq24/1930s_living_room/)
-7. [Brush](https://www.creativefabrica.com/product/comb-png-file-cute-clip-art/)
-8. [Bath](https://www.vecteezy.com/vector-art/22477547-toilet-in-pixel-art-style)
 
 
 
@@ -60,4 +54,11 @@ ___
 11. [Water Sound](https://pixabay.com/sound-effects/fill-water-192164/)
 12. [Clippers Sound](https://pixabay.com/sound-effects/some-clicks-46243/)
 13. [Scissors Sound](https://pixabay.com/sound-effects/scissors-43438/)
+14. [Walk Background Music](https://pixabay.com/music/happy-childrens-tunes-quirky-kids-music-254537/)
+15. [Walk Jump SFX](https://pixabay.com/sound-effects/bloop-2-186531/)
+16. [Walk Boulder SFX](https://pixabay.com/sound-effects/rolling-24b-100544/)
+17. [Tug of War Backgrouind Music](https://pixabay.com/music/comedy-awkward-comedy-229249/)
+18. [Feed Background Music](https://pixabay.com/music/comedy-quirky-fun-comedy-250869/)
+19. [Feed Incorrect/Hungry SFX](https://pixabay.com/sound-effects/grumbles-38430/)
+20. [Feed Correct/Eat SFX](https://pixabay.com/sound-effects/eatingsfxwav-14588/)
 

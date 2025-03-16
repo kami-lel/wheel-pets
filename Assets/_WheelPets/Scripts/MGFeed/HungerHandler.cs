@@ -41,11 +41,13 @@ public class HungerHandler : MonoBehaviour
     private AudioSource Music;
     public PauseOverlay pauseOverlay;
 
-    // At some point, a singleton needs to be coordinated + implemented so that this can just search for it by name. For now, I will initialize an object for it.
     [SerializeField]
     GameObject Spawner;
 
     private GameObject displayFood;
+
+    [SerializeField]
+    private LocalizedFeedText localizedFeedText; // Reference to the LocalizedFeedText script
 
     private void Start()
     {
@@ -59,18 +61,19 @@ public class HungerHandler : MonoBehaviour
         foods[3] = FoodObject.FoodTypes.Food4;
         foods[4] = FoodObject.FoodTypes.Food5;
         foods[5] = FoodObject.FoodTypes.Food6;
-        int bleh = Random.Range(
-            0,
-            Spawner.GetComponent<SpawnHandler>().NumPrefabs
-        );
+        int bleh = Random.Range(0, Spawner.GetComponent<SpawnHandler>().NumPrefabs);
         FoodIWant = foods[bleh];
-        texty.text = "I want...      !";
+
+        // Use LocalizedFeedText to update the "I want..." and "Foods Left" text
+        if (localizedFeedText != null)
+        {
+            localizedFeedText.UpdateTexts(bleh, score);
+        }
+
         displayFood = Instantiate(Spawner.GetComponent<SpawnHandler>().gameObjects[bleh], new Vector3(.62f, -4.54f, -1.5f), Quaternion.identity);
         displayFood.GetComponent<BoxCollider2D>().enabled = false;
-        textytoo.text = "Foods Left: " + score.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
@@ -80,10 +83,7 @@ public class HungerHandler : MonoBehaviour
             HungerSlider.value = CurrentHunger;
             timer = 0f;
         }
-        if (
-            CurrentHunger <= 0f
-            && pauseOverlay.status == PauseOverlay.Status.Running
-        )
+        if (CurrentHunger <= 0f && pauseOverlay.status == PauseOverlay.Status.Running)
         {
             pauseOverlay.MinigameLost();
             Data.GetPlayerData().statFeed.RecordWin((float)score);
@@ -95,11 +95,7 @@ public class HungerHandler : MonoBehaviour
         }
     }
 
-    public void SatiateHunger(
-        float FoodAmount,
-        int ScoreAmount,
-        FoodObject.FoodTypes foodType
-    )
+    public void SatiateHunger(float FoodAmount, int ScoreAmount, FoodObject.FoodTypes foodType)
     {
         if (FoodIWant == foodType)
         {
@@ -110,21 +106,25 @@ public class HungerHandler : MonoBehaviour
         {
             BadFeedEffect.Play();
         }
+
         if ((CurrentHunger - Hunger) > .01f)
         {
             CurrentHunger = Hunger;
         }
         HungerSlider.value = CurrentHunger;
-        int bleh = Random.Range(
-            0,
-            Spawner.GetComponent<SpawnHandler>().NumPrefabs
-        );
+
+        int bleh = Random.Range(0, Spawner.GetComponent<SpawnHandler>().NumPrefabs);
         FoodIWant = foods[bleh];
-        texty.text = "I want...      !";
+
+        // Use LocalizedFeedText to update the "I want..." and "Foods Left" text
+        if (localizedFeedText != null)
+        {
+            localizedFeedText.UpdateTexts(bleh, score);
+        }
+
         Destroy(displayFood);
         displayFood = Instantiate(Spawner.GetComponent<SpawnHandler>().gameObjects[bleh], new Vector3(.62f, -4.54f, -1.5f), Quaternion.identity);
         displayFood.GetComponent<BoxCollider2D>().enabled = false;
         Spawner.GetComponent<SpawnHandler>().ResetFoods();
-        textytoo.text = "Foods Left: " + score.ToString();
     }
 }

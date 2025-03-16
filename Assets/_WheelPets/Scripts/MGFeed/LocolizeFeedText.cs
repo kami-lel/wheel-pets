@@ -1,43 +1,30 @@
 using UnityEngine;
-using UnityEngine.Localization;
-using UnityEngine.Localization.Components;
 using TMPro;
 
-public class LocalizedGameText : MonoBehaviour
+public class LocalizedFeedText : MonoBehaviour
 {
-    public LocalizeStringEvent wantTextEvent;
-    public LocalizeStringEvent scoreTextEvent;
-    public TMP_Text wantText;
-    public TMP_Text scoreText;
-    private int score;
-
-    private void Start()
-    {
-        score = 0;
-        UpdateScoreText();
-    }
+    public TMP_Text wantText; // Reference to the "I want..." text
+    public TMP_Text foodsLeftText; // Reference to the "Foods Left" text
 
     public void UpdateWantText(int foodIndex)
     {
-        if (wantTextEvent != null)
+        if (wantText != null)
         {
-            wantTextEvent.StringReference.Arguments = new object[] { foodIndex + 1 };
-            wantTextEvent.RefreshString();
+            wantText.text = FeedLocalizationManager.Instance.GetTranslation("i_want_text", foodIndex + 1);
         }
     }
 
-    public void UpdateScoreText()
+    public void UpdateFoodsLeftText(int score)
     {
-        if (scoreTextEvent != null)
+        if (foodsLeftText != null)
         {
-            scoreTextEvent.StringReference.Arguments = new object[] { score };
-            scoreTextEvent.RefreshString();
+            foodsLeftText.text = FeedLocalizationManager.Instance.GetTranslation("foods_left_text", score);
         }
     }
 
-    public void IncrementScore(int amount)
+    public void UpdateTexts(int foodIndex, int score)
     {
-        score += amount;
-        UpdateScoreText();
+        UpdateWantText(foodIndex);
+        UpdateFoodsLeftText(score);
     }
 }

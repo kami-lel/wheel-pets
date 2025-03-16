@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Components;
 
 public class LeaderboardManager : MonoBehaviour
 {
@@ -13,6 +15,12 @@ public class LeaderboardManager : MonoBehaviour
 
     [SerializeField]
     private LeaderboardPlayer leaderboardPlayer;
+
+    [SerializeField]
+    private LocalizeStringEvent titleText;
+
+    [SerializeField]
+    private LocalizeStringEvent backButtonText;
 
     private List<LeaderboardEntry> leaderboardEntries = new();
 
@@ -75,18 +83,20 @@ public class LeaderboardManager : MonoBehaviour
             Transform leaderboardContent = newEntry.transform.Find(
                 "LeaderboardContent"
             );
-            leaderboardContent
-                .Find("RankText")
-                .GetComponent<TextMeshProUGUI>()
-                .text = "#" + sortedEntries[i].rank.ToString();
-            leaderboardContent
-                .Find("NameText")
-                .GetComponent<TextMeshProUGUI>()
-                .text = sortedEntries[i].playerName;
-            leaderboardContent
-                .Find("ScoreText")
-                .GetComponent<TextMeshProUGUI>()
-                .text = sortedEntries[i].score.ToString() + " Points";
+
+            // Get LocalizeStringEvent components
+            var rankText = leaderboardContent.Find("RankText").GetComponent<LocalizeStringEvent>();
+            var nameText = leaderboardContent.Find("NameText").GetComponent<TextMeshProUGUI>();
+            var scoreText = leaderboardContent.Find("ScoreText").GetComponent<LocalizeStringEvent>();
+
+            // Update localized text with arguments
+            rankText.StringReference.Arguments = new object[] { sortedEntries[i].rank };
+            rankText.RefreshString();
+
+            nameText.text = sortedEntries[i].playerName;
+
+            scoreText.StringReference.Arguments = new object[] { sortedEntries[i].score };
+            scoreText.RefreshString();
         }
 
         leaderboardPlayer.LoadPlayerData(userRank);
