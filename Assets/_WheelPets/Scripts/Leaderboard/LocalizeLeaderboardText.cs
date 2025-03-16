@@ -29,7 +29,7 @@ public class LocalizedLeaderboardText : MonoBehaviour
             {
                 data.leftTurnSignals,
                 data.rightTurnSignals,
-                data.timesParkedWithoutTouchingLines,
+                data.timesParkedWithoutBraking,
                 data.stopSignsStoppedAt,
             };
             drivingStatsTextEvent.RefreshString();
@@ -40,13 +40,13 @@ public class LocalizedLeaderboardText : MonoBehaviour
     {
         if (minigameStatsTextEvent != null)
         {
+            var stats = data.GetAllStats();
             minigameStatsTextEvent.StringReference.Arguments = new object[]
             {
-                // bug these data fields are deprecated, use the new stat system
-                data.tugOfWarGamesWon,
-                data.timesPetWashed,
-                data.timesHideNSeekWon,
-                data.cosmeticsUnlocked,
+                stats["tug"].winCount,
+                stats["bath"].PlayCount(),
+                stats["hide"].winCount,
+                data.purchasedAccessories.Count
             };
             minigameStatsTextEvent.RefreshString();
         }

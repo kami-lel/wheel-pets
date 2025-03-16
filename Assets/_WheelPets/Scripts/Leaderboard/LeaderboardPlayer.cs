@@ -1,7 +1,8 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
+using UnityEngine.Localization.Settings;
 
 public class LeaderboardPlayer : MonoBehaviour
 {
@@ -11,68 +12,118 @@ public class LeaderboardPlayer : MonoBehaviour
     [SerializeField]
     private GameObject stats;
 
+    [SerializeField]
+    private LocalizeStringEvent rankText;
+
+    [SerializeField]
+    private TextMeshProUGUI nameText;
+
+    [SerializeField]
+    private LocalizeStringEvent pointsText;
+
+    [SerializeField]
+    private LocalizeStringEvent drivingText;
+
+    [SerializeField]
+    private LocalizeStringEvent minigamesText;
+
+    private GameObject currentPet;
+
+    [SerializeField]
+    private GameObject petContainer;
+
+    [SerializeField]
+    private GameObject petPrefab;
+
     public void LoadPlayerData(int userRank)
     {
         PlayerData data = Data.GetPlayerData();
 
-        // Ensure userScore and stats are assigned
+        // Ensure required components are assigned
         if (userScore == null || stats == null)
         {
             Debug.LogError("userScore or stats GameObject is not assigned.");
             return;
         }
 
-        // Update userScore texts
-        Text placeText = userScore
-            .transform.Find("Place")
-            .GetComponent<Text>();
-        Text nameText = userScore.transform.Find("Name").GetComponent<Text>();
-        Text pointsText = userScore
-            .transform.Find("Points")
-            .GetComponent<Text>();
-
-        if (placeText == null || nameText == null || pointsText == null)
+        // Update rank text
+        if (rankText != null)
         {
-            Debug.LogError(
-                "One or more Text components are not assigned in userScore."
-            );
-            return;
+            rankText.StringReference.TableReference = "UI";
+            rankText.StringReference.TableEntryReference = "leaderboard_rank";
+            rankText.StringReference.Arguments = new object[] { userRank };
+            rankText.RefreshString();
         }
 
-        placeText.text = "#" + userRank.ToString();
-        nameText.text = data.playerName;
-        pointsText.text = data.drivingPoint.ToString() + " Points";
-
-        // Update stats texts
-        Text drivingStatsText = stats
-            .transform.Find("Driving Stats")
-            .GetComponent<Text>();
-        Text minigameStatsText = stats
-            .transform.Find("Minigame Stats")
-            .GetComponent<Text>();
-
-        if (drivingStatsText == null || minigameStatsText == null)
+        // Update name text
+        if (nameText != null)
         {
-            Debug.LogError(
-                "One or more Text components are not assigned in stats."
-            );
-            return;
+            nameText.text = data.playerName;
         }
 
-        drivingStatsText.text =
-            $"Left Turn Signals: {data.leftTurnSignals}\n"
-            + $"Right Turn Signals: {data.rightTurnSignals}\n"
-            + $"Times Parked Without Touching Lines: {data.timesParkedWithoutTouchingLines}\n"
-            + $"Stop Signs Stopped At: {data.stopSignsStoppedAt}";
+        // Update points text
+        if (pointsText != null)
+        {
+            pointsText.StringReference.TableReference = "UI";
+            pointsText.StringReference.TableEntryReference = "leaderboard_points";
+            pointsText.StringReference.Arguments = new object[] { data.drivingPoint + data.minigameCoin };
+            pointsText.RefreshString();
+        }
 
-        // bug these data fields are deprecated, use the new stat system
-        minigameStatsText.text =
-            $"Tug Of War Games Won: {data.tugOfWarGamesWon}\n"
-            + $"Times Pet Washed: {data.timesPetWashed}\n"
-            + $"Times Hide-N-Seek Won: {data.timesHideNSeekWon}\n"
-            + $"Cosmetics Unlocked: {data.cosmeticsUnlocked}\n"
-            + $"Fetch High Score: {data.fetchHighScore}\n"
-            + $"Best Time for Bath Minigame: {data.bathMinigameBestTime:F2} seconds\n"
-            + $"Times Pet Walked: {data.timesPetWalked}";
+        // Update driving stats text
+        if (drivingText != null)
+        {
+            drivingText.StringReference.TableReference = "UI";
+            drivingText.StringReference.TableEntryReference = "leaderboard_driving_stats";
+            drivingText.StringReference.Arguments = new object[] 
+            { 
+                data.leftTurnSignals,
+                data.rightTurnSignals,
+                data.timesParkedWithoutBraking,
+                data.stopSignsStoppedAt
+            };
+            drivingText.RefreshString();
+        }
+
+        // Update minigame stats text
+        if (minigamesText != null)
+        {
+            var stats = data.GetAllStats();
+            minigamesText.StringReference.TableReference = "UI";
+            minigamesText.StringReference.TableEntryReference = "leaderboard_minigame_stats";
+            minigamesText.StringReference.Arguments = new object[]
+            {
+                stats["tug"].winCount,
+                stats["bath"].PlayCount(),
+                stats["hide"].winCount,
+                data.purchasedAccessories.Count
+            };
+            minigamesText.RefreshString();
+        }
+
+        // Load pet if one has been adopted
+        LoadPet(data);
+    }
+
+    private void LoadPet(PlayerData data)
+    {
+        if (data.petData != null && petContainer != null && petPrefab != null)
+        {
+            // Remove existing pet if any
+            if (currentPet != null)
+            {
+                Destroy(currentPet);
+            }
+
+            // Create new pet
+            currentPet = Instantiate(petPrefab, petContainer.transform);
+            
+            // Apply customization if interface is implemented
+            var customization = currentPet.GetComponent<IPetCustomization>();
+            if (customization != null)
+            {
+                customization.ApplyCustomization(data.petData);
+            }
+        }
     }
 }

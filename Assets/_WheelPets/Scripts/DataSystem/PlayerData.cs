@@ -29,7 +29,7 @@ public class PlayerData
     // driving statistics
     public int leftTurnSignals = 0;
     public int rightTurnSignals = 0;
-    public int timesParkedWithoutTouchingLines = 0;
+    public int timesParkedWithoutBraking = 0;
     public int stopSignsStoppedAt = 0;
 
     // bug these data fields are deprecated
