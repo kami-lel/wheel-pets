@@ -9,6 +9,14 @@ public class LeaderboardPlayer : MonoBehaviour
     [SerializeField]
     private GameObject stats;
 
+    [SerializeField]
+    private GameObject petContainer; // Container for the pet visualization
+
+    [SerializeField]
+    private GameObject petPrefab; // Prefab for the pet model
+
+    private GameObject currentPet; // Reference to the instantiated pet
+
     public void LoadPlayerData(int userRank)
     {
         PlayerData data = Data.GetPlayerData();
@@ -39,7 +47,10 @@ public class LeaderboardPlayer : MonoBehaviour
 
         placeText.text = "#" + userRank.ToString();
         nameText.text = data.playerName;
-        pointsText.text = data.drivingPoint.ToString() + " Points";
+        
+        // Calculate total points (driving + minigame points)
+        int totalPoints = data.drivingPoint + data.minigamePoints;
+        pointsText.text = totalPoints.ToString() + " Points";
 
         // Update stats texts
         Text drivingStatsText = stats
@@ -57,20 +68,50 @@ public class LeaderboardPlayer : MonoBehaviour
             return;
         }
 
+        // Update driving stats with the new "parked without braking" stat
         drivingStatsText.text =
             $"Left Turn Signals: {data.leftTurnSignals}\n"
             + $"Right Turn Signals: {data.rightTurnSignals}\n"
-            + $"Times Parked Without Touching Lines: {data.timesParkedWithoutTouchingLines}\n"
+            + $"Times Parked Without Braking: {data.timesParkedWithoutBraking}\n"
             + $"Stop Signs Stopped At: {data.stopSignsStoppedAt}";
 
-        // bug these data fields are deprecated, use the new stat system
+        // Update minigame stats with the new stat system
         minigameStatsText.text =
-            $"Tug Of War Games Won: {data.tugOfWarGamesWon}\n"
-            + $"Times Pet Washed: {data.timesPetWashed}\n"
-            + $"Times Hide-N-Seek Won: {data.timesHideNSeekWon}\n"
-            + $"Cosmetics Unlocked: {data.cosmeticsUnlocked}\n"
-            + $"Fetch High Score: {data.fetchHighScore}\n"
-            + $"Best Time for Bath Minigame: {data.bathMinigameBestTime:F2} seconds\n"
-            + $"Times Pet Walked: {data.timesPetWalked}";
+            $"Minigames Completed: {data.minigamesCompleted}\n"
+            + $"Total Minigame Wins: {data.totalMinigameWins}\n"
+            + $"Best Scores:\n"
+            + $"  Fetch: {data.fetchHighScore}\n"
+            + $"  Bath Time: {data.bathMinigameBestTime:F2}s\n"
+            + $"  Hide-N-Seek: {data.hideNSeekBestTime:F2}s\n"
+            + $"  Tug of War: {data.tugOfWarBestScore}";
+
+        // Load and display the pet
+        LoadPet(data);
+    }
+
+    private void LoadPet(PlayerData data)
+    {
+        // Clean up any existing pet
+        if (currentPet != null)
+        {
+            Destroy(currentPet);
+        }
+
+        // Check if we have the necessary components
+        if (petContainer == null || petPrefab == null)
+        {
+            Debug.LogError("Pet container or prefab is not assigned.");
+            return;
+        }
+
+        // Instantiate the pet prefab
+        currentPet = Instantiate(petPrefab, petContainer.transform);
+        
+        // Apply pet customizations from player data
+        PetCustomization petCustomization = currentPet.GetComponent<PetCustomization>();
+        if (petCustomization != null)
+        {
+            petCustomization.ApplyCustomization(data.petCustomization);
+        }
     }
 }

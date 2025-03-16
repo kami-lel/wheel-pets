@@ -28,14 +28,17 @@ public class LeaderboardManager : MonoBehaviour
             PlayerData.LeaderboardOtherPlayerData otherPlayer in playerData.leaderBoardOtherPlayerData
         )
         {
-            LeaderboardEntry entry = new(otherPlayer.name, otherPlayer.point);
+            // Calculate total points for other players
+            int totalPoints = otherPlayer.point + otherPlayer.minigamePoints;
+            LeaderboardEntry entry = new(otherPlayer.name, totalPoints);
             leaderboardEntries.Add(entry);
         }
 
-        // add our player's data into leaderboard
+        // add our player's data into leaderboard with total points
+        int playerTotalPoints = playerData.drivingPoint + playerData.minigamePoints;
         LeaderboardEntry playerEntry = new(
             playerData.playerName,
-            playerData.drivingPoint
+            playerTotalPoints
         );
         leaderboardEntries.Add(playerEntry);
         PopulateLeaderboardUI();
