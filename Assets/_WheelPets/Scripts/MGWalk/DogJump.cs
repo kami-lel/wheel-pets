@@ -10,6 +10,7 @@ public class DogJump : MonoBehaviour
     [SerializeField] private float fallGravity = 1f; // Base gravity strength
     [SerializeField] private float fallMultiplier = 2.5f; // Gravity multiplier for falling speed
 
+
     // Jump Fields
     public float yVariation = 2f; // Vertical randomization range
     private float yStart; // Initial Y position
@@ -161,4 +162,5 @@ public class DogJump : MonoBehaviour
         yield return new WaitForSeconds(delay);
         controlsEnabled = true;
     }
+
 }

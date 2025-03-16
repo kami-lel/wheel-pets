@@ -1,4 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 
 public class RockMovement : MonoBehaviour
 {
@@ -11,6 +14,8 @@ public class RockMovement : MonoBehaviour
 
     public float respawnOffset = 100f;       // Optional buffer to spawn slightly offscreen right
 
+    [SerializeField] AudioSource rockSFX; // sfx for rock spawning
+
     void Start()
     {
         if (background == null)
@@ -21,6 +26,8 @@ public class RockMovement : MonoBehaviour
 
         UpdateBackgroundBounds();
         StartCoroutine(EnableMovementAfterDelay(2f));  // Optional delay before rocks move
+
+        StartCoroutine(PlayRockSoundOnStart());
     }
 
     void Update()
@@ -59,6 +66,10 @@ public class RockMovement : MonoBehaviour
         if (transform.localPosition.x < xBoundLeft - 50f)  // 50f buffer ensures it's fully offscreen
         {
             RespawnRock();
+
+            // Play rock sfx on screen wrap
+            rockSFX.Play();
+            rockSFX.SetScheduledEndTime(AudioSettings.dspTime + 0.75); 
         }
     }
 
@@ -70,5 +81,12 @@ public class RockMovement : MonoBehaviour
 
         // Optional log
         // Debug.Log($"Rock respawned at {newPosition.x}");
+    }
+
+    IEnumerator PlayRockSoundOnStart()
+    {
+        yield return new WaitForSeconds(2);
+        rockSFX.Play();
+        rockSFX.SetScheduledEndTime(AudioSettings.dspTime + 0.75);
     }
 }
