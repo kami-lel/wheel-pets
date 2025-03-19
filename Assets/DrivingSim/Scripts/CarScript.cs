@@ -11,6 +11,8 @@ public class CarScript : MonoBehaviour
     Transform signstop;
     Transform signturn;
     Transform currentsign;
+    Transform maproad;
+
 
     GameObject cloud1;
     GameObject cloud2;
@@ -18,6 +20,7 @@ public class CarScript : MonoBehaviour
     GameObject road;
     GameObject land;
     GameObject sky;
+    
 
     ShakyScript sroad;
     ShakyScript shill;
@@ -36,9 +39,11 @@ public class CarScript : MonoBehaviour
     private bool lturn = false;
     private bool rturn = false;
     private float spin = 0;
+    private float roadspin = 0;
     private bool brakes = false;
     private bool accel = false;
     private float basespeed = 50;
+    private float roadbase = 0;
     private float maxspeed = 100;
     public float speed = 0;
     public bool failedpark = false; // turns true whenever parked incorrectly.
@@ -60,7 +65,8 @@ public class CarScript : MonoBehaviour
         turnl = transform.Find("carturn_1");
         turnr = transform.Find("carturn_0");
         screen = transform.Find("carscreen_0");
-
+        maproad = screen.Find("wheelmap_0").Find("maproad_0");
+        roadbase = maproad.position.x;
         cloud1 = GameObject.Find("bgcloud_0");
         cloud2 = GameObject.Find("bgcloud_1");
         hill = GameObject.Find("bghill_1");
@@ -155,10 +161,19 @@ public class CarScript : MonoBehaviour
         if (lturn && !rturn)
         {
             spin++;
+
+            if (spin > 50)
+            {
+                spin = 50;
+            }
         }
         else if (rturn && !lturn)
         {
             spin--;
+            if (spin < -50)
+            {
+                spin = -50;
+            }
         }
         else if (!(lturn || rturn))
         {
@@ -167,6 +182,7 @@ public class CarScript : MonoBehaviour
             {
                 spin = 0;
             }
+
         }
 
         //Debug.Log(speed);
@@ -175,9 +191,38 @@ public class CarScript : MonoBehaviour
         sland.degree = landspeed * (speed / maxspeed);
         sroad.degree = landspeed * (speed / maxspeed);
         shill.degree = hillspeed * (speed / maxspeed);
+        maproad.position = new Vector3(roadbase + roadspin*0.003f, maproad.position.y, maproad.position.z);
 
         if (speed > 0)
         {
+
+            if (lturn && !rturn)
+            {
+                roadspin++;
+
+                if (roadspin > 50)
+                {
+                    roadspin = 50;
+                }
+            }
+            else if (rturn && !lturn)
+            {
+                roadspin--;
+                if (roadspin < -50)
+                {
+                    roadspin = -50;
+                }
+            }
+            else if (!(lturn || rturn))
+            {
+                roadspin = roadspin / 1.04f;
+                if (roadspin < 0.01f && roadspin > -0.01f)
+                {
+                    roadspin = 0;
+                }
+
+            }
+
             if (signprog == 0 && Random.Range(1, 150) == 49)
             {
                 signprog += Time.deltaTime * 80 * (speed / maxspeed);
