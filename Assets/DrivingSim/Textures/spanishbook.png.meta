@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spanishbook_0: 7075934559251330682
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
